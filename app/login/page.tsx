@@ -2,8 +2,8 @@ import React from 'react';
 
 const SignInForm: React.FC = () => {
     return (
-        <section className="bg-gray-50">
-            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 w-full lg:w-2/3 xl:w-1/3 sm:w-2/3">
+        <section className="bg-gray-50 h-full">
+            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0 w-full lg:w-2/3 xl:w-1/3 sm:w-2/3">
                 <div className="w-full bg-white rounded-lg shadow">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
