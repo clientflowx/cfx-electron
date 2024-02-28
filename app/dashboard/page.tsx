@@ -70,8 +70,8 @@ const AdminDashboard = () => {
           <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
             <div className='charts bg-transparent w-full'>
               <div className=" h-screen sm:h-auto flex flex-col gap-3">
-                <div className='flex charts gap-3'>
-                  <div className='w-2/3 flex gap-3'>
+                <div className='flex charts flex-col sm:flex-row gap-3'>
+                  <div className='sm:w-2/3 flex gap-3 flex-col sm:flex-row'>
 
                     <div className='w-full border rounded-lg overflow-hidden shadow-lg'>
                       <Line
@@ -118,8 +118,8 @@ const AdminDashboard = () => {
                     </div>
                   </div>
 
-                  <div className='flex w-1/3 gap-3 justify-between'>
-                    <div className='w-1/2 border rounded-lg overflow-hidden shadow-lg'>
+                  <div className='flex sm:w-1/3 flex-col sm:flex-row gap-3 justify-between'>
+                    <div className='sm:w-1/2 border rounded-lg overflow-hidden shadow-lg'>
                       <Doughnut
                         data={{
                           labels: ['Red', 'Blue', 'Yellow'],
@@ -151,8 +151,8 @@ const AdminDashboard = () => {
                 </div>
 
 
-                <div className='flex items-center gap-3 justify-between'>
-                  <div className='w-1/2 border rounded-lg overflow-hidden shadow-lg'>
+                <div className='flex flex-col sm:flex-row items-center gap-3 justify-between'>
+                  <div className='sm:w-1/2 w-full border rounded-lg overflow-hidden shadow-lg'>
                     <Line
                       data={{
                         labels: ['January', 'February', 'March', 'April', 'May'],
@@ -179,7 +179,7 @@ const AdminDashboard = () => {
                       }}
                     />
                   </div>
-                  <div className='w-1/2 border rounded-lg overflow-hidden shadow-lg'>
+                  <div className='sm:w-1/2 w-full border rounded-lg overflow-hidden shadow-lg'>
                     <Bar
                       data={{
                         labels: ['January', 'February', 'March', 'April', 'May'],
