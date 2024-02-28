@@ -48,7 +48,7 @@ const SignInForm: React.FC = () => {
                                 />
                             </div>
                             <div>
-                                <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900">Password</label>
+                                <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900">PIN</label>
                                 <input
                                     type="password"
                                     name="password"
@@ -56,7 +56,7 @@ const SignInForm: React.FC = () => {
                                     value={formData.password}
                                     onChange={handleChange}
                                     className={inputStyles}
-                                    placeholder="Enter your password"
+                                    placeholder="Enter your PIN number"
                                     required
                                 />
                             </div>
@@ -64,7 +64,7 @@ const SignInForm: React.FC = () => {
                                 type="submit"
                                 className={buttonStyles}
                             >
-                                Sign in
+                                Log in
                             </button>
                             <p className="text-sm font-light text-gray-500">
                                 Don’t have an account yet? <a href="#" className="font-medium text-primary-600 hover:underline">Sign up</a>

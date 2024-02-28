@@ -1,222 +1,129 @@
 "use client"
-
-import { Bar, Doughnut, Line } from 'react-chartjs-2';
-import { Chart, LinearScale, CategoryScale } from 'chart.js/auto';
-import { Dashboard, Components, Files, Inbox, Calendar } from '@/svg/index.ts'
+import React, { useState } from 'react';
+import { Dashboard, Components, Files, Inbox, Calendar } from '@/svg/index.ts';
 
 const AdminDashboard = () => {
-  Chart.register(LinearScale, CategoryScale);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [sidebarOption, setSidebarOption] = useState('');
 
   type SidebarItem = {
     title: string;
     icon: JSX.Element;
+    titleVisible: boolean
   };
 
-  //list of sidebar items
   const sidebarItems: SidebarItem[] = [
     {
-      title: 'Dashboard',
-      icon: <Dashboard />
+      title: 'Manage Users',
+      icon: <Dashboard />,
+      titleVisible: true,
     },
     {
       title: 'Components',
-      icon: <Components />
+      icon: <Components />,
+      titleVisible: true,
     },
     {
       title: 'Inbox',
-      icon: <Inbox />
+      icon: <Inbox />,
+      titleVisible: true,
     },
     {
       title: 'Calendar',
-      icon: <Calendar />
+      icon: <Calendar />,
+      titleVisible: true,
     },
     {
       title: 'Files',
-      icon: <Files />
+      icon: <Files />,
+      titleVisible: true,
     },
-  ]
+  ];
 
   return (
     <div>
       <aside
         id="logo-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0"
+        className={`fixed top-0 left-0 z-40 h-screen pt-20 transition-transform ${isSidebarOpen ? 'w-64' : 'w-16'} cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}
         aria-label="Sidebar"
+        onMouseEnter={() => setIsSidebarOpen(true)}
+        onMouseLeave={() => setIsSidebarOpen(false)}
       >
-        <div className="h-full px-3 pb-4 overflow-y-auto bg-white ">
+        <div className="h-full pb-4 overflow-y-auto bg-gray-700">
           <ul className="space-y-2 font-medium">
             {sidebarItems.map((item, id) => (
-              <li key={id}>
-                <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
-                  {item.icon}
-                  <span className="ms-3">{item.title}</span>
-                </a>
+              <li key={id} onClick={() => setSidebarOption(item.title)}>
+                <div className={`flex items-center p-4 text-gray-300 hover:bg-gray-800 transition-all ${isSidebarOpen ? '' : 'justify-center'} group`}>
+                  <div className='w-5 text-white'>
+                    {item.icon}
+                  </div>
+                  <span className={`ms-3 h-5 ${isSidebarOpen || !item.titleVisible ? '' : 'hidden'}`}>
+                    {item.title}
+                  </span>
+                </div>
               </li>
             ))}
           </ul>
         </div>
       </aside>
 
-      <div className="relative flex flex-col flex-1 overflow-hidden">
-        <div className="p-4 sm:ml-64">
-          <div className="p-4 border-2 border-gray-200  border-dashed rounded-lg mt-14">
-            <div className='charts bg-transparent w-full'>
-              <div className=" h-screen sm:h-auto flex flex-col gap-3">
-                <div className='flex charts flex-col sm:flex-row gap-3'>
-                  <div className='sm:w-2/3 flex gap-3 flex-col sm:flex-row'>
-
-                    <div className='w-full border rounded-lg overflow-hidden shadow-lg'>
-                      <Line
-                        data={{
-                          labels: ['January', 'February', 'March', 'April', 'May'],
-                          datasets: [
-                            {
-                              label: 'Monthly Sales - Dataset 1',
-                              data: [45, 79, 60, 41, 76],
-                              fill: false,
-                              borderColor: 'rgba(255,99,132,1)',
-                            },
-                            {
-                              label: 'Monthly Sales - Dataset 2',
-                              data: [30, 45, 75, 89, 60],
-                              fill: false,
-                              borderColor: 'rgba(54, 162, 235, 1)',
-                            },
-                          ],
-                        }}
-                      />
-                    </div>
-                    <div className='w-full border rounded-lg overflow-hidden shadow-lg'>
-                      <Line
-                        data={{
-                          labels: ['January', 'February', 'March', 'April', 'May'],
-                          datasets: [
-                            {
-                              label: 'Temperature - City A',
-                              data: [25, 28, 30, 22, 26],
-                              fill: false,
-                              borderColor: 'rgba(255,99,132,1)',
-                            },
-                            {
-                              label: 'Temperature - City B',
-                              data: [22, 26, 29, 24, 27],
-                              fill: false,
-                              borderColor: 'rgba(54, 162, 235, 1)',
-                            },
-                          ],
-                        }}
-                      />
-
-                    </div>
-                  </div>
-
-                  <div className='flex sm:w-1/3 flex-col sm:flex-row gap-3 justify-between'>
-                    <div className='sm:w-1/2 border rounded-lg overflow-hidden shadow-lg'>
-                      <Doughnut
-                        data={{
-                          labels: ['Red', 'Blue', 'Yellow'],
-                          datasets: [
-                            {
-                              data: [200, 80, 150],
-                              backgroundColor: ['red', 'blue', 'yellow'],
-                              hoverBackgroundColor: ['darkred', 'darkblue', 'darkyellow'],
-                            },
-                          ],
-                        }}
-                      />
-                    </div>
-                    <div className='w-1/2 border rounded-lg overflow-hidden shadow-lg'>
-                      <Doughnut
-                        data={{
-                          labels: ['Red', 'Blue', 'Yellow'],
-                          datasets: [
-                            {
-                              data: [120, 30, 180],
-                              backgroundColor: ['lightcoral', 'lightblue', 'lightgoldenrodyellow'],
-                              hoverBackgroundColor: ['darkred', 'darkblue', 'darkyellow'],
-                            },
-                          ],
-                        }}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-
-                <div className='flex flex-col sm:flex-row items-center gap-3 justify-between'>
-                  <div className='sm:w-1/2 w-full border rounded-lg overflow-hidden shadow-lg'>
-                    <Line
-                      data={{
-                        labels: ['January', 'February', 'March', 'April', 'May'],
-                        datasets: [
-                          {
-                            label: 'Sales - Product A',
-                            data: [45, 79, 60, 41, 76],
-                            fill: false,
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                          },
-                          {
-                            label: 'Sales - Product B',
-                            data: [30, 45, 75, 89, 60],
-                            fill: false,
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                          },
-                          {
-                            label: 'Sales - Product C',
-                            data: [65, 50, 70, 45, 80],
-                            fill: false,
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                          },
-                        ],
-                      }}
-                    />
-                  </div>
-                  <div className='sm:w-1/2 w-full border rounded-lg overflow-hidden shadow-lg'>
-                    <Bar
-                      data={{
-                        labels: ['January', 'February', 'March', 'April', 'May'],
-                        datasets: [
-                          {
-                            label: 'Monthly Sales',
-                            backgroundColor: 'rgba(255, 206, 86, 0.2)',
-                            borderColor: 'rgba(255, 206, 86, 1)',
-                            borderWidth: 1,
-                            hoverBackgroundColor: 'rgba(255, 206, 86, 0.4)',
-                            hoverBorderColor: 'rgba(255, 206, 86, 1)',
-                            data: [60, 80, 20, 50, 70],
-                          },
-                        ],
-                      }}
-                    />
-                  </div>
-                </div>
-
-                <div className='border rounded-lg overflow-hidden shadow-lg'>
-                  <Bar
-                    data={{
-                      labels: ['January', 'February', 'March', 'April', 'May'],
-                      datasets: [
-                        {
-                          label: 'Monthly Sales',
-                          backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                          borderColor: 'rgba(153, 102, 255, 1)',
-                          borderWidth: 1,
-                          hoverBackgroundColor: 'rgba(153, 102, 255, 0.4)',
-                          hoverBorderColor: 'rgba(153, 102, 255, 1)',
-                          data: [30, 75, 40, 65, 90],
-                        },
-                      ],
-                    }}
-                  />
-                </div>
-              </div>
+      <div className="relative flex flex-col flex-1 h-full min-h-screen p-10  bg-[#f0f4f7]">
+        <div className="sm:ml-10">
+          <div className={`p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14`}>
+            <div className={` ${sidebarOption === '' ? '' : 'hidden'}`}>
+              <h1 className="text-2xl font-bold text-gray-700">Dashboard</h1>
+              <div className='text-sm'>Home <span className='text-gray-500'>/ Dashboard</span></div>
             </div>
+            <div className={`${sidebarOption === 'Manage Users' ? '' : 'hidden'}`}>
+              <section >
+                <div className="flex flex-col items-start justify-start mx-auto h-screen w-full ">
+                  <div className="w-1/2">
+                    <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                      <form className="space-y-4 md:space-y-6">
+                        <div>
+                          <label htmlFor="text" className="block mb-2 text-sm font-medium text-gray-900">Input Field</label>
+                          <input
+                            type="text"
+                            name="text"
+                            id="text"
+                            className={inputStyles}
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="text" className="block mb-2 text-sm font-medium text-gray-900">Input Field</label>
+                          <input
+                            type="text"
+                            name="text"
+                            id="text"
+                            className={inputStyles}
+                            required
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          className={buttonStyles}
+                        >
+                          Save
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
           </div>
         </div>
-
       </div>
     </div>
   );
 };
+
+
+
+// Repeated styles
+const inputStyles = "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5";
+const buttonStyles = "mt-4 border border-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-40 px-4 py-2 text-center mr-2 bg-[#38A0DB] text-white";
 
 export default AdminDashboard;
