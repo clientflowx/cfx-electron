@@ -1,5 +1,7 @@
 "use client"
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import axios from 'axios'
+import { useRouter } from 'next/navigation'
 
 interface FormData {
     email: string;
@@ -7,6 +9,8 @@ interface FormData {
 }
 
 const SignInForm: React.FC = () => {
+
+    const router = useRouter();
     const [formData, setFormData] = useState<FormData>({
         email: '',
         password: '',
@@ -20,9 +24,37 @@ const SignInForm: React.FC = () => {
         }));
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        //  perform form submission logic here
+        try {
+            const response = await axios.post('https://cfx-mono-production-5ec7.up.railway.app/api/internal/auth', {
+                secretCode: formData.password,
+                email: formData.email,
+            });
+
+            console.log(response.data);  // this is the response with the object containing JWT token
+            const adminToken = response.data.token;
+
+            const expirationDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); //expiration time for 30 days
+            document.cookie = `token=${adminToken}; expires=${expirationDate.toUTCString()}; path=/; secure; SameSite=Strict`; //save the token in the cookie
+
+            //redirect the valid admin user to the dashboard
+            router.push('/dashboard');
+
+            //reset the login form
+            setFormData({
+                email: '',
+                password: '',
+            });
+
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            // alert message functionality can be implemented
+        }
+        setFormData({
+            email: '',
+            password: '',
+        })
     };
 
     return (
