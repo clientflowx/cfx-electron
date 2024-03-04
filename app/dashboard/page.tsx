@@ -87,7 +87,7 @@ const AdminDashboard = () => {
               <div className='text-sm'>Home <span className='text-gray-500'>/ Dashboard</span></div>
             </div>
             <div className={`${sidebarOption === 'Manage Users' ? '' : 'hidden'}`}>
-              <h1 className='my-2 font-bold text-2xl'>Teams</h1>
+              <h1 className='my-2 font-bold text-md'>Teams</h1>
               <UserList />
             </div>
         </div>
