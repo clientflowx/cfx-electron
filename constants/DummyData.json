@@ -1,500 +1,3502 @@
-[{"name":"Ginger Dimitrov","email":"gdimitrov0@java.com","phone":"5128665576","usertype":"Central Europe, Russia and Turkey Fund, Inc. (The)","location":"NYSE"},
-{"name":"Nedi Osmon","email":"nosmon1@about.com","phone":"8182826879","usertype":"Nuveen Massachusetts Municipal Income Fund","location":"NYSE"},
-{"name":"Bettina Wincom","email":"bwincom2@berkeley.edu","phone":"9299834854","usertype":"Ark Restaurants Corp.","location":"NASDAQ"},
-{"name":"Enrichetta Yegorkin","email":"eyegorkin3@nbcnews.com","phone":"8057577546","usertype":"FIRST REPUBLIC BANK","location":"NYSE"},
-{"name":"Sheffie Jordan","email":"sjordan4@icio.us","phone":"2986572896","usertype":"Astrotech Corporation","location":"NASDAQ"},
-{"name":"Robin Rapin","email":"rrapin5@yandex.ru","phone":"7207540826","usertype":"New York REIT, Inc.","location":"NYSE"},
-{"name":"Cory Paolillo","email":"cpaolillo6@irs.gov","phone":"4576323281","usertype":"Actua Corporation","location":"NASDAQ"},
-{"name":"Meggie Cowap","email":"mcowap7@t.co","phone":"1616583438","usertype":"Biostar Pharmaceuticals, Inc.","location":"NASDAQ"},
-{"name":"Brucie Flowers","email":"bflowers8@topsy.com","phone":"7072817260","usertype":"BioLineRx Ltd.","location":"NASDAQ"},
-{"name":"Petrina O'Hdirscoll","email":"pohdirscoll9@ihg.com","phone":"4576060269","usertype":"J. Alexander's Holdings, Inc.","location":"NYSE"},
-{"name":"Huberto Scawn","email":"hscawna@usnews.com","phone":"6131742579","usertype":"Pan American Silver Corp.","location":"NASDAQ"},
-{"name":"Langston Wissby","email":"lwissbyb@bigcartel.com","phone":"5218927281","usertype":"Nortech Systems Incorporated","location":"NASDAQ"},
-{"name":"Dionisio Pessel","email":"dpesselc@php.net","phone":"8166950597","usertype":"The Ultimate Software Group, Inc.","location":"NASDAQ"},
-{"name":"Matteo Featherston","email":"mfeatherstond@admin.ch","phone":"1822692659","usertype":"Provident Financial Holdings, Inc.","location":"NASDAQ"},
-{"name":"Emery Windridge","email":"ewindridgee@nasa.gov","phone":"3462738619","usertype":"Daseke, Inc.","location":"NASDAQ"},
-{"name":"Molli Chalice","email":"mchalicef@a8.net","phone":"4301984730","usertype":"Ardagh Group S.A.","location":"NYSE"},
-{"name":"Laverna Sleet","email":"lsleetg@discovery.com","phone":"2007907344","usertype":"HomeTown Bankshares Corporation","location":"NASDAQ"},
-{"name":"Gibbie Braim","email":"gbraimh@hp.com","phone":"4629858715","usertype":"Teligent, Inc.","location":"NASDAQ"},
-{"name":"Aimee Shuter","email":"ashuteri@so-net.ne.jp","phone":"8747520557","usertype":"HFF, Inc.","location":"NYSE"},
-{"name":"Codie Sorrie","email":"csorriej@huffingtonpost.com","phone":"6779462068","usertype":"Helios and Matheson Analytics Inc","location":"NASDAQ"},
-{"name":"Jobye Hulse","email":"jhulsek@bandcamp.com","phone":"7358996469","usertype":"Enterprise Bancorp Inc","location":"NASDAQ"},
-{"name":"Rozamond Creelman","email":"rcreelmanl@mapquest.com","phone":"4144462696","usertype":"WisdomTree Negative Duration High Yield Bond Fund","location":"NASDAQ"},
-{"name":"Edin Breckon","email":"ebreckonm@usnews.com","phone":"7504964907","usertype":"Check Point Software Technologies Ltd.","location":"NASDAQ"},
-{"name":"Veronika Tuckwell","email":"vtuckwelln@surveymonkey.com","phone":"7779520195","usertype":"Atento S.A.","location":"NYSE"},
-{"name":"Ally Greenhalgh","email":"agreenhalgho@google.cn","phone":"1069202317","usertype":"Zoe's Kitchen, Inc.","location":"NYSE"},
-{"name":"Corella Uzielli","email":"cuziellip@go.com","phone":"8975944721","usertype":"Zillow Group, Inc.","location":"NASDAQ"},
-{"name":"Euell Verney","email":"everneyq@google.nl","phone":"5713991265","usertype":"Pingtan Marine Enterprise Ltd.","location":"NASDAQ"},
-{"name":"Atlante Joder","email":"ajoderr@uiuc.edu","phone":"4666576889","usertype":"Renasant Corporation","location":"NASDAQ"},
-{"name":"Olva Clyma","email":"oclymas@cbsnews.com","phone":"9289859751","usertype":"KCAP Financial, Inc.","location":"NASDAQ"},
-{"name":"Chantal Sagg","email":"csaggt@bing.com","phone":"1537736288","usertype":"Cliffs Natural Resources Inc.","location":"NYSE"},
-{"name":"Tera Grigoli","email":"tgrigoliu@wiley.com","phone":"9936474291","usertype":"JM Global Holding Company","location":"NASDAQ"},
-{"name":"Etienne Sill","email":"esillv@comsenz.com","phone":"7975629715","usertype":"Georgia Power Company","location":"NYSE"},
-{"name":"Mabel Whickman","email":"mwhickmanw@sina.com.cn","phone":"9426623202","usertype":"Federal Agricultural Mortgage Corporation","location":"NYSE"},
-{"name":"Annalee Barehead","email":"abareheadx@istockphoto.com","phone":"5238543341","usertype":"Imprimis Pharmaceuticals, Inc.","location":"NASDAQ"},
-{"name":"Liva Jahan","email":"ljahany@baidu.com","phone":"6206923843","usertype":"Agree Realty Corporation","location":"NYSE"},
-{"name":"Joleen Curtis","email":"jcurtisz@ycombinator.com","phone":"1052572443","usertype":"China Telecom Corp Ltd","location":"NYSE"},
-{"name":"Anastasie Cudde","email":"acudde10@tumblr.com","phone":"9107481346","usertype":"La-Z-Boy Incorporated","location":"NYSE"},
-{"name":"Nickola Rickhuss","email":"nrickhuss11@baidu.com","phone":"2251262829","usertype":"MIDSTATES PETROLEUM COMPANY, INC.","location":"NYSE"},
-{"name":"Jess Giorgetti","email":"jgiorgetti12@furl.net","phone":"9766794151","usertype":"Radius Health, Inc.","location":"NASDAQ"},
-{"name":"Eduard Coonihan","email":"ecoonihan13@netscape.com","phone":"4795684099","usertype":"B. Riley Financial, Inc.","location":"NASDAQ"},
-{"name":"Babbette Durbridge","email":"bdurbridge14@loc.gov","phone":"5376027737","usertype":"Costco Wholesale Corporation","location":"NASDAQ"},
-{"name":"Shea Saunier","email":"ssaunier15@cnet.com","phone":"2299296523","usertype":"Kosmos Energy Ltd.","location":"NYSE"},
-{"name":"Kary Etchells","email":"ketchells16@diigo.com","phone":"6949487780","usertype":"Macquarie Infrastructure Company","location":"NYSE"},
-{"name":"Therine Victory","email":"tvictory17@eepurl.com","phone":"3366682301","usertype":"FORM Holdings Corp.","location":"NASDAQ"},
-{"name":"Grantley Swiers","email":"gswiers18@homestead.com","phone":"2176572586","usertype":"Dillard's, Inc.","location":"NYSE"},
-{"name":"Gerick Pickering","email":"gpickering19@dyndns.org","phone":"2346004503","usertype":"Citrix Systems, Inc.","location":"NASDAQ"},
-{"name":"Rodolphe Shovelin","email":"rshovelin1a@ibm.com","phone":"5158838060","usertype":"Function(x) Inc.","location":"NASDAQ"},
-{"name":"Valene Camamill","email":"vcamamill1b@furl.net","phone":"1481713543","usertype":"Regional Management Corp.","location":"NYSE"},
-{"name":"Federica Muglestone","email":"fmuglestone1c@prnewswire.com","phone":"4685359683","usertype":"NeoPhotonics Corporation","location":"NYSE"},
-{"name":"Bernardine Thurber","email":"bthurber1d@latimes.com","phone":"8945641625","usertype":"Eaton Vance Tax Advantaged Dividend Income Fund","location":"NYSE"},
-{"name":"Brenden Maydway","email":"bmaydway1e@flickr.com","phone":"1262288997","usertype":"Forrester Research, Inc.","location":"NASDAQ"},
-{"name":"Jareb Murrthum","email":"jmurrthum1f@newsvine.com","phone":"3036931517","usertype":"Wheeler Real Estate Investment Trust, Inc.","location":"NASDAQ"},
-{"name":"Marlowe Fleisch","email":"mfleisch1g@hibu.com","phone":"7678738965","usertype":"Insulet Corporation","location":"NASDAQ"},
-{"name":"Barbee Mardee","email":"bmardee1h@weather.com","phone":"1473439959","usertype":"Rocky Brands, Inc.","location":"NASDAQ"},
-{"name":"Brietta Goodie","email":"bgoodie1i@redcross.org","phone":"9208247190","usertype":"MVC Capital, Inc.","location":"NYSE"},
-{"name":"Joachim Domican","email":"jdomican1j@ameblo.jp","phone":"6027934070","usertype":"Pacific Gas & Electric Co.","location":"NYSE"},
-{"name":"Bibby Pendred","email":"bpendred1k@networksolutions.com","phone":"8323055994","usertype":"FIRST REPUBLIC BANK","location":"NYSE"},
-{"name":"Nicol Derx","email":"nderx1l@census.gov","phone":"3169970589","usertype":"China Unicom (Hong Kong) Ltd","location":"NYSE"},
-{"name":"Ellene Haselwood","email":"ehaselwood1m@cdc.gov","phone":"4883796697","usertype":"Saul Centers, Inc.","location":"NYSE"},
-{"name":"Janos St Pierre","email":"jst1n@pcworld.com","phone":"6113065932","usertype":"Validus Holdings, Ltd.","location":"NYSE"},
-{"name":"Westbrook Gorghetto","email":"wgorghetto1o@mtv.com","phone":"3835984655","usertype":"Jacobs Engineering Group Inc.","location":"NYSE"},
-{"name":"Keene Shafier","email":"kshafier1p@techcrunch.com","phone":"8458382760","usertype":"EP Energy Corporation","location":"NYSE"},
-{"name":"Jacobo Deniso","email":"jdeniso1q@samsung.com","phone":"1737052059","usertype":"Avis Budget Group, Inc.","location":"NASDAQ"},
-{"name":"Wyatan Gentner","email":"wgentner1r@nytimes.com","phone":"3094709331","usertype":"Bank of America Corporation","location":"NYSE"},
-{"name":"Xaviera Vale","email":"xvale1s@xrea.com","phone":"7326298402","usertype":"Cimpress N.V","location":"NASDAQ"},
-{"name":"Delcina Dorber","email":"ddorber1t@xinhuanet.com","phone":"3968228497","usertype":"Hershey Company (The)","location":"NYSE"},
-{"name":"Lesly Webben","email":"lwebben1u@gravatar.com","phone":"4082018842","usertype":"National Holdings Corporation","location":"NASDAQ"},
-{"name":"Tristam Gentile","email":"tgentile1v@plala.or.jp","phone":"7851555149","usertype":"IRSA Inversiones Y Representaciones S.A.","location":"NYSE"},
-{"name":"Ugo Boriston","email":"uboriston1w@devhub.com","phone":"3249245684","usertype":"Newell Brands Inc.","location":"NYSE"},
-{"name":"Lefty Dudden","email":"ldudden1x@china.com.cn","phone":"4998306060","usertype":"Customers Bancorp, Inc","location":"NYSE"},
-{"name":"Hollie Boissieux","email":"hboissieux1y@pinterest.com","phone":"4681561911","usertype":"The Chefs' Warehouse, Inc.","location":"NASDAQ"},
-{"name":"Travers Parmeter","email":"tparmeter1z@economist.com","phone":"8171155833","usertype":"Thermo Fisher Scientific Inc","location":"NYSE"},
-{"name":"Leanna Derr","email":"lderr20@dagondesign.com","phone":"8295127685","usertype":"Wells Fargo & Company","location":"NYSE"},
-{"name":"Zabrina Breewood","email":"zbreewood21@mozilla.com","phone":"9035587246","usertype":"Mota Group, Inc.","location":"NASDAQ"},
-{"name":"Derick Boss","email":"dboss22@google.de","phone":"5162248813","usertype":"RAIT Financial Trust","location":"NYSE"},
-{"name":"Nalani Ugoni","email":"nugoni23@multiply.com","phone":"7513655827","usertype":"Tortoise Energy Infrastructure Corporation","location":"NYSE"},
-{"name":"Eugine Goldin","email":"egoldin24@de.vu","phone":"8107048100","usertype":"Itau Unibanco Banco Holding SA","location":"NYSE"},
-{"name":"Milicent Simmill","email":"msimmill25@miibeian.gov.cn","phone":"8038933436","usertype":"The First of Long Island Corporation","location":"NASDAQ"},
-{"name":"Farlee Tarte","email":"ftarte26@cnet.com","phone":"9977420780","usertype":"Public Service Enterprise Group Incorporated","location":"NYSE"},
-{"name":"Daisi Kubecka","email":"dkubecka27@apache.org","phone":"1755867381","usertype":"Del Frisco's Restaurant Group, Inc.","location":"NASDAQ"},
-{"name":"Kissee Hundell","email":"khundell28@webeden.co.uk","phone":"3671950464","usertype":"PowerShares DWA Energy Momentum Portfolio","location":"NASDAQ"},
-{"name":"Glyn Albany","email":"galbany29@zdnet.com","phone":"4347375439","usertype":"51job, Inc.","location":"NASDAQ"},
-{"name":"Betty Botwright","email":"bbotwright2a@prnewswire.com","phone":"3052680305","usertype":"iShares FTSE EPRA/NAREIT Global Real Estate ex-U.S. Index Fund","location":"NASDAQ"},
-{"name":"Ches Malarkey","email":"cmalarkey2b@abc.net.au","phone":"1914596976","usertype":"Blackrock Florida Municipal 2020 Term Trust","location":"NYSE"},
-{"name":"Celinka Guidoni","email":"cguidoni2c@mlb.com","phone":"6324151142","usertype":"Pinnacle Foods, Inc.","location":"NYSE"},
-{"name":"Maddalena Copner","email":"mcopner2d@webs.com","phone":"1032620377","usertype":"James River Group Holdings, Ltd.","location":"NASDAQ"},
-{"name":"Reid Martill","email":"rmartill2e@yelp.com","phone":"3926054724","usertype":"Reinsurance Group of America, Incorporated","location":"NYSE"},
-{"name":"Doti Pottberry","email":"dpottberry2f@cloudflare.com","phone":"4633639854","usertype":"Safeguard Scientifics, Inc.","location":"NYSE"},
-{"name":"Lelia Sayle","email":"lsayle2g@angelfire.com","phone":"6779463565","usertype":"iSectors Post-MPT Growth ETF","location":"NASDAQ"},
-{"name":"Franz Janosevic","email":"fjanosevic2h@hugedomains.com","phone":"7078408986","usertype":"Texas Roadhouse, Inc.","location":"NASDAQ"},
-{"name":"Doralynn Slimmon","email":"dslimmon2i@multiply.com","phone":"9927359431","usertype":"CONMED Corporation","location":"NASDAQ"},
-{"name":"Conway Letrange","email":"cletrange2j@marketwatch.com","phone":"3644461735","usertype":"Corcept Therapeutics Incorporated","location":"NASDAQ"},
-{"name":"Desiri Adhams","email":"dadhams2k@mit.edu","phone":"7612429488","usertype":"Fifth Street Finance Corp.","location":"NASDAQ"},
-{"name":"Boonie Size","email":"bsize2l@hao123.com","phone":"6522167836","usertype":"iShares MSCI Europe Financials Sector Index Fund","location":"NASDAQ"},
-{"name":"Pansy Rowell","email":"prowell2m@fda.gov","phone":"2734035119","usertype":"Nuveen Missouri Quality Municipal Income Fund","location":"NYSE"},
-{"name":"Gratiana Andrivot","email":"gandrivot2n@cmu.edu","phone":"3769823490","usertype":"AmTrust Financial Services, Inc.","location":"NYSE"},
-{"name":"Jenifer Drummer","email":"jdrummer2o@answers.com","phone":"8207552629","usertype":"Alliance One International, Inc.","location":"NYSE"},
-{"name":"Liliane O' Mulderrig","email":"lo2p@ox.ac.uk","phone":"6441443492","usertype":"Obalon Therapeutics, Inc.","location":"NASDAQ"},
-{"name":"Karalee Coners","email":"kconers2q@economist.com","phone":"8253001441","usertype":"Boulevard Acquisition Corp. II","location":"NASDAQ"},
-{"name":"Say Brocklesby","email":"sbrocklesby2r@pagesperso-orange.fr","phone":"3886496812","usertype":"Tronox Limited","location":"NYSE"},
-{"name":"Maryann Summerhayes","email":"msummerhayes2s@github.com","phone":"9954856160","usertype":"Enel Americas S.A.","location":"NYSE"},
-{"name":"Javier Chubb","email":"jchubb2t@digg.com","phone":"3511695806","usertype":"ReWalk Robotics Ltd","location":"NASDAQ"},
-{"name":"Jason Ilyushkin","email":"jilyushkin2u@t.co","phone":"3766108523","usertype":"Overstock.com, Inc.","location":"NASDAQ"},
-{"name":"Pepita Cornfield","email":"pcornfield2v@reference.com","phone":"9396484492","usertype":"One Liberty Properties, Inc.","location":"NYSE"},
-{"name":"Lolly Scragg","email":"lscragg2w@skype.com","phone":"1962698419","usertype":"South Jersey Industries, Inc.","location":"NYSE"},
-{"name":"Charissa Conrart","email":"cconrart2x@fotki.com","phone":"6859119030","usertype":"MIND C.T.I. Ltd.","location":"NASDAQ"},
-{"name":"Burg Cotes","email":"bcotes2y@merriam-webster.com","phone":"3255128194","usertype":"James Hardie Industries plc.","location":"NYSE"},
-{"name":"Flory Daville","email":"fdaville2z@qq.com","phone":"5036251799","usertype":"Telephone and Data Systems, Inc.","location":"NYSE"},
-{"name":"Juli De Giovanni","email":"jde30@google.es","phone":"4801057347","usertype":"First Trust New Opportunities MLP & Energy Fund","location":"NYSE"},
-{"name":"Forest Muckart","email":"fmuckart31@wsj.com","phone":"4339851511","usertype":"Knight Transportation, Inc.","location":"NYSE"},
-{"name":"Georgie Blabie","email":"gblabie32@earthlink.net","phone":"8234115917","usertype":"First Trust Small Cap Growth AlphaDEX Fund","location":"NASDAQ"},
-{"name":"Adria Campanelli","email":"acampanelli33@howstuffworks.com","phone":"1011084326","usertype":"ADTRAN, Inc.","location":"NASDAQ"},
-{"name":"Wat Chominski","email":"wchominski34@plala.or.jp","phone":"3094228243","usertype":"Great Plains Energy Inc","location":"NYSE"},
-{"name":"Giordano Jewis","email":"gjewis35@blogtalkradio.com","phone":"1342848038","usertype":"Kulicke and Soffa Industries, Inc.","location":"NASDAQ"},
-{"name":"Putnam Fitzsimon","email":"pfitzsimon36@woothemes.com","phone":"2126441015","usertype":"Remark Holdings, Inc.","location":"NASDAQ"},
-{"name":"Frayda Dzeniskevich","email":"fdzeniskevich37@yahoo.co.jp","phone":"4331936493","usertype":"Pacific Coast Oil Trust","location":"NYSE"},
-{"name":"Fabien Dinsell","email":"fdinsell38@freewebs.com","phone":"5852819554","usertype":"VelocityShares VIX Short-Term ETN","location":"NASDAQ"},
-{"name":"Antons Alvarado","email":"aalvarado39@delicious.com","phone":"9536430464","usertype":"PennTex Midstream Partners, LP","location":"NASDAQ"},
-{"name":"Kattie Fowlie","email":"kfowlie3a@slashdot.org","phone":"2487397350","usertype":"The Cushing MLP Total Return Fund","location":"NYSE"},
-{"name":"Fanya Haggidon","email":"fhaggidon3b@statcounter.com","phone":"2167064349","usertype":"The Bancorp, Inc.","location":"NASDAQ"},
-{"name":"Lia Pennick","email":"lpennick3c@state.gov","phone":"7731830893","usertype":"Och-Ziff Capital Management Group LLC","location":"NYSE"},
-{"name":"Glen Hearons","email":"ghearons3d@themeforest.net","phone":"5289857484","usertype":"Avangrid, Inc.","location":"NYSE"},
-{"name":"Mavra Razzell","email":"mrazzell3e@odnoklassniki.ru","phone":"5239945429","usertype":"Fred's, Inc.","location":"NASDAQ"},
-{"name":"Troy McNickle","email":"tmcnickle3f@bbc.co.uk","phone":"2071592010","usertype":"Universal Corporation","location":"NYSE"},
-{"name":"Myra Skehens","email":"mskehens3g@census.gov","phone":"8219799628","usertype":"P & F Industries, Inc.","location":"NASDAQ"},
-{"name":"Rollins Ledster","email":"rledster3h@wix.com","phone":"7471249601","usertype":"Air Transport Services Group, Inc","location":"NASDAQ"},
-{"name":"Ranee Sail","email":"rsail3i@un.org","phone":"8899057520","usertype":"Lyon William Homes","location":"NYSE"},
-{"name":"Staford Madgett","email":"smadgett3j@xrea.com","phone":"4776103814","usertype":"Qwest Corporation","location":"NYSE"},
-{"name":"Marin Towe","email":"mtowe3k@sina.com.cn","phone":"7858293239","usertype":"FlexShares Credit-Scored US Long Corporate Bond Index Fund","location":"NASDAQ"},
-{"name":"Atalanta Erni","email":"aerni3l@berkeley.edu","phone":"7891896499","usertype":"Baldwin & Lyons, Inc.","location":"NASDAQ"},
-{"name":"Bab Nugent","email":"bnugent3m@domainmarket.com","phone":"5198607150","usertype":"Ecology and Environment, Inc.","location":"NASDAQ"},
-{"name":"Anatola Walkden","email":"awalkden3n@oaic.gov.au","phone":"2076962098","usertype":"Agilent Technologies, Inc.","location":"NYSE"},
-{"name":"Dyna MacCaffery","email":"dmaccaffery3o@google.co.jp","phone":"6385585072","usertype":"Halcon Resources Corporation","location":"NYSE"},
-{"name":"Philippe Mathou","email":"pmathou3p@cnn.com","phone":"5124267679","usertype":"j2 Global, Inc.","location":"NASDAQ"},
-{"name":"Georgeta Barday","email":"gbarday3q@sogou.com","phone":"1038484727","usertype":"Etsy, Inc.","location":"NASDAQ"},
-{"name":"Cristen O'Towey","email":"cotowey3r@sohu.com","phone":"2182558823","usertype":"Exa Corporation","location":"NASDAQ"},
-{"name":"Mamie Featley","email":"mfeatley3s@home.pl","phone":"2798210322","usertype":"Physicians Realty Trust","location":"NYSE"},
-{"name":"Justine Flacknoe","email":"jflacknoe3t@photobucket.com","phone":"4706216724","usertype":"Boeing Company (The)","location":"NYSE"},
-{"name":"Lanni Bembrick","email":"lbembrick3u@shutterfly.com","phone":"8123835151","usertype":"Summit State Bank","location":"NASDAQ"},
-{"name":"Claude Antognoni","email":"cantognoni3v@zimbio.com","phone":"2341224214","usertype":"Akari Therapeutics Plc","location":"NASDAQ"},
-{"name":"Cyndi Ayliffe","email":"cayliffe3w@eepurl.com","phone":"5846716303","usertype":"Sterling Bancorp","location":"NYSE"},
-{"name":"Wyndham Willard","email":"wwillard3x@slate.com","phone":"7558258600","usertype":"Vital Therapies, Inc.","location":"NASDAQ"},
-{"name":"Samara Briar","email":"sbriar3y@angelfire.com","phone":"5235868998","usertype":"Nuveen Senior Income Fund","location":"NYSE"},
-{"name":"Giralda Whitely","email":"gwhitely3z@spiegel.de","phone":"2266620269","usertype":"Medallion Financial Corp.","location":"NASDAQ"},
-{"name":"Shaughn Lates","email":"slates40@sphinn.com","phone":"8936277686","usertype":"AdvanSix Inc.","location":"NYSE"},
-{"name":"Angelina Feaveryear","email":"afeaveryear41@yellowpages.com","phone":"3775947759","usertype":"New Mountain Finance Corporation","location":"NYSE"},
-{"name":"Phip Goldsby","email":"pgoldsby42@xinhuanet.com","phone":"8808092485","usertype":"UNIVERSAL INSURANCE HOLDINGS INC","location":"NYSE"},
-{"name":"Shep Konig","email":"skonig43@nbcnews.com","phone":"7965692809","usertype":"Global Payments Inc.","location":"NYSE"},
-{"name":"Alair Armall","email":"aarmall44@reference.com","phone":"9247468693","usertype":"AutoNation, Inc.","location":"NYSE"},
-{"name":"Sully Rhead","email":"srhead45@wix.com","phone":"6967182704","usertype":"City Holding Company","location":"NASDAQ"},
-{"name":"Prent Gettens","email":"pgettens46@flavors.me","phone":"3899628762","usertype":"Five Oaks Investment Corp.","location":"NYSE"},
-{"name":"Dione Gorini","email":"dgorini47@gnu.org","phone":"2903187279","usertype":"Woodward, Inc.","location":"NASDAQ"},
-{"name":"Carie Brassington","email":"cbrassington48@symantec.com","phone":"4255696183","usertype":"First Majestic Silver Corp.","location":"NYSE"},
-{"name":"Tania Bulch","email":"tbulch49@geocities.com","phone":"5919253887","usertype":"Hess Corporation","location":"NYSE"},
-{"name":"Edan Mowatt","email":"emowatt4a@earthlink.net","phone":"9431386266","usertype":"Herman Miller, Inc.","location":"NASDAQ"},
-{"name":"Donnell Commins","email":"dcommins4b@mapy.cz","phone":"6841128234","usertype":"United Dominion Realty Trust, Inc.","location":"NYSE"},
-{"name":"Kevin McGarrie","email":"kmcgarrie4c@livejournal.com","phone":"7716485255","usertype":"VTTI Energy Partners LP","location":"NYSE"},
-{"name":"Modesty Marvelley","email":"mmarvelley4d@gnu.org","phone":"2564978313","usertype":"TAL Education Group","location":"NYSE"},
-{"name":"Benjamin Colquitt","email":"bcolquitt4e@phoca.cz","phone":"7353319968","usertype":"MIND C.T.I. Ltd.","location":"NASDAQ"},
-{"name":"Morten Bernaldo","email":"mbernaldo4f@hao123.com","phone":"9785420494","usertype":"Thomson Reuters Corp","location":"NYSE"},
-{"name":"Kaitlynn Fiddyment","email":"kfiddyment4g@newsvine.com","phone":"7078797756","usertype":"Syneron Medical Ltd.","location":"NASDAQ"},
-{"name":"Teddy Hukins","email":"thukins4h@pinterest.com","phone":"4412987811","usertype":"Bio-Rad Laboratories, Inc.","location":"NYSE"},
-{"name":"Karon Bordone","email":"kbordone4i@jalbum.net","phone":"8319650934","usertype":"Peoples Bancorp Inc.","location":"NASDAQ"},
-{"name":"Craggy Seamer","email":"cseamer4j@wikipedia.org","phone":"6351244804","usertype":"Stepan Company","location":"NYSE"},
-{"name":"Petronella Lyptratt","email":"plyptratt4k@xrea.com","phone":"8301200550","usertype":"ePlus inc.","location":"NASDAQ"},
-{"name":"Bellanca Loveguard","email":"bloveguard4l@gmpg.org","phone":"7295487157","usertype":"Immune Pharmaceuticals Inc.","location":"NASDAQ"},
-{"name":"Elisabetta Fenner","email":"efenner4m@arstechnica.com","phone":"5182511590","usertype":"QuickLogic Corporation","location":"NASDAQ"},
-{"name":"Ariela Charlotte","email":"acharlotte4n@qq.com","phone":"7032094738","usertype":"Heritage Insurance Holdings, Inc.","location":"NYSE"},
-{"name":"Melitta Whybrow","email":"mwhybrow4o@google.ca","phone":"7623878471","usertype":"Inovio Pharmaceuticals, Inc.","location":"NASDAQ"},
-{"name":"Clarance McMonnies","email":"cmcmonnies4p@usatoday.com","phone":"7177445864","usertype":"PNM Resources, Inc. (Holding Co.)","location":"NYSE"},
-{"name":"Doris Prin","email":"dprin4q@plala.or.jp","phone":"4887418984","usertype":"500.com Limited","location":"NYSE"},
-{"name":"Delphine Mollin","email":"dmollin4r@ask.com","phone":"3098230038","usertype":"Grupo Financiero Galicia S.A.","location":"NASDAQ"},
-{"name":"Rachelle Birkin","email":"rbirkin4s@mit.edu","phone":"6828610096","usertype":"Korn/Ferry International","location":"NYSE"},
-{"name":"Esmeralda Hanster","email":"ehanster4t@phoca.cz","phone":"5657212685","usertype":"Yandex N.V.","location":"NASDAQ"},
-{"name":"Demott Hawksley","email":"dhawksley4u@intel.com","phone":"8966440438","usertype":"Xenetic Biosciences, Inc.","location":"NASDAQ"},
-{"name":"Durward Mc Carroll","email":"dmc4v@google.fr","phone":"1048461383","usertype":"NetApp, Inc.","location":"NASDAQ"},
-{"name":"Mindy Schwartz","email":"mschwartz4w@miitbeian.gov.cn","phone":"1301212715","usertype":"Aflac Incorporated","location":"NYSE"},
-{"name":"Elyse Gruby","email":"egruby4x@indiatimes.com","phone":"6669595044","usertype":"Sequans Communications S.A.","location":"NYSE"},
-{"name":"Kimmy Nudd","email":"knudd4y@cloudflare.com","phone":"7423099022","usertype":"Invitation Homes Inc.","location":"NYSE"},
-{"name":"Baird Shreve","email":"bshreve4z@home.pl","phone":"8743373363","usertype":"Danaos Corporation","location":"NYSE"},
-{"name":"Leoine De Ferrari","email":"lde50@tamu.edu","phone":"3792768090","usertype":"California Resources Corporation","location":"NYSE"},
-{"name":"Patricia Colquhoun","email":"pcolquhoun51@wix.com","phone":"1042743474","usertype":"Hooker Furniture Corporation","location":"NASDAQ"},
-{"name":"Shaine Willeson","email":"swilleson52@instagram.com","phone":"9543096506","usertype":"ConocoPhillips","location":"NYSE"},
-{"name":"Richie Mitton","email":"rmitton53@sbwire.com","phone":"8041574039","usertype":"Quarterhill Inc.","location":"NASDAQ"},
-{"name":"Kermie Masterton","email":"kmasterton54@youku.com","phone":"2487211203","usertype":"Verastem, Inc.","location":"NASDAQ"},
-{"name":"Kellia Collman","email":"kcollman55@nyu.edu","phone":"7159194166","usertype":"Bridgeline Digital, Inc.","location":"NASDAQ"},
-{"name":"Lani Pawlowicz","email":"lpawlowicz56@addthis.com","phone":"1739833699","usertype":"Trans World Entertainment Corp.","location":"NASDAQ"},
-{"name":"Farrel Salling","email":"fsalling57@dion.ne.jp","phone":"6805810743","usertype":"Pacific Premier Bancorp Inc","location":"NASDAQ"},
-{"name":"Essa Harroway","email":"eharroway58@timesonline.co.uk","phone":"9726620979","usertype":"Fiduciary/Claymore MLP Opportunity Fund","location":"NYSE"},
-{"name":"Nettie Halm","email":"nhalm59@dell.com","phone":"5135014604","usertype":"Cabot Microelectronics Corporation","location":"NASDAQ"},
-{"name":"Jobye Kirton","email":"jkirton5a@lulu.com","phone":"9608772591","usertype":"New York Community Bancorp, Inc.","location":"NYSE"},
-{"name":"Agace Shropsheir","email":"ashropsheir5b@paginegialle.it","phone":"5042166703","usertype":"FORM Holdings Corp.","location":"NASDAQ"},
-{"name":"Felix Antoniat","email":"fantoniat5c@miitbeian.gov.cn","phone":"1044269881","usertype":"First Busey Corporation","location":"NASDAQ"},
-{"name":"Karee Bosson","email":"kbosson5d@hhs.gov","phone":"5766163279","usertype":"Synergy Pharmaceuticals, Inc.","location":"NASDAQ"},
-{"name":"Marta Alekseev","email":"malekseev5e@wp.com","phone":"8291922278","usertype":"Chemours Company (The)","location":"NYSE"},
-{"name":"Dar Serridge","email":"dserridge5f@yolasite.com","phone":"1334821291","usertype":"VelocityShares Daily 2x VIX Short-Term ETN","location":"NASDAQ"},
-{"name":"Joanne Beazley","email":"jbeazley5g@independent.co.uk","phone":"4093305408","usertype":"Retail Properties of America, Inc.","location":"NYSE"},
-{"name":"Morley MacGillivray","email":"mmacgillivray5h@scribd.com","phone":"5741843819","usertype":"Basic Energy Services, Inc.","location":"NYSE"},
-{"name":"Amalie Dowdam","email":"adowdam5i@nationalgeographic.com","phone":"7613384756","usertype":"Galmed Pharmaceuticals Ltd.","location":"NASDAQ"},
-{"name":"Odo Redgate","email":"oredgate5j@sogou.com","phone":"7471483291","usertype":"Exelixis, Inc.","location":"NASDAQ"},
-{"name":"Hermia Albasini","email":"halbasini5k@prnewswire.com","phone":"7807543284","usertype":"PowerShares FTSE RAFI US 1500 Small-Mid Portfolio","location":"NASDAQ"},
-{"name":"Wanids Matyukon","email":"wmatyukon5l@hp.com","phone":"6791901655","usertype":"Astec Industries, Inc.","location":"NASDAQ"},
-{"name":"Gussi Polin","email":"gpolin5m@ow.ly","phone":"3533774218","usertype":"Powell Industries, Inc.","location":"NASDAQ"},
-{"name":"Alameda Iacoviello","email":"aiacoviello5n@unesco.org","phone":"8452056255","usertype":"Entergy Corporation","location":"NYSE"},
-{"name":"Jerome Higounet","email":"jhigounet5o@istockphoto.com","phone":"4675624035","usertype":"UFP Technologies, Inc.","location":"NASDAQ"},
-{"name":"Mada Dunbabin","email":"mdunbabin5p@domainmarket.com","phone":"1166396693","usertype":"Atlanticus Holdings Corporation","location":"NASDAQ"},
-{"name":"Jone Gwillyam","email":"jgwillyam5q@salon.com","phone":"2289115197","usertype":"Advanced Emissions Solutions, Inc.","location":"NASDAQ"},
-{"name":"Barbabra Sextone","email":"bsextone5r@artisteer.com","phone":"9364585640","usertype":"Pennsylvania Real Estate Investment Trust","location":"NYSE"},
-{"name":"Sebastian Yeates","email":"syeates5s@pagesperso-orange.fr","phone":"6141670886","usertype":"ARRIS International plc","location":"NASDAQ"},
-{"name":"Winonah Wagstaff","email":"wwagstaff5t@xing.com","phone":"1582910660","usertype":"Abeona Therapeutics Inc.","location":"NASDAQ"},
-{"name":"Ray England","email":"rengland5u@zimbio.com","phone":"9514146600","usertype":"Gamestop Corporation","location":"NYSE"},
-{"name":"Brandais Casburn","email":"bcasburn5v@plala.or.jp","phone":"5207913821","usertype":"Texas Capital Bancshares, Inc.","location":"NASDAQ"},
-{"name":"Micki Coneybeare","email":"mconeybeare5w@list-manage.com","phone":"2336938710","usertype":"Foot Locker, Inc.","location":"NYSE"},
-{"name":"Dorena Huntington","email":"dhuntington5x@pcworld.com","phone":"2656589349","usertype":"The ExOne Company","location":"NASDAQ"},
-{"name":"Cris Morcom","email":"cmorcom5y@networkadvertising.org","phone":"3633419749","usertype":"XL Group Ltd.","location":"NYSE"},
-{"name":"Jeannie Iacovacci","email":"jiacovacci5z@sakura.ne.jp","phone":"1164932384","usertype":"Vedanta  Limited","location":"NYSE"},
-{"name":"Orelie Prendeville","email":"oprendeville60@dropbox.com","phone":"3642269117","usertype":"Nuveen Preferred and Income Term Fund","location":"NYSE"},
-{"name":"Miran Lutzmann","email":"mlutzmann61@youtu.be","phone":"7227757691","usertype":"Vanguard Intermediate-Term Corporate Bond ETF","location":"NASDAQ"},
-{"name":"Hillary Matyushenko","email":"hmatyushenko62@cbslocal.com","phone":"8767102975","usertype":"Escalade, Incorporated","location":"NASDAQ"},
-{"name":"Jeramey Stanyland","email":"jstanyland63@berkeley.edu","phone":"5185464532","usertype":"First Financial Bankshares, Inc.","location":"NASDAQ"},
-{"name":"Jard Perring","email":"jperring64@opera.com","phone":"9736006245","usertype":"Old Line Bancshares, Inc.","location":"NASDAQ"},
-{"name":"Odele Gyorffy","email":"ogyorffy65@nasa.gov","phone":"4279284757","usertype":"iPass Inc.","location":"NASDAQ"},
-{"name":"Ninon Gerram","email":"ngerram66@unesco.org","phone":"3822701338","usertype":"First Business Financial Services, Inc.","location":"NASDAQ"},
-{"name":"Cthrine Sisland","email":"csisland67@japanpost.jp","phone":"4909523856","usertype":"Invesco Credit Opportunities Fund","location":"NYSE"},
-{"name":"Stanleigh Ortelt","email":"sortelt68@linkedin.com","phone":"8798584054","usertype":"NuVasive, Inc.","location":"NASDAQ"},
-{"name":"Orlan Pinnion","email":"opinnion69@bizjournals.com","phone":"7354049587","usertype":"Neothetics, Inc.","location":"NASDAQ"},
-{"name":"Errol Rapps","email":"erapps6a@purevolume.com","phone":"1238419975","usertype":"CrossAmerica Partners LP","location":"NYSE"},
-{"name":"Elke Januszewicz","email":"ejanuszewicz6b@cnn.com","phone":"3347721548","usertype":"Caesarstone Ltd.","location":"NASDAQ"},
-{"name":"Fritz Cottey","email":"fcottey6c@amazon.com","phone":"1579925791","usertype":"Chesapeake Utilities Corporation","location":"NYSE"},
-{"name":"Dick Peto","email":"dpeto6d@dell.com","phone":"1318306532","usertype":"Vanguard Russell 1000 ETF","location":"NASDAQ"},
-{"name":"Quintus Cattanach","email":"qcattanach6e@foxnews.com","phone":"2527803339","usertype":"Strattec Security Corporation","location":"NASDAQ"},
-{"name":"Amabelle Tooting","email":"atooting6f@ovh.net","phone":"2553586571","usertype":"Concurrent Computer Corporation","location":"NASDAQ"},
-{"name":"Harman Julyan","email":"hjulyan6g@slideshare.net","phone":"9129847463","usertype":"AudioCodes Ltd.","location":"NASDAQ"},
-{"name":"Robina McGonigle","email":"rmcgonigle6h@free.fr","phone":"2063256228","usertype":"First Trust CEF Income Opportunity ETF","location":"NASDAQ"},
-{"name":"Bentley Heardman","email":"bheardman6i@moonfruit.com","phone":"4512857184","usertype":"Gardner Denver Holdings, Inc.","location":"NYSE"},
-{"name":"Casey Barczynski","email":"cbarczynski6j@mtv.com","phone":"6178092023","usertype":"Laredo Petroleum, Inc.","location":"NYSE"},
-{"name":"Nikos Cliburn","email":"ncliburn6k@vistaprint.com","phone":"8203414237","usertype":"M/I Homes, Inc.","location":"NYSE"},
-{"name":"Ashia Pendlebery","email":"apendlebery6l@g.co","phone":"3143167146","usertype":"Bank Of Montreal","location":"NYSE"},
-{"name":"Stillman Dumbrall","email":"sdumbrall6m@forbes.com","phone":"1339801406","usertype":"ASV Holdings, Inc.","location":"NASDAQ"},
-{"name":"Bobbie Landal","email":"blandal6n@seesaa.net","phone":"3583746507","usertype":"Aberdeen Singapore Fund, Inc.","location":"NYSE"},
-{"name":"Correy Mussett","email":"cmussett6o@ihg.com","phone":"8205432122","usertype":"DST Systems, Inc.","location":"NYSE"},
-{"name":"Marlow Catling","email":"mcatling6p@craigslist.org","phone":"9096987789","usertype":"Avnet, Inc.","location":"NYSE"},
-{"name":"Dene Kilgannon","email":"dkilgannon6q@nbcnews.com","phone":"9309498579","usertype":"SB Financial Group, Inc.","location":"NASDAQ"},
-{"name":"Caressa Thorowgood","email":"cthorowgood6r@wordpress.org","phone":"7354467835","usertype":"Assured Guaranty Ltd.","location":"NYSE"},
-{"name":"Lianne Brech","email":"lbrech6s@purevolume.com","phone":"5695021779","usertype":"Shinhan Financial Group Co Ltd","location":"NYSE"},
-{"name":"Nari Hynd","email":"nhynd6t@japanpost.jp","phone":"9827678184","usertype":"Assurant, Inc.","location":"NYSE"},
-{"name":"Corty Downage","email":"cdownage6u@cbslocal.com","phone":"4561778102","usertype":"MGC Diagnostics Corporation","location":"NASDAQ"},
-{"name":"Odelinda O'Donohue","email":"oodonohue6v@google.de","phone":"7732435190","usertype":"Antero Midstream Partners LP","location":"NYSE"},
-{"name":"Angie Stallen","email":"astallen6w@xing.com","phone":"6446045871","usertype":"SecureWorks Corp.","location":"NASDAQ"},
-{"name":"Cassey Cutchey","email":"ccutchey6x@latimes.com","phone":"5609083602","usertype":"Vornado Realty Trust","location":"NYSE"},
-{"name":"Myrah Roz","email":"mroz6y@tuttocitta.it","phone":"4778982431","usertype":"Ever-Glory International Group, Inc.","location":"NASDAQ"},
-{"name":"Claudell Dallander","email":"cdallander6z@sphinn.com","phone":"8406741499","usertype":"NBT Bancorp Inc.","location":"NASDAQ"},
-{"name":"Ignaz Blood","email":"iblood70@bigcartel.com","phone":"5264179567","usertype":"Radcom Ltd.","location":"NASDAQ"},
-{"name":"Silvano Ames","email":"sames71@jigsy.com","phone":"8525445792","usertype":"Atlantica Yield plc","location":"NASDAQ"},
-{"name":"Brendan Flanne","email":"bflanne72@sohu.com","phone":"4369567400","usertype":"Eaton Vance Floating Rate Income Trust","location":"NYSE"},
-{"name":"Nealy Reubel","email":"nreubel73@uiuc.edu","phone":"5401236767","usertype":"Texas Capital Bancshares, Inc.","location":"NASDAQ"},
-{"name":"Annice Bengefield","email":"abengefield74@wp.com","phone":"9331903141","usertype":"Allegion plc","location":"NYSE"},
-{"name":"Locke Deacon","email":"ldeacon75@google.pl","phone":"3396182648","usertype":"BlackRock Energy and Resources Trust","location":"NYSE"},
-{"name":"Deck Beardon","email":"dbeardon76@skype.com","phone":"9673477319","usertype":"Floor & Decor Holdings, Inc.","location":"NYSE"},
-{"name":"Maude Boggas","email":"mboggas77@goodreads.com","phone":"9745128385","usertype":"Voya Financial, Inc.","location":"NYSE"},
-{"name":"Jeannie Vlahos","email":"jvlahos78@engadget.com","phone":"9934218920","usertype":"AG Mortgage Investment Trust, Inc.","location":"NYSE"},
-{"name":"Ambrose Ruzek","email":"aruzek79@epa.gov","phone":"2071543076","usertype":"Denbury Resources Inc.","location":"NYSE"},
-{"name":"Dorthea Bebbington","email":"dbebbington7a@slideshare.net","phone":"4162192786","usertype":"Core Laboratories N.V.","location":"NYSE"},
-{"name":"Patrice Laidlaw","email":"plaidlaw7b@kickstarter.com","phone":"9415979709","usertype":"Pacific Drilling S.A.","location":"NYSE"},
-{"name":"Emlynne Edleston","email":"eedleston7c@upenn.edu","phone":"3521860529","usertype":"Hancock Holding Company","location":"NASDAQ"},
-{"name":"Vivianna Corke","email":"vcorke7d@oaic.gov.au","phone":"5474893880","usertype":"Virtusa Corporation","location":"NASDAQ"},
-{"name":"Perri Lampens","email":"plampens7e@stumbleupon.com","phone":"1156885105","usertype":"Jazz Pharmaceuticals plc","location":"NASDAQ"},
-{"name":"Eleonore Halliday","email":"ehalliday7f@timesonline.co.uk","phone":"5095897675","usertype":"KKR & Co. L.P.","location":"NYSE"},
-{"name":"Terencio Parkins","email":"tparkins7g@meetup.com","phone":"7212966312","usertype":"Arc Logistic Partners LP","location":"NYSE"},
-{"name":"Duffie Skurray","email":"dskurray7h@geocities.com","phone":"1473779643","usertype":"Stone Harbor Emerging Markets Income Fund","location":"NYSE"},
-{"name":"Bernadine Ray","email":"bray7i@barnesandnoble.com","phone":"4862657641","usertype":"DelMar Pharmaceuticals, Inc.","location":"NASDAQ"},
-{"name":"Mable Goodfellow","email":"mgoodfellow7j@reddit.com","phone":"4139837459","usertype":"Tri Continental Corporation","location":"NYSE"},
-{"name":"Brandtr Greenhead","email":"bgreenhead7k@msn.com","phone":"7142163719","usertype":"Wells Fargo & Company","location":"NYSE"},
-{"name":"Thorin Trehearn","email":"ttrehearn7l@apache.org","phone":"5136697426","usertype":"First Trust Senior Loan Fund ETF","location":"NASDAQ"},
-{"name":"Maximilianus Caseborne","email":"mcaseborne7m@zdnet.com","phone":"7888833984","usertype":"Avenue Income Credit Strategies Fund","location":"NYSE"},
-{"name":"Hart Lettson","email":"hlettson7n@newsvine.com","phone":"6176644818","usertype":"Valero Energy Corporation","location":"NYSE"},
-{"name":"Bob Heindle","email":"bheindle7o@blogs.com","phone":"7019716533","usertype":"Archer-Daniels-Midland Company","location":"NYSE"},
-{"name":"Walden Padkin","email":"wpadkin7p@java.com","phone":"1498524299","usertype":"ProAssurance Corporation","location":"NYSE"},
-{"name":"Ulysses Braunthal","email":"ubraunthal7q@dmoz.org","phone":"2064293732","usertype":"PowerShares S&P SmallCap Consumer Discretionary Portfolio","location":"NASDAQ"},
-{"name":"Averil Rickets","email":"arickets7r@psu.edu","phone":"6755829726","usertype":"S&P Global Inc.","location":"NYSE"},
-{"name":"Clemens Sayse","email":"csayse7s@elpais.com","phone":"8099845935","usertype":"Tyson Foods, Inc.","location":"NYSE"},
-{"name":"Tommy Pahlsson","email":"tpahlsson7t@acquirethisname.com","phone":"8838211928","usertype":"BioCryst Pharmaceuticals, Inc.","location":"NASDAQ"},
-{"name":"Trixy Jeanel","email":"tjeanel7u@oakley.com","phone":"4965971584","usertype":"South State Corporation","location":"NASDAQ"},
-{"name":"Fayette Wollrauch","email":"fwollrauch7v@oaic.gov.au","phone":"3038078363","usertype":"Tantech Holdings Ltd.","location":"NASDAQ"},
-{"name":"Clayton Avrahamoff","email":"cavrahamoff7w@cbc.ca","phone":"7106210350","usertype":"The Ultimate Software Group, Inc.","location":"NASDAQ"},
-{"name":"Zebadiah Dorgan","email":"zdorgan7x@behance.net","phone":"7701124999","usertype":"SPS Commerce, Inc.","location":"NASDAQ"},
-{"name":"Siouxie Fardell","email":"sfardell7y@time.com","phone":"2236385561","usertype":"OncoMed Pharmaceuticals, Inc.","location":"NASDAQ"},
-{"name":"Danella Kench","email":"dkench7z@wp.com","phone":"6664421014","usertype":"Kennametal Inc.","location":"NYSE"},
-{"name":"Gran Asling","email":"gasling80@indiegogo.com","phone":"5892014955","usertype":"GNC Holdings, Inc.","location":"NYSE"},
-{"name":"Jennifer Kidwell","email":"jkidwell81@de.vu","phone":"6916147657","usertype":"Delta Air Lines, Inc.","location":"NYSE"},
-{"name":"Bethanne Lightbourn","email":"blightbourn82@ning.com","phone":"5212634289","usertype":"Axar Acquisition Corp.","location":"NASDAQ"},
-{"name":"Deborah Huerta","email":"dhuerta83@state.gov","phone":"3884133972","usertype":"WashingtonFirst Bankshares Inc","location":"NASDAQ"},
-{"name":"Arlyne Ledekker","email":"aledekker84@dyndns.org","phone":"9135243342","usertype":"Costamare Inc.","location":"NYSE"},
-{"name":"Valerie MacLice","email":"vmaclice85@themeforest.net","phone":"7444605522","usertype":"Agios Pharmaceuticals, Inc.","location":"NASDAQ"},
-{"name":"Aaron Mackiewicz","email":"amackiewicz86@zdnet.com","phone":"8943888470","usertype":"National Retail Properties","location":"NYSE"},
-{"name":"Chloette Worral","email":"cworral87@aol.com","phone":"2687885663","usertype":"Calamos Global Dynamic Income Fund","location":"NASDAQ"},
-{"name":"Rudolfo Audry","email":"raudry88@house.gov","phone":"8893626286","usertype":"SPDR Dorsey Wright Fixed Income Allocation ETF","location":"NASDAQ"},
-{"name":"Monique Stedman","email":"mstedman89@chicagotribune.com","phone":"3998846643","usertype":"Omega Protein Corporation","location":"NYSE"},
-{"name":"Friederike Dobeson","email":"fdobeson8a@dell.com","phone":"2474943049","usertype":"Arbutus Biopharma Corporation","location":"NASDAQ"},
-{"name":"Christye Franzetti","email":"cfranzetti8b@fda.gov","phone":"6707218092","usertype":"The Andersons, Inc.","location":"NASDAQ"},
-{"name":"Emmery Siviter","email":"esiviter8c@shop-pro.jp","phone":"1097557244","usertype":"Rennova Health, Inc.","location":"NASDAQ"},
-{"name":"Violette Losbie","email":"vlosbie8d@icq.com","phone":"4969480323","usertype":"Papa John's International, Inc.","location":"NASDAQ"},
-{"name":"Laetitia Drains","email":"ldrains8e@slate.com","phone":"5789231098","usertype":"Green Bancorp, Inc.","location":"NASDAQ"},
-{"name":"Cherice Campbell-Dunlop","email":"ccampbelldunlop8f@last.fm","phone":"3401799066","usertype":"Cytosorbents Corporation","location":"NASDAQ"},
-{"name":"Piggy Boothby","email":"pboothby8g@berkeley.edu","phone":"6872402348","usertype":"DST Systems, Inc.","location":"NYSE"},
-{"name":"Elaina Jullian","email":"ejullian8h@techcrunch.com","phone":"9831519746","usertype":"Ares Capital Corporation","location":"NYSE"},
-{"name":"Britteny Ivanonko","email":"bivanonko8i@hp.com","phone":"1682650015","usertype":"Transportadora De Gas Sa Ord B","location":"NYSE"},
-{"name":"Christyna Reinbach","email":"creinbach8j@washington.edu","phone":"3097764919","usertype":"Guaranty Bancshares, Inc.","location":"NASDAQ"},
-{"name":"Ailyn Abbitt","email":"aabbitt8k@foxnews.com","phone":"6298144568","usertype":"Zion Oil & Gas Inc","location":"NASDAQ"},
-{"name":"Donovan Matuszyk","email":"dmatuszyk8l@skype.com","phone":"6221268574","usertype":"Rudolph Technologies, Inc.","location":"NYSE"},
-{"name":"Suzie Barefoot","email":"sbarefoot8m@nifty.com","phone":"1919804830","usertype":"LKQ Corporation","location":"NASDAQ"},
-{"name":"Ravid D'Alessio","email":"rdalessio8n@netvibes.com","phone":"6525210366","usertype":"Brasilagro Cia Brasileira De Propriedades Agricolas","location":"NYSE"},
-{"name":"Lorin Blanshard","email":"lblanshard8o@sciencedirect.com","phone":"2034708795","usertype":"Cutera, Inc.","location":"NASDAQ"},
-{"name":"Claresta Yitshak","email":"cyitshak8p@cbc.ca","phone":"5448667868","usertype":"MFA Financial, Inc.","location":"NYSE"},
-{"name":"Leandra Althrop","email":"lalthrop8q@examiner.com","phone":"9969875461","usertype":"First Trust Senior Loan Fund ETF","location":"NASDAQ"},
-{"name":"Dionis McLennan","email":"dmclennan8r@cnn.com","phone":"4327822665","usertype":"TIER REIT, Inc.","location":"NYSE"},
-{"name":"Karalynn Trytsman","email":"ktrytsman8s@acquirethisname.com","phone":"6598122934","usertype":"Allstate Corporation (The)","location":"NYSE"},
-{"name":"Theresina Matterson","email":"tmatterson8t@jalbum.net","phone":"8519989384","usertype":"Jensyn Acquistion Corp.","location":"NASDAQ"},
-{"name":"Sawyere Stayte","email":"sstayte8u@oracle.com","phone":"1338566060","usertype":"Upland Software, Inc.","location":"NASDAQ"},
-{"name":"Dulcine Amott","email":"damott8v@gizmodo.com","phone":"8982302862","usertype":"Monotype Imaging Holdings Inc.","location":"NASDAQ"},
-{"name":"Enrique Dorkin","email":"edorkin8w@twitter.com","phone":"2792788285","usertype":"State Street Corporation","location":"NYSE"},
-{"name":"Quinn Woolger","email":"qwoolger8x@creativecommons.org","phone":"4888102102","usertype":"Gladstone Commercial Corporation","location":"NASDAQ"},
-{"name":"Kalinda Wilmington","email":"kwilmington8y@twitpic.com","phone":"2394575920","usertype":"Cohen & Steers MLP Income and Energy Opportunity Fund, Inc.","location":"NYSE"},
-{"name":"Leland Coggings","email":"lcoggings8z@boston.com","phone":"3476815149","usertype":"Hancock Holding Company","location":"NASDAQ"},
-{"name":"Jackqueline Nealy","email":"jnealy90@answers.com","phone":"4018097212","usertype":"Northwest Natural Gas Company","location":"NYSE"},
-{"name":"Richmond Costin","email":"rcostin91@dedecms.com","phone":"3435970445","usertype":"Artisan Partners Asset Management Inc.","location":"NYSE"},
-{"name":"Olav Bidgood","email":"obidgood92@theglobeandmail.com","phone":"8127722931","usertype":"Qwest Corporation","location":"NYSE"},
-{"name":"Ludovico Tallant","email":"ltallant93@histats.com","phone":"4304893060","usertype":"Cross Country Healthcare, Inc.","location":"NASDAQ"},
-{"name":"Christean Heister","email":"cheister94@blinklist.com","phone":"1544242010","usertype":"Century Casinos, Inc.","location":"NASDAQ"},
-{"name":"Timi Wipper","email":"twipper95@cisco.com","phone":"8857677710","usertype":"Pilgrim's Pride Corporation","location":"NASDAQ"},
-{"name":"Rriocard Hagwood","email":"rhagwood96@t.co","phone":"9276534146","usertype":"Evolent Health, Inc","location":"NYSE"},
-{"name":"Eliot Maso","email":"emaso97@ustream.tv","phone":"5977311341","usertype":"Equity Lifestyle Properties, Inc.","location":"NYSE"},
-{"name":"Lacy Leaman","email":"lleaman98@ehow.com","phone":"7814697817","usertype":"DENTSPLY SIRONA Inc.","location":"NASDAQ"},
-{"name":"Raine Carwardine","email":"rcarwardine99@intel.com","phone":"1722878977","usertype":"Innoviva, Inc.","location":"NASDAQ"},
-{"name":"Lila Bartoletti","email":"lbartoletti9a@123-reg.co.uk","phone":"4439950563","usertype":"General Electric Company","location":"NYSE"},
-{"name":"Arabela Tricker","email":"atricker9b@reddit.com","phone":"6542082149","usertype":"Autodesk, Inc.","location":"NASDAQ"},
-{"name":"Ced Dy","email":"cdy9c@mozilla.com","phone":"4443631400","usertype":"Sharps Compliance Corp","location":"NASDAQ"},
-{"name":"Godiva Hook","email":"ghook9d@sourceforge.net","phone":"9288672929","usertype":"Dynasil Corporation of America","location":"NASDAQ"},
-{"name":"Daven Hillum","email":"dhillum9e@hao123.com","phone":"8019439605","usertype":"Columbus McKinnon Corporation","location":"NASDAQ"},
-{"name":"Camellia Hardiman","email":"chardiman9f@instagram.com","phone":"6152021650","usertype":"Renasant Corporation","location":"NASDAQ"},
-{"name":"Dallas Monteath","email":"dmonteath9g@ehow.com","phone":"4594232551","usertype":"J P Morgan Chase & Co","location":"NYSE"},
-{"name":"Linet O'Hagan","email":"lohagan9h@home.pl","phone":"2908513925","usertype":"Biostage, Inc.","location":"NASDAQ"},
-{"name":"Jessamine Doerffer","email":"jdoerffer9i@ning.com","phone":"8358874761","usertype":"ClearOne, Inc.","location":"NASDAQ"},
-{"name":"Annabel Tolliday","email":"atolliday9j@spiegel.de","phone":"4924584682","usertype":"Equus Total Return, Inc.","location":"NYSE"},
-{"name":"Lark Yewen","email":"lyewen9k@imdb.com","phone":"6758166620","usertype":"Kingstone Companies, Inc","location":"NASDAQ"},
-{"name":"Annecorinne Grimsley","email":"agrimsley9l@privacy.gov.au","phone":"2573054361","usertype":"Silver Run Acquisition Corporation II","location":"NASDAQ"},
-{"name":"Brig Reith","email":"breith9m@oaic.gov.au","phone":"4101761212","usertype":"China Green Agriculture, Inc.","location":"NYSE"},
-{"name":"Kathryne Dilston","email":"kdilston9n@icq.com","phone":"2379401999","usertype":"CalAmp Corp.","location":"NASDAQ"},
-{"name":"Peta Rawne","email":"prawne9o@ustream.tv","phone":"4045142433","usertype":"Mechel PAO","location":"NYSE"},
-{"name":"Dudley Newey","email":"dnewey9p@odnoklassniki.ru","phone":"6447112349","usertype":"ArcBest Corporation","location":"NASDAQ"},
-{"name":"Lorinda Jinkin","email":"ljinkin9q@mozilla.com","phone":"5932601991","usertype":"Boingo Wireless, Inc.","location":"NASDAQ"},
-{"name":"Benny Gensavage","email":"bgensavage9r@hud.gov","phone":"2534201163","usertype":"Wright Medical Group N.V.","location":"NASDAQ"},
-{"name":"Kaile Matthews","email":"kmatthews9s@themeforest.net","phone":"3441264784","usertype":"OUTFRONT Media Inc.","location":"NYSE"},
-{"name":"Solly Ghidoni","email":"sghidoni9t@elpais.com","phone":"2858058477","usertype":"Banco Santander, S.A.","location":"NYSE"},
-{"name":"Dorena Sheekey","email":"dsheekey9u@twitter.com","phone":"9226623132","usertype":"Endeavour Silver Corporation","location":"NYSE"},
-{"name":"Horatius Brannan","email":"hbrannan9v@mail.ru","phone":"5059762528","usertype":"First Financial Bancorp.","location":"NASDAQ"},
-{"name":"Mattie Matyukon","email":"mmatyukon9w@msu.edu","phone":"6183745563","usertype":"Donegal Group, Inc.","location":"NASDAQ"},
-{"name":"Vinita Eagger","email":"veagger9x@ca.gov","phone":"8503060459","usertype":"Office Depot, Inc.","location":"NASDAQ"},
-{"name":"Hamid Pedrollo","email":"hpedrollo9y@google.it","phone":"2634114305","usertype":"Ambev S.A.","location":"NYSE"},
-{"name":"Stoddard Kornyshev","email":"skornyshev9z@liveinternet.ru","phone":"9893379616","usertype":"THL Credit, Inc.","location":"NASDAQ"},
-{"name":"Charla Chippindall","email":"cchippindalla0@people.com.cn","phone":"1218266131","usertype":"Genesco Inc.","location":"NYSE"},
-{"name":"Mathias Tween","email":"mtweena1@squarespace.com","phone":"5952975291","usertype":"Vantage Energy Acquisition Corp.","location":"NASDAQ"},
-{"name":"Marge Sidle","email":"msidlea2@discuz.net","phone":"7504883891","usertype":"Western Asset Emerging Markets Debt Fund Inc","location":"NYSE"},
-{"name":"Rhoda Cicchitello","email":"rcicchitelloa3@npr.org","phone":"7648015755","usertype":"Cavco Industries, Inc.","location":"NASDAQ"},
-{"name":"Shandy Fold","email":"sfolda4@myspace.com","phone":"7595532187","usertype":"CEVA, Inc.","location":"NASDAQ"},
-{"name":"Vally Maffezzoli","email":"vmaffezzolia5@earthlink.net","phone":"3094264026","usertype":"Biostage, Inc.","location":"NASDAQ"},
-{"name":"Obediah Polycote","email":"opolycotea6@globo.com","phone":"1233196113","usertype":"AppFolio, Inc.","location":"NASDAQ"},
-{"name":"Korney Brosi","email":"kbrosia7@cbsnews.com","phone":"3366950434","usertype":"A V Homes, Inc.","location":"NASDAQ"},
-{"name":"Falkner Mountlow","email":"fmountlowa8@moonfruit.com","phone":"2449447380","usertype":"1-800 FLOWERS.COM, Inc.","location":"NASDAQ"},
-{"name":"Antonia Gallico","email":"agallicoa9@devhub.com","phone":"9466557355","usertype":"Kulicke and Soffa Industries, Inc.","location":"NASDAQ"},
-{"name":"Ali Golland","email":"agollandaa@geocities.com","phone":"5915233423","usertype":"Brinker International, Inc.","location":"NYSE"},
-{"name":"Melanie Ambrogioli","email":"mambrogioliab@ow.ly","phone":"5171474869","usertype":"AmTrust Financial Services, Inc.","location":"NYSE"},
-{"name":"Moyra Vobes","email":"mvobesac@msu.edu","phone":"9768593679","usertype":"WisdomTree Negative Duration High Yield Bond Fund","location":"NASDAQ"},
-{"name":"Deane Thomesson","email":"dthomessonad@amazonaws.com","phone":"2621274559","usertype":"WSI Industries Inc.","location":"NASDAQ"},
-{"name":"Salomi Hodjetts","email":"shodjettsae@bloglines.com","phone":"4814441793","usertype":"Kemper Corporation","location":"NYSE"},
-{"name":"Gibby Preston","email":"gprestonaf@gov.uk","phone":"9094600567","usertype":"Eaton Vance Tax-Advantaged Bond","location":"NYSE"},
-{"name":"Denna Salatino","email":"dsalatinoag@ucsd.edu","phone":"2196444584","usertype":"National Instruments Corporation","location":"NASDAQ"},
-{"name":"Milo Janczyk","email":"mjanczykah@yolasite.com","phone":"6236860054","usertype":"Mirati Therapeutics, Inc.","location":"NASDAQ"},
-{"name":"Carlin Pailin","email":"cpailinai@disqus.com","phone":"5029095009","usertype":"Vermilion Energy Inc.","location":"NYSE"},
-{"name":"Kiley Fotitt","email":"kfotittaj@istockphoto.com","phone":"2154905202","usertype":"H&R Block, Inc.","location":"NYSE"},
-{"name":"Terrance Bygrave","email":"tbygraveak@samsung.com","phone":"6802930105","usertype":"MicroStrategy Incorporated","location":"NASDAQ"},
-{"name":"Boone Dinsell","email":"bdinsellal@1688.com","phone":"3096044887","usertype":"AzurRx BioPharma, Inc.","location":"NASDAQ"},
-{"name":"Alonso Twigg","email":"atwiggam@phoca.cz","phone":"5898618403","usertype":"Cenovus Energy Inc","location":"NYSE"},
-{"name":"Gustaf Wasiel","email":"gwasielan@feedburner.com","phone":"8465607151","usertype":"Perficient, Inc.","location":"NASDAQ"},
-{"name":"Cad Olivera","email":"coliveraao@dyndns.org","phone":"3734523231","usertype":"Beazer Homes USA, Inc.","location":"NYSE"},
-{"name":"Dorelle McGrorty","email":"dmcgrortyap@cam.ac.uk","phone":"9388259286","usertype":"QUALCOMM Incorporated","location":"NASDAQ"},
-{"name":"Krissie Geekin","email":"kgeekinaq@google.pl","phone":"3476489951","usertype":"MabVax Therapeutics Holdings, Inc.","location":"NASDAQ"},
-{"name":"Ewan Kopecka","email":"ekopeckaar@nhs.uk","phone":"9881929211","usertype":"NextEra Energy, Inc.","location":"NYSE"},
-{"name":"Rurik Willans","email":"rwillansas@lulu.com","phone":"6204055564","usertype":"Q2 Holdings, Inc.","location":"NYSE"},
-{"name":"Asia Gergely","email":"agergelyat@google.com.br","phone":"2262423381","usertype":"WEC Energy Group, Inc.","location":"NYSE"},
-{"name":"Sydelle Millett","email":"smillettau@multiply.com","phone":"7302956495","usertype":"Curis, Inc.","location":"NASDAQ"},
-{"name":"Adrianne Cartmell","email":"acartmellav@ustream.tv","phone":"4944825355","usertype":"China Fund, Inc. (The)","location":"NYSE"},
-{"name":"Lebbie Balaison","email":"lbalaisonaw@reverbnation.com","phone":"2369560665","usertype":"Gladstone Commercial Corporation","location":"NASDAQ"},
-{"name":"Lidia Pedroni","email":"lpedroniax@aboutads.info","phone":"9451538218","usertype":"CorVel Corp.","location":"NASDAQ"},
-{"name":"Row Marcinkus","email":"rmarcinkusay@amazon.de","phone":"5014539258","usertype":"Lantronix, Inc.","location":"NASDAQ"},
-{"name":"Ulysses McCambridge","email":"umccambridgeaz@usa.gov","phone":"4268783193","usertype":"Globus Maritime Limited","location":"NASDAQ"},
-{"name":"Sayers Neville","email":"snevilleb0@tamu.edu","phone":"1794367348","usertype":"Aflac Incorporated","location":"NYSE"},
-{"name":"Gus Schwander","email":"gschwanderb1@unesco.org","phone":"6674719472","usertype":"Quanta Services, Inc.","location":"NYSE"},
-{"name":"Cody Pickthall","email":"cpickthallb2@aol.com","phone":"9048887217","usertype":"Woodward, Inc.","location":"NASDAQ"},
-{"name":"Elene Braidon","email":"ebraidonb3@spotify.com","phone":"7473413891","usertype":"SandRidge Mississippian Trust I","location":"NYSE"},
-{"name":"Terence Dunbleton","email":"tdunbletonb4@eventbrite.com","phone":"1443579865","usertype":"Helix Energy Solutions Group, Inc.","location":"NYSE"},
-{"name":"Seana Crewes","email":"screwesb5@sbwire.com","phone":"2131488882","usertype":"ProPetro Holding Corp.","location":"NYSE"},
-{"name":"Onida Danielou","email":"odanieloub6@trellian.com","phone":"4657577126","usertype":"Astrazeneca PLC","location":"NYSE"},
-{"name":"Cleopatra Barcke","email":"cbarckeb7@networksolutions.com","phone":"9754666595","usertype":"PowerShares FTSE RAFI US 1500 Small-Mid Portfolio","location":"NASDAQ"},
-{"name":"Lionello Bern","email":"lbernb8@moonfruit.com","phone":"4451814934","usertype":"Marcus Corporation (The)","location":"NYSE"},
-{"name":"Joanie Tatton","email":"jtattonb9@salon.com","phone":"8225955468","usertype":"Tyler Technologies, Inc.","location":"NYSE"},
-{"name":"Winona Corneck","email":"wcorneckba@mozilla.com","phone":"5393619731","usertype":"Sajan, Inc.","location":"NASDAQ"},
-{"name":"Sheri Spratling","email":"sspratlingbb@sitemeter.com","phone":"8132732871","usertype":"Home Bancorp, Inc.","location":"NASDAQ"},
-{"name":"Mayne Jakubovski","email":"mjakubovskibc@meetup.com","phone":"5858282075","usertype":"Santander Holdings USA, Inc.","location":"NYSE"},
-{"name":"Liva Swaite","email":"lswaitebd@wisc.edu","phone":"9368803639","usertype":"Tupperware Brands Corporation","location":"NYSE"},
-{"name":"Deedee Callear","email":"dcallearbe@va.gov","phone":"1748719062","usertype":"RLI Corp.","location":"NYSE"},
-{"name":"Nita Ciciura","email":"nciciurabf@dell.com","phone":"7296263155","usertype":"MFA Financial, Inc.","location":"NYSE"},
-{"name":"Morey Sweetland","email":"msweetlandbg@mediafire.com","phone":"8793272738","usertype":"SunTrust Banks, Inc.","location":"NYSE"},
-{"name":"Maurits Yaldren","email":"myaldrenbh@wix.com","phone":"3606218351","usertype":"Harsco Corporation","location":"NYSE"},
-{"name":"Burton Nisby","email":"bnisbybi@gov.uk","phone":"9368142875","usertype":"Colony Bankcorp, Inc.","location":"NASDAQ"},
-{"name":"Ryley Goford","email":"rgofordbj@europa.eu","phone":"5315151703","usertype":"Banco Bradesco Sa","location":"NYSE"},
-{"name":"Carmelle Fawthorpe","email":"cfawthorpebk@chicagotribune.com","phone":"6682648213","usertype":"Southwestern Energy Company","location":"NYSE"},
-{"name":"Cyrus Adess","email":"cadessbl@uol.com.br","phone":"7781025415","usertype":"Exelixis, Inc.","location":"NASDAQ"},
-{"name":"Nananne Americi","email":"namericibm@columbia.edu","phone":"2302751506","usertype":"Wells Fargo & Company","location":"NYSE"},
-{"name":"Lenore Eltringham","email":"leltringhambn@census.gov","phone":"4421763361","usertype":"Till Capital Ltd.","location":"NASDAQ"},
-{"name":"Doris Driver","email":"ddriverbo@miitbeian.gov.cn","phone":"6267926687","usertype":"Appian Corporation","location":"NASDAQ"},
-{"name":"Mickie Sherlock","email":"msherlockbp@blogger.com","phone":"6203153937","usertype":"Cameco Corporation","location":"NYSE"},
-{"name":"Queenie Barbie","email":"qbarbiebq@cyberchimps.com","phone":"4809127993","usertype":"CST Brands, Inc.","location":"NYSE"},
-{"name":"Gustave Ockland","email":"gocklandbr@irs.gov","phone":"2245359168","usertype":"MSB Financial Corp.","location":"NASDAQ"},
-{"name":"Welbie Wyldes","email":"wwyldesbs@si.edu","phone":"8141517829","usertype":"MFA Financial, Inc.","location":"NYSE"},
-{"name":"Brana Brettel","email":"bbrettelbt@tripod.com","phone":"7354430788","usertype":"WPP plc","location":"NASDAQ"},
-{"name":"Georgina Kennaway","email":"gkennawaybu@slate.com","phone":"8815898068","usertype":"Infinity Pharmaceuticals, Inc.","location":"NASDAQ"},
-{"name":"Emlynn Cottis","email":"ecottisbv@pcworld.com","phone":"2624755683","usertype":"Diamond Hill Investment Group, Inc.","location":"NASDAQ"},
-{"name":"Morgen Tuny","email":"mtunybw@about.com","phone":"3306920579","usertype":"Teekay Offshore Partners L.P.","location":"NYSE"},
-{"name":"Anna Keenor","email":"akeenorbx@mtv.com","phone":"3812054949","usertype":"Net 1 UEPS Technologies, Inc.","location":"NASDAQ"},
-{"name":"Cello Bareford","email":"cbarefordby@homestead.com","phone":"3267077700","usertype":"Putnam Premier Income Trust","location":"NYSE"},
-{"name":"Agneta Klainman","email":"aklainmanbz@privacy.gov.au","phone":"2919464345","usertype":"Chegg, Inc.","location":"NYSE"},
-{"name":"Dita Sneezem","email":"dsneezemc0@unicef.org","phone":"4034341786","usertype":"Electrum Special Acquisition Corporation","location":"NASDAQ"},
-{"name":"Gracie Tozer","email":"gtozerc1@barnesandnoble.com","phone":"8203097464","usertype":"Siliconware Precision Industries Company, Ltd.","location":"NASDAQ"},
-{"name":"Jemie Tuttle","email":"jtuttlec2@wordpress.com","phone":"2941932159","usertype":"Fabrinet","location":"NYSE"},
-{"name":"Anica Tuffley","email":"atuffleyc3@google.com.au","phone":"9526311107","usertype":"Guess?, Inc.","location":"NYSE"},
-{"name":"Sascha Elrick","email":"selrickc4@histats.com","phone":"6634236367","usertype":"Kitov Pharmaceuticals Holdings Ltd.","location":"NASDAQ"},
-{"name":"Oliy Chesworth","email":"ochesworthc5@abc.net.au","phone":"7845731817","usertype":"WPX Energy, Inc.","location":"NYSE"},
-{"name":"Flossy Dearden","email":"fdeardenc6@live.com","phone":"2661511768","usertype":"Amphenol Corporation","location":"NYSE"},
-{"name":"Hephzibah Canto","email":"hcantoc7@booking.com","phone":"8246286330","usertype":"Unity Bancorp, Inc.","location":"NASDAQ"},
-{"name":"Warren Butfield","email":"wbutfieldc8@rakuten.co.jp","phone":"9203314785","usertype":"Parkway, Inc.","location":"NYSE"},
-{"name":"Hamish Dekeyser","email":"hdekeyserc9@domainmarket.com","phone":"4882936860","usertype":"KBR, Inc.","location":"NYSE"},
-{"name":"Frasquito Harnor","email":"fharnorca@npr.org","phone":"5364357582","usertype":"Nuveen Quality Preferred Income Fund 2","location":"NYSE"},
-{"name":"Clayborn Wrotchford","email":"cwrotchfordcb@yahoo.co.jp","phone":"9745465029","usertype":"China Life Insurance Company Limited","location":"NYSE"},
-{"name":"Allegra Grob","email":"agrobcc@huffingtonpost.com","phone":"5175657091","usertype":"Westlake Chemical Partners LP","location":"NYSE"},
-{"name":"Lennie Muselli","email":"lmusellicd@nationalgeographic.com","phone":"8643919725","usertype":"PowerShares S&P SmallCap Materials Portfolio","location":"NASDAQ"},
-{"name":"Nerta Iffe","email":"niffece@europa.eu","phone":"7912350211","usertype":"Bio-Techne Corp","location":"NASDAQ"},
-{"name":"Annice Scurr","email":"ascurrcf@theglobeandmail.com","phone":"6435831200","usertype":"Commvault Systems, Inc.","location":"NASDAQ"},
-{"name":"Elie Penburton","email":"epenburtoncg@bigcartel.com","phone":"6759324510","usertype":"MSG Networks Inc.","location":"NYSE"},
-{"name":"Ingar Critchley","email":"icritchleych@vk.com","phone":"4625724332","usertype":"PennyMac Mortgage Investment Trust","location":"NYSE"},
-{"name":"Sigfrid Swayton","email":"sswaytonci@i2i.jp","phone":"6128646991","usertype":"SL Green Realty Corporation","location":"NYSE"},
-{"name":"Ryon Grute","email":"rgrutecj@fastcompany.com","phone":"9058713561","usertype":"TPI Composites, Inc.","location":"NASDAQ"},
-{"name":"Paige Kempstone","email":"pkempstoneck@flickr.com","phone":"4125496875","usertype":"HealthEquity, Inc.","location":"NASDAQ"},
-{"name":"Tybi Revitt","email":"trevittcl@princeton.edu","phone":"8275637354","usertype":"Kansas City Southern","location":"NYSE"},
-{"name":"Brittne Snassell","email":"bsnassellcm@bandcamp.com","phone":"7816776379","usertype":"BioSpecifics Technologies Corp","location":"NASDAQ"},
-{"name":"Drona Keener","email":"dkeenercn@devhub.com","phone":"5895482355","usertype":"Quidel Corporation","location":"NASDAQ"},
-{"name":"Jimmy Twigg","email":"jtwiggco@rambler.ru","phone":"8756084299","usertype":"Customers Bancorp, Inc","location":"NYSE"},
-{"name":"Amie Hamshar","email":"ahamsharcp@wired.com","phone":"9697998737","usertype":"La-Z-Boy Incorporated","location":"NYSE"},
-{"name":"Camile Drepp","email":"cdreppcq@upenn.edu","phone":"4283755766","usertype":"Ashford Hospitality Trust Inc","location":"NYSE"},
-{"name":"Rachael Tripean","email":"rtripeancr@indiatimes.com","phone":"2666894963","usertype":"LyondellBasell Industries NV","location":"NYSE"},
-{"name":"Steffen Lynas","email":"slynascs@pagesperso-orange.fr","phone":"3791102498","usertype":"iShares Commodities Select Strategy ETF","location":"NASDAQ"},
-{"name":"Roseline Alsobrook","email":"ralsobrookct@fda.gov","phone":"9536606337","usertype":"Gridsum Holding Inc.","location":"NASDAQ"},
-{"name":"Gian Pedden","email":"gpeddencu@lycos.com","phone":"6811725272","usertype":"Colony NorthStar, Inc.","location":"NYSE"},
-{"name":"Kelcy Scad","email":"kscadcv@irs.gov","phone":"2849126935","usertype":"Gazit-Globe Ltd.","location":"NYSE"},
-{"name":"Chucho Andraud","email":"candraudcw@simplemachines.org","phone":"1045250965","usertype":"TerraForm Power, Inc.","location":"NASDAQ"},
-{"name":"Alison Fleg","email":"aflegcx@opera.com","phone":"1907654508","usertype":"Nivalis Therapeutics, Inc.","location":"NASDAQ"},
-{"name":"Felicio Markham","email":"fmarkhamcy@vistaprint.com","phone":"1659346693","usertype":"Alliance HealthCare Services, Inc.","location":"NASDAQ"},
-{"name":"Hope Shere","email":"hsherecz@admin.ch","phone":"3692128087","usertype":"Novavax, Inc.","location":"NASDAQ"},
-{"name":"Myrtia Sutherley","email":"msutherleyd0@disqus.com","phone":"1165152917","usertype":"ProShares UltraPro QQQ","location":"NASDAQ"},
-{"name":"Kane Stilliard","email":"kstilliardd1@feedburner.com","phone":"6961100127","usertype":"Lumos Networks Corp.","location":"NASDAQ"},
-{"name":"Dorie Adamiec","email":"dadamiecd2@altervista.org","phone":"5806888125","usertype":"BlackRock Municipal Income Investment Trust","location":"NYSE"},
-{"name":"Ethelbert Driuzzi","email":"edriuzzid3@pagesperso-orange.fr","phone":"6205372228","usertype":"Vident Core US Equity ETF","location":"NASDAQ"},
-{"name":"Alfonso Brattell","email":"abrattelld4@a8.net","phone":"3396715233","usertype":"Choice Hotels International, Inc.","location":"NYSE"},
-{"name":"Page Bertolin","email":"pbertolind5@dedecms.com","phone":"2001774044","usertype":"Washington Prime Group Inc.","location":"NYSE"},
-{"name":"Ariella Dresche","email":"adresched6@google.fr","phone":"1573668679","usertype":"Atlantic Capital Bancshares, Inc.","location":"NASDAQ"},
-{"name":"Keely Ainsley","email":"kainsleyd7@webeden.co.uk","phone":"4219835055","usertype":"American Realty Investors, Inc.","location":"NYSE"},
-{"name":"Rosco Badger","email":"rbadgerd8@msu.edu","phone":"2502349642","usertype":"Inogen, Inc","location":"NASDAQ"},
-{"name":"Basilio Bakhrushin","email":"bbakhrushind9@tinypic.com","phone":"3299695183","usertype":"Threshold Pharmaceuticals, Inc.","location":"NASDAQ"},
-{"name":"Prent Breckin","email":"pbreckinda@fda.gov","phone":"5672797389","usertype":"Scudder Municiple Income Trust","location":"NYSE"},
-{"name":"Brandyn Riehm","email":"briehmdb@etsy.com","phone":"9384410676","usertype":"iShares S&P/Citigroup International Treasury Bond Fund","location":"NASDAQ"},
-{"name":"Danyette Bernasek","email":"dbernasekdc@state.gov","phone":"8559950038","usertype":"F.N.B. Corporation","location":"NYSE"},
-{"name":"Johannah Feldstern","email":"jfeldsterndd@networkadvertising.org","phone":"5147931450","usertype":"First Trust Indxx Global Natural Resources Income ETF","location":"NASDAQ"},
-{"name":"Keely Paylie","email":"kpayliede@themeforest.net","phone":"3061241355","usertype":"Pacific Drilling S.A.","location":"NYSE"},
-{"name":"Peyter Heephy","email":"pheephydf@sogou.com","phone":"7795830239","usertype":"BioTelemetry, Inc.","location":"NASDAQ"},
-{"name":"Viki Mannock","email":"vmannockdg@hc360.com","phone":"1923255409","usertype":"Check-Cap Ltd.","location":"NASDAQ"},
-{"name":"Annamarie Marwick","email":"amarwickdh@phpbb.com","phone":"5556642151","usertype":"Big 5 Sporting Goods Corporation","location":"NASDAQ"},
-{"name":"Quillan Trickey","email":"qtrickeydi@japanpost.jp","phone":"9066243511","usertype":"Empire Resorts, Inc.","location":"NASDAQ"},
-{"name":"Edee Turgoose","email":"eturgoosedj@wordpress.com","phone":"1403837164","usertype":"Invesco High Income 2023 Target Term Fund","location":"NYSE"},
-{"name":"Janeczka Baalham","email":"jbaalhamdk@de.vu","phone":"6022007443","usertype":"Compania Cervecerias Unidas, S.A.","location":"NYSE"},
-{"name":"Zarah Reisk","email":"zreiskdl@sciencedirect.com","phone":"6633165029","usertype":"Gabelli Equity Trust, Inc. (The)","location":"NYSE"},
-{"name":"Cati McGeachey","email":"cmcgeacheydm@hao123.com","phone":"9972194896","usertype":"TriplePoint Venture Growth BDC Corp.","location":"NYSE"},
-{"name":"Chloe Featherby","email":"cfeatherbydn@nationalgeographic.com","phone":"5714349443","usertype":"Tandem Diabetes Care, Inc.","location":"NASDAQ"},
-{"name":"Misha Kahane","email":"mkahanedo@examiner.com","phone":"8754152747","usertype":"Sypris Solutions, Inc.","location":"NASDAQ"},
-{"name":"Angela Cicccitti","email":"acicccittidp@tuttocitta.it","phone":"1065543047","usertype":"China Advanced Construction Materials Group, Inc.","location":"NASDAQ"},
-{"name":"Korney Manach","email":"kmanachdq@theatlantic.com","phone":"1589612355","usertype":"PennantPark Investment Corporation","location":"NASDAQ"},
-{"name":"Donovan Lovelady","email":"dloveladydr@weebly.com","phone":"4629189200","usertype":"Grana y Montero S.A.A.","location":"NYSE"},
-{"name":"Luis Baigent","email":"lbaigentds@booking.com","phone":"7572622295","usertype":"KeyCorp","location":"NYSE"},
-{"name":"Chrisy Probbings","email":"cprobbingsdt@mac.com","phone":"5612576569","usertype":"MSG Networks Inc.","location":"NYSE"},
-{"name":"Sherye Pyvis","email":"spyvisdu@theguardian.com","phone":"2424149377","usertype":"M.D.C. Holdings, Inc.","location":"NYSE"},
-{"name":"Dasya Hendriksen","email":"dhendriksendv@google.com.au","phone":"9094584764","usertype":"AGNC Investment Corp.","location":"NASDAQ"}]
+[
+    {
+        "name": "Ginger Dimitrov",
+        "email": "gdimitrov0@java.com",
+        "phone": "5128665576",
+        "usertype": "Central Europe, Russia and Turkey Fund, Inc. (The)",
+        "location": "NYSE"
+    },
+    {
+        "name": "Nedi Osmon",
+        "email": "nosmon1@about.com",
+        "phone": "8182826879",
+        "usertype": "Nuveen Massachusetts Municipal Income Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Bettina Wincom",
+        "email": "bwincom2@berkeley.edu",
+        "phone": "9299834854",
+        "usertype": "Ark Restaurants Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Enrichetta Yegorkin",
+        "email": "eyegorkin3@nbcnews.com",
+        "phone": "8057577546",
+        "usertype": "FIRST REPUBLIC BANK",
+        "location": "NYSE"
+    },
+    {
+        "name": "Sheffie Jordan",
+        "email": "sjordan4@icio.us",
+        "phone": "2986572896",
+        "usertype": "Astrotech Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Robin Rapin",
+        "email": "rrapin5@yandex.ru",
+        "phone": "7207540826",
+        "usertype": "New York REIT, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Cory Paolillo",
+        "email": "cpaolillo6@irs.gov",
+        "phone": "4576323281",
+        "usertype": "Actua Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Meggie Cowap",
+        "email": "mcowap7@t.co",
+        "phone": "1616583438",
+        "usertype": "Biostar Pharmaceuticals, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Brucie Flowers",
+        "email": "bflowers8@topsy.com",
+        "phone": "7072817260",
+        "usertype": "BioLineRx Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Petrina O'Hdirscoll",
+        "email": "pohdirscoll9@ihg.com",
+        "phone": "4576060269",
+        "usertype": "J. Alexander's Holdings, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Huberto Scawn",
+        "email": "hscawna@usnews.com",
+        "phone": "6131742579",
+        "usertype": "Pan American Silver Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Langston Wissby",
+        "email": "lwissbyb@bigcartel.com",
+        "phone": "5218927281",
+        "usertype": "Nortech Systems Incorporated",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Dionisio Pessel",
+        "email": "dpesselc@php.net",
+        "phone": "8166950597",
+        "usertype": "The Ultimate Software Group, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Matteo Featherston",
+        "email": "mfeatherstond@admin.ch",
+        "phone": "1822692659",
+        "usertype": "Provident Financial Holdings, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Emery Windridge",
+        "email": "ewindridgee@nasa.gov",
+        "phone": "3462738619",
+        "usertype": "Daseke, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Molli Chalice",
+        "email": "mchalicef@a8.net",
+        "phone": "4301984730",
+        "usertype": "Ardagh Group S.A.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Laverna Sleet",
+        "email": "lsleetg@discovery.com",
+        "phone": "2007907344",
+        "usertype": "HomeTown Bankshares Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Gibbie Braim",
+        "email": "gbraimh@hp.com",
+        "phone": "4629858715",
+        "usertype": "Teligent, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Aimee Shuter",
+        "email": "ashuteri@so-net.ne.jp",
+        "phone": "8747520557",
+        "usertype": "HFF, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Codie Sorrie",
+        "email": "csorriej@huffingtonpost.com",
+        "phone": "6779462068",
+        "usertype": "Helios and Matheson Analytics Inc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Jobye Hulse",
+        "email": "jhulsek@bandcamp.com",
+        "phone": "7358996469",
+        "usertype": "Enterprise Bancorp Inc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Rozamond Creelman",
+        "email": "rcreelmanl@mapquest.com",
+        "phone": "4144462696",
+        "usertype": "WisdomTree Negative Duration High Yield Bond Fund",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Edin Breckon",
+        "email": "ebreckonm@usnews.com",
+        "phone": "7504964907",
+        "usertype": "Check Point Software Technologies Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Veronika Tuckwell",
+        "email": "vtuckwelln@surveymonkey.com",
+        "phone": "7779520195",
+        "usertype": "Atento S.A.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Ally Greenhalgh",
+        "email": "agreenhalgho@google.cn",
+        "phone": "1069202317",
+        "usertype": "Zoe's Kitchen, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Corella Uzielli",
+        "email": "cuziellip@go.com",
+        "phone": "8975944721",
+        "usertype": "Zillow Group, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Euell Verney",
+        "email": "everneyq@google.nl",
+        "phone": "5713991265",
+        "usertype": "Pingtan Marine Enterprise Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Atlante Joder",
+        "email": "ajoderr@uiuc.edu",
+        "phone": "4666576889",
+        "usertype": "Renasant Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Olva Clyma",
+        "email": "oclymas@cbsnews.com",
+        "phone": "9289859751",
+        "usertype": "KCAP Financial, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Chantal Sagg",
+        "email": "csaggt@bing.com",
+        "phone": "1537736288",
+        "usertype": "Cliffs Natural Resources Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Tera Grigoli",
+        "email": "tgrigoliu@wiley.com",
+        "phone": "9936474291",
+        "usertype": "JM Global Holding Company",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Etienne Sill",
+        "email": "esillv@comsenz.com",
+        "phone": "7975629715",
+        "usertype": "Georgia Power Company",
+        "location": "NYSE"
+    },
+    {
+        "name": "Mabel Whickman",
+        "email": "mwhickmanw@sina.com.cn",
+        "phone": "9426623202",
+        "usertype": "Federal Agricultural Mortgage Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Annalee Barehead",
+        "email": "abareheadx@istockphoto.com",
+        "phone": "5238543341",
+        "usertype": "Imprimis Pharmaceuticals, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Liva Jahan",
+        "email": "ljahany@baidu.com",
+        "phone": "6206923843",
+        "usertype": "Agree Realty Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Joleen Curtis",
+        "email": "jcurtisz@ycombinator.com",
+        "phone": "1052572443",
+        "usertype": "China Telecom Corp Ltd",
+        "location": "NYSE"
+    },
+    {
+        "name": "Anastasie Cudde",
+        "email": "acudde10@tumblr.com",
+        "phone": "9107481346",
+        "usertype": "La-Z-Boy Incorporated",
+        "location": "NYSE"
+    },
+    {
+        "name": "Nickola Rickhuss",
+        "email": "nrickhuss11@baidu.com",
+        "phone": "2251262829",
+        "usertype": "MIDSTATES PETROLEUM COMPANY, INC.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Jess Giorgetti",
+        "email": "jgiorgetti12@furl.net",
+        "phone": "9766794151",
+        "usertype": "Radius Health, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Eduard Coonihan",
+        "email": "ecoonihan13@netscape.com",
+        "phone": "4795684099",
+        "usertype": "B. Riley Financial, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Babbette Durbridge",
+        "email": "bdurbridge14@loc.gov",
+        "phone": "5376027737",
+        "usertype": "Costco Wholesale Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Shea Saunier",
+        "email": "ssaunier15@cnet.com",
+        "phone": "2299296523",
+        "usertype": "Kosmos Energy Ltd.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Kary Etchells",
+        "email": "ketchells16@diigo.com",
+        "phone": "6949487780",
+        "usertype": "Macquarie Infrastructure Company",
+        "location": "NYSE"
+    },
+    {
+        "name": "Therine Victory",
+        "email": "tvictory17@eepurl.com",
+        "phone": "3366682301",
+        "usertype": "FORM Holdings Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Grantley Swiers",
+        "email": "gswiers18@homestead.com",
+        "phone": "2176572586",
+        "usertype": "Dillard's, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Gerick Pickering",
+        "email": "gpickering19@dyndns.org",
+        "phone": "2346004503",
+        "usertype": "Citrix Systems, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Rodolphe Shovelin",
+        "email": "rshovelin1a@ibm.com",
+        "phone": "5158838060",
+        "usertype": "Function(x) Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Valene Camamill",
+        "email": "vcamamill1b@furl.net",
+        "phone": "1481713543",
+        "usertype": "Regional Management Corp.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Federica Muglestone",
+        "email": "fmuglestone1c@prnewswire.com",
+        "phone": "4685359683",
+        "usertype": "NeoPhotonics Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Bernardine Thurber",
+        "email": "bthurber1d@latimes.com",
+        "phone": "8945641625",
+        "usertype": "Eaton Vance Tax Advantaged Dividend Income Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Brenden Maydway",
+        "email": "bmaydway1e@flickr.com",
+        "phone": "1262288997",
+        "usertype": "Forrester Research, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Jareb Murrthum",
+        "email": "jmurrthum1f@newsvine.com",
+        "phone": "3036931517",
+        "usertype": "Wheeler Real Estate Investment Trust, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Marlowe Fleisch",
+        "email": "mfleisch1g@hibu.com",
+        "phone": "7678738965",
+        "usertype": "Insulet Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Barbee Mardee",
+        "email": "bmardee1h@weather.com",
+        "phone": "1473439959",
+        "usertype": "Rocky Brands, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Brietta Goodie",
+        "email": "bgoodie1i@redcross.org",
+        "phone": "9208247190",
+        "usertype": "MVC Capital, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Joachim Domican",
+        "email": "jdomican1j@ameblo.jp",
+        "phone": "6027934070",
+        "usertype": "Pacific Gas & Electric Co.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Bibby Pendred",
+        "email": "bpendred1k@networksolutions.com",
+        "phone": "8323055994",
+        "usertype": "FIRST REPUBLIC BANK",
+        "location": "NYSE"
+    },
+    {
+        "name": "Nicol Derx",
+        "email": "nderx1l@census.gov",
+        "phone": "3169970589",
+        "usertype": "China Unicom (Hong Kong) Ltd",
+        "location": "NYSE"
+    },
+    {
+        "name": "Ellene Haselwood",
+        "email": "ehaselwood1m@cdc.gov",
+        "phone": "4883796697",
+        "usertype": "Saul Centers, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Janos St Pierre",
+        "email": "jst1n@pcworld.com",
+        "phone": "6113065932",
+        "usertype": "Validus Holdings, Ltd.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Westbrook Gorghetto",
+        "email": "wgorghetto1o@mtv.com",
+        "phone": "3835984655",
+        "usertype": "Jacobs Engineering Group Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Keene Shafier",
+        "email": "kshafier1p@techcrunch.com",
+        "phone": "8458382760",
+        "usertype": "EP Energy Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Jacobo Deniso",
+        "email": "jdeniso1q@samsung.com",
+        "phone": "1737052059",
+        "usertype": "Avis Budget Group, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Wyatan Gentner",
+        "email": "wgentner1r@nytimes.com",
+        "phone": "3094709331",
+        "usertype": "Bank of America Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Xaviera Vale",
+        "email": "xvale1s@xrea.com",
+        "phone": "7326298402",
+        "usertype": "Cimpress N.V",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Delcina Dorber",
+        "email": "ddorber1t@xinhuanet.com",
+        "phone": "3968228497",
+        "usertype": "Hershey Company (The)",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lesly Webben",
+        "email": "lwebben1u@gravatar.com",
+        "phone": "4082018842",
+        "usertype": "National Holdings Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Tristam Gentile",
+        "email": "tgentile1v@plala.or.jp",
+        "phone": "7851555149",
+        "usertype": "IRSA Inversiones Y Representaciones S.A.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Ugo Boriston",
+        "email": "uboriston1w@devhub.com",
+        "phone": "3249245684",
+        "usertype": "Newell Brands Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lefty Dudden",
+        "email": "ldudden1x@china.com.cn",
+        "phone": "4998306060",
+        "usertype": "Customers Bancorp, Inc",
+        "location": "NYSE"
+    },
+    {
+        "name": "Hollie Boissieux",
+        "email": "hboissieux1y@pinterest.com",
+        "phone": "4681561911",
+        "usertype": "The Chefs' Warehouse, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Travers Parmeter",
+        "email": "tparmeter1z@economist.com",
+        "phone": "8171155833",
+        "usertype": "Thermo Fisher Scientific Inc",
+        "location": "NYSE"
+    },
+    {
+        "name": "Leanna Derr",
+        "email": "lderr20@dagondesign.com",
+        "phone": "8295127685",
+        "usertype": "Wells Fargo & Company",
+        "location": "NYSE"
+    },
+    {
+        "name": "Zabrina Breewood",
+        "email": "zbreewood21@mozilla.com",
+        "phone": "9035587246",
+        "usertype": "Mota Group, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Derick Boss",
+        "email": "dboss22@google.de",
+        "phone": "5162248813",
+        "usertype": "RAIT Financial Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Nalani Ugoni",
+        "email": "nugoni23@multiply.com",
+        "phone": "7513655827",
+        "usertype": "Tortoise Energy Infrastructure Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Eugine Goldin",
+        "email": "egoldin24@de.vu",
+        "phone": "8107048100",
+        "usertype": "Itau Unibanco Banco Holding SA",
+        "location": "NYSE"
+    },
+    {
+        "name": "Milicent Simmill",
+        "email": "msimmill25@miibeian.gov.cn",
+        "phone": "8038933436",
+        "usertype": "The First of Long Island Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Farlee Tarte",
+        "email": "ftarte26@cnet.com",
+        "phone": "9977420780",
+        "usertype": "Public Service Enterprise Group Incorporated",
+        "location": "NYSE"
+    },
+    {
+        "name": "Daisi Kubecka",
+        "email": "dkubecka27@apache.org",
+        "phone": "1755867381",
+        "usertype": "Del Frisco's Restaurant Group, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Kissee Hundell",
+        "email": "khundell28@webeden.co.uk",
+        "phone": "3671950464",
+        "usertype": "PowerShares DWA Energy Momentum Portfolio",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Glyn Albany",
+        "email": "galbany29@zdnet.com",
+        "phone": "4347375439",
+        "usertype": "51job, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Betty Botwright",
+        "email": "bbotwright2a@prnewswire.com",
+        "phone": "3052680305",
+        "usertype": "iShares FTSE EPRA/NAREIT Global Real Estate ex-U.S. Index Fund",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ches Malarkey",
+        "email": "cmalarkey2b@abc.net.au",
+        "phone": "1914596976",
+        "usertype": "Blackrock Florida Municipal 2020 Term Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Celinka Guidoni",
+        "email": "cguidoni2c@mlb.com",
+        "phone": "6324151142",
+        "usertype": "Pinnacle Foods, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Maddalena Copner",
+        "email": "mcopner2d@webs.com",
+        "phone": "1032620377",
+        "usertype": "James River Group Holdings, Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Reid Martill",
+        "email": "rmartill2e@yelp.com",
+        "phone": "3926054724",
+        "usertype": "Reinsurance Group of America, Incorporated",
+        "location": "NYSE"
+    },
+    {
+        "name": "Doti Pottberry",
+        "email": "dpottberry2f@cloudflare.com",
+        "phone": "4633639854",
+        "usertype": "Safeguard Scientifics, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lelia Sayle",
+        "email": "lsayle2g@angelfire.com",
+        "phone": "6779463565",
+        "usertype": "iSectors Post-MPT Growth ETF",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Franz Janosevic",
+        "email": "fjanosevic2h@hugedomains.com",
+        "phone": "7078408986",
+        "usertype": "Texas Roadhouse, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Doralynn Slimmon",
+        "email": "dslimmon2i@multiply.com",
+        "phone": "9927359431",
+        "usertype": "CONMED Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Conway Letrange",
+        "email": "cletrange2j@marketwatch.com",
+        "phone": "3644461735",
+        "usertype": "Corcept Therapeutics Incorporated",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Desiri Adhams",
+        "email": "dadhams2k@mit.edu",
+        "phone": "7612429488",
+        "usertype": "Fifth Street Finance Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Boonie Size",
+        "email": "bsize2l@hao123.com",
+        "phone": "6522167836",
+        "usertype": "iShares MSCI Europe Financials Sector Index Fund",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Pansy Rowell",
+        "email": "prowell2m@fda.gov",
+        "phone": "2734035119",
+        "usertype": "Nuveen Missouri Quality Municipal Income Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Gratiana Andrivot",
+        "email": "gandrivot2n@cmu.edu",
+        "phone": "3769823490",
+        "usertype": "AmTrust Financial Services, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Jenifer Drummer",
+        "email": "jdrummer2o@answers.com",
+        "phone": "8207552629",
+        "usertype": "Alliance One International, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Liliane O' Mulderrig",
+        "email": "lo2p@ox.ac.uk",
+        "phone": "6441443492",
+        "usertype": "Obalon Therapeutics, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Karalee Coners",
+        "email": "kconers2q@economist.com",
+        "phone": "8253001441",
+        "usertype": "Boulevard Acquisition Corp. II",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Say Brocklesby",
+        "email": "sbrocklesby2r@pagesperso-orange.fr",
+        "phone": "3886496812",
+        "usertype": "Tronox Limited",
+        "location": "NYSE"
+    },
+    {
+        "name": "Maryann Summerhayes",
+        "email": "msummerhayes2s@github.com",
+        "phone": "9954856160",
+        "usertype": "Enel Americas S.A.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Javier Chubb",
+        "email": "jchubb2t@digg.com",
+        "phone": "3511695806",
+        "usertype": "ReWalk Robotics Ltd",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Jason Ilyushkin",
+        "email": "jilyushkin2u@t.co",
+        "phone": "3766108523",
+        "usertype": "Overstock.com, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Pepita Cornfield",
+        "email": "pcornfield2v@reference.com",
+        "phone": "9396484492",
+        "usertype": "One Liberty Properties, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lolly Scragg",
+        "email": "lscragg2w@skype.com",
+        "phone": "1962698419",
+        "usertype": "South Jersey Industries, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Charissa Conrart",
+        "email": "cconrart2x@fotki.com",
+        "phone": "6859119030",
+        "usertype": "MIND C.T.I. Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Burg Cotes",
+        "email": "bcotes2y@merriam-webster.com",
+        "phone": "3255128194",
+        "usertype": "James Hardie Industries plc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Flory Daville",
+        "email": "fdaville2z@qq.com",
+        "phone": "5036251799",
+        "usertype": "Telephone and Data Systems, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Juli De Giovanni",
+        "email": "jde30@google.es",
+        "phone": "4801057347",
+        "usertype": "First Trust New Opportunities MLP & Energy Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Forest Muckart",
+        "email": "fmuckart31@wsj.com",
+        "phone": "4339851511",
+        "usertype": "Knight Transportation, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Georgie Blabie",
+        "email": "gblabie32@earthlink.net",
+        "phone": "8234115917",
+        "usertype": "First Trust Small Cap Growth AlphaDEX Fund",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Adria Campanelli",
+        "email": "acampanelli33@howstuffworks.com",
+        "phone": "1011084326",
+        "usertype": "ADTRAN, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Wat Chominski",
+        "email": "wchominski34@plala.or.jp",
+        "phone": "3094228243",
+        "usertype": "Great Plains Energy Inc",
+        "location": "NYSE"
+    },
+    {
+        "name": "Giordano Jewis",
+        "email": "gjewis35@blogtalkradio.com",
+        "phone": "1342848038",
+        "usertype": "Kulicke and Soffa Industries, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Putnam Fitzsimon",
+        "email": "pfitzsimon36@woothemes.com",
+        "phone": "2126441015",
+        "usertype": "Remark Holdings, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Frayda Dzeniskevich",
+        "email": "fdzeniskevich37@yahoo.co.jp",
+        "phone": "4331936493",
+        "usertype": "Pacific Coast Oil Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Fabien Dinsell",
+        "email": "fdinsell38@freewebs.com",
+        "phone": "5852819554",
+        "usertype": "VelocityShares VIX Short-Term ETN",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Antons Alvarado",
+        "email": "aalvarado39@delicious.com",
+        "phone": "9536430464",
+        "usertype": "PennTex Midstream Partners, LP",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Kattie Fowlie",
+        "email": "kfowlie3a@slashdot.org",
+        "phone": "2487397350",
+        "usertype": "The Cushing MLP Total Return Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Fanya Haggidon",
+        "email": "fhaggidon3b@statcounter.com",
+        "phone": "2167064349",
+        "usertype": "The Bancorp, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Lia Pennick",
+        "email": "lpennick3c@state.gov",
+        "phone": "7731830893",
+        "usertype": "Och-Ziff Capital Management Group LLC",
+        "location": "NYSE"
+    },
+    {
+        "name": "Glen Hearons",
+        "email": "ghearons3d@themeforest.net",
+        "phone": "5289857484",
+        "usertype": "Avangrid, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Mavra Razzell",
+        "email": "mrazzell3e@odnoklassniki.ru",
+        "phone": "5239945429",
+        "usertype": "Fred's, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Troy McNickle",
+        "email": "tmcnickle3f@bbc.co.uk",
+        "phone": "2071592010",
+        "usertype": "Universal Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Myra Skehens",
+        "email": "mskehens3g@census.gov",
+        "phone": "8219799628",
+        "usertype": "P & F Industries, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Rollins Ledster",
+        "email": "rledster3h@wix.com",
+        "phone": "7471249601",
+        "usertype": "Air Transport Services Group, Inc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ranee Sail",
+        "email": "rsail3i@un.org",
+        "phone": "8899057520",
+        "usertype": "Lyon William Homes",
+        "location": "NYSE"
+    },
+    {
+        "name": "Staford Madgett",
+        "email": "smadgett3j@xrea.com",
+        "phone": "4776103814",
+        "usertype": "Qwest Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Marin Towe",
+        "email": "mtowe3k@sina.com.cn",
+        "phone": "7858293239",
+        "usertype": "FlexShares Credit-Scored US Long Corporate Bond Index Fund",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Atalanta Erni",
+        "email": "aerni3l@berkeley.edu",
+        "phone": "7891896499",
+        "usertype": "Baldwin & Lyons, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Bab Nugent",
+        "email": "bnugent3m@domainmarket.com",
+        "phone": "5198607150",
+        "usertype": "Ecology and Environment, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Anatola Walkden",
+        "email": "awalkden3n@oaic.gov.au",
+        "phone": "2076962098",
+        "usertype": "Agilent Technologies, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dyna MacCaffery",
+        "email": "dmaccaffery3o@google.co.jp",
+        "phone": "6385585072",
+        "usertype": "Halcon Resources Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Philippe Mathou",
+        "email": "pmathou3p@cnn.com",
+        "phone": "5124267679",
+        "usertype": "j2 Global, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Georgeta Barday",
+        "email": "gbarday3q@sogou.com",
+        "phone": "1038484727",
+        "usertype": "Etsy, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Cristen O'Towey",
+        "email": "cotowey3r@sohu.com",
+        "phone": "2182558823",
+        "usertype": "Exa Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Mamie Featley",
+        "email": "mfeatley3s@home.pl",
+        "phone": "2798210322",
+        "usertype": "Physicians Realty Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Justine Flacknoe",
+        "email": "jflacknoe3t@photobucket.com",
+        "phone": "4706216724",
+        "usertype": "Boeing Company (The)",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lanni Bembrick",
+        "email": "lbembrick3u@shutterfly.com",
+        "phone": "8123835151",
+        "usertype": "Summit State Bank",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Claude Antognoni",
+        "email": "cantognoni3v@zimbio.com",
+        "phone": "2341224214",
+        "usertype": "Akari Therapeutics Plc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Cyndi Ayliffe",
+        "email": "cayliffe3w@eepurl.com",
+        "phone": "5846716303",
+        "usertype": "Sterling Bancorp",
+        "location": "NYSE"
+    },
+    {
+        "name": "Wyndham Willard",
+        "email": "wwillard3x@slate.com",
+        "phone": "7558258600",
+        "usertype": "Vital Therapies, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Samara Briar",
+        "email": "sbriar3y@angelfire.com",
+        "phone": "5235868998",
+        "usertype": "Nuveen Senior Income Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Giralda Whitely",
+        "email": "gwhitely3z@spiegel.de",
+        "phone": "2266620269",
+        "usertype": "Medallion Financial Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Shaughn Lates",
+        "email": "slates40@sphinn.com",
+        "phone": "8936277686",
+        "usertype": "AdvanSix Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Angelina Feaveryear",
+        "email": "afeaveryear41@yellowpages.com",
+        "phone": "3775947759",
+        "usertype": "New Mountain Finance Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Phip Goldsby",
+        "email": "pgoldsby42@xinhuanet.com",
+        "phone": "8808092485",
+        "usertype": "UNIVERSAL INSURANCE HOLDINGS INC",
+        "location": "NYSE"
+    },
+    {
+        "name": "Shep Konig",
+        "email": "skonig43@nbcnews.com",
+        "phone": "7965692809",
+        "usertype": "Global Payments Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Alair Armall",
+        "email": "aarmall44@reference.com",
+        "phone": "9247468693",
+        "usertype": "AutoNation, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Sully Rhead",
+        "email": "srhead45@wix.com",
+        "phone": "6967182704",
+        "usertype": "City Holding Company",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Prent Gettens",
+        "email": "pgettens46@flavors.me",
+        "phone": "3899628762",
+        "usertype": "Five Oaks Investment Corp.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dione Gorini",
+        "email": "dgorini47@gnu.org",
+        "phone": "2903187279",
+        "usertype": "Woodward, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Carie Brassington",
+        "email": "cbrassington48@symantec.com",
+        "phone": "4255696183",
+        "usertype": "First Majestic Silver Corp.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Tania Bulch",
+        "email": "tbulch49@geocities.com",
+        "phone": "5919253887",
+        "usertype": "Hess Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Edan Mowatt",
+        "email": "emowatt4a@earthlink.net",
+        "phone": "9431386266",
+        "usertype": "Herman Miller, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Donnell Commins",
+        "email": "dcommins4b@mapy.cz",
+        "phone": "6841128234",
+        "usertype": "United Dominion Realty Trust, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Kevin McGarrie",
+        "email": "kmcgarrie4c@livejournal.com",
+        "phone": "7716485255",
+        "usertype": "VTTI Energy Partners LP",
+        "location": "NYSE"
+    },
+    {
+        "name": "Modesty Marvelley",
+        "email": "mmarvelley4d@gnu.org",
+        "phone": "2564978313",
+        "usertype": "TAL Education Group",
+        "location": "NYSE"
+    },
+    {
+        "name": "Benjamin Colquitt",
+        "email": "bcolquitt4e@phoca.cz",
+        "phone": "7353319968",
+        "usertype": "MIND C.T.I. Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Morten Bernaldo",
+        "email": "mbernaldo4f@hao123.com",
+        "phone": "9785420494",
+        "usertype": "Thomson Reuters Corp",
+        "location": "NYSE"
+    },
+    {
+        "name": "Kaitlynn Fiddyment",
+        "email": "kfiddyment4g@newsvine.com",
+        "phone": "7078797756",
+        "usertype": "Syneron Medical Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Teddy Hukins",
+        "email": "thukins4h@pinterest.com",
+        "phone": "4412987811",
+        "usertype": "Bio-Rad Laboratories, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Karon Bordone",
+        "email": "kbordone4i@jalbum.net",
+        "phone": "8319650934",
+        "usertype": "Peoples Bancorp Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Craggy Seamer",
+        "email": "cseamer4j@wikipedia.org",
+        "phone": "6351244804",
+        "usertype": "Stepan Company",
+        "location": "NYSE"
+    },
+    {
+        "name": "Petronella Lyptratt",
+        "email": "plyptratt4k@xrea.com",
+        "phone": "8301200550",
+        "usertype": "ePlus inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Bellanca Loveguard",
+        "email": "bloveguard4l@gmpg.org",
+        "phone": "7295487157",
+        "usertype": "Immune Pharmaceuticals Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Elisabetta Fenner",
+        "email": "efenner4m@arstechnica.com",
+        "phone": "5182511590",
+        "usertype": "QuickLogic Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ariela Charlotte",
+        "email": "acharlotte4n@qq.com",
+        "phone": "7032094738",
+        "usertype": "Heritage Insurance Holdings, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Melitta Whybrow",
+        "email": "mwhybrow4o@google.ca",
+        "phone": "7623878471",
+        "usertype": "Inovio Pharmaceuticals, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Clarance McMonnies",
+        "email": "cmcmonnies4p@usatoday.com",
+        "phone": "7177445864",
+        "usertype": "PNM Resources, Inc. (Holding Co.)",
+        "location": "NYSE"
+    },
+    {
+        "name": "Doris Prin",
+        "email": "dprin4q@plala.or.jp",
+        "phone": "4887418984",
+        "usertype": "500.com Limited",
+        "location": "NYSE"
+    },
+    {
+        "name": "Delphine Mollin",
+        "email": "dmollin4r@ask.com",
+        "phone": "3098230038",
+        "usertype": "Grupo Financiero Galicia S.A.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Rachelle Birkin",
+        "email": "rbirkin4s@mit.edu",
+        "phone": "6828610096",
+        "usertype": "Korn/Ferry International",
+        "location": "NYSE"
+    },
+    {
+        "name": "Esmeralda Hanster",
+        "email": "ehanster4t@phoca.cz",
+        "phone": "5657212685",
+        "usertype": "Yandex N.V.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Demott Hawksley",
+        "email": "dhawksley4u@intel.com",
+        "phone": "8966440438",
+        "usertype": "Xenetic Biosciences, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Durward Mc Carroll",
+        "email": "dmc4v@google.fr",
+        "phone": "1048461383",
+        "usertype": "NetApp, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Mindy Schwartz",
+        "email": "mschwartz4w@miitbeian.gov.cn",
+        "phone": "1301212715",
+        "usertype": "Aflac Incorporated",
+        "location": "NYSE"
+    },
+    {
+        "name": "Elyse Gruby",
+        "email": "egruby4x@indiatimes.com",
+        "phone": "6669595044",
+        "usertype": "Sequans Communications S.A.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Kimmy Nudd",
+        "email": "knudd4y@cloudflare.com",
+        "phone": "7423099022",
+        "usertype": "Invitation Homes Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Baird Shreve",
+        "email": "bshreve4z@home.pl",
+        "phone": "8743373363",
+        "usertype": "Danaos Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Leoine De Ferrari",
+        "email": "lde50@tamu.edu",
+        "phone": "3792768090",
+        "usertype": "California Resources Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Patricia Colquhoun",
+        "email": "pcolquhoun51@wix.com",
+        "phone": "1042743474",
+        "usertype": "Hooker Furniture Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Shaine Willeson",
+        "email": "swilleson52@instagram.com",
+        "phone": "9543096506",
+        "usertype": "ConocoPhillips",
+        "location": "NYSE"
+    },
+    {
+        "name": "Richie Mitton",
+        "email": "rmitton53@sbwire.com",
+        "phone": "8041574039",
+        "usertype": "Quarterhill Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Kermie Masterton",
+        "email": "kmasterton54@youku.com",
+        "phone": "2487211203",
+        "usertype": "Verastem, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Kellia Collman",
+        "email": "kcollman55@nyu.edu",
+        "phone": "7159194166",
+        "usertype": "Bridgeline Digital, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Lani Pawlowicz",
+        "email": "lpawlowicz56@addthis.com",
+        "phone": "1739833699",
+        "usertype": "Trans World Entertainment Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Farrel Salling",
+        "email": "fsalling57@dion.ne.jp",
+        "phone": "6805810743",
+        "usertype": "Pacific Premier Bancorp Inc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Essa Harroway",
+        "email": "eharroway58@timesonline.co.uk",
+        "phone": "9726620979",
+        "usertype": "Fiduciary/Claymore MLP Opportunity Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Nettie Halm",
+        "email": "nhalm59@dell.com",
+        "phone": "5135014604",
+        "usertype": "Cabot Microelectronics Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Jobye Kirton",
+        "email": "jkirton5a@lulu.com",
+        "phone": "9608772591",
+        "usertype": "New York Community Bancorp, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Agace Shropsheir",
+        "email": "ashropsheir5b@paginegialle.it",
+        "phone": "5042166703",
+        "usertype": "FORM Holdings Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Felix Antoniat",
+        "email": "fantoniat5c@miitbeian.gov.cn",
+        "phone": "1044269881",
+        "usertype": "First Busey Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Karee Bosson",
+        "email": "kbosson5d@hhs.gov",
+        "phone": "5766163279",
+        "usertype": "Synergy Pharmaceuticals, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Marta Alekseev",
+        "email": "malekseev5e@wp.com",
+        "phone": "8291922278",
+        "usertype": "Chemours Company (The)",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dar Serridge",
+        "email": "dserridge5f@yolasite.com",
+        "phone": "1334821291",
+        "usertype": "VelocityShares Daily 2x VIX Short-Term ETN",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Joanne Beazley",
+        "email": "jbeazley5g@independent.co.uk",
+        "phone": "4093305408",
+        "usertype": "Retail Properties of America, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Morley MacGillivray",
+        "email": "mmacgillivray5h@scribd.com",
+        "phone": "5741843819",
+        "usertype": "Basic Energy Services, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Amalie Dowdam",
+        "email": "adowdam5i@nationalgeographic.com",
+        "phone": "7613384756",
+        "usertype": "Galmed Pharmaceuticals Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Odo Redgate",
+        "email": "oredgate5j@sogou.com",
+        "phone": "7471483291",
+        "usertype": "Exelixis, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Hermia Albasini",
+        "email": "halbasini5k@prnewswire.com",
+        "phone": "7807543284",
+        "usertype": "PowerShares FTSE RAFI US 1500 Small-Mid Portfolio",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Wanids Matyukon",
+        "email": "wmatyukon5l@hp.com",
+        "phone": "6791901655",
+        "usertype": "Astec Industries, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Gussi Polin",
+        "email": "gpolin5m@ow.ly",
+        "phone": "3533774218",
+        "usertype": "Powell Industries, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Alameda Iacoviello",
+        "email": "aiacoviello5n@unesco.org",
+        "phone": "8452056255",
+        "usertype": "Entergy Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Jerome Higounet",
+        "email": "jhigounet5o@istockphoto.com",
+        "phone": "4675624035",
+        "usertype": "UFP Technologies, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Mada Dunbabin",
+        "email": "mdunbabin5p@domainmarket.com",
+        "phone": "1166396693",
+        "usertype": "Atlanticus Holdings Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Jone Gwillyam",
+        "email": "jgwillyam5q@salon.com",
+        "phone": "2289115197",
+        "usertype": "Advanced Emissions Solutions, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Barbabra Sextone",
+        "email": "bsextone5r@artisteer.com",
+        "phone": "9364585640",
+        "usertype": "Pennsylvania Real Estate Investment Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Sebastian Yeates",
+        "email": "syeates5s@pagesperso-orange.fr",
+        "phone": "6141670886",
+        "usertype": "ARRIS International plc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Winonah Wagstaff",
+        "email": "wwagstaff5t@xing.com",
+        "phone": "1582910660",
+        "usertype": "Abeona Therapeutics Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ray England",
+        "email": "rengland5u@zimbio.com",
+        "phone": "9514146600",
+        "usertype": "Gamestop Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Brandais Casburn",
+        "email": "bcasburn5v@plala.or.jp",
+        "phone": "5207913821",
+        "usertype": "Texas Capital Bancshares, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Micki Coneybeare",
+        "email": "mconeybeare5w@list-manage.com",
+        "phone": "2336938710",
+        "usertype": "Foot Locker, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dorena Huntington",
+        "email": "dhuntington5x@pcworld.com",
+        "phone": "2656589349",
+        "usertype": "The ExOne Company",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Cris Morcom",
+        "email": "cmorcom5y@networkadvertising.org",
+        "phone": "3633419749",
+        "usertype": "XL Group Ltd.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Jeannie Iacovacci",
+        "email": "jiacovacci5z@sakura.ne.jp",
+        "phone": "1164932384",
+        "usertype": "Vedanta  Limited",
+        "location": "NYSE"
+    },
+    {
+        "name": "Orelie Prendeville",
+        "email": "oprendeville60@dropbox.com",
+        "phone": "3642269117",
+        "usertype": "Nuveen Preferred and Income Term Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Miran Lutzmann",
+        "email": "mlutzmann61@youtu.be",
+        "phone": "7227757691",
+        "usertype": "Vanguard Intermediate-Term Corporate Bond ETF",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Hillary Matyushenko",
+        "email": "hmatyushenko62@cbslocal.com",
+        "phone": "8767102975",
+        "usertype": "Escalade, Incorporated",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Jeramey Stanyland",
+        "email": "jstanyland63@berkeley.edu",
+        "phone": "5185464532",
+        "usertype": "First Financial Bankshares, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Jard Perring",
+        "email": "jperring64@opera.com",
+        "phone": "9736006245",
+        "usertype": "Old Line Bancshares, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Odele Gyorffy",
+        "email": "ogyorffy65@nasa.gov",
+        "phone": "4279284757",
+        "usertype": "iPass Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ninon Gerram",
+        "email": "ngerram66@unesco.org",
+        "phone": "3822701338",
+        "usertype": "First Business Financial Services, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Cthrine Sisland",
+        "email": "csisland67@japanpost.jp",
+        "phone": "4909523856",
+        "usertype": "Invesco Credit Opportunities Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Stanleigh Ortelt",
+        "email": "sortelt68@linkedin.com",
+        "phone": "8798584054",
+        "usertype": "NuVasive, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Orlan Pinnion",
+        "email": "opinnion69@bizjournals.com",
+        "phone": "7354049587",
+        "usertype": "Neothetics, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Errol Rapps",
+        "email": "erapps6a@purevolume.com",
+        "phone": "1238419975",
+        "usertype": "CrossAmerica Partners LP",
+        "location": "NYSE"
+    },
+    {
+        "name": "Elke Januszewicz",
+        "email": "ejanuszewicz6b@cnn.com",
+        "phone": "3347721548",
+        "usertype": "Caesarstone Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Fritz Cottey",
+        "email": "fcottey6c@amazon.com",
+        "phone": "1579925791",
+        "usertype": "Chesapeake Utilities Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dick Peto",
+        "email": "dpeto6d@dell.com",
+        "phone": "1318306532",
+        "usertype": "Vanguard Russell 1000 ETF",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Quintus Cattanach",
+        "email": "qcattanach6e@foxnews.com",
+        "phone": "2527803339",
+        "usertype": "Strattec Security Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Amabelle Tooting",
+        "email": "atooting6f@ovh.net",
+        "phone": "2553586571",
+        "usertype": "Concurrent Computer Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Harman Julyan",
+        "email": "hjulyan6g@slideshare.net",
+        "phone": "9129847463",
+        "usertype": "AudioCodes Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Robina McGonigle",
+        "email": "rmcgonigle6h@free.fr",
+        "phone": "2063256228",
+        "usertype": "First Trust CEF Income Opportunity ETF",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Bentley Heardman",
+        "email": "bheardman6i@moonfruit.com",
+        "phone": "4512857184",
+        "usertype": "Gardner Denver Holdings, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Casey Barczynski",
+        "email": "cbarczynski6j@mtv.com",
+        "phone": "6178092023",
+        "usertype": "Laredo Petroleum, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Nikos Cliburn",
+        "email": "ncliburn6k@vistaprint.com",
+        "phone": "8203414237",
+        "usertype": "M/I Homes, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Ashia Pendlebery",
+        "email": "apendlebery6l@g.co",
+        "phone": "3143167146",
+        "usertype": "Bank Of Montreal",
+        "location": "NYSE"
+    },
+    {
+        "name": "Stillman Dumbrall",
+        "email": "sdumbrall6m@forbes.com",
+        "phone": "1339801406",
+        "usertype": "ASV Holdings, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Bobbie Landal",
+        "email": "blandal6n@seesaa.net",
+        "phone": "3583746507",
+        "usertype": "Aberdeen Singapore Fund, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Correy Mussett",
+        "email": "cmussett6o@ihg.com",
+        "phone": "8205432122",
+        "usertype": "DST Systems, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Marlow Catling",
+        "email": "mcatling6p@craigslist.org",
+        "phone": "9096987789",
+        "usertype": "Avnet, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dene Kilgannon",
+        "email": "dkilgannon6q@nbcnews.com",
+        "phone": "9309498579",
+        "usertype": "SB Financial Group, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Caressa Thorowgood",
+        "email": "cthorowgood6r@wordpress.org",
+        "phone": "7354467835",
+        "usertype": "Assured Guaranty Ltd.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lianne Brech",
+        "email": "lbrech6s@purevolume.com",
+        "phone": "5695021779",
+        "usertype": "Shinhan Financial Group Co Ltd",
+        "location": "NYSE"
+    },
+    {
+        "name": "Nari Hynd",
+        "email": "nhynd6t@japanpost.jp",
+        "phone": "9827678184",
+        "usertype": "Assurant, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Corty Downage",
+        "email": "cdownage6u@cbslocal.com",
+        "phone": "4561778102",
+        "usertype": "MGC Diagnostics Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Odelinda O'Donohue",
+        "email": "oodonohue6v@google.de",
+        "phone": "7732435190",
+        "usertype": "Antero Midstream Partners LP",
+        "location": "NYSE"
+    },
+    {
+        "name": "Angie Stallen",
+        "email": "astallen6w@xing.com",
+        "phone": "6446045871",
+        "usertype": "SecureWorks Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Cassey Cutchey",
+        "email": "ccutchey6x@latimes.com",
+        "phone": "5609083602",
+        "usertype": "Vornado Realty Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Myrah Roz",
+        "email": "mroz6y@tuttocitta.it",
+        "phone": "4778982431",
+        "usertype": "Ever-Glory International Group, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Claudell Dallander",
+        "email": "cdallander6z@sphinn.com",
+        "phone": "8406741499",
+        "usertype": "NBT Bancorp Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ignaz Blood",
+        "email": "iblood70@bigcartel.com",
+        "phone": "5264179567",
+        "usertype": "Radcom Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Silvano Ames",
+        "email": "sames71@jigsy.com",
+        "phone": "8525445792",
+        "usertype": "Atlantica Yield plc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Brendan Flanne",
+        "email": "bflanne72@sohu.com",
+        "phone": "4369567400",
+        "usertype": "Eaton Vance Floating Rate Income Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Nealy Reubel",
+        "email": "nreubel73@uiuc.edu",
+        "phone": "5401236767",
+        "usertype": "Texas Capital Bancshares, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Annice Bengefield",
+        "email": "abengefield74@wp.com",
+        "phone": "9331903141",
+        "usertype": "Allegion plc",
+        "location": "NYSE"
+    },
+    {
+        "name": "Locke Deacon",
+        "email": "ldeacon75@google.pl",
+        "phone": "3396182648",
+        "usertype": "BlackRock Energy and Resources Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Deck Beardon",
+        "email": "dbeardon76@skype.com",
+        "phone": "9673477319",
+        "usertype": "Floor & Decor Holdings, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Maude Boggas",
+        "email": "mboggas77@goodreads.com",
+        "phone": "9745128385",
+        "usertype": "Voya Financial, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Jeannie Vlahos",
+        "email": "jvlahos78@engadget.com",
+        "phone": "9934218920",
+        "usertype": "AG Mortgage Investment Trust, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Ambrose Ruzek",
+        "email": "aruzek79@epa.gov",
+        "phone": "2071543076",
+        "usertype": "Denbury Resources Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dorthea Bebbington",
+        "email": "dbebbington7a@slideshare.net",
+        "phone": "4162192786",
+        "usertype": "Core Laboratories N.V.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Patrice Laidlaw",
+        "email": "plaidlaw7b@kickstarter.com",
+        "phone": "9415979709",
+        "usertype": "Pacific Drilling S.A.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Emlynne Edleston",
+        "email": "eedleston7c@upenn.edu",
+        "phone": "3521860529",
+        "usertype": "Hancock Holding Company",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Vivianna Corke",
+        "email": "vcorke7d@oaic.gov.au",
+        "phone": "5474893880",
+        "usertype": "Virtusa Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Perri Lampens",
+        "email": "plampens7e@stumbleupon.com",
+        "phone": "1156885105",
+        "usertype": "Jazz Pharmaceuticals plc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Eleonore Halliday",
+        "email": "ehalliday7f@timesonline.co.uk",
+        "phone": "5095897675",
+        "usertype": "KKR & Co. L.P.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Terencio Parkins",
+        "email": "tparkins7g@meetup.com",
+        "phone": "7212966312",
+        "usertype": "Arc Logistic Partners LP",
+        "location": "NYSE"
+    },
+    {
+        "name": "Duffie Skurray",
+        "email": "dskurray7h@geocities.com",
+        "phone": "1473779643",
+        "usertype": "Stone Harbor Emerging Markets Income Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Bernadine Ray",
+        "email": "bray7i@barnesandnoble.com",
+        "phone": "4862657641",
+        "usertype": "DelMar Pharmaceuticals, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Mable Goodfellow",
+        "email": "mgoodfellow7j@reddit.com",
+        "phone": "4139837459",
+        "usertype": "Tri Continental Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Brandtr Greenhead",
+        "email": "bgreenhead7k@msn.com",
+        "phone": "7142163719",
+        "usertype": "Wells Fargo & Company",
+        "location": "NYSE"
+    },
+    {
+        "name": "Thorin Trehearn",
+        "email": "ttrehearn7l@apache.org",
+        "phone": "5136697426",
+        "usertype": "First Trust Senior Loan Fund ETF",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Maximilianus Caseborne",
+        "email": "mcaseborne7m@zdnet.com",
+        "phone": "7888833984",
+        "usertype": "Avenue Income Credit Strategies Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Hart Lettson",
+        "email": "hlettson7n@newsvine.com",
+        "phone": "6176644818",
+        "usertype": "Valero Energy Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Bob Heindle",
+        "email": "bheindle7o@blogs.com",
+        "phone": "7019716533",
+        "usertype": "Archer-Daniels-Midland Company",
+        "location": "NYSE"
+    },
+    {
+        "name": "Walden Padkin",
+        "email": "wpadkin7p@java.com",
+        "phone": "1498524299",
+        "usertype": "ProAssurance Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Ulysses Braunthal",
+        "email": "ubraunthal7q@dmoz.org",
+        "phone": "2064293732",
+        "usertype": "PowerShares S&P SmallCap Consumer Discretionary Portfolio",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Averil Rickets",
+        "email": "arickets7r@psu.edu",
+        "phone": "6755829726",
+        "usertype": "S&P Global Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Clemens Sayse",
+        "email": "csayse7s@elpais.com",
+        "phone": "8099845935",
+        "usertype": "Tyson Foods, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Tommy Pahlsson",
+        "email": "tpahlsson7t@acquirethisname.com",
+        "phone": "8838211928",
+        "usertype": "BioCryst Pharmaceuticals, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Trixy Jeanel",
+        "email": "tjeanel7u@oakley.com",
+        "phone": "4965971584",
+        "usertype": "South State Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Fayette Wollrauch",
+        "email": "fwollrauch7v@oaic.gov.au",
+        "phone": "3038078363",
+        "usertype": "Tantech Holdings Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Clayton Avrahamoff",
+        "email": "cavrahamoff7w@cbc.ca",
+        "phone": "7106210350",
+        "usertype": "The Ultimate Software Group, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Zebadiah Dorgan",
+        "email": "zdorgan7x@behance.net",
+        "phone": "7701124999",
+        "usertype": "SPS Commerce, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Siouxie Fardell",
+        "email": "sfardell7y@time.com",
+        "phone": "2236385561",
+        "usertype": "OncoMed Pharmaceuticals, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Danella Kench",
+        "email": "dkench7z@wp.com",
+        "phone": "6664421014",
+        "usertype": "Kennametal Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Gran Asling",
+        "email": "gasling80@indiegogo.com",
+        "phone": "5892014955",
+        "usertype": "GNC Holdings, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Jennifer Kidwell",
+        "email": "jkidwell81@de.vu",
+        "phone": "6916147657",
+        "usertype": "Delta Air Lines, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Bethanne Lightbourn",
+        "email": "blightbourn82@ning.com",
+        "phone": "5212634289",
+        "usertype": "Axar Acquisition Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Deborah Huerta",
+        "email": "dhuerta83@state.gov",
+        "phone": "3884133972",
+        "usertype": "WashingtonFirst Bankshares Inc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Arlyne Ledekker",
+        "email": "aledekker84@dyndns.org",
+        "phone": "9135243342",
+        "usertype": "Costamare Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Valerie MacLice",
+        "email": "vmaclice85@themeforest.net",
+        "phone": "7444605522",
+        "usertype": "Agios Pharmaceuticals, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Aaron Mackiewicz",
+        "email": "amackiewicz86@zdnet.com",
+        "phone": "8943888470",
+        "usertype": "National Retail Properties",
+        "location": "NYSE"
+    },
+    {
+        "name": "Chloette Worral",
+        "email": "cworral87@aol.com",
+        "phone": "2687885663",
+        "usertype": "Calamos Global Dynamic Income Fund",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Rudolfo Audry",
+        "email": "raudry88@house.gov",
+        "phone": "8893626286",
+        "usertype": "SPDR Dorsey Wright Fixed Income Allocation ETF",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Monique Stedman",
+        "email": "mstedman89@chicagotribune.com",
+        "phone": "3998846643",
+        "usertype": "Omega Protein Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Friederike Dobeson",
+        "email": "fdobeson8a@dell.com",
+        "phone": "2474943049",
+        "usertype": "Arbutus Biopharma Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Christye Franzetti",
+        "email": "cfranzetti8b@fda.gov",
+        "phone": "6707218092",
+        "usertype": "The Andersons, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Emmery Siviter",
+        "email": "esiviter8c@shop-pro.jp",
+        "phone": "1097557244",
+        "usertype": "Rennova Health, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Violette Losbie",
+        "email": "vlosbie8d@icq.com",
+        "phone": "4969480323",
+        "usertype": "Papa John's International, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Laetitia Drains",
+        "email": "ldrains8e@slate.com",
+        "phone": "5789231098",
+        "usertype": "Green Bancorp, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Cherice Campbell-Dunlop",
+        "email": "ccampbelldunlop8f@last.fm",
+        "phone": "3401799066",
+        "usertype": "Cytosorbents Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Piggy Boothby",
+        "email": "pboothby8g@berkeley.edu",
+        "phone": "6872402348",
+        "usertype": "DST Systems, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Elaina Jullian",
+        "email": "ejullian8h@techcrunch.com",
+        "phone": "9831519746",
+        "usertype": "Ares Capital Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Britteny Ivanonko",
+        "email": "bivanonko8i@hp.com",
+        "phone": "1682650015",
+        "usertype": "Transportadora De Gas Sa Ord B",
+        "location": "NYSE"
+    },
+    {
+        "name": "Christyna Reinbach",
+        "email": "creinbach8j@washington.edu",
+        "phone": "3097764919",
+        "usertype": "Guaranty Bancshares, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ailyn Abbitt",
+        "email": "aabbitt8k@foxnews.com",
+        "phone": "6298144568",
+        "usertype": "Zion Oil & Gas Inc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Donovan Matuszyk",
+        "email": "dmatuszyk8l@skype.com",
+        "phone": "6221268574",
+        "usertype": "Rudolph Technologies, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Suzie Barefoot",
+        "email": "sbarefoot8m@nifty.com",
+        "phone": "1919804830",
+        "usertype": "LKQ Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ravid D'Alessio",
+        "email": "rdalessio8n@netvibes.com",
+        "phone": "6525210366",
+        "usertype": "Brasilagro Cia Brasileira De Propriedades Agricolas",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lorin Blanshard",
+        "email": "lblanshard8o@sciencedirect.com",
+        "phone": "2034708795",
+        "usertype": "Cutera, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Claresta Yitshak",
+        "email": "cyitshak8p@cbc.ca",
+        "phone": "5448667868",
+        "usertype": "MFA Financial, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Leandra Althrop",
+        "email": "lalthrop8q@examiner.com",
+        "phone": "9969875461",
+        "usertype": "First Trust Senior Loan Fund ETF",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Dionis McLennan",
+        "email": "dmclennan8r@cnn.com",
+        "phone": "4327822665",
+        "usertype": "TIER REIT, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Karalynn Trytsman",
+        "email": "ktrytsman8s@acquirethisname.com",
+        "phone": "6598122934",
+        "usertype": "Allstate Corporation (The)",
+        "location": "NYSE"
+    },
+    {
+        "name": "Theresina Matterson",
+        "email": "tmatterson8t@jalbum.net",
+        "phone": "8519989384",
+        "usertype": "Jensyn Acquistion Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Sawyere Stayte",
+        "email": "sstayte8u@oracle.com",
+        "phone": "1338566060",
+        "usertype": "Upland Software, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Dulcine Amott",
+        "email": "damott8v@gizmodo.com",
+        "phone": "8982302862",
+        "usertype": "Monotype Imaging Holdings Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Enrique Dorkin",
+        "email": "edorkin8w@twitter.com",
+        "phone": "2792788285",
+        "usertype": "State Street Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Quinn Woolger",
+        "email": "qwoolger8x@creativecommons.org",
+        "phone": "4888102102",
+        "usertype": "Gladstone Commercial Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Kalinda Wilmington",
+        "email": "kwilmington8y@twitpic.com",
+        "phone": "2394575920",
+        "usertype": "Cohen & Steers MLP Income and Energy Opportunity Fund, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Leland Coggings",
+        "email": "lcoggings8z@boston.com",
+        "phone": "3476815149",
+        "usertype": "Hancock Holding Company",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Jackqueline Nealy",
+        "email": "jnealy90@answers.com",
+        "phone": "4018097212",
+        "usertype": "Northwest Natural Gas Company",
+        "location": "NYSE"
+    },
+    {
+        "name": "Richmond Costin",
+        "email": "rcostin91@dedecms.com",
+        "phone": "3435970445",
+        "usertype": "Artisan Partners Asset Management Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Olav Bidgood",
+        "email": "obidgood92@theglobeandmail.com",
+        "phone": "8127722931",
+        "usertype": "Qwest Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Ludovico Tallant",
+        "email": "ltallant93@histats.com",
+        "phone": "4304893060",
+        "usertype": "Cross Country Healthcare, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Christean Heister",
+        "email": "cheister94@blinklist.com",
+        "phone": "1544242010",
+        "usertype": "Century Casinos, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Timi Wipper",
+        "email": "twipper95@cisco.com",
+        "phone": "8857677710",
+        "usertype": "Pilgrim's Pride Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Rriocard Hagwood",
+        "email": "rhagwood96@t.co",
+        "phone": "9276534146",
+        "usertype": "Evolent Health, Inc",
+        "location": "NYSE"
+    },
+    {
+        "name": "Eliot Maso",
+        "email": "emaso97@ustream.tv",
+        "phone": "5977311341",
+        "usertype": "Equity Lifestyle Properties, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lacy Leaman",
+        "email": "lleaman98@ehow.com",
+        "phone": "7814697817",
+        "usertype": "DENTSPLY SIRONA Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Raine Carwardine",
+        "email": "rcarwardine99@intel.com",
+        "phone": "1722878977",
+        "usertype": "Innoviva, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Lila Bartoletti",
+        "email": "lbartoletti9a@123-reg.co.uk",
+        "phone": "4439950563",
+        "usertype": "General Electric Company",
+        "location": "NYSE"
+    },
+    {
+        "name": "Arabela Tricker",
+        "email": "atricker9b@reddit.com",
+        "phone": "6542082149",
+        "usertype": "Autodesk, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ced Dy",
+        "email": "cdy9c@mozilla.com",
+        "phone": "4443631400",
+        "usertype": "Sharps Compliance Corp",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Godiva Hook",
+        "email": "ghook9d@sourceforge.net",
+        "phone": "9288672929",
+        "usertype": "Dynasil Corporation of America",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Daven Hillum",
+        "email": "dhillum9e@hao123.com",
+        "phone": "8019439605",
+        "usertype": "Columbus McKinnon Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Camellia Hardiman",
+        "email": "chardiman9f@instagram.com",
+        "phone": "6152021650",
+        "usertype": "Renasant Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Dallas Monteath",
+        "email": "dmonteath9g@ehow.com",
+        "phone": "4594232551",
+        "usertype": "J P Morgan Chase & Co",
+        "location": "NYSE"
+    },
+    {
+        "name": "Linet O'Hagan",
+        "email": "lohagan9h@home.pl",
+        "phone": "2908513925",
+        "usertype": "Biostage, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Jessamine Doerffer",
+        "email": "jdoerffer9i@ning.com",
+        "phone": "8358874761",
+        "usertype": "ClearOne, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Annabel Tolliday",
+        "email": "atolliday9j@spiegel.de",
+        "phone": "4924584682",
+        "usertype": "Equus Total Return, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lark Yewen",
+        "email": "lyewen9k@imdb.com",
+        "phone": "6758166620",
+        "usertype": "Kingstone Companies, Inc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Annecorinne Grimsley",
+        "email": "agrimsley9l@privacy.gov.au",
+        "phone": "2573054361",
+        "usertype": "Silver Run Acquisition Corporation II",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Brig Reith",
+        "email": "breith9m@oaic.gov.au",
+        "phone": "4101761212",
+        "usertype": "China Green Agriculture, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Kathryne Dilston",
+        "email": "kdilston9n@icq.com",
+        "phone": "2379401999",
+        "usertype": "CalAmp Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Peta Rawne",
+        "email": "prawne9o@ustream.tv",
+        "phone": "4045142433",
+        "usertype": "Mechel PAO",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dudley Newey",
+        "email": "dnewey9p@odnoklassniki.ru",
+        "phone": "6447112349",
+        "usertype": "ArcBest Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Lorinda Jinkin",
+        "email": "ljinkin9q@mozilla.com",
+        "phone": "5932601991",
+        "usertype": "Boingo Wireless, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Benny Gensavage",
+        "email": "bgensavage9r@hud.gov",
+        "phone": "2534201163",
+        "usertype": "Wright Medical Group N.V.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Kaile Matthews",
+        "email": "kmatthews9s@themeforest.net",
+        "phone": "3441264784",
+        "usertype": "OUTFRONT Media Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Solly Ghidoni",
+        "email": "sghidoni9t@elpais.com",
+        "phone": "2858058477",
+        "usertype": "Banco Santander, S.A.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dorena Sheekey",
+        "email": "dsheekey9u@twitter.com",
+        "phone": "9226623132",
+        "usertype": "Endeavour Silver Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Horatius Brannan",
+        "email": "hbrannan9v@mail.ru",
+        "phone": "5059762528",
+        "usertype": "First Financial Bancorp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Mattie Matyukon",
+        "email": "mmatyukon9w@msu.edu",
+        "phone": "6183745563",
+        "usertype": "Donegal Group, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Vinita Eagger",
+        "email": "veagger9x@ca.gov",
+        "phone": "8503060459",
+        "usertype": "Office Depot, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Hamid Pedrollo",
+        "email": "hpedrollo9y@google.it",
+        "phone": "2634114305",
+        "usertype": "Ambev S.A.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Stoddard Kornyshev",
+        "email": "skornyshev9z@liveinternet.ru",
+        "phone": "9893379616",
+        "usertype": "THL Credit, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Charla Chippindall",
+        "email": "cchippindalla0@people.com.cn",
+        "phone": "1218266131",
+        "usertype": "Genesco Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Mathias Tween",
+        "email": "mtweena1@squarespace.com",
+        "phone": "5952975291",
+        "usertype": "Vantage Energy Acquisition Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Marge Sidle",
+        "email": "msidlea2@discuz.net",
+        "phone": "7504883891",
+        "usertype": "Western Asset Emerging Markets Debt Fund Inc",
+        "location": "NYSE"
+    },
+    {
+        "name": "Rhoda Cicchitello",
+        "email": "rcicchitelloa3@npr.org",
+        "phone": "7648015755",
+        "usertype": "Cavco Industries, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Shandy Fold",
+        "email": "sfolda4@myspace.com",
+        "phone": "7595532187",
+        "usertype": "CEVA, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Vally Maffezzoli",
+        "email": "vmaffezzolia5@earthlink.net",
+        "phone": "3094264026",
+        "usertype": "Biostage, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Obediah Polycote",
+        "email": "opolycotea6@globo.com",
+        "phone": "1233196113",
+        "usertype": "AppFolio, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Korney Brosi",
+        "email": "kbrosia7@cbsnews.com",
+        "phone": "3366950434",
+        "usertype": "A V Homes, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Falkner Mountlow",
+        "email": "fmountlowa8@moonfruit.com",
+        "phone": "2449447380",
+        "usertype": "1-800 FLOWERS.COM, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Antonia Gallico",
+        "email": "agallicoa9@devhub.com",
+        "phone": "9466557355",
+        "usertype": "Kulicke and Soffa Industries, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ali Golland",
+        "email": "agollandaa@geocities.com",
+        "phone": "5915233423",
+        "usertype": "Brinker International, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Melanie Ambrogioli",
+        "email": "mambrogioliab@ow.ly",
+        "phone": "5171474869",
+        "usertype": "AmTrust Financial Services, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Moyra Vobes",
+        "email": "mvobesac@msu.edu",
+        "phone": "9768593679",
+        "usertype": "WisdomTree Negative Duration High Yield Bond Fund",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Deane Thomesson",
+        "email": "dthomessonad@amazonaws.com",
+        "phone": "2621274559",
+        "usertype": "WSI Industries Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Salomi Hodjetts",
+        "email": "shodjettsae@bloglines.com",
+        "phone": "4814441793",
+        "usertype": "Kemper Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Gibby Preston",
+        "email": "gprestonaf@gov.uk",
+        "phone": "9094600567",
+        "usertype": "Eaton Vance Tax-Advantaged Bond",
+        "location": "NYSE"
+    },
+    {
+        "name": "Denna Salatino",
+        "email": "dsalatinoag@ucsd.edu",
+        "phone": "2196444584",
+        "usertype": "National Instruments Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Milo Janczyk",
+        "email": "mjanczykah@yolasite.com",
+        "phone": "6236860054",
+        "usertype": "Mirati Therapeutics, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Carlin Pailin",
+        "email": "cpailinai@disqus.com",
+        "phone": "5029095009",
+        "usertype": "Vermilion Energy Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Kiley Fotitt",
+        "email": "kfotittaj@istockphoto.com",
+        "phone": "2154905202",
+        "usertype": "H&R Block, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Terrance Bygrave",
+        "email": "tbygraveak@samsung.com",
+        "phone": "6802930105",
+        "usertype": "MicroStrategy Incorporated",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Boone Dinsell",
+        "email": "bdinsellal@1688.com",
+        "phone": "3096044887",
+        "usertype": "AzurRx BioPharma, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Alonso Twigg",
+        "email": "atwiggam@phoca.cz",
+        "phone": "5898618403",
+        "usertype": "Cenovus Energy Inc",
+        "location": "NYSE"
+    },
+    {
+        "name": "Gustaf Wasiel",
+        "email": "gwasielan@feedburner.com",
+        "phone": "8465607151",
+        "usertype": "Perficient, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Cad Olivera",
+        "email": "coliveraao@dyndns.org",
+        "phone": "3734523231",
+        "usertype": "Beazer Homes USA, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dorelle McGrorty",
+        "email": "dmcgrortyap@cam.ac.uk",
+        "phone": "9388259286",
+        "usertype": "QUALCOMM Incorporated",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Krissie Geekin",
+        "email": "kgeekinaq@google.pl",
+        "phone": "3476489951",
+        "usertype": "MabVax Therapeutics Holdings, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ewan Kopecka",
+        "email": "ekopeckaar@nhs.uk",
+        "phone": "9881929211",
+        "usertype": "NextEra Energy, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Rurik Willans",
+        "email": "rwillansas@lulu.com",
+        "phone": "6204055564",
+        "usertype": "Q2 Holdings, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Asia Gergely",
+        "email": "agergelyat@google.com.br",
+        "phone": "2262423381",
+        "usertype": "WEC Energy Group, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Sydelle Millett",
+        "email": "smillettau@multiply.com",
+        "phone": "7302956495",
+        "usertype": "Curis, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Adrianne Cartmell",
+        "email": "acartmellav@ustream.tv",
+        "phone": "4944825355",
+        "usertype": "China Fund, Inc. (The)",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lebbie Balaison",
+        "email": "lbalaisonaw@reverbnation.com",
+        "phone": "2369560665",
+        "usertype": "Gladstone Commercial Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Lidia Pedroni",
+        "email": "lpedroniax@aboutads.info",
+        "phone": "9451538218",
+        "usertype": "CorVel Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Row Marcinkus",
+        "email": "rmarcinkusay@amazon.de",
+        "phone": "5014539258",
+        "usertype": "Lantronix, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ulysses McCambridge",
+        "email": "umccambridgeaz@usa.gov",
+        "phone": "4268783193",
+        "usertype": "Globus Maritime Limited",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Sayers Neville",
+        "email": "snevilleb0@tamu.edu",
+        "phone": "1794367348",
+        "usertype": "Aflac Incorporated",
+        "location": "NYSE"
+    },
+    {
+        "name": "Gus Schwander",
+        "email": "gschwanderb1@unesco.org",
+        "phone": "6674719472",
+        "usertype": "Quanta Services, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Cody Pickthall",
+        "email": "cpickthallb2@aol.com",
+        "phone": "9048887217",
+        "usertype": "Woodward, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Elene Braidon",
+        "email": "ebraidonb3@spotify.com",
+        "phone": "7473413891",
+        "usertype": "SandRidge Mississippian Trust I",
+        "location": "NYSE"
+    },
+    {
+        "name": "Terence Dunbleton",
+        "email": "tdunbletonb4@eventbrite.com",
+        "phone": "1443579865",
+        "usertype": "Helix Energy Solutions Group, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Seana Crewes",
+        "email": "screwesb5@sbwire.com",
+        "phone": "2131488882",
+        "usertype": "ProPetro Holding Corp.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Onida Danielou",
+        "email": "odanieloub6@trellian.com",
+        "phone": "4657577126",
+        "usertype": "Astrazeneca PLC",
+        "location": "NYSE"
+    },
+    {
+        "name": "Cleopatra Barcke",
+        "email": "cbarckeb7@networksolutions.com",
+        "phone": "9754666595",
+        "usertype": "PowerShares FTSE RAFI US 1500 Small-Mid Portfolio",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Lionello Bern",
+        "email": "lbernb8@moonfruit.com",
+        "phone": "4451814934",
+        "usertype": "Marcus Corporation (The)",
+        "location": "NYSE"
+    },
+    {
+        "name": "Joanie Tatton",
+        "email": "jtattonb9@salon.com",
+        "phone": "8225955468",
+        "usertype": "Tyler Technologies, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Winona Corneck",
+        "email": "wcorneckba@mozilla.com",
+        "phone": "5393619731",
+        "usertype": "Sajan, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Sheri Spratling",
+        "email": "sspratlingbb@sitemeter.com",
+        "phone": "8132732871",
+        "usertype": "Home Bancorp, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Mayne Jakubovski",
+        "email": "mjakubovskibc@meetup.com",
+        "phone": "5858282075",
+        "usertype": "Santander Holdings USA, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Liva Swaite",
+        "email": "lswaitebd@wisc.edu",
+        "phone": "9368803639",
+        "usertype": "Tupperware Brands Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Deedee Callear",
+        "email": "dcallearbe@va.gov",
+        "phone": "1748719062",
+        "usertype": "RLI Corp.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Nita Ciciura",
+        "email": "nciciurabf@dell.com",
+        "phone": "7296263155",
+        "usertype": "MFA Financial, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Morey Sweetland",
+        "email": "msweetlandbg@mediafire.com",
+        "phone": "8793272738",
+        "usertype": "SunTrust Banks, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Maurits Yaldren",
+        "email": "myaldrenbh@wix.com",
+        "phone": "3606218351",
+        "usertype": "Harsco Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Burton Nisby",
+        "email": "bnisbybi@gov.uk",
+        "phone": "9368142875",
+        "usertype": "Colony Bankcorp, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Ryley Goford",
+        "email": "rgofordbj@europa.eu",
+        "phone": "5315151703",
+        "usertype": "Banco Bradesco Sa",
+        "location": "NYSE"
+    },
+    {
+        "name": "Carmelle Fawthorpe",
+        "email": "cfawthorpebk@chicagotribune.com",
+        "phone": "6682648213",
+        "usertype": "Southwestern Energy Company",
+        "location": "NYSE"
+    },
+    {
+        "name": "Cyrus Adess",
+        "email": "cadessbl@uol.com.br",
+        "phone": "7781025415",
+        "usertype": "Exelixis, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Nananne Americi",
+        "email": "namericibm@columbia.edu",
+        "phone": "2302751506",
+        "usertype": "Wells Fargo & Company",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lenore Eltringham",
+        "email": "leltringhambn@census.gov",
+        "phone": "4421763361",
+        "usertype": "Till Capital Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Doris Driver",
+        "email": "ddriverbo@miitbeian.gov.cn",
+        "phone": "6267926687",
+        "usertype": "Appian Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Mickie Sherlock",
+        "email": "msherlockbp@blogger.com",
+        "phone": "6203153937",
+        "usertype": "Cameco Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Queenie Barbie",
+        "email": "qbarbiebq@cyberchimps.com",
+        "phone": "4809127993",
+        "usertype": "CST Brands, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Gustave Ockland",
+        "email": "gocklandbr@irs.gov",
+        "phone": "2245359168",
+        "usertype": "MSB Financial Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Welbie Wyldes",
+        "email": "wwyldesbs@si.edu",
+        "phone": "8141517829",
+        "usertype": "MFA Financial, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Brana Brettel",
+        "email": "bbrettelbt@tripod.com",
+        "phone": "7354430788",
+        "usertype": "WPP plc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Georgina Kennaway",
+        "email": "gkennawaybu@slate.com",
+        "phone": "8815898068",
+        "usertype": "Infinity Pharmaceuticals, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Emlynn Cottis",
+        "email": "ecottisbv@pcworld.com",
+        "phone": "2624755683",
+        "usertype": "Diamond Hill Investment Group, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Morgen Tuny",
+        "email": "mtunybw@about.com",
+        "phone": "3306920579",
+        "usertype": "Teekay Offshore Partners L.P.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Anna Keenor",
+        "email": "akeenorbx@mtv.com",
+        "phone": "3812054949",
+        "usertype": "Net 1 UEPS Technologies, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Cello Bareford",
+        "email": "cbarefordby@homestead.com",
+        "phone": "3267077700",
+        "usertype": "Putnam Premier Income Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Agneta Klainman",
+        "email": "aklainmanbz@privacy.gov.au",
+        "phone": "2919464345",
+        "usertype": "Chegg, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dita Sneezem",
+        "email": "dsneezemc0@unicef.org",
+        "phone": "4034341786",
+        "usertype": "Electrum Special Acquisition Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Gracie Tozer",
+        "email": "gtozerc1@barnesandnoble.com",
+        "phone": "8203097464",
+        "usertype": "Siliconware Precision Industries Company, Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Jemie Tuttle",
+        "email": "jtuttlec2@wordpress.com",
+        "phone": "2941932159",
+        "usertype": "Fabrinet",
+        "location": "NYSE"
+    },
+    {
+        "name": "Anica Tuffley",
+        "email": "atuffleyc3@google.com.au",
+        "phone": "9526311107",
+        "usertype": "Guess?, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Sascha Elrick",
+        "email": "selrickc4@histats.com",
+        "phone": "6634236367",
+        "usertype": "Kitov Pharmaceuticals Holdings Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Oliy Chesworth",
+        "email": "ochesworthc5@abc.net.au",
+        "phone": "7845731817",
+        "usertype": "WPX Energy, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Flossy Dearden",
+        "email": "fdeardenc6@live.com",
+        "phone": "2661511768",
+        "usertype": "Amphenol Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Hephzibah Canto",
+        "email": "hcantoc7@booking.com",
+        "phone": "8246286330",
+        "usertype": "Unity Bancorp, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Warren Butfield",
+        "email": "wbutfieldc8@rakuten.co.jp",
+        "phone": "9203314785",
+        "usertype": "Parkway, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Hamish Dekeyser",
+        "email": "hdekeyserc9@domainmarket.com",
+        "phone": "4882936860",
+        "usertype": "KBR, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Frasquito Harnor",
+        "email": "fharnorca@npr.org",
+        "phone": "5364357582",
+        "usertype": "Nuveen Quality Preferred Income Fund 2",
+        "location": "NYSE"
+    },
+    {
+        "name": "Clayborn Wrotchford",
+        "email": "cwrotchfordcb@yahoo.co.jp",
+        "phone": "9745465029",
+        "usertype": "China Life Insurance Company Limited",
+        "location": "NYSE"
+    },
+    {
+        "name": "Allegra Grob",
+        "email": "agrobcc@huffingtonpost.com",
+        "phone": "5175657091",
+        "usertype": "Westlake Chemical Partners LP",
+        "location": "NYSE"
+    },
+    {
+        "name": "Lennie Muselli",
+        "email": "lmusellicd@nationalgeographic.com",
+        "phone": "8643919725",
+        "usertype": "PowerShares S&P SmallCap Materials Portfolio",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Nerta Iffe",
+        "email": "niffece@europa.eu",
+        "phone": "7912350211",
+        "usertype": "Bio-Techne Corp",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Annice Scurr",
+        "email": "ascurrcf@theglobeandmail.com",
+        "phone": "6435831200",
+        "usertype": "Commvault Systems, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Elie Penburton",
+        "email": "epenburtoncg@bigcartel.com",
+        "phone": "6759324510",
+        "usertype": "MSG Networks Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Ingar Critchley",
+        "email": "icritchleych@vk.com",
+        "phone": "4625724332",
+        "usertype": "PennyMac Mortgage Investment Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Sigfrid Swayton",
+        "email": "sswaytonci@i2i.jp",
+        "phone": "6128646991",
+        "usertype": "SL Green Realty Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Ryon Grute",
+        "email": "rgrutecj@fastcompany.com",
+        "phone": "9058713561",
+        "usertype": "TPI Composites, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Paige Kempstone",
+        "email": "pkempstoneck@flickr.com",
+        "phone": "4125496875",
+        "usertype": "HealthEquity, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Tybi Revitt",
+        "email": "trevittcl@princeton.edu",
+        "phone": "8275637354",
+        "usertype": "Kansas City Southern",
+        "location": "NYSE"
+    },
+    {
+        "name": "Brittne Snassell",
+        "email": "bsnassellcm@bandcamp.com",
+        "phone": "7816776379",
+        "usertype": "BioSpecifics Technologies Corp",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Drona Keener",
+        "email": "dkeenercn@devhub.com",
+        "phone": "5895482355",
+        "usertype": "Quidel Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Jimmy Twigg",
+        "email": "jtwiggco@rambler.ru",
+        "phone": "8756084299",
+        "usertype": "Customers Bancorp, Inc",
+        "location": "NYSE"
+    },
+    {
+        "name": "Amie Hamshar",
+        "email": "ahamsharcp@wired.com",
+        "phone": "9697998737",
+        "usertype": "La-Z-Boy Incorporated",
+        "location": "NYSE"
+    },
+    {
+        "name": "Camile Drepp",
+        "email": "cdreppcq@upenn.edu",
+        "phone": "4283755766",
+        "usertype": "Ashford Hospitality Trust Inc",
+        "location": "NYSE"
+    },
+    {
+        "name": "Rachael Tripean",
+        "email": "rtripeancr@indiatimes.com",
+        "phone": "2666894963",
+        "usertype": "LyondellBasell Industries NV",
+        "location": "NYSE"
+    },
+    {
+        "name": "Steffen Lynas",
+        "email": "slynascs@pagesperso-orange.fr",
+        "phone": "3791102498",
+        "usertype": "iShares Commodities Select Strategy ETF",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Roseline Alsobrook",
+        "email": "ralsobrookct@fda.gov",
+        "phone": "9536606337",
+        "usertype": "Gridsum Holding Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Gian Pedden",
+        "email": "gpeddencu@lycos.com",
+        "phone": "6811725272",
+        "usertype": "Colony NorthStar, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Kelcy Scad",
+        "email": "kscadcv@irs.gov",
+        "phone": "2849126935",
+        "usertype": "Gazit-Globe Ltd.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Chucho Andraud",
+        "email": "candraudcw@simplemachines.org",
+        "phone": "1045250965",
+        "usertype": "TerraForm Power, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Alison Fleg",
+        "email": "aflegcx@opera.com",
+        "phone": "1907654508",
+        "usertype": "Nivalis Therapeutics, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Felicio Markham",
+        "email": "fmarkhamcy@vistaprint.com",
+        "phone": "1659346693",
+        "usertype": "Alliance HealthCare Services, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Hope Shere",
+        "email": "hsherecz@admin.ch",
+        "phone": "3692128087",
+        "usertype": "Novavax, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Myrtia Sutherley",
+        "email": "msutherleyd0@disqus.com",
+        "phone": "1165152917",
+        "usertype": "ProShares UltraPro QQQ",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Kane Stilliard",
+        "email": "kstilliardd1@feedburner.com",
+        "phone": "6961100127",
+        "usertype": "Lumos Networks Corp.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Dorie Adamiec",
+        "email": "dadamiecd2@altervista.org",
+        "phone": "5806888125",
+        "usertype": "BlackRock Municipal Income Investment Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Ethelbert Driuzzi",
+        "email": "edriuzzid3@pagesperso-orange.fr",
+        "phone": "6205372228",
+        "usertype": "Vident Core US Equity ETF",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Alfonso Brattell",
+        "email": "abrattelld4@a8.net",
+        "phone": "3396715233",
+        "usertype": "Choice Hotels International, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Page Bertolin",
+        "email": "pbertolind5@dedecms.com",
+        "phone": "2001774044",
+        "usertype": "Washington Prime Group Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Ariella Dresche",
+        "email": "adresched6@google.fr",
+        "phone": "1573668679",
+        "usertype": "Atlantic Capital Bancshares, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Keely Ainsley",
+        "email": "kainsleyd7@webeden.co.uk",
+        "phone": "4219835055",
+        "usertype": "American Realty Investors, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Rosco Badger",
+        "email": "rbadgerd8@msu.edu",
+        "phone": "2502349642",
+        "usertype": "Inogen, Inc",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Basilio Bakhrushin",
+        "email": "bbakhrushind9@tinypic.com",
+        "phone": "3299695183",
+        "usertype": "Threshold Pharmaceuticals, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Prent Breckin",
+        "email": "pbreckinda@fda.gov",
+        "phone": "5672797389",
+        "usertype": "Scudder Municiple Income Trust",
+        "location": "NYSE"
+    },
+    {
+        "name": "Brandyn Riehm",
+        "email": "briehmdb@etsy.com",
+        "phone": "9384410676",
+        "usertype": "iShares S&P/Citigroup International Treasury Bond Fund",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Danyette Bernasek",
+        "email": "dbernasekdc@state.gov",
+        "phone": "8559950038",
+        "usertype": "F.N.B. Corporation",
+        "location": "NYSE"
+    },
+    {
+        "name": "Johannah Feldstern",
+        "email": "jfeldsterndd@networkadvertising.org",
+        "phone": "5147931450",
+        "usertype": "First Trust Indxx Global Natural Resources Income ETF",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Keely Paylie",
+        "email": "kpayliede@themeforest.net",
+        "phone": "3061241355",
+        "usertype": "Pacific Drilling S.A.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Peyter Heephy",
+        "email": "pheephydf@sogou.com",
+        "phone": "7795830239",
+        "usertype": "BioTelemetry, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Viki Mannock",
+        "email": "vmannockdg@hc360.com",
+        "phone": "1923255409",
+        "usertype": "Check-Cap Ltd.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Annamarie Marwick",
+        "email": "amarwickdh@phpbb.com",
+        "phone": "5556642151",
+        "usertype": "Big 5 Sporting Goods Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Quillan Trickey",
+        "email": "qtrickeydi@japanpost.jp",
+        "phone": "9066243511",
+        "usertype": "Empire Resorts, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Edee Turgoose",
+        "email": "eturgoosedj@wordpress.com",
+        "phone": "1403837164",
+        "usertype": "Invesco High Income 2023 Target Term Fund",
+        "location": "NYSE"
+    },
+    {
+        "name": "Janeczka Baalham",
+        "email": "jbaalhamdk@de.vu",
+        "phone": "6022007443",
+        "usertype": "Compania Cervecerias Unidas, S.A.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Zarah Reisk",
+        "email": "zreiskdl@sciencedirect.com",
+        "phone": "6633165029",
+        "usertype": "Gabelli Equity Trust, Inc. (The)",
+        "location": "NYSE"
+    },
+    {
+        "name": "Cati McGeachey",
+        "email": "cmcgeacheydm@hao123.com",
+        "phone": "9972194896",
+        "usertype": "TriplePoint Venture Growth BDC Corp.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Chloe Featherby",
+        "email": "cfeatherbydn@nationalgeographic.com",
+        "phone": "5714349443",
+        "usertype": "Tandem Diabetes Care, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Misha Kahane",
+        "email": "mkahanedo@examiner.com",
+        "phone": "8754152747",
+        "usertype": "Sypris Solutions, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Angela Cicccitti",
+        "email": "acicccittidp@tuttocitta.it",
+        "phone": "1065543047",
+        "usertype": "China Advanced Construction Materials Group, Inc.",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Korney Manach",
+        "email": "kmanachdq@theatlantic.com",
+        "phone": "1589612355",
+        "usertype": "PennantPark Investment Corporation",
+        "location": "NASDAQ"
+    },
+    {
+        "name": "Donovan Lovelady",
+        "email": "dloveladydr@weebly.com",
+        "phone": "4629189200",
+        "usertype": "Grana y Montero S.A.A.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Luis Baigent",
+        "email": "lbaigentds@booking.com",
+        "phone": "7572622295",
+        "usertype": "KeyCorp",
+        "location": "NYSE"
+    },
+    {
+        "name": "Chrisy Probbings",
+        "email": "cprobbingsdt@mac.com",
+        "phone": "5612576569",
+        "usertype": "MSG Networks Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Sherye Pyvis",
+        "email": "spyvisdu@theguardian.com",
+        "phone": "2424149377",
+        "usertype": "M.D.C. Holdings, Inc.",
+        "location": "NYSE"
+    },
+    {
+        "name": "Dasya Hendriksen",
+        "email": "dhendriksendv@google.com.au",
+        "phone": "9094584764",
+        "usertype": "AGNC Investment Corp.",
+        "location": "NASDAQ"
+    }
+]

@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation'
 
 import { Dashboard, Components, Files, Inbox, Calendar } from '@/svg/index.ts';
 import { UserList } from '@/components/components.ts'
+import cfxlogo from '@/public/assets/clientflowx_logo.jpeg'
+import Image from 'next/image';
 
 const AdminDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -32,7 +34,7 @@ const AdminDashboard = () => {
   const sidebarItems: SidebarItem[] = [
     {
       title: 'CientFlowX',
-      icon: <div className='text-2xl font-bold text-whitew'>C</div>,
+      icon: <Image className='rounded-full' src={cfxlogo} alt='CFX logo'/>,
       titleVisible: true,
     },
     {

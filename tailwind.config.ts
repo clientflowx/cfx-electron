@@ -16,5 +16,6 @@ const config: Config = {
     },
   },
   plugins: [],
+  // important: '[data-table-library_table]',
 };
 export default config;
