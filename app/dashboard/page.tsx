@@ -58,7 +58,7 @@ const AdminDashboard = () => {
     <div>
       <aside
         id="logo-sidebar"
-        className={`fixed top-0 left-0 z-40 h-screen transition-transform ${isSidebarOpen ? 'w-64' : 'w-16'} cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}
+        className={`fixed top-0 left-0 z-50 h-screen transition-transform ${isSidebarOpen ? 'w-64' : 'w-16'} cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}
         aria-label="Sidebar"
         onMouseEnter={() => setIsSidebarOpen(true)}
         onMouseLeave={() => setIsSidebarOpen(false)}

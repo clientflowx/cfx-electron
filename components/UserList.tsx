@@ -11,6 +11,7 @@ import { Loader } from '@/components/components.ts'
 import { IoSearch } from 'react-icons/io5';
 import { myTheme } from '@/constants/TableStyles';  // custom styling for the react-table component
 import axios from 'axios';
+import NewUserModal from '@/app/dashboard/NewUserModal.tsx';
 
 const UserList = () => {
     const theme = useTheme(myTheme);
@@ -24,6 +25,8 @@ const UserList = () => {
     const [loading, setLoading] = useState(true); // New state to track loading
     const [users, setUsers] = useState([]);
     const data = { users };  // this is used to populate the table
+    const [newUserModal, setNewUserModal] = useState(false);
+
 
     useEffect(() => {
         //fetch admin-users from backend
@@ -59,7 +62,7 @@ const UserList = () => {
         {
             label: 'Action', renderCell: (user: any) => (
                 <div className='flex items-center justify-start gap-3'>
-                    <div className='w-3 h-3 hover:cursor-pointer'><EditPen /></div>
+                    <div className='w-3 h-3 hover:cursor-pointer' onClick={() => setNewUserModal((prevValue) => !prevValue)}><EditPen /></div>
                     <div className='w-3 h-3 hover:cursor-pointer'><Dustbin /></div>
                 </div>
             )
@@ -99,7 +102,7 @@ const UserList = () => {
         return pageButtons;
     };
 
-    return <div className='flex flex-col gap-2'>
+    return <div className='relative flex flex-col gap-2'>
         {/* Filters and Search section */}
         <div className='flex items-center justify-end gap-1 py-2'>
             <div>
@@ -153,7 +156,7 @@ const UserList = () => {
                 />
             </div>
             <div>
-                <button className='text-xs text-white rounded-md px-3 p-1 bg-blue-500'>+ Add Employee</button>
+                <button className='text-xs text-white rounded-md px-3 p-1 bg-blue-500' onClick={() => setNewUserModal((prevValue) => !prevValue)}>+ Add Employee</button>
             </div>
         </div>
 
@@ -199,6 +202,13 @@ const UserList = () => {
                 </div>
             </div>
         }
+
+        {/* newUserModal */}
+        {newUserModal ?
+            <div className='absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-center justify-center'>
+                <NewUserModal setNewUserModal={setNewUserModal} />
+            </div>
+            : ''}
     </div>
 };
 

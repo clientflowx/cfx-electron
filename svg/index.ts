@@ -11,5 +11,8 @@ import Grid from "./Grid";
 import Hamburger from "./Hamburger";
 import EditPen from "./EditPen";
 import Dustbin from "./Dustbin";
+import CrossIcon from "./CrossIcon";
+import UpIcon from "./UpIcon";
+import DownIcon from "./DownIcon";
 
-export { Dashboard, Components, Calendar, Files, Inbox, Notification, List, Mail, Avatar, Grid, Hamburger, EditPen,Dustbin } 
+export { UpIcon, DownIcon, Dashboard, Components, Calendar, Files, Inbox, Notification, List, Mail, Avatar, Grid, Hamburger, EditPen, Dustbin, CrossIcon } 
