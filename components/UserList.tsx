@@ -163,7 +163,6 @@ const UserList = () => {
         {/* Main Table */}
         {loading ? <Loader /> :
             <div>
-                {/* <div className='w-full h-1 bg-white rounded-t'></div> */}
                 <CompactTable
                     columns={COLUMNS}
                     data={{ nodes: users }}

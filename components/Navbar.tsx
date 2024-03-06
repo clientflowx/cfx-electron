@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
         <Avatar />,
         <Grid />,
     ]
-        
+
     return (
         <div className="w-full fixed flex  bg-white z-20 items-center justify-between gap-3 sm:gap-0 py-3 pl-20 px-10 shadow-sm">
             <div className="flex flex-row items-center justify-start gap-3">
@@ -27,8 +27,8 @@ const Navbar: React.FC = () => {
             </div>
             <div className="flex items-center justify-between gap-5 ">
                 <div className="w-6 sm:hidden opacity-60 hover:opacity-100"><Hamburger /></div>
-                {navIcons.map(navItem => (
-                    <div className="relative hidden sm:flex">
+                {navIcons.map((navItem, index) => (
+                    <div className="relative hidden sm:flex" key={index}>
 
                         <div className="absolute -right-1 -top-1 bg-green-600 opacity-95 rounded-full w-2 h-2"></div>
                         <div className="relative font w-6 opacity-40 hover:opacity-90 transition-all cursor-pointer">

@@ -8,15 +8,15 @@ type Props = {
 const NewUserModal: React.FC<Props> = ({ setNewUserModal }) => {
     const [userInfoAccordion, setUserInfoAccordion] = useState(true);
     return (
-        <div className='flex flex-col w-1/2 rounded-md bg-white items-end justify-between'>
-            <div className='p-1 cursor-pointer' onClick={() => setNewUserModal(prevValue => !prevValue)}>
+        <div className='flex flex-col w-1/2 rounded-md bg-white items-start justify-between gap-2 p-2'>
+            <div className='p-1 cursor-pointer flex items-center justify-end w-full' onClick={() => setNewUserModal(prevValue => !prevValue)}>
                 <button className='w-6'><CrossIcon /></button>
             </div>
-            <div className=''>Team Management</div>
+            <div className='w-full px-2'>Team Management</div>
             <div className='w-full'>
-                <form className="px-3 bg-white rounded  ">
-                    <div>
-                        <div className='flex items-center justify-start gap-1 w-full'>
+                <form className="p-2 bg-white rounded  ">
+                    <div className='border p-4 rounded-md shadow'>
+                        <div className='flex items-center justify-start py-5 gap-1 w-full'>
                             <div className='w-5 cursor-pointer' onClick={() => setUserInfoAccordion(prev => !prev)}>{userInfoAccordion ? <DownIcon /> : <UpIcon />}</div>
                             <div>User Info</div>
                         </div>
