@@ -201,7 +201,7 @@ const UserList = () => {
         </div>
         <div>
           <button
-            className="text-xs text-white rounded-md px-3 p-1 bg-blue-500"
+            className="text-xs text-white rounded-md font-semibold px-3 p-1 bg-blue-500"
             onClick={() => setNewUserModal((prevValue) => !prevValue)}
           >
             + Add Employee
