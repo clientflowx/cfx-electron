@@ -4,11 +4,12 @@ import { Avatar, Grid, Hamburger, List, Mail, Notification } from '@/svg/index.t
 
 const Navbar: React.FC = () => {
     const navIcons: JSX.Element[] = [
-        <Notification />,
-        <List />,
-        <Mail />,
-        <Avatar />,
-        <Grid />,
+
+        <Notification key="notifications" />,
+        <List key="list"/>,
+        <Mail key="mail" />,
+        <Avatar key="avatar" />,
+        <Grid key="grid" />,
     ]
 
     return (

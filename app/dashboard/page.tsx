@@ -65,8 +65,8 @@ const AdminDashboard = () => {
       >
         <div className="h-full pb-4 overflow-y-auto bg-gray-700">
           <ul className="space-y-2 font-medium">
-            {sidebarItems.map((item, id) => (
-              <li key={id} onClick={() => setSidebarOption(item.title)}>
+            {sidebarItems.map((item, index) => (
+              <li key={index} onClick={() => setSidebarOption(item.title)}>
                 <div className={`flex items-center p-4 text-gray-300 hover:bg-gray-800 transition-all ${isSidebarOpen ? '' : 'justify-center'} group`}>
                   <div className='w-5 text-white'>
                     {item.icon}
