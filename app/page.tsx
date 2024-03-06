@@ -1,5 +1,9 @@
+import Navbar from "@/components/Navbar";
+
 function Home(): JSX.Element {
 
-  return <h1>Home</h1>;
+  return <h1>
+        <Navbar />
+  </h1>;
 }
 export default Home;

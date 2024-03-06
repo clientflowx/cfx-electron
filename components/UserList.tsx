@@ -41,7 +41,6 @@ const UserList = () => {
                         Authorization: `Bearer ${tokenValue}`
                     }
                 });
-
                 setUsers(response.data?.data?.users);
                 setLoading(false);
             } catch (error) {

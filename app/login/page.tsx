@@ -15,6 +15,7 @@ const SignInForm: React.FC = () => {
         email: '',
         password: '',
     });
+    const [isLoginError, setIsLoginError] = useState(false)
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -39,6 +40,7 @@ const SignInForm: React.FC = () => {
             document.cookie = `token=${adminToken}; expires=${expirationDate.toUTCString()}; path=/; secure; SameSite=Strict`; //save the token in the cookie
 
             //redirect the valid admin user to the dashboard
+            setIsLoginError(false);
             router.push('/dashboard');
 
             //reset the login form
@@ -49,6 +51,7 @@ const SignInForm: React.FC = () => {
 
         } catch (error) {
             console.error('Error submitting form:', error);
+            setIsLoginError(true);
             // alert message functionality can be implemented
         }
         setFormData({
@@ -98,6 +101,7 @@ const SignInForm: React.FC = () => {
                             >
                                 Log in
                             </button>
+                            <div className={`${isLoginError?'':'hidden'} text-red-500 text-sm font-bold`}>Wrong Credentials</div>
                             <p className="text-sm font-light text-gray-500">
                                 Don’t have an account yet? <a href="#" className="font-medium text-primary-600 hover:underline">Sign up</a>
                             </p>

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'
 
 import { Dashboard, Components, Files, Inbox, Calendar } from '@/svg/index.ts';
-import { UserList } from '@/components/components.ts'
+import { UserList,Navbar } from '@/components/components.ts'
 import cfxlogo from '@/public/assets/clientflowx_logo.jpeg'
 import Image from 'next/image';
 
@@ -56,6 +56,7 @@ const AdminDashboard = () => {
 
   return (
     <div>
+      <Navbar/>
       <aside
         id="logo-sidebar"
         className={`fixed top-0 left-0 z-50 h-screen transition-transform ${isSidebarOpen ? 'w-64' : 'w-16'} cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}

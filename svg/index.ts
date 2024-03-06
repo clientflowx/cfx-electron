@@ -14,5 +14,6 @@ import Dustbin from "./Dustbin";
 import CrossIcon from "./CrossIcon";
 import UpIcon from "./UpIcon";
 import DownIcon from "./DownIcon";
+import LockIcon from "./LockIcon";
 
-export { UpIcon, DownIcon, Dashboard, Components, Calendar, Files, Inbox, Notification, List, Mail, Avatar, Grid, Hamburger, EditPen, Dustbin, CrossIcon } 
+export { UpIcon, DownIcon, LockIcon, Dashboard, Components, Calendar, Files, Inbox, Notification, List, Mail, Avatar, Grid, Hamburger, EditPen, Dustbin, CrossIcon } 
