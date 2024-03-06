@@ -42,11 +42,11 @@ const AdminDashboard = () => {
       icon: <Dashboard />,
       titleVisible: true,
     },
-    {
-      title: 'Components',
-      icon: <Components />,
-      titleVisible: true,
-    },
+    // {
+    //   title: 'Components',
+    //   icon: <Components />,
+    //   titleVisible: true,
+    // },
     {
       title: 'Aloha',
       icon: <Inbox />,
