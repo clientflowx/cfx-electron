@@ -66,7 +66,6 @@ const SignInForm: React.FC = () => {
                     setLoginErrorMessage('An error occurred. Please try again later.');
                 }
             }
-
             setFormData({
                 email: '',
                 password: '',

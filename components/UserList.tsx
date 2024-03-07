@@ -17,10 +17,51 @@ import {
   TableNode,
 } from "@table-library/react-table-library/types/table";
 
+interface UserInterface {
+  id: string;
+  name: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string; // Optional phone property
+  permissions: {
+      funnelsEnabled: boolean;
+      dashboardStatsEnabled: boolean;
+      phoneCallEnabled: boolean;
+      workflowsReadOnly: boolean;
+      contactsEnabled: boolean;
+      tagsEnabled: boolean;
+      websitesEnabled: boolean;
+      campaignsReadOnly: boolean;
+      appointmentsEnabled: boolean;
+      assignedDataOnly: boolean;
+      onlineListingsEnabled: boolean;
+      marketingEnabled: boolean;
+      attributionsReportingEnabled: boolean;
+      membershipEnabled: boolean;
+      settingsEnabled: boolean;
+      leadValueEnabled: boolean;
+      opportunitiesEnabled: boolean;
+      reviewsEnabled: boolean;
+      facebookAdsReportingEnabled: boolean;
+      workflowsEnabled: boolean;
+      campaignsEnabled: boolean;
+      conversationsEnabled: boolean;
+      adwordsReportingEnabled: boolean;
+      bulkRequestsEnabled: boolean;
+      triggersEnabled: boolean;
+  };
+  roles: {
+      type: string;
+      role: string;
+      locationIds: string[];
+  };
+}
+
 const UserList = () => {
   const theme = useTheme(myTheme);
   const initialData: Data<TableNode> = {
-    nodes: [], // Provide an empty array or array with TableNode objects
+    nodes: [],
   };
 
   const pagination = usePagination(initialData, {
@@ -29,35 +70,37 @@ const UserList = () => {
       size: 10,
     },
   });
+
   const [pageIndex, setPageIndex] = useState(pagination.state.page);
   const [loading, setLoading] = useState(true); // New state to track loading
   const [users, setUsers] = useState([]);
   const data = { users }; // this is used to populate the table
   const [newUserModal, setNewUserModal] = useState(false);
+  const [userFormData, setUserFormData] = useState<UserInterface>(Object);
 
-    useEffect(() => {
-        //fetch admin-users from backend
-        const getUsers = async () => {
-            try {
-                // Retrieve the bearer token from cookies
-                const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
-                const tokenValue = token ? token.split('=')[1] : '';
-                // Make the request with the bearer token
-                const response = await axios.get('https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-user-list', {
-                    headers: {
-                        Authorization: `Bearer ${tokenValue}`
-                    }
-                });
+  useEffect(() => {
+    //fetch admin-users from backend
+    const getUsers = async () => {
+      try {
+        // Retrieve the bearer token from cookies
+        const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+        const tokenValue = token ? token.split('=')[1] : '';
+        // Make the request with the bearer token
+        const response = await axios.get('https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-user-list', {
+          headers: {
+            Authorization: `Bearer ${tokenValue}`
+          }
+        });
 
-                setUsers(response.data?.data?.users);
-                setLoading(false);
-            } catch (error) {
-                console.error('Error fetching users:', error);
-                setLoading(false);
-            }
-        };
-        getUsers();
-    }, []);
+        setUsers(response.data?.data?.users);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching users:', error);
+        setLoading(false);
+      }
+    };
+    getUsers();
+  }, []);
 
   //table columns
   const COLUMNS = [
@@ -80,7 +123,10 @@ const UserList = () => {
         <div className="flex items-center justify-start gap-3">
           <div
             className="w-3 h-3 hover:cursor-pointer"
-            onClick={() => setNewUserModal((prevValue) => !prevValue)}
+            onClick={() => {
+              setNewUserModal(true);
+              setUserFormData(user);
+            }}
           >
             <EditPen />
           </div>
@@ -115,11 +161,10 @@ const UserList = () => {
       pageButtons.push(
         <button
           key={i}
-          className={`${
-            pagination.state.page === i
-              ? "border-blue-400 border-1 border bg-blue-50"
-              : ""
-          } rounded-sm text-xs text-gray-600 w-6 h-6`}
+          className={`${pagination.state.page === i
+            ? "border-blue-400 border-1 border bg-blue-50"
+            : ""
+            } rounded-sm text-xs text-gray-600 w-6 h-6`}
           onClick={() => {
             setPageIndex(i);
             pagination.fns.onSetPage(i);
@@ -228,11 +273,10 @@ const UserList = () => {
             </span>
             <span className="w-1/2 flex items-start justify-end gap-2">
               <button
-                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${
-                  pagination.state.page <= 0
-                    ? "pointer-events-none opacity-50"
-                    : ""
-                }`}
+                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${pagination.state.page <= 0
+                  ? "pointer-events-none opacity-50"
+                  : ""
+                  }`}
                 onClick={() => {
                   if (pagination.state.page > 0) {
                     pagination.fns.onSetPage(pageIndex - 1);
@@ -248,12 +292,11 @@ const UserList = () => {
                 {pagination.state.getTotalPages(users)}
               </button>
               <button
-                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${
-                  pagination.state.page >=
+                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${pagination.state.page >=
                   pagination.state.getTotalPages(users) - 1
-                    ? "pointer-events-none opacity-50"
-                    : ""
-                }`}
+                  ? "pointer-events-none opacity-50"
+                  : ""
+                  }`}
                 onClick={() => {
                   if (
                     pagination.state.page <
@@ -274,7 +317,7 @@ const UserList = () => {
       {/* newUserModal */}
       {newUserModal ? (
         <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-center justify-center">
-          <NewUserModal setNewUserModal={setNewUserModal} />
+          <NewUserModal setNewUserModal={setNewUserModal} userFormData={userFormData} />
         </div>
       ) : (
         ""
