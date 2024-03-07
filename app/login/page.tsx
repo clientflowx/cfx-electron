@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import axios from 'axios'
+import axios, { AxiosError, isAxiosError } from 'axios'
 import { useRouter } from 'next/navigation'
 
 interface FormData {
@@ -16,6 +16,7 @@ const SignInForm: React.FC = () => {
         password: '',
     });
     const [isLoginError, setIsLoginError] = useState(false)
+    const [loginErrorMessage, setLoginErrorMessage] = useState("")
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -49,16 +50,33 @@ const SignInForm: React.FC = () => {
                 password: '',
             });
 
-        } catch (error) {
+        } catch (error: unknown) {
             console.error('Error submitting form:', error);
             setIsLoginError(true);
-            // alert message functionality can be implemented
-        }
-        setFormData({
-            email: '',
-            password: '',
-        })
+            if (isAxiosError(error)) {
+                const axiosError = error as AxiosError;
+
+                if (error.isAxiosError && error.response && error.response.data) {
+                    // Assert the type of response data
+                    const responseData = error.response.data as { msg: string };
+                    const errorMessage = responseData.msg;
+                    setLoginErrorMessage(errorMessage);
+                } else {
+                    // Handle other types of errors
+                    setLoginErrorMessage('An error occurred. Please try again later.');
+                }
+            }
+
+            setFormData({
+                email: '',
+                password: '',
+            });
+        };
     };
+
+    // Repeated styles
+    const inputStyles = "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5";
+    const buttonStyles = "mt-4 border border-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-4 py-2 text-center mr-2 bg-[#38A0DB] text-white";
 
     return (
         <section className="bg-gray-50 h-full">
@@ -101,7 +119,7 @@ const SignInForm: React.FC = () => {
                             >
                                 Log in
                             </button>
-                            <div className={`${isLoginError?'':'hidden'} text-red-500 text-sm font-bold`}>Wrong Credentials</div>
+                            <div className={`${isLoginError ? '' : 'hidden'} text-red-500 text-sm font-bold`}>{loginErrorMessage}</div>
                             <p className="text-sm font-light text-gray-500">
                                 Don’t have an account yet? <a href="#" className="font-medium text-primary-600 hover:underline">Sign up</a>
                             </p>
@@ -112,9 +130,5 @@ const SignInForm: React.FC = () => {
         </section>
     );
 };
-
-// Repeated styles
-const inputStyles = "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5";
-const buttonStyles = "mt-4 border border-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-4 py-2 text-center mr-2 bg-[#38A0DB] text-white";
 
 export default SignInForm;
