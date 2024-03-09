@@ -1,22 +1,23 @@
-import { useState } from "react";
+// Inside the Toggle component
+
+import React, { useState } from "react";
 
 interface ToggleProps {
   title: string;
-  initialValue: boolean;
-  onChange: (value: boolean) => void;
+  onChange: (permission: string, value: boolean) => void; // Callback function to handle toggle change
 }
 
-const Toggle: React.FC<ToggleProps> = ({ title, initialValue, onChange }) => {
-  const [checked, setChecked] = useState(initialValue);
+const Toggle: React.FC<ToggleProps> = ({ title, onChange }) => {
+  const [checked, setChecked] = useState(false);
 
   const handleChange = () => {
     const newValue = !checked;
     setChecked(newValue);
-    onChange(newValue);
+    onChange(title, newValue); // Invoke the onChange callback with the title and new value
   };
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between gap-2">
       <span className="text-sm font-medium">{title}</span>
       <label className="inline-flex items-center cursor-pointer">
         <input
@@ -32,6 +33,6 @@ const Toggle: React.FC<ToggleProps> = ({ title, initialValue, onChange }) => {
       </label>
     </div>
   );
-}
+};
 
 export default Toggle;

@@ -11,7 +11,8 @@ import { Loader } from "@/components/components.ts";
 import { IoSearch } from "react-icons/io5";
 import { myTheme } from "@/constants/TableStyles"; // custom styling for the react-table component
 import axios from "axios";
-import NewUserModal from "@/app/dashboard/NewUserModal.tsx";
+import UpdateUserModal from "@/app/dashboard/UpdateUserModal";
+import NewUserModal from "@/app/dashboard/NewUserModal";
 import {
   Data,
   TableNode,
@@ -25,36 +26,36 @@ interface UserInterface {
   email: string;
   phone?: string; // Optional phone property
   permissions: {
-      funnelsEnabled: boolean;
-      dashboardStatsEnabled: boolean;
-      phoneCallEnabled: boolean;
-      workflowsReadOnly: boolean;
-      contactsEnabled: boolean;
-      tagsEnabled: boolean;
-      websitesEnabled: boolean;
-      campaignsReadOnly: boolean;
-      appointmentsEnabled: boolean;
-      assignedDataOnly: boolean;
-      onlineListingsEnabled: boolean;
-      marketingEnabled: boolean;
-      attributionsReportingEnabled: boolean;
-      membershipEnabled: boolean;
-      settingsEnabled: boolean;
-      leadValueEnabled: boolean;
-      opportunitiesEnabled: boolean;
-      reviewsEnabled: boolean;
-      facebookAdsReportingEnabled: boolean;
-      workflowsEnabled: boolean;
-      campaignsEnabled: boolean;
-      conversationsEnabled: boolean;
-      adwordsReportingEnabled: boolean;
-      bulkRequestsEnabled: boolean;
-      triggersEnabled: boolean;
+    funnelsEnabled: boolean;
+    dashboardStatsEnabled: boolean;
+    phoneCallEnabled: boolean;
+    workflowsReadOnly: boolean;
+    contactsEnabled: boolean;
+    tagsEnabled: boolean;
+    websitesEnabled: boolean;
+    campaignsReadOnly: boolean;
+    appointmentsEnabled: boolean;
+    assignedDataOnly: boolean;
+    onlineListingsEnabled: boolean;
+    marketingEnabled: boolean;
+    attributionsReportingEnabled: boolean;
+    membershipEnabled: boolean;
+    settingsEnabled: boolean;
+    leadValueEnabled: boolean;
+    opportunitiesEnabled: boolean;
+    reviewsEnabled: boolean;
+    facebookAdsReportingEnabled: boolean;
+    workflowsEnabled: boolean;
+    campaignsEnabled: boolean;
+    conversationsEnabled: boolean;
+    adwordsReportingEnabled: boolean;
+    bulkRequestsEnabled: boolean;
+    triggersEnabled: boolean;
   };
   roles: {
-      type: string;
-      role: string;
-      locationIds: string[];
+    type: string;
+    role: string;
+    locationIds: string[];
   };
 }
 
@@ -75,7 +76,8 @@ const UserList = () => {
   const [loading, setLoading] = useState(true); // New state to track loading
   const [users, setUsers] = useState([]);
   const data = { users }; // this is used to populate the table
-  const [newUserModal, setNewUserModal] = useState(false);
+  const [openNewUserModal, setOpenNewUserModal] = useState(false);
+  const [openUpdateUserModal, setOpenUpdateUserModal] = useState(false);
   const [userFormData, setUserFormData] = useState<UserInterface>(Object);
 
   useEffect(() => {
@@ -124,7 +126,7 @@ const UserList = () => {
           <div
             className="w-3 h-3 hover:cursor-pointer"
             onClick={() => {
-              setNewUserModal(true);
+              setOpenUpdateUserModal(true);
               setUserFormData(user);
             }}
           >
@@ -247,7 +249,7 @@ const UserList = () => {
         <div>
           <button
             className="text-xs text-white rounded-md font-semibold px-3 p-1 bg-blue-500"
-            onClick={() => setNewUserModal((prevValue) => !prevValue)}
+            onClick={() => setOpenNewUserModal(true)}
           >
             + Add Employee
           </button>
@@ -314,10 +316,18 @@ const UserList = () => {
         </div>
       )}
 
-      {/* newUserModal */}
-      {newUserModal ? (
+      {/* update user modal */}
+      {openUpdateUserModal ? (
         <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-center justify-center">
-          <NewUserModal setNewUserModal={setNewUserModal} userFormData={userFormData} />
+          <UpdateUserModal setOpenUpdateUserModal={setOpenUpdateUserModal} userFormData={userFormData} />
+        </div>
+      ) : (
+        ""
+      )}
+      {/* newUserModal */}
+      {openNewUserModal ? (
+        <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-center justify-center">
+          <NewUserModal setOpenNewUserModal={setOpenNewUserModal} />
         </div>
       ) : (
         ""
