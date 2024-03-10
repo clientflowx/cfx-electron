@@ -73,18 +73,45 @@ const UserList = () => {
   });
 
   const [pageIndex, setPageIndex] = useState(pagination.state.page);
-  const [loading, setLoading] = useState(true); // New state to track loading
+  const [loading, setLoading] = useState(false); // New state to track loading
   const [users, setUsers] = useState([]);
   const data = { users }; // this is used to populate the table
   const [openNewUserModal, setOpenNewUserModal] = useState(false);
   const [openUpdateUserModal, setOpenUpdateUserModal] = useState(false);
   const [userFormData, setUserFormData] = useState<UserInterface>(Object);
+  const [loadingMessage, setLoadingMessage] = useState('');
+
+
+  const refreshUserList = async () => {
+    try {
+      // Retrieve the bearer token from cookies
+      setLoading(true);
+      setLoadingMessage('Updating the list');
+      const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+      const tokenValue = token ? token.split('=')[1] : '';
+      // Make the request with the bearer token
+      const response = await axios.get('https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-user-list', {
+        headers: {
+          Authorization: `Bearer ${tokenValue}`
+        }
+      });
+
+      setUsers(response.data?.data?.users);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching users:', error);
+      setLoading(false);
+    }
+  };
+
 
   useEffect(() => {
     //fetch admin-users from backend
     const getUsers = async () => {
       try {
+        setLoading(true);
         // Retrieve the bearer token from cookies
+        setLoadingMessage('Fetching the list');
         const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
         const tokenValue = token ? token.split('=')[1] : '';
         // Make the request with the bearer token
@@ -258,7 +285,10 @@ const UserList = () => {
 
       {/* Main Table */}
       {loading ? (
-        <Loader />
+        <div className="flex flex-col gap-2 items-center justify-between my-40">
+          <Loader />
+          <div className="text-xs font-medium" >{loadingMessage}</div>
+        </div>
       ) : (
         <div>
           <CompactTable
@@ -327,7 +357,7 @@ const UserList = () => {
       {/* newUserModal */}
       {openNewUserModal ? (
         <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-center justify-center">
-          <NewUserModal setOpenNewUserModal={setOpenNewUserModal} />
+          <NewUserModal setOpenNewUserModal={setOpenNewUserModal} refreshUserList={refreshUserList} />
         </div>
       ) : (
         ""

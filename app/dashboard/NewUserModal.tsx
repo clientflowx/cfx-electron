@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CrossIcon, UpIcon, DownIcon, LockIcon, UserIcon } from '@/svg/index.ts';
 import { Toggle } from '@/components/components.ts';
-import axios from 'axios';
+import axios, { AxiosError, isAxiosError } from 'axios';
 import { Loader } from '@/components/components.ts';
 
 interface User {
@@ -71,6 +71,7 @@ const permissionsArrayColumn2 = permissionsArray.slice(Math.ceil(permissionsArra
 
 type Props = {
     setOpenNewUserModal: React.Dispatch<React.SetStateAction<boolean>>;
+    refreshUserList: () => void;
 }
 
 type agencyArray = [
@@ -80,7 +81,7 @@ type agencyArray = [
     }
 ]
 
-const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal }) => {
+const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList }) => {
     const [userInfoAccordion, setUserInfoAccordion] = useState(true);
     const [userPermissionAcc, setUserPermissionAcc] = useState(false);
     const [userRolesAcc, setUserRolesAcc] = useState(false);
@@ -124,6 +125,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal }) => {
     const [PasswordValid, setPasswordValid] = useState<boolean>(false)
     const [loading, setLoading] = useState<boolean>(false)
     const [formSubmissionLoading, setformSubmissionLoading] = useState<boolean>(false);
+    const [formSubmitError, setFormSubmitError] = useState<string>('');
 
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -209,11 +211,21 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal }) => {
             if (response.data.success) {
                 setformSubmissionLoading(false);
                 setOpenNewUserModal(false);
+                setFormSubmitError('');
+                refreshUserList();
+
             }
 
         } catch (error: unknown) {
             setformSubmissionLoading(false);
-            console.log(error);
+            if (isAxiosError(error)) {
+
+                if (error.isAxiosError && error.response && error.response.data) {
+                    setFormSubmitError(error.message);
+                } else {
+                    setFormSubmitError('An error occurred. Please try again later.');
+                }
+            }
         };
     }
 
@@ -376,6 +388,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal }) => {
                                 </svg> : 'Save'}
                         </button>
                     </div>
+                    <div className={`text-xs text-red-500 ${formSubmitError === '' ? 'hidden' : ''}`}>Error adding user: {formSubmitError}</div>
                 </form >
             </div>
         </div >
