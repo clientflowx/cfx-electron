@@ -260,24 +260,6 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                                     />
                                 </div>
                             </div>
-                            {/* <div className='flex w-full gap-2'>
-                                <div className='flex flex-col items-start justify-between gap-1 w-1/2'>
-                                    <label htmlFor="" className='text-xs'>Password</label>
-                                    <input
-                                        type="text"
-                                        className={inputFieldStyle}
-                                        name='phone'
-                                        value={userDetails.password}
-                                        onChange={handleInputChange}
-                                    />
-                                </div>
-                            </div> */}
-                            {/* <div>
-                                <button className='rounded-md text-xs text-white bg-blue-700 p-2 flex items-center justify-between gap-2'>
-                                    <div className='w-4'><LockIcon /></div>
-                                    Forgot Password
-                                </button>
-                            </div> */}
                         </div>
                     </div>
                     {/* user permissions */}
