@@ -213,7 +213,6 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
                 setOpenNewUserModal(false);
                 setFormSubmitError('');
                 refreshUserList();
-
             }
 
         } catch (error: unknown) {
@@ -319,14 +318,14 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
                                 <div className='flex justify-between flex-col gap-1'>
                                     {permissionsArrayColumn1.map((permission, index) => (
                                         <div key={index}>
-                                            <Toggle title={permission} onChange={handleToggleChange} />
+                                            <Toggle title={permission} onChange={handleToggleChange} value={false} />
                                         </div>
                                     ))}
                                 </div>
                                 <div className='flex justify-between flex-col gap-1'>
                                     {permissionsArrayColumn2.map((permission, index) => (
                                         <div key={index}>
-                                            <Toggle title={permission} onChange={handleToggleChange} />
+                                            <Toggle title={permission} onChange={handleToggleChange} value={false} />
                                         </div>
                                     ))}
                                 </div>

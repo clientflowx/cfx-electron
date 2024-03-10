@@ -78,8 +78,49 @@ const UserList = () => {
   const data = { users }; // this is used to populate the table
   const [openNewUserModal, setOpenNewUserModal] = useState(false);
   const [openUpdateUserModal, setOpenUpdateUserModal] = useState(false);
-  const [userFormData, setUserFormData] = useState<UserInterface>(Object);
+  const [userFormData, setUserFormData] = useState<UserInterface>({
+    id: "",
+    name: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: undefined,
+    permissions: {
+      funnelsEnabled: false,
+      dashboardStatsEnabled: false,
+      phoneCallEnabled: false,
+      workflowsReadOnly: false,
+      contactsEnabled: false,
+      tagsEnabled: false,
+      websitesEnabled: false,
+      campaignsReadOnly: false,
+      appointmentsEnabled: false,
+      assignedDataOnly: false,
+      onlineListingsEnabled: false,
+      marketingEnabled: false,
+      attributionsReportingEnabled: false,
+      membershipEnabled: false,
+      settingsEnabled: false,
+      leadValueEnabled: false,
+      opportunitiesEnabled: false,
+      reviewsEnabled: false,
+      facebookAdsReportingEnabled: false,
+      workflowsEnabled: false,
+      campaignsEnabled: false,
+      conversationsEnabled: false,
+      adwordsReportingEnabled: false,
+      bulkRequestsEnabled: false,
+      triggersEnabled: false,
+    },
+    roles: {
+      type: "",
+      role: "",
+      locationIds: [],
+    },
+  });
   const [loadingMessage, setLoadingMessage] = useState('');
+  // console.log(userFormData);
+  
 
 
   const refreshUserList = async () => {
@@ -349,9 +390,9 @@ const UserList = () => {
       {/* update user modal */}
       {openUpdateUserModal ? (
         <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-center justify-center">
-          <UpdateUserModal setOpenUpdateUserModal={setOpenUpdateUserModal} userFormData={userFormData} />
+          <UpdateUserModal setOpenUpdateUserModal={setOpenUpdateUserModal} userFormData={userFormData} refreshUserList={refreshUserList} />
         </div>
-      ) : (
+      ) : ( 
         ""
       )}
       {/* newUserModal */}

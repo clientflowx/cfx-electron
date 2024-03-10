@@ -5,10 +5,11 @@ import React, { useState } from "react";
 interface ToggleProps {
   title: string;
   onChange: (permission: string, value: boolean) => void; // Callback function to handle toggle change
+  value: boolean
 }
 
-const Toggle: React.FC<ToggleProps> = ({ title, onChange }) => {
-  const [checked, setChecked] = useState(false);
+const Toggle: React.FC<ToggleProps> = ({ title, onChange, value }) => {
+  const [checked, setChecked] = useState(value);
 
   const handleChange = () => {
     const newValue = !checked;
