@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'
 
 import { Dashboard, Components, Files, Inbox, Calendar } from '@/svg/index.ts';
-import { UserList,Navbar } from '@/components/components.ts'
+import { UserList, Navbar } from '@/components/components.ts'
 import cfxlogo from '@/public/assets/clientflowx_logo.jpeg'
 import Image from 'next/image';
 
@@ -25,7 +25,7 @@ const AdminDashboard = () => {
     }
   }, []);
 
-  type SidebarItem = {  
+  type SidebarItem = {
     title: string;
     icon: JSX.Element;
     titleVisible: boolean
@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   const sidebarItems: SidebarItem[] = [
     {
       title: 'CientFlowX',
-      icon: <Image className='rounded-full' src={cfxlogo} alt='CFX logo'/>,
+      icon: <Image className='rounded-full' src={cfxlogo} alt='CFX logo' />,
       titleVisible: true,
     },
     {
@@ -42,11 +42,6 @@ const AdminDashboard = () => {
       icon: <Dashboard />,
       titleVisible: true,
     },
-    // {
-    //   title: 'Components',
-    //   icon: <Components />,
-    //   titleVisible: true,
-    // },
     {
       title: 'Aloha',
       icon: <Inbox />,
@@ -56,7 +51,7 @@ const AdminDashboard = () => {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <aside
         id="logo-sidebar"
         className={`fixed top-0 left-0 z-50 h-screen transition-transform ${isSidebarOpen ? 'w-64' : 'w-16'} cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}
@@ -66,21 +61,31 @@ const AdminDashboard = () => {
       >
         <div className="h-full pb-4 overflow-y-auto bg-gray-700">
           <ul className="space-y-2 font-medium">
-            {sidebarItems.map((item, index) => (
-              <li key={index} onClick={() => setSidebarOption(item.title)}>
-                <div className={`flex items-center p-4 text-gray-300 hover:bg-gray-800 transition-all ${isSidebarOpen ? '' : 'justify-center'} group`}>
-                  <div className='w-5 text-white'>
-                    {item.icon}
-                  </div>
-                  <span className={`ms-3 h-5 ${isSidebarOpen || !item.titleVisible ? '' : 'hidden'}`}>
-                    {item.title}
-                  </span>
-                </div>
-              </li>
-            ))}
+            {sidebarItems.map((item, index) => {
+              const userData = JSON.parse(localStorage.getItem('loginUserDetails') || '{}')?.data?.userData;
+              const role = userData?.role;
+              const shouldRenderItem = item.title === 'Manage Users' ? ['owner', 'admin'].includes(role) : true;
+
+              return (
+                shouldRenderItem && (
+                  <li key={index} onClick={() => setSidebarOption(item.title)}>
+                    <div className={`flex items-center p-4 text-gray-300 hover:bg-gray-800 transition-all ${isSidebarOpen ? '' : 'justify-center'} group`}>
+                      <div className='w-5 text-white'>
+                        {item.icon}
+                      </div>
+                      <span className={`ms-3 h-5 ${isSidebarOpen || !item.titleVisible ? '' : 'hidden'}`}>
+                        {item.title}
+                      </span>
+                    </div>
+                  </li>
+                )
+              );
+            })}
           </ul>
+
+
         </div>
-      </aside>
+      </aside >
 
       <div className="relative flex flex-col flex-1 h-full min-h-screen p-10 bg-[#f0f4f7]">
         <div className="sm:ml-10">
@@ -93,10 +98,10 @@ const AdminDashboard = () => {
               <h1 className='my-2 font-bold text-md'>Teams</h1>
               <UserList />
             </div>
-        </div>
+          </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

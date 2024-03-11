@@ -37,6 +37,8 @@ const SignInForm: React.FC = () => {
                 email: formData.email,
             });
             
+            localStorage.setItem('loginUserDetails', JSON.stringify(response));
+
             // console.log(response.data);  // this is the response with the object containing JWT token
             const adminToken = response.data.token;
             

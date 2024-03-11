@@ -18,6 +18,14 @@ import {
   TableNode,
 } from "@table-library/react-table-library/types/table";
 
+type LocationIdsArray = [
+  {
+    id: string,
+    name: string
+  }
+]
+
+
 interface UserInterface {
   id: string;
   name: string;
@@ -120,7 +128,11 @@ const UserList = () => {
   });
   const [loadingMessage, setLoadingMessage] = useState('');
   // console.log(userFormData);
-  
+
+  const [locationIds, setLocationIds] = useState<LocationIdsArray>([{ id: '', name: '' }]);
+  // console.log("location ids: ", locationIds);
+
+
 
 
   const refreshUserList = async () => {
@@ -144,6 +156,27 @@ const UserList = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const getAgencyLocation = async () => {
+      try {
+        const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+        const tokenValue = token ? token.split('=')[1] : '';
+        const response = await axios.
+          get('https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-subaccounts',
+            {
+              headers: {
+                Authorization: `Bearer ${tokenValue}`
+              }
+            });
+        // console.log("user locations: ", response.data?.data);
+        setLocationIds(response.data?.data);
+      } catch (error) {
+        console.log("Error getting location: ", error);
+      }
+    }
+    getAgencyLocation();
+  }, [])
 
 
   useEffect(() => {
@@ -184,9 +217,21 @@ const UserList = () => {
     { label: "Phone", renderCell: (user: any) => user.phone },
     {
       label: "User Type",
-      renderCell: (user: any) => <div>Account-{user.roles.role}</div>,
+      renderCell: (user: any) => <div className="uppercase">{user.roles.role}</div>,
     },
-    { label: "Location", renderCell: (user: any) => user.roles.locationIds },
+    {
+      label: "Location",
+      renderCell: (user: any) => {
+        const location = locationIds.find((location) => user.roles.locationIds.includes(location.id));
+        return location ? (
+          <div className="text-blue-500 break-words flex items-center justify-start font-medium text-xs">
+            <div className="bg-sky-50 rounded-full p-1 px-2">
+              {location.name}
+            </div>
+          </div>
+        ) : '';
+      }
+    },
     {
       label: "Action",
       renderCell: (user: any) => (
@@ -200,7 +245,29 @@ const UserList = () => {
           >
             <EditPen />
           </div>
-          <div className="w-3 h-3 hover:cursor-pointer">
+          <div
+            className="w-3 h-3 hover:cursor-pointer"
+            onClick={async () => {
+              try {
+                const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+                const tokenValue = token ? token.split('=')[1] : '';
+                await axios.delete(`https://cfx-mono-production-5ec7.up.railway.app/api/internal/delete-agency-user/${user.id}`, {
+                  headers: {
+                    Authorization: `Bearer ${tokenValue}`
+                  }
+                })
+                  .then(response => {
+                    console.log('Deleted successfully:', response.data);
+                  })
+                  .catch(error => {
+                    console.error('Error deleting resource:', error.response.data);
+                  });
+                refreshUserList();
+              } catch (error) {
+                console.log(error);
+              }
+            }}
+          >
             <Dustbin />
           </div>
         </div>
@@ -289,9 +356,11 @@ const UserList = () => {
             <option value="" defaultChecked>
               Select Sub Account
             </option>
-            <option value="">option 1</option>
-            <option value="">option 1</option>
-            <option value="">option 1</option>
+            {
+              locationIds.map(({ id, name }) => (
+                <option value={id}>{name}</option>
+              ))
+            }
           </select>
         </div>
         <div className="flex items-center justify-between p-1 bg-white border border-1 outline-none rounded-md gap-1">
@@ -301,7 +370,7 @@ const UserList = () => {
           <input
             type="text"
             className=" text-xs text-gray-400 outline-none"
-            placeholder="Search..."
+            placeholder="Search by name"
           />
         </div>
         <div className="flex items-center justify-between p-1 bg-white border border-1 outline-none rounded-md gap-1">
@@ -311,7 +380,7 @@ const UserList = () => {
           <input
             type="text"
             className=" text-xs text-gray-400 outline-none"
-            placeholder="Search..."
+            placeholder="Search by Location Id"
           />
         </div>
         <div>
@@ -392,7 +461,7 @@ const UserList = () => {
         <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-center justify-center">
           <UpdateUserModal setOpenUpdateUserModal={setOpenUpdateUserModal} userFormData={userFormData} refreshUserList={refreshUserList} />
         </div>
-      ) : ( 
+      ) : (
         ""
       )}
       {/* newUserModal */}
