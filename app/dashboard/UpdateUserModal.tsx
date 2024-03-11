@@ -128,7 +128,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
     const [formSubmissionLoading, setformSubmissionLoading] = useState<boolean>(false);
 
 
-    console.log("user details:", userDetails);
+    console.log("user details before the api call:", userDetails);
 
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -153,22 +153,24 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
         e.preventDefault();
         try {
             setformSubmissionLoading(true);
+            console.log("inside the api call: ", userDetails);
+            console.log("user id inside the api call: ", userDetails.id);
+            
+            
             const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
             const tokenValue = token ? token.split('=')[1] : '';
-            const response = await axios.post('https://cfx-mono-production-5ec7.up.railway.app/api/internal/update-user/1CNd5evx0owacOwIeAdk', userDetails, {
+            const response = await axios.post(`https://cfx-mono-production-5ec7.up.railway.app/api/internal/update-user/${userDetails.id}`, userDetails, {
                 headers: {
                     Authorization: `Bearer ${tokenValue}`
                 }
             });
-            // if (response.data.success) {
-                // setformSubmissionLoading(false);
-                // setOpenUpdateUserModal(false);
-                // setFormSubmitError('');
-                // refreshUserList();
-                // console.log("createdd");
-                console.log(response);
-                
-            // }
+            if (response.data.success) {
+                setformSubmissionLoading(false);
+                setOpenUpdateUserModal(false);
+                setFormSubmitError('');
+                refreshUserList();
+                console.log(response);   
+            }
         } catch (error) {
             // setformSubmissionLoading(false);
             console.log("arey baba:", error);
@@ -188,7 +190,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
     }
 
     return (
-        <div className='flex flex-col w-1/2 h-3/4 overflow-y-auto rounded-md bg-white items-center justify-between gap-2 p-2 custom-scrollbar'>
+        <div className='flex flex-col w-1/2 max-h-3/4 overflow-y-auto rounded-md bg-white items-center justify-start gap-5 p-2 custom-scrollbar'>
             {/* Button to close the modal */}
             <div className='p-1 flex items-center justify-between w-full' >
                 <div className='w-10 p-2 shadow-md rounded-full'><UserIcon /></div>
@@ -268,8 +270,8 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                             <div className='w-5 ' >{userPermissionAcc ? <DownIcon /> : <UpIcon />}</div>
                             <div className='text-sm'>User Permissions</div>
                         </div>
-                        <div className={`${userPermissionAcc ? '' : 'hidden'} flex flex-col items-start justify-end gap-3`}>
-                            <div className='flex justify-between gap-10'>
+                        <div className={`${userPermissionAcc ? '' : 'hidden'} `}>
+                            <div className='flex justify-between'>
                                 <div className='flex justify-between flex-col gap-1'>
                                     {permissionsArrayColumn1.map((permission, index) => (
                                         <div key={index}>

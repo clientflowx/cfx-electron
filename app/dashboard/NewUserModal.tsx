@@ -221,6 +221,8 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
 
                 if (error.isAxiosError && error.response && error.response.data) {
                     setFormSubmitError(error.message);
+                    console.log(error);
+                    
                 } else {
                     setFormSubmitError('An error occurred. Please try again later.');
                 }
@@ -229,7 +231,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
     }
 
     return (
-        <div className='flex flex-col w-1/2 h-3/4 overflow-y-auto rounded-md bg-white items-center justify-between gap-2 p-2 custom-scrollbar'>
+        <div className='flex flex-col w-1/2 max-h-3/4 overflow-y-auto rounded-md bg-white items-center justify-start gap-5 p-2 custom-scrollbar'>
             {/* Button to close the modal */}
             <div className='p-1 flex items-center justify-between w-full' >
                 <div className='w-10 p-2 shadow-md rounded-full'><UserIcon /></div>
@@ -313,8 +315,8 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
                             <div className='w-5 ' >{userPermissionAcc ? <DownIcon /> : <UpIcon />}</div>
                             <div className='text-sm'>User Permissions</div>
                         </div>
-                        <div className={`${userPermissionAcc ? '' : 'hidden'} flex flex-col items-start justify-end gap-3`}>
-                            <div className='flex justify-between gap-10'>
+                        <div className={`${userPermissionAcc ? '' : 'hidden'}`}>
+                            <div className='flex justify-between'>
                                 <div className='flex justify-between flex-col gap-1'>
                                     {permissionsArrayColumn1.map((permission, index) => (
                                         <div key={index}>
