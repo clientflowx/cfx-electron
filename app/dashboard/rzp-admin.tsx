@@ -19,7 +19,7 @@ const RazorpayAdmin = () => {
       [key: string]: string;
     }[]
   >([]);
-  console.log(accounts);
+
   const [showError, setShowError] = React.useState<boolean>(false);
   const [showSuccess, setShowSuccess] = React.useState<boolean>(false);
 
@@ -77,11 +77,11 @@ const RazorpayAdmin = () => {
       return;
     }
     try {
-      const { data } = await axios.post(`${apiUrl}/api/crmalloha/remove-user`, {
-        locationId: value?.id,
-      });
+      const { data } = await axios.delete(
+        `${apiUrl}/api/razorpay/remove-razorpay-user/${value?.id}`
+      );
 
-      if (data?.data?.success) {
+      if (data?.success) {
         alertMsg.current = "Razorpay access revoked";
         fetchAccounts();
         setShowSuccess(true);

@@ -39,7 +39,7 @@ const AllohaAdmin = () => {
         locationId: value?.id,
         name: value?.name,
       });
-      console.log(value);
+
       if (data?.data?.success) {
         alertMsg.current = "Alohaa access granted";
         fetchAllohaAccounts();

@@ -134,7 +134,7 @@ const ManageAdminUser = () => {
           Authorization: `Bearer ${tokenValue}`,
         },
       };
-      console.log("payload", payload);
+
       const { data } = await axios.post(
         `https://cfx-mono-production-5ec7.up.railway.app/api/internal/update-admin-user`,
         {
@@ -145,7 +145,6 @@ const ManageAdminUser = () => {
         },
         config
       );
-      console.log("updated", data);
     } catch (err) {
       console.log(err);
     }
