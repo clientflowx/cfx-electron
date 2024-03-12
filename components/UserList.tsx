@@ -1,10 +1,8 @@
 "use client";
 import { CompactTable } from "@table-library/react-table-library/compact";
 import { useTheme } from "@table-library/react-table-library/theme";
-import { getTheme } from "@table-library/react-table-library/baseline";
 import { usePagination } from "@table-library/react-table-library/pagination";
 import { EditPen, Dustbin } from "@/svg/index.ts";
-
 import { useEffect, useState } from "react";
 import { Loader } from "@/components/components.ts";
 import { IoSearch } from "react-icons/io5";
@@ -12,10 +10,7 @@ import { myTheme } from "@/constants/TableStyles"; // custom styling for the rea
 import axios from "axios";
 import UpdateUserModal from "@/app/dashboard/UpdateUserModal";
 import NewUserModal from "@/app/dashboard/NewUserModal";
-import {
-  Data,
-  TableNode,
-} from "@table-library/react-table-library/types/table";
+import { Data, TableNode } from "@table-library/react-table-library/types/table";
 
 type LocationIdsArray = [
   {
@@ -66,20 +61,13 @@ interface UserInterface {
 }
 
 const UserList = () => {
+
   const theme = useTheme(myTheme);
-  const initialData: Data<TableNode> = {
-    nodes: [],
-  };
-  const pagination = usePagination(initialData, {
-    state: {
-      page: 0,
-      size: 10,
-    },
-  });
+  const initialData: Data<TableNode> = { nodes: [], };
+  const pagination = usePagination(initialData, { state: { page: 0, size: 10, }, });
   const [pageIndex, setPageIndex] = useState(pagination.state.page);
   const [loading, setLoading] = useState(false); // New state to track loading
   const [users, setUsers] = useState([]);
-  const data = { users }; // this is used to populate the table
   const [openNewUserModal, setOpenNewUserModal] = useState(false);
   const [openUpdateUserModal, setOpenUpdateUserModal] = useState(false);
   const [userFormData, setUserFormData] = useState<UserInterface>({
@@ -129,6 +117,11 @@ const UserList = () => {
   const [userTypeFilter, setUserTypeFilter] = useState<string>("all");
   const [subAccountFilter, setSubAccountFilter] = useState<string>("all");
 
+  // console.log("type filter: ", userTypeFilter);
+  // console.log("role filter: ", userRoleFilter);
+  // console.log("sub account filter: ", subAccountFilter);
+
+  //refresh the list and fetch the updated list
   const refreshUserList = async () => {
     try {
       setLoading(true);
@@ -148,6 +141,7 @@ const UserList = () => {
     }
   };
 
+  // fetch the list of sub-accounts
   useEffect(() => {
     const getAgencyLocation = async () => {
       try {
@@ -169,7 +163,7 @@ const UserList = () => {
     getAgencyLocation();
   }, [])
 
-
+  //fethch the list of all agency users
   useEffect(() => {
     const getUsers = async () => {
       try {
@@ -205,7 +199,7 @@ const UserList = () => {
     { label: "Phone", renderCell: (user: any) => user.phone },
     {
       label: "User Type",
-      renderCell: (user: any) => <div className="uppercase">{user.roles.role}</div>,
+      renderCell: (user: any) => <div className="uppercase">account-{user.roles.role}</div>,
     },
     {
       label: "Location",
@@ -263,9 +257,9 @@ const UserList = () => {
     },
   ];
 
-  // pagination pages group
+  // pagination pages group segment
   const renderPageButtons = () => {
-    const totalPages = pagination.state.getTotalPages(users);
+    const totalPages = pagination.state.getTotalPages(filteredUsers.length > 0 ? filteredUsers : users);
     const currentPage = pagination.state.page + 1;
     const maxButtonsToShow = 7;
     const pageButtons = [];
@@ -303,24 +297,16 @@ const UserList = () => {
     return pageButtons;
   };
 
+
   const handleSearchByName = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     const searchedUsers = users.filter((user: UserInterface) => user.name.toLowerCase().includes(value.toLowerCase()));
     setFilteredUsers(searchedUsers);
   };
 
-  // const handleLocationIdSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-  //   const { value } = e.target;
-  //   const searchedUsers = users.filter((user: UserInterface) => {
-  //     return user.roles.locationIds.includes(value);
-  //   });
-  //   setFilteredUsers(searchedUsers);
-  // } 
-
+  //users filtering on the basis of the filters value
   useEffect(() => {
-    // Filter the userList based on the applied filters
     const filteredUsers = users.filter((user: UserInterface) => {
-      // Check if the user matches the applied filters
       const subAccountMatch = subAccountFilter === 'all' || user.roles.locationIds.includes(subAccountFilter);
       const userTypeMatch = userTypeFilter === 'all' || user.roles.type === userTypeFilter;
       const userRoleMatch = userRoleFilter === 'all' || user.roles.role === userRoleFilter;
@@ -338,9 +324,11 @@ const UserList = () => {
     if (name === 'subAccount') setSubAccountFilter(value);
     else if (name === 'userType') setUserTypeFilter(value);
     else if (name === 'userRole') setUserRoleFilter(value);
-  }; 
+  };
+
   return (
     <div className="relative flex flex-col gap-2">
+
       {/* Filters and Search section */}
       <div className="flex items-center justify-end gap-1 py-2">
         <div>
@@ -458,18 +446,18 @@ const UserList = () => {
               <div className="flex flex-wrap gap-1">{renderPageButtons()}</div>
               <div className="rounded-sm text-xs text-gray-600">...</div>
               <button className="rounded-sm text-xs text-gray-600 w-6 h-6">
-                {pagination.state.getTotalPages(users)}
+                {pagination.state.getTotalPages(filteredUsers.length > 0 ? filteredUsers : users)}
               </button>
               <button
                 className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${pagination.state.page >=
-                  pagination.state.getTotalPages(users) - 1
+                  pagination.state.getTotalPages(filteredUsers.length > 0 ? filteredUsers : users) - 1
                   ? "pointer-events-none opacity-50"
                   : ""
                   }`}
                 onClick={() => {
                   if (
                     pagination.state.page <
-                    pagination.state.getTotalPages(users) - 1
+                    pagination.state.getTotalPages(filteredUsers.length > 0 ? filteredUsers : users) - 1
                   ) {
                     pagination.fns.onSetPage(pageIndex + 1);
                     setPageIndex(pageIndex + 1);
