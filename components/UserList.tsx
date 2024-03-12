@@ -5,7 +5,6 @@ import { getTheme } from "@table-library/react-table-library/baseline";
 import { usePagination } from "@table-library/react-table-library/pagination";
 import { EditPen, Dustbin } from "@/svg/index.ts";
 
-import nodes from "@/constants/DummyData.json"; //dummy data
 import { useEffect, useState } from "react";
 import { Loader } from "@/components/components.ts";
 import { IoSearch } from "react-icons/io5";
@@ -24,7 +23,6 @@ type LocationIdsArray = [
     name: string
   }
 ]
-
 
 interface UserInterface {
   id: string;
@@ -72,14 +70,12 @@ const UserList = () => {
   const initialData: Data<TableNode> = {
     nodes: [],
   };
-
   const pagination = usePagination(initialData, {
     state: {
       page: 0,
       size: 10,
     },
   });
-
   const [pageIndex, setPageIndex] = useState(pagination.state.page);
   const [loading, setLoading] = useState(false); // New state to track loading
   const [users, setUsers] = useState([]);
@@ -127,28 +123,23 @@ const UserList = () => {
     },
   });
   const [loadingMessage, setLoadingMessage] = useState('');
-  // console.log(userFormData);
-
   const [locationIds, setLocationIds] = useState<LocationIdsArray>([{ id: '', name: '' }]);
-  // console.log("location ids: ", locationIds);
-
-
-
+  const [filteredUsers, setFilteredUsers] = useState([]);
+  const [userRoleFilter, setUserRoleFilter] = useState<string>("all");
+  const [userTypeFilter, setUserTypeFilter] = useState<string>("all");
+  const [subAccountFilter, setSubAccountFilter] = useState<string>("all");
 
   const refreshUserList = async () => {
     try {
-      // Retrieve the bearer token from cookies
       setLoading(true);
       setLoadingMessage('Updating the list');
       const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
       const tokenValue = token ? token.split('=')[1] : '';
-      // Make the request with the bearer token
       const response = await axios.get('https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-user-list', {
         headers: {
           Authorization: `Bearer ${tokenValue}`
         }
       });
-
       setUsers(response.data?.data?.users);
       setLoading(false);
     } catch (error) {
@@ -180,11 +171,9 @@ const UserList = () => {
 
 
   useEffect(() => {
-    //fetch admin-users from backend
     const getUsers = async () => {
       try {
         setLoading(true);
-        // Retrieve the bearer token from cookies
         setLoadingMessage('Fetching the list');
         const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
         const tokenValue = token ? token.split('=')[1] : '';
@@ -194,7 +183,6 @@ const UserList = () => {
             Authorization: `Bearer ${tokenValue}`
           }
         });
-
         setUsers(response.data?.data?.users);
         setLoading(false);
       } catch (error) {
@@ -315,45 +303,83 @@ const UserList = () => {
     return pageButtons;
   };
 
+  const handleSearchByName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    const searchedUsers = users.filter((user: UserInterface) => user.name.toLowerCase().includes(value.toLowerCase()));
+    setFilteredUsers(searchedUsers);
+  };
+
+  // const handleLocationIdSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const { value } = e.target;
+  //   const searchedUsers = users.filter((user: UserInterface) => {
+  //     return user.roles.locationIds.includes(value);
+  //   });
+  //   setFilteredUsers(searchedUsers);
+  // } 
+
+  useEffect(() => {
+    // Filter the userList based on the applied filters
+    const filteredUsers = users.filter((user: UserInterface) => {
+      // Check if the user matches the applied filters
+      const subAccountMatch = subAccountFilter === 'all' || user.roles.locationIds.includes(subAccountFilter);
+      const userTypeMatch = userTypeFilter === 'all' || user.roles.type === userTypeFilter;
+      const userRoleMatch = userRoleFilter === 'all' || user.roles.role === userRoleFilter;
+
+      // Return true if all filters match, otherwise false
+      return subAccountMatch && userTypeMatch && userRoleMatch;
+    });
+    // Update state with the filtered users
+    setFilteredUsers(filteredUsers);
+  }, [subAccountFilter, userTypeFilter, userRoleFilter, UserList]);
+
+
+  const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    if (name === 'subAccount') setSubAccountFilter(value);
+    else if (name === 'userType') setUserTypeFilter(value);
+    else if (name === 'userRole') setUserRoleFilter(value);
+  }; 
   return (
     <div className="relative flex flex-col gap-2">
       {/* Filters and Search section */}
       <div className="flex items-center justify-end gap-1 py-2">
         <div>
           <select
-            name=""
+            name="userType"
             id=""
             className="p-1 border border-1 outline-none rounded-md text-xs text-gray-400"
+            onChange={handleFilterChange}
           >
-            <option value="" defaultChecked>
+            <option value="all" defaultChecked>
               Select User Type
             </option>
-            <option value="">option 1</option>
-            <option value="">option 1</option>
-            <option value="">option 1</option>
+            <option value="agency">agency</option>
+            <option value="account">account</option>
           </select>
         </div>
         <div>
           <select
-            name=""
+            name="userRole"
             id=""
             className="p-1 border border-1 outline-none rounded-md text-xs text-gray-400"
+            onChange={handleFilterChange}
           >
-            <option value="" defaultChecked>
+            <option value="all" defaultChecked>
               Select User Role
             </option>
-            <option value="">option 1</option>
-            <option value="">option 1</option>
-            <option value="">option 1</option>
+            <option value="owner">owner</option>
+            <option value="admin">admin</option>
+            <option value="user">user</option>
           </select>
         </div>
         <div>
           <select
-            name=""
+            name="subAccount"
             id=""
             className="p-1 border border-1 outline-none rounded-md text-xs text-gray-400"
+            onChange={handleFilterChange}
           >
-            <option value="" defaultChecked>
+            <option value="all" defaultChecked>
               Select Sub Account
             </option>
             {
@@ -371,6 +397,7 @@ const UserList = () => {
             type="text"
             className=" text-xs text-gray-400 outline-none"
             placeholder="Search by name"
+            onChange={handleSearchByName}
           />
         </div>
         <div className="flex items-center justify-between p-1 bg-white border border-1 outline-none rounded-md gap-1">
@@ -403,7 +430,7 @@ const UserList = () => {
         <div>
           <CompactTable
             columns={COLUMNS}
-            data={{ nodes: users }}
+            data={{ nodes: filteredUsers.length > 0 ? filteredUsers : users }}
             theme={theme}
             pagination={pagination}
           />

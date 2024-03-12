@@ -128,7 +128,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
     const [formSubmitError, setFormSubmitError] = useState<string>('');
 
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
 
