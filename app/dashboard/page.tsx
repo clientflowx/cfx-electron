@@ -8,6 +8,8 @@ import { Dashboard, Components, Files, Inbox, Calendar } from "@/svg/index.ts";
 import { UserList, Navbar, ManageAdminUser } from "@/components/components.ts";
 import cfxlogo from "@/public/assets/clientflowx_logo.jpeg";
 import Image from "next/image";
+import AllohaAdmin from "./alohaa-admin";
+import RazorpayAdmin from "./rzp-admin";
 
 const AdminDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -53,8 +55,19 @@ const AdminDashboard = () => {
       icon: <Dashboard />,
       titleVisible: true,
     },
+    {
+      title: "Manage Alohaa",
+      icon: <Dashboard />,
+      titleVisible: true,
+    },
+    {
+      title: "Manage Razorpay",
+      icon: <Dashboard />,
+      titleVisible: true,
+    },
   ];
 
+  console.log(process.browser);
   return (
     <div>
       <Navbar />
@@ -71,7 +84,7 @@ const AdminDashboard = () => {
           <ul className="space-y-2 font-medium">
             {sidebarItems.map((item, index) => {
               const userData = JSON.parse(
-                localStorage.getItem("loginUserDetails") || "{}"
+                window.localStorage.getItem("loginUserDetails") || "{}"
               )?.data?.userData;
               const role = userData?.role;
               const shouldRenderItem =
@@ -127,6 +140,18 @@ const AdminDashboard = () => {
               <h1 className="my-2 font-bold text-md">Manage Admins</h1>
               <ManageAdminUser />
             </div>
+            <div
+              className={`${sidebarOption === "Manage Alohaa" ? "" : "hidden"}`}
+            >
+              <h1 className="my-2 font-bold text-md">Manage Admins</h1>
+              <AllohaAdmin />
+            </div>
+            {sidebarOption === "Manage Razorpay" && (
+              <div>
+                <h1 className="my-2 font-bold text-md">Manage Admins</h1>
+                <RazorpayAdmin />
+              </div>
+            )}
           </div>
         </div>
       </div>
