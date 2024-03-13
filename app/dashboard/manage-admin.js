@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { Loader } from "@/components/components.ts";
 import axios from "axios";
+import NewAdminModal from "./NewAdminModal";
+
 const AdminUserItem = ({ item, onUpdate }) => {
   const { _id, name, email, role } = item || {};
   const [selectedRole, setSelectedRole] = useState(role);
@@ -95,9 +97,12 @@ const AdminUserItem = ({ item, onUpdate }) => {
     </div>
   );
 };
+
 const ManageAdminUser = () => {
   const [adminData, setAdminData] = useState([]);
   const [loading, setLoading] = useState(true); // New state to track loading
+  const [openAddAdminModal, setOpenAddAdminModal] = useState(false);
+
   const fetchAdminList = async () => {
     try {
       const token = document.cookie
@@ -155,16 +160,13 @@ const ManageAdminUser = () => {
   }, []);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+    <div className="flex flex-col w-full relative">
       {loading ? (
         <Loader />
       ) : (
         <div>
-          <div
-            className="flex justify-end"
-            style={{ marginBottom: "30px", marginTop: "-30px" }}
-          >
-            <button className="bg-blue-500 text-white py-2 px-10 rounded flex items-center">
+          <div className="flex justify-end mb-8 ">
+            <button className="bg-blue-500 text-white py-2 px-10 rounded flex items-center" onClick={() => setOpenAddAdminModal(true)}>
               Add Admin User
             </button>
           </div>
@@ -174,6 +176,9 @@ const ManageAdminUser = () => {
             ))}
         </div>
       )}
+      <div className={`${openAddAdminModal ? "" : "hidden"} absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-center justify-center`}>
+        <NewAdminModal setOpenAddAdminModal={setOpenAddAdminModal} fetchAdminList={fetchAdminList} />
+      </div>
     </div>
   );
 };

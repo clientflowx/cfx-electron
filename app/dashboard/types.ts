@@ -4,4 +4,10 @@ type AccType = {
   id: string;
 };
 
-export type { AccType };
+type AdminUser = {
+  name: string,
+  email: string,
+  role: string
+}
+
+export type { AccType, AdminUser };

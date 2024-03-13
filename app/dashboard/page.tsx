@@ -1,10 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-// import { Redirect } from 'react-router-dom'; // Import Redirect
 import { useRouter } from "next/navigation";
-
-import { Dashboard, Components, Files, Inbox, Calendar } from "@/svg/index.ts";
+import { Dashboard, AdminUser, RazorPay,Alohaa } from "@/svg/index.ts";
 import { UserList, Navbar, ManageAdminUser } from "@/components/components.ts";
 import cfxlogo from "@/public/assets/clientflowx_logo.jpeg";
 import Image from "next/image";
@@ -46,36 +44,29 @@ const AdminDashboard = () => {
       titleVisible: true,
     },
     {
-      title: "Aloha",
-      icon: <Inbox />,
-      titleVisible: true,
-    },
-    {
       title: "Manage Admin Users",
-      icon: <Dashboard />,
+      icon: <AdminUser />,
       titleVisible: true,
     },
     {
       title: "Manage Alohaa",
-      icon: <Dashboard />,
+      icon: <Alohaa />,
       titleVisible: true,
     },
     {
       title: "Manage Razorpay",
-      icon: <Dashboard />,
+      icon: <RazorPay />,
       titleVisible: true,
     },
   ];
 
-  console.log(process.browser);
   return (
     <div>
       <Navbar />
       <aside
         id="logo-sidebar"
-        className={`fixed top-0 left-0 z-50 h-screen transition-transform ${
-          isSidebarOpen ? "w-64" : "w-16"
-        } cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}
+        className={`fixed top-0 left-0 z-50 h-screen transition-transform ${isSidebarOpen ? "w-64" : "w-16"
+          } cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}
         aria-label="Sidebar"
         onMouseEnter={() => setIsSidebarOpen(true)}
         onMouseLeave={() => setIsSidebarOpen(false)}
@@ -96,15 +87,13 @@ const AdminDashboard = () => {
                 shouldRenderItem && (
                   <li key={index} onClick={() => setSidebarOption(item.title)}>
                     <div
-                      className={`flex items-center p-4 text-gray-300 hover:bg-gray-800 transition-all ${
-                        isSidebarOpen ? "" : "justify-center"
-                      } group`}
+                      className={`flex items-center p-4 text-gray-300 hover:bg-gray-800 transition-all ${isSidebarOpen ? "" : "justify-center"
+                        } group`}
                     >
                       <div className="w-5 text-white">{item.icon}</div>
                       <span
-                        className={`ms-3 h-5 ${
-                          isSidebarOpen || !item.titleVisible ? "" : "hidden"
-                        }`}
+                        className={`ms-3 h-5 ${isSidebarOpen || !item.titleVisible ? "" : "hidden"
+                          }`}
                       >
                         {item.title}
                       </span>
@@ -133,9 +122,8 @@ const AdminDashboard = () => {
               <UserList />
             </div>
             <div
-              className={`${
-                sidebarOption === "Manage Admin Users" ? "" : "hidden"
-              }`}
+              className={`${sidebarOption === "Manage Admin Users" ? "" : "hidden"
+                }`}
             >
               <h1 className="my-2 font-bold text-md">Manage Admins</h1>
               <ManageAdminUser />
