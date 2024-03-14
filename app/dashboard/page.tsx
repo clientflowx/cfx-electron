@@ -78,7 +78,7 @@ const AdminDashboard = () => {
           <ul className="space-y-2 font-medium">
             {sidebarItems.map((item, index) => {
               const userData = JSON.parse(
-                window?.localStorage?.getItem("loginUserDetails") || "{}"
+                localStorage?.getItem("loginUserDetails") || "{}"
               )?.data?.userData;
               const role = userData?.role;
               const shouldRenderItem =
