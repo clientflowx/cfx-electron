@@ -128,7 +128,33 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
     const [formSubmitError, setFormSubmitError] = useState<string>('');
 
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange: React.ChangeEventHandler<HTMLInputElement> | undefined = (e) => {
+        const { name, value } = e.target;
+        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+
+        // Check if the input field is for the password
+        if (name === 'password') {
+            if (!passwordRegex.test(value)) {
+                setPasswordValid(false);
+            }
+            else setPasswordValid(true);
+        }
+
+        if (name === 'locationIds') {
+            setNewUserData(prevData => ({
+                ...prevData,
+                locationIds: [...prevData.locationIds, value],
+            }))
+        }
+        else {
+            setNewUserData(prevData => ({
+                ...prevData,
+                [name]: value
+            }));
+        }
+    };
+    
+    const handleSelectChange: React.ChangeEventHandler<HTMLSelectElement> | undefined = (e) => {
         const { name, value } = e.target;
         const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
 
@@ -222,7 +248,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
                 if (error.isAxiosError && error.response && error.response.data) {
                     setFormSubmitError(error.message);
                     console.log(error);
-                    
+
                 } else {
                     setFormSubmitError('An error occurred. Please try again later.');
                 }
@@ -343,7 +369,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
                         <div className={`${userRolesAcc ? '' : 'hidden'} flex flex-col items-start justify-between gap-3`}>
                             <div className='flex flex-col w-full items-start justify-between gap-1 text-xs'>
                                 <label htmlFor="" className='text-xs'>User Type</label>
-                                <select name="type" id="" className={selectFieldStyle} onChange={handleInputChange} required>
+                                <select name="type" id="" className={selectFieldStyle} onChange={handleSelectChange} required>
                                     <option value="">Select type</option>
                                     <option value="account">Account</option>
                                     {/* Add other options as needed */}
@@ -352,7 +378,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
 
                             <div className='flex flex-col w-full items-start justify-between gap-1 text-xs'>
                                 <label htmlFor="role" className='text-xs'>User Role</label>
-                                <select name="role" id="role" className={selectFieldStyle} onChange={handleInputChange} required>
+                                <select name="role" id="role" className={selectFieldStyle} onChange={handleSelectChange} required>
                                     <option value="">Select Role</option>
                                     <option value="admin">Admin</option>
                                     <option value="user">User</option>
@@ -361,7 +387,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
 
                             <div className='flex flex-col w-full items-start justify-between gap-1 text-xs'>
                                 <label htmlFor="" className='text-xs'>Add Sub Accounts</label>
-                                <select name="locationIds" id="" className={selectFieldStyle} onChange={handleInputChange}>
+                                <select name="locationIds" id="" className={selectFieldStyle} onChange={handleSelectChange}>
                                     {loading ?
                                         <option><Loader /></option> :
                                         agencyLocation?.map((location, index) => (

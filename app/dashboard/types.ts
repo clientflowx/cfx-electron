@@ -53,4 +53,5 @@ type Permissions = {
   triggersEnabled: boolean;
 }
 
+
 export type {Permissions, AccType, AdminUser,User };

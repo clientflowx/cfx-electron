@@ -1,10 +1,48 @@
 // Inside the Toggle component
 
 import React, { useState } from "react";
+import { Permissions } from "@/app/dashboard/types";
+
+
+interface User {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  type: string;
+  role: string;
+  locationIds: string[];
+  permissions: {
+    campaignsEnabled: boolean;
+    campaignsReadOnly: boolean;
+    contactsEnabled: boolean;
+    workflowsEnabled: boolean;
+    triggersEnabled: boolean;
+    funnelsEnabled: boolean;
+    websitesEnabled: boolean;
+    opportunitiesEnabled: boolean;
+    dashboardStatsEnabled: boolean;
+    bulkRequestsEnabled: boolean;
+    appointmentsEnabled: boolean;
+    reviewsEnabled: boolean;
+    onlineListingsEnabled: boolean;
+    phoneCallEnabled: boolean;
+    conversationsEnabled: boolean;
+    assignedDataOnly: boolean;
+    adwordsReportingEnabled: boolean;
+    membershipEnabled: boolean;
+    facebookAdsReportingEnabled: boolean;
+    attributionsReportingEnabled: boolean;
+    settingsEnabled: boolean;
+    tagsEnabled: boolean;
+    leadValueEnabled: boolean;
+    marketingEnabled: boolean;
+  };
+}
 
 interface ToggleProps {
   title: string;
-  onChange: (permission: string, value: boolean) => void; // Callback function to handle toggle change
+  onChange: (permission: keyof User['permissions'], value: boolean) => void; // Callback function to handle toggle change
   value: boolean
 }
 
@@ -14,7 +52,7 @@ const Toggle: React.FC<ToggleProps> = ({ title, onChange, value }) => {
   const handleChange = () => {
     const newValue = !checked;
     setChecked(newValue);
-    onChange(title, newValue); // Invoke the onChange callback with the title and new value
+    onChange(title as keyof User['permissions'], newValue); // Invoke the onChange callback with the title and new value
   };
 
   return (
