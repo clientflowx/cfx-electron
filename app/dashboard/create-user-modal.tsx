@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import { CrossIcon, UpIcon, DownIcon, LockIcon, UserIcon } from '@/svg/index.ts';
 import Toggle from '@/components/Toggle';
@@ -153,7 +154,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
             }));
         }
     };
-    
+
     const handleSelectChange: React.ChangeEventHandler<HTMLSelectElement> | undefined = (e) => {
         const { name, value } = e.target;
         const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;

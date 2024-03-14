@@ -63,6 +63,14 @@ const AdminDashboard = () => {
     },
   ];
 
+  const returnUserData = () => {
+    if (window === undefined) return {};
+    return JSON.parse(
+      localStorage?.getItem("loginUserDetails") || "{}"
+    )?.data?.userData;
+  }
+
+
   return (
     <div>
       <Navbar />
@@ -77,9 +85,7 @@ const AdminDashboard = () => {
         <div className="h-full pb-4 overflow-y-auto bg-gray-700">
           <ul className="space-y-2 font-medium">
             {sidebarItems.map((item, index) => {
-              const userData = JSON.parse(
-                localStorage?.getItem("loginUserDetails") || "{}"
-              )?.data?.userData;
+              const userData = returnUserData();
               const role = userData?.role;
               const shouldRenderItem =
                 item.title === "Manage Users"
@@ -114,7 +120,7 @@ const AdminDashboard = () => {
           <div className={`rounded-lg mt-14`}>
             <div className={` ${sidebarOption === "ClientFlowX" ? "" : "hidden"}`}>
               {/* <h1 className="text-2xl font-bold text-gray-700 my-6">Dashboard</h1> */}
-              <HomePage/>
+              <HomePage />
             </div>
             <div
               className={`${sidebarOption === "Manage Users" ? "" : "hidden"}`}
