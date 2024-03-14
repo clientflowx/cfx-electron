@@ -64,12 +64,13 @@ const AdminDashboard = () => {
   ];
 
   const returnUserData = () => {
-    if (window === undefined) return {};
-    return JSON.parse(
-      localStorage?.getItem("loginUserDetails") || "{}"
-    )?.data?.userData;
+    // if (window === undefined) return {};
+    if (process.browser) {
+      return JSON.parse(
+        localStorage?.getItem("loginUserDetails") || "{}"
+      )?.data?.userData;
+    }
   }
-
 
   return (
     <div>
