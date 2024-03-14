@@ -2,7 +2,6 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios, { AxiosError, isAxiosError } from 'axios'
 import { useRouter } from 'next/navigation'
-import { Loader } from '@/components/components.ts'
 
 interface FormData {
     email: string;
