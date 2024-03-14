@@ -117,6 +117,7 @@ const UserList = () => {
   const [userRoleFilter, setUserRoleFilter] = useState<string>("all");
   const [userTypeFilter, setUserTypeFilter] = useState<string>("all");
   const [subAccountFilter, setSubAccountFilter] = useState<string>("all");
+  const [noRecordFound, setNoRecordFound] = useState<boolean>(false);
 
   // console.log("type filter: ", userTypeFilter);
   // console.log("role filter: ", userRoleFilter);
@@ -316,6 +317,9 @@ const UserList = () => {
       return subAccountMatch && userTypeMatch && userRoleMatch;
     });
     // Update state with the filtered users
+    if (filteredUsers.length == 0) {
+      setNoRecordFound(true);
+    }
     setFilteredUsers(filteredUsers);
   }, [subAccountFilter, userTypeFilter, userRoleFilter, UserList]);
 
@@ -373,7 +377,7 @@ const UserList = () => {
             </option>
             {
               locationIds.map(({ id, name }) => (
-                <option value={id}>{name}</option>
+                <option value={id} key={id}>{name}</option>
               ))
             }
           </select>
