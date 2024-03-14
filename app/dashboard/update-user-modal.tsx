@@ -1,44 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { CrossIcon, UpIcon, DownIcon, LockIcon, UserIcon } from '@/svg/index.ts';
-import { Toggle } from '@/components/components.ts';
-import axios, { AxiosError, isAxiosError } from 'axios';
-import { Loader } from '@/components/components.ts';
+import Toggle from '@/components/Toggle';
+import axios, { isAxiosError } from 'axios';
+import { User, Permissions } from './types';
 
-interface User {
-    firstName: string;
-    lastName: string;
-    email: string;
-    password: string;
-    type: string;
-    role: string;
-    locationIds: string[];
-    permissions: {
-        campaignsEnabled: boolean;
-        campaignsReadOnly: boolean;
-        contactsEnabled: boolean;
-        workflowsEnabled: boolean;
-        triggersEnabled: boolean;
-        funnelsEnabled: boolean;
-        websitesEnabled: boolean;
-        opportunitiesEnabled: boolean;
-        dashboardStatsEnabled: boolean;
-        bulkRequestsEnabled: boolean;
-        appointmentsEnabled: boolean;
-        reviewsEnabled: boolean;
-        onlineListingsEnabled: boolean;
-        phoneCallEnabled: boolean;
-        conversationsEnabled: boolean;
-        assignedDataOnly: boolean;
-        adwordsReportingEnabled: boolean;
-        membershipEnabled: boolean;
-        facebookAdsReportingEnabled: boolean;
-        attributionsReportingEnabled: boolean;
-        settingsEnabled: boolean;
-        tagsEnabled: boolean;
-        leadValueEnabled: boolean;
-        marketingEnabled: boolean;
-    };
+type Props = {
+    setOpenUpdateUserModal: React.Dispatch<React.SetStateAction<boolean>>;
+    userFormData: User;
+    refreshUserList: () => void;
 }
+
+const toggleButtonHeaders: string[] = [
+    "Dashboard Stats",
+    "Appointments",
+    "Campaigns",
+    "Bulk Requests",
+    "Triggers",
+    "Funnels",
+    "Opportunities",
+    "Conversations",
+    "Contacts",
+    "Reviews",
+    "Online Listings",
+    "Membership",
+    "Communities",
+    "Settings",
+    "Only Assigned Data",
+    "Tags",
+    "Lead Value",
+    "Marketing",
+    "Websites",
+    "Adwords Reporting",
+    "Facebook Ads",
+    "Call Reporting",
+    "Reporting",
+    "Attribution Reporting",
+    "Agent Reporting",
+    "Social Planner",
+    "Workflows",
+    "Blogging",
+    "Affiliate Manager",
+    "Content Al",
+    "Payments",
+    "Invoicing",
+    "Record Payment",
+    "Payment Refund",
+    "Cancel Subscription",
+];
 
 const permissionsArray: string[] = [
     'campaignsEnabled',
@@ -69,165 +77,74 @@ const permissionsArray: string[] = [
 const permissionsArrayColumn1 = permissionsArray.slice(0, Math.ceil(permissionsArray.length / 2));
 const permissionsArrayColumn2 = permissionsArray.slice(Math.ceil(permissionsArray.length / 2));
 
-type Props = {
-    setOpenNewUserModal: React.Dispatch<React.SetStateAction<boolean>>;
-    refreshUserList: () => void;
-}
-
-type agencyArray = [
-    {
-        id: string,
-        name: string,
-    }
-]
-
-const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList }) => {
+const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData, refreshUserList }) => {
     const [userInfoAccordion, setUserInfoAccordion] = useState(true);
     const [userPermissionAcc, setUserPermissionAcc] = useState(false);
     const [userRolesAcc, setUserRolesAcc] = useState(false);
-    const [newUserData, setNewUserData] = useState<User>({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        type: '',
-        role: '',
-        locationIds: [], // Initialize as an empty array
-        permissions: {
-            campaignsEnabled: false,
-            campaignsReadOnly: false,
-            contactsEnabled: false,
-            workflowsEnabled: false,
-            triggersEnabled: false,
-            funnelsEnabled: false,
-            websitesEnabled: false,
-            opportunitiesEnabled: false,
-            dashboardStatsEnabled: false,
-            bulkRequestsEnabled: false,
-            appointmentsEnabled: false,
-            reviewsEnabled: false,
-            onlineListingsEnabled: false,
-            phoneCallEnabled: false,
-            conversationsEnabled: false,
-            assignedDataOnly: false,
-            adwordsReportingEnabled: false,
-            membershipEnabled: false,
-            facebookAdsReportingEnabled: false,
-            attributionsReportingEnabled: false,
-            settingsEnabled: false,
-            tagsEnabled: false,
-            leadValueEnabled: false,
-            marketingEnabled: false,
-        },
-    });
-
-    const [agencyLocation, setAgencyLocation] = useState<agencyArray>()
-    const [PasswordValid, setPasswordValid] = useState<boolean>(false)
-    const [loading, setLoading] = useState<boolean>(false)
-    const [formSubmissionLoading, setformSubmissionLoading] = useState<boolean>(false);
+    const [userDetails, setUserDetails] = useState<User>(userFormData);
     const [formSubmitError, setFormSubmitError] = useState<string>('');
+    const [formSubmissionLoading, setformSubmissionLoading] = useState<boolean>(false);
 
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("user details before the api call:", userDetails);
+
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const { name, value } = e.target;
-        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
-
-        // Check if the input field is for the password
-        if (name === 'password') {
-            if (!passwordRegex.test(value)) {
-                setPasswordValid(false);
-            }
-            else setPasswordValid(true);
-        }
-
-        if (name === 'locationIds') {
-            setNewUserData(prevData => ({
-                ...prevData,
-                locationIds: [...prevData.locationIds, value],
-            }))
-        }
-        else {
-            setNewUserData(prevData => ({
-                ...prevData,
-                [name]: value
-            }));
-        }
+        setUserDetails(prevData => ({
+            ...prevData,
+            [name]: value
+        }));
     };
 
-
-    // fetching all the location with their ids
-    useEffect(() => {
-        const getAgencyLocation = async () => {
-            try {
-                setLoading(true);
-                // Retrieve the bearer token from cookies
-                const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
-                const tokenValue = token ? token.split('=')[1] : '';
-                const response = await axios.
-                    get('https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-subaccounts',
-                        {
-                            headers: {
-                                Authorization: `Bearer ${tokenValue}`
-                            }
-                        });
-                // console.log("user locations: ", response.data?.data);
-                setLoading(false);
-                setAgencyLocation(response.data?.data);
-            } catch (error) {
-                setLoading(false);
-                console.log("Error getting location: ", error);
-            }
-        }
-        getAgencyLocation();
-    }, [])
-
-
     const handleToggleChange = (permission: keyof User['permissions'], value: boolean) => {
-        setNewUserData(prevData => ({
-            ...prevData,
+        setUserDetails(prevState => ({
+            ...prevState,
             permissions: {
-                ...prevData.permissions,
+                ...prevState.permissions,
                 [permission]: value
             }
         }));
     };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleEditFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             setformSubmissionLoading(true);
-            // Retrieve the bearer token from cookies
+            console.log("inside the api call: ", userDetails);
+            console.log("user id inside the api call: ", userDetails.id);
+
+
             const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
             const tokenValue = token ? token.split('=')[1] : '';
-            const response = await axios.
-                post('https://cfx-mono-production-5ec7.up.railway.app/api/internal/create-agency-user',
-                    newUserData,
-                    {
-                        headers: {
-                            Authorization: `Bearer ${tokenValue}`
-                        }
-                    });
-            // console.log(response.data.m);
+            const response = await axios.post(`https://cfx-mono-production-5ec7.up.railway.app/api/internal/update-user/${userDetails.id}`, userDetails, {
+                headers: {
+                    Authorization: `Bearer ${tokenValue}`
+                }
+            });
             if (response.data.success) {
                 setformSubmissionLoading(false);
-                setOpenNewUserModal(false);
+                setOpenUpdateUserModal(false);
                 setFormSubmitError('');
                 refreshUserList();
+                console.log(response);
             }
+        } catch (error) {
+            // setformSubmissionLoading(false);
+            console.log("arey baba:", error);
 
-        } catch (error: unknown) {
-            setformSubmissionLoading(false);
             if (isAxiosError(error)) {
-
+                setformSubmissionLoading(false);
                 if (error.isAxiosError && error.response && error.response.data) {
-                    setFormSubmitError(error.message);
+                    // setFormSubmitError(error.message);
                     console.log(error);
-                    
+
                 } else {
                     setFormSubmitError('An error occurred. Please try again later.');
+                    console.log(error);
                 }
             }
-        };
+        }
     }
 
     return (
@@ -238,19 +155,20 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
                 <button
                     className='w-6'
                     onClick={() => {
-                        setOpenNewUserModal(false)
+                        setOpenUpdateUserModal(false)
                     }}
                 >
                     <CrossIcon />
                 </button>
             </div>
+
             <div className='w-full px-2 font-semibold'>Team Management</div>
 
             <div className='w-full'>
-                <form className="p-2 bg-white rounded flex flex-col gap-3" onSubmit={handleSubmit}>
+                <form className="p-2 bg-white rounded flex flex-col gap-3" onSubmit={handleEditFormSubmit}>
                     {/* user information */}
                     <div className='border p-4 rounded-md shadow'>
-                        <div className='flex items-center justify-start gap-1 w-full cursor-pointer' onClick={() => setUserInfoAccordion(prev => !prev)}>
+                        <div className='flex items-center justify-start py-5 gap-1 w-full cursor-pointer' onClick={() => setUserInfoAccordion(prev => !prev)}>
                             <div className='w-5' >{userInfoAccordion ? <DownIcon /> : <UpIcon />}</div>
                             <div className='text-sm'>User Info</div>
                         </div>
@@ -262,7 +180,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
                                         type="text"
                                         className={inputFieldStyle}
                                         name='firstName'
-                                        value={newUserData.firstName}
+                                        value={userDetails.firstName}
                                         onChange={handleInputChange}
                                         required
                                     />
@@ -273,61 +191,56 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
                                         type="text"
                                         className={inputFieldStyle}
                                         name='lastName'
-                                        value={newUserData.lastName}
+                                        value={userDetails.lastName}
                                         onChange={handleInputChange}
                                         required
                                     />
                                 </div>
                             </div>
-                            <div className='flex gap-2 w-full'>
+                            <div className='flex w-full gap-2'>
                                 <div className='flex flex-col items-start justify-between gap-1 w-1/2'>
                                     <label htmlFor="" className='text-xs'>Email</label>
                                     <input
                                         type="text"
                                         name='email'
-                                        className={inputFieldStyle}
-                                        value={newUserData.email}
+                                        className={`${inputFieldStyle} text-gray-300`}
+                                        value={userDetails.email}
                                         onChange={handleInputChange}
-                                        required
+                                        disabled
                                     />
                                 </div>
-                            </div>
-                            <div className='flex flex-col gap-1 w-full'>
                                 <div className='flex flex-col items-start justify-between gap-1 w-1/2'>
-                                    <label htmlFor="" className='text-xs'>Password</label>
+                                    <label htmlFor="" className='text-xs'>Phone</label>
                                     <input
                                         type="text"
                                         className={inputFieldStyle}
-                                        name='password'
-                                        value={newUserData.password}
+                                        name='phone'
+                                        value={userDetails.phone}
                                         onChange={handleInputChange}
-                                        required
                                     />
-                                </div>
-                                <div className={`${PasswordValid ? 'hidden' : ''} text-xs text-red-500`}>Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.
                                 </div>
                             </div>
                         </div>
                     </div>
                     {/* user permissions */}
                     <div className='border p-4 rounded-md shadow gap-3 flex flex-col justify-between'>
-                        <div className='flex items-center cursor-pointer justify-start gap-1 w-full' onClick={() => setUserPermissionAcc(prev => !prev)}>
+                        <div className='flex items-center cursor-pointer justify-start py-5 gap-1 w-full' onClick={() => setUserPermissionAcc(prev => !prev)}>
                             <div className='w-5 ' >{userPermissionAcc ? <DownIcon /> : <UpIcon />}</div>
                             <div className='text-sm'>User Permissions</div>
                         </div>
-                        <div className={`${userPermissionAcc ? '' : 'hidden'}`}>
+                        <div className={`${userPermissionAcc ? '' : 'hidden'} `}>
                             <div className='flex justify-between'>
                                 <div className='flex justify-between flex-col gap-1'>
                                     {permissionsArrayColumn1.map((permission, index) => (
                                         <div key={index}>
-                                            <Toggle title={permission} onChange={handleToggleChange} value={false} />
+                                            <Toggle title={permission} onChange={handleToggleChange} value={userDetails.permissions[permission as keyof Permissions]} />
                                         </div>
                                     ))}
                                 </div>
                                 <div className='flex justify-between flex-col gap-1'>
                                     {permissionsArrayColumn2.map((permission, index) => (
                                         <div key={index}>
-                                            <Toggle title={permission} onChange={handleToggleChange} value={false} />
+                                            <Toggle title={permission} onChange={handleToggleChange} value={userDetails.permissions[permission as keyof Permissions]} />
                                         </div>
                                     ))}
                                 </div>
@@ -336,49 +249,40 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
                     </div>
                     {/* user roles */}
                     <div className='border p-4 rounded-md shadow gap-3 flex flex-col justify-between'>
-                        <div className='flex items-center justify-start gap-1 w-full cursor-pointer' onClick={() => setUserRolesAcc(prev => !prev)}>
+                        <div className='flex items-center justify-start py-5 gap-1 w-full cursor-pointer' onClick={() => setUserRolesAcc(prev => !prev)}>
                             <div className='w-5'>{userRolesAcc ? <DownIcon /> : <UpIcon />}</div>
                             <div className='text-sm'>User Roles</div>
                         </div>
                         <div className={`${userRolesAcc ? '' : 'hidden'} flex flex-col items-start justify-between gap-3`}>
                             <div className='flex flex-col w-full items-start justify-between gap-1 text-xs'>
                                 <label htmlFor="" className='text-xs'>User Type</label>
-                                <select name="type" id="" className={selectFieldStyle} onChange={handleInputChange} required>
+                                <select name="type" id="" className={selectFieldStyle} required defaultValue={userFormData.roles.type}>
                                     <option value="">Select type</option>
                                     <option value="account">Account</option>
-                                    {/* Add other options as needed */}
                                 </select>
                             </div>
-
-                            <div className='flex flex-col w-full items-start justify-between gap-1 text-xs'>
-                                <label htmlFor="role" className='text-xs'>User Role</label>
-                                <select name="role" id="role" className={selectFieldStyle} onChange={handleInputChange} required>
+                            <div className='flex flex-col w-full items-start justify-between gap-1'>
+                                <label htmlFor="" className='text-xs'>User Role</label>
+                                <select name="" id="" className={selectFieldStyle} required defaultValue={userFormData.roles.role}>
                                     <option value="">Select Role</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="user">User</option>
+                                    <option value="admin" className='py-10 px-10 '>Admin</option>
+                                    <option value="user" className='py-10 px-10 '>User</option>
                                 </select>
                             </div>
-
-                            <div className='flex flex-col w-full items-start justify-between gap-1 text-xs'>
+                            {/* <div className='flex flex-col w-full items-start justify-between gap-1'>
                                 <label htmlFor="" className='text-xs'>Add Sub Accounts</label>
-                                <select name="locationIds" id="" className={selectFieldStyle} onChange={handleInputChange}>
-                                    {loading ?
-                                        <option><Loader /></option> :
-                                        agencyLocation?.map((location, index) => (
-                                            <option key={index} value={location.id} className='py-10 px-10'>{location.name}</option>
-                                        ))
-                                    }
+                                <select name="" id="" className={selectFieldStyle}>
+                                    <option value="account" className='py-10 px-10 '>Account</option>
+                                    <option value="account" className='py-10 px-10 '>Account</option>
+                                    <option value="account" className='py-10 px-10 '>Account</option>
+                                    <option value="account" className='py-10 px-10 '>Account</option>
                                 </select>
-                            </div>
-                            {/* <div>{newUserData.locationIds.map((id) => (
-                                <div>{id}</div>
-                            ))}
                             </div> */}
                         </div>
                     </div>
                     {/* form buttons */}
                     <div className='flex items-center justify-end gap-3 '>
-                        <button type='reset' onClick={() => setOpenNewUserModal(false)} className='rounded-md text-xs border shadow bg-white-700 p-2 px-4'>
+                        <button onClick={() => setOpenUpdateUserModal(false)} className='rounded-md text-xs border shadow bg-white-700 p-2 px-4'>
                             Cancel
                         </button>
                         <button type='submit' className='rounded-md text-xs text-white bg-blue-700 p-2 px-4 flex w-20 items-center justify-center '>
@@ -396,7 +300,9 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
     );
 }
 
+
 const inputFieldStyle = "border rounded-md outline-none py-2 text-gray-500 px-2 shadow text-xs w-full";
 const selectFieldStyle = "border text-xs p-2 shadow-sm rounded-md outline-none w-full";
 
-export default NewUserModal;
+
+export default UpdateUserModal;

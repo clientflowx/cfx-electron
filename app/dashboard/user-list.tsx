@@ -4,12 +4,12 @@ import { useTheme } from "@table-library/react-table-library/theme";
 import { usePagination } from "@table-library/react-table-library/pagination";
 import { EditPen, Dustbin } from "@/svg/index.ts";
 import { useEffect, useState } from "react";
-import { Loader } from "@/components/components.ts";
+import Loader from "@/components/Loader";
 import { IoSearch } from "react-icons/io5";
 import { myTheme } from "@/constants/TableStyles"; // custom styling for the react-table component
 import axios from "axios";
-import UpdateUserModal from "@/app/dashboard/UpdateUserModal";
-import NewUserModal from "@/app/dashboard/NewUserModal";
+import UpdateUserModal from "@/app/dashboard/update-user-modal";
+import NewUserModal from "@/app/dashboard/create-user-modal";
 import { Data, TableNode } from "@table-library/react-table-library/types/table";
 
 type LocationIdsArray = [
@@ -59,6 +59,7 @@ interface UserInterface {
     locationIds: string[];
   };
 }
+
 
 const UserList = () => {
 
@@ -155,7 +156,7 @@ const UserList = () => {
               }
             });
         // console.log("user locations: ", response.data?.data);
-        setLocationIds(response.data?.data);
+        setLocationIds(response.data?.data || [{ id: '', name: '' }]);
       } catch (error) {
         console.log("Error getting location: ", error);
       }
@@ -473,7 +474,7 @@ const UserList = () => {
 
       {/* update user modal */}
       {openUpdateUserModal ? (
-        <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-center justify-center">
+        <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-top justify-center">
           <UpdateUserModal setOpenUpdateUserModal={setOpenUpdateUserModal} userFormData={userFormData} refreshUserList={refreshUserList} />
         </div>
       ) : (
@@ -481,7 +482,7 @@ const UserList = () => {
       )}
       {/* newUserModal */}
       {openNewUserModal ? (
-        <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-center justify-center">
+        <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-top justify-center">
           <NewUserModal setOpenNewUserModal={setOpenNewUserModal} refreshUserList={refreshUserList} />
         </div>
       ) : (

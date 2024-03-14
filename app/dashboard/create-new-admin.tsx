@@ -51,6 +51,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
         setFormSubmitError('');
         console.log(response);
         fetchAdminList();
+        setAdminData({ name: '', email: '', role: '' });
       }
 
     } catch (error) {

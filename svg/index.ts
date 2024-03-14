@@ -19,5 +19,7 @@ import UserIcon from "./UserIcon";
 import AdminUser from "./AdminUser";
 import RazorPay from "./RazorPay";
 import Alohaa from "./Alohaa";
+import AlohaaLogo from "./AlohaaLogo";
+import RazorpayLogo from "./RazorpayLogo";
 
-export { Alohaa, RazorPay, AdminUser, UserIcon, UpIcon, DownIcon, LockIcon, Dashboard, Components, Calendar, Files, Inbox, Notification, List, Mail, Avatar, Grid, Hamburger, EditPen, Dustbin, CrossIcon } 
+export { RazorpayLogo,Alohaa, AlohaaLogo, RazorPay, AdminUser, UserIcon, UpIcon, DownIcon, LockIcon, Dashboard, Components, Calendar, Files, Inbox, Notification, List, Mail, Avatar, Grid, Hamburger, EditPen, Dustbin, CrossIcon } 

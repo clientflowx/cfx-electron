@@ -144,7 +144,7 @@ const AllohaAdmin = () => {
     <>
       <div className="flex min-h-[340px] lg:flex-row md:flex-col sm:flex-col p-4 mt-6 justify-between">
         <div
-          className="lg:w-[340px] flex md:w-full md:flex-row lg:justify-start sm:w-full sm:w-full sm:flex-row sm:justify-center 
+          className="lg:w-[340px] flex md:w-full md:flex-row lg:justify-start sm:w-full sm:flex-row sm:justify-center 
         lg:flex-col lg:mr-8 md:mr-0 rounded overflow-hidden px-6 py-4"
         >
           <div className=" text-lg"> Manage Alohaa Access</div>

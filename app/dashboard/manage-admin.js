@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Loader } from "@/components/components.ts";
+import Loader from "@/components/Loader";
 import axios from "axios";
-import NewAdminModal from "./NewAdminModal";
+import NewAdminModal from "./create-new-admin";
 
 const AdminUserItem = ({ item, onUpdate }) => {
   const { _id, name, email, role } = item || {};
@@ -30,70 +30,67 @@ const AdminUserItem = ({ item, onUpdate }) => {
       email: editedEmail,
       role: selectedRole,
     };
-
     // Call the onUpdate function with the updated user data
     onUpdate(updatedUser);
   };
 
   return (
-    <div className="flex items-center" style={{ margin: "10px 5px" }}>
-      <input
-        className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 rounded shadow mr-2"
-        id="name"
-        type="text"
-        value={editedName}
-        onChange={handleNameChange}
-        style={{ width: "28%" }}
-      />
-      <input
-        className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 rounded shadow mr-2"
-        id="email"
-        type="text"
-        value={editedEmail}
-        onChange={handleEmailChange}
-        style={{ width: "28%" }}
-      />
-      <div
-        className="mr-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 rounded shadow"
-        style={{ display: "flex" }}
-      >
-        <span style={{ margin: "0px 5px" }}>
+    <div className="flex items-center justify-between w-full gap-2">
+      <div className="flex w-full gap-2">
+        <input
+          className="bg-white hover:bg-gray-100 transition-all text-gray-800 font-semibold py-2 px-4 rounded shadow w-full"
+          id="name"
+          type="text"
+          value={editedName}
+          onChange={handleNameChange}
+        />
+        <input
+          className="bg-white hover:bg-gray-100 transition-all text-gray-800 font-semibold py-2 px-4 rounded shadow w-full"
+          id="email"
+          type="text"
+          value={editedEmail}
+          onChange={handleEmailChange}
+        />
+      </div>
+      <div className="bg-white hover:bg-gray-100 text-gray-800 transition-all font-semibold py-2 px-4 rounded shadow w-full flex items-center justify-between">
+        <div className="flex gap-2">
           <input
             type="radio"
             value="admin"
-            checked={selectedRole === "admin"}
+            checked={item.role === "admin"}
             onChange={() => handleRoleChange("admin")}
-          />
-          <label style={{ marginLeft: "5px" }}>Admin</label>
-        </span>
-        <span style={{ margin: "0px 5px" }}>
+            disabled={item.role === "owner"}
+            />
+          <label className={`${item.role === "owner"?'text-gray-400':'' }`}>Admin</label>
+        </div>
+        <div className="flex gap-2">
           <input
             type="radio"
             value="super-admin"
-            checked={selectedRole === "super-admin"}
+            checked={item.role === "super-admin"}
             onChange={() => handleRoleChange("super-admin")}
+            disabled={item.role === "owner"}
           />
-          <label style={{ marginLeft: "5px" }}>Super Admin</label>
-        </span>
-        <span style={{ margin: "0px 5px" }}>
+          <label className={`${item.role === "owner"?'text-gray-400':'' }`}>Super Admin</label>
+        </div>
+        <div className="flex gap-2">
           <input
             type="radio"
             value="owner"
             checked={selectedRole === "owner"}
             onChange={() => handleRoleChange("owner")}
           />
-          <label style={{ marginLeft: "5px" }}>Owner</label>
-        </span>
+          <label>Owner</label>
+        </div>
       </div>
-      <button className="mr-2 bg-red-500 hover:bg-gray-100 text-white hover:text-gray-800 font-semibold py-2 px-4 rounded shadow">
-        Delete User
-      </button>
-      <button
-        className="mr-2 bg-green-500 hover:bg-gray-100 text-white hover:text-gray-800 font-semibold py-2 px-4 rounded shadow"
-        onClick={handleUpdateClick}
-      >
-        Update User
-      </button>
+      <div className="flex w-full gap-2">
+        <button disabled={item.role === 'admin'} className={`w-full bg-red-500 hover:bg-red-600 text-white transition-all font-semibold py-2 px-4 rounded shadow ${item.role === 'admin' ? 'opacity-50 cursor-not-allowed' : ''}`}>
+          Delete User
+        </button>
+        <button disabled={item.role === 'admin'} className={`w-full bg-green-500 hover:bg-green-600 text-white transition-all font-semibold py-2 px-4 rounded shadow ${item.role === 'admin' ? 'opacity-50 cursor-not-allowed' : ''}`}>
+          Update User
+        </button>
+      </div>
     </div>
   );
 };
@@ -170,10 +167,12 @@ const ManageAdminUser = () => {
               Add Admin User
             </button>
           </div>
-          {adminData &&
-            adminData.map((item) => (
-              <AdminUserItem key={item.id} item={item} onUpdate={onUpdate} />
-            ))}
+          <div className="flex flex-col gap-4">
+            {adminData &&
+              adminData.map((item) => (
+                <AdminUserItem key={item.id} item={item} onUpdate={onUpdate} />
+              ))}
+          </div>
         </div>
       )}
       <div className={`${openAddAdminModal ? "" : "hidden"} absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-center justify-center`}>

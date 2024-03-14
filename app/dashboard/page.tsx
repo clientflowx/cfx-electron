@@ -2,16 +2,19 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Dashboard, AdminUser, RazorPay,Alohaa } from "@/svg/index.ts";
-import { UserList, Navbar, ManageAdminUser } from "@/components/components.ts";
+import { Dashboard, AdminUser, RazorPay, Alohaa } from "@/svg/index.ts";
+import UserList from "./user-list";
+import Navbar from "@/components/Navbar";
+import ManageAdminUser from './manage-admin.js'
 import cfxlogo from "@/public/assets/clientflowx_logo.jpeg";
 import Image from "next/image";
 import AllohaAdmin from "./alohaa-admin";
 import RazorpayAdmin from "./rzp-admin";
+import HomePage from "./home-page";
 
 const AdminDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [sidebarOption, setSidebarOption] = useState("");
+  const [sidebarOption, setSidebarOption] = useState("ClientFlowX");
   const router = useRouter();
 
   useEffect(() => {
@@ -34,7 +37,7 @@ const AdminDashboard = () => {
 
   const sidebarItems: SidebarItem[] = [
     {
-      title: "CientFlowX",
+      title: "ClientFlowX",
       icon: <Image className="rounded-full" src={cfxlogo} alt="CFX logo" />,
       titleVisible: true,
     },
@@ -109,11 +112,9 @@ const AdminDashboard = () => {
       <div className="relative flex flex-col flex-1 h-full min-h-screen p-10 bg-[#f0f4f7]">
         <div className="sm:ml-10">
           <div className={`rounded-lg mt-14`}>
-            <div className={` ${sidebarOption === "" ? "" : "hidden"}`}>
-              <h1 className="text-2xl font-bold text-gray-700">Dashboard</h1>
-              <div className="text-sm">
-                Home <span className="text-gray-500">/ Dashboard</span>
-              </div>
+            <div className={` ${sidebarOption === "ClientFlowX" ? "" : "hidden"}`}>
+              {/* <h1 className="text-2xl font-bold text-gray-700 my-6">Dashboard</h1> */}
+              <HomePage/>
             </div>
             <div
               className={`${sidebarOption === "Manage Users" ? "" : "hidden"}`}
