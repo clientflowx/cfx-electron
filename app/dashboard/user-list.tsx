@@ -15,6 +15,7 @@ import {
   TableNode,
 } from "@table-library/react-table-library/types/table";
 import Alert from "@/components/Alert";
+import { Permissions } from "./types";
 
 type LocationIdsArray = [
   {
@@ -30,33 +31,7 @@ interface UserInterface {
   lastName: string;
   email: string;
   phone?: string; // Optional phone property
-  permissions: {
-    funnelsEnabled: boolean;
-    dashboardStatsEnabled: boolean;
-    phoneCallEnabled: boolean;
-    workflowsReadOnly: boolean;
-    contactsEnabled: boolean;
-    tagsEnabled: boolean;
-    websitesEnabled: boolean;
-    campaignsReadOnly: boolean;
-    appointmentsEnabled: boolean;
-    assignedDataOnly: boolean;
-    onlineListingsEnabled: boolean;
-    marketingEnabled: boolean;
-    attributionsReportingEnabled: boolean;
-    membershipEnabled: boolean;
-    settingsEnabled: boolean;
-    leadValueEnabled: boolean;
-    opportunitiesEnabled: boolean;
-    reviewsEnabled: boolean;
-    facebookAdsReportingEnabled: boolean;
-    workflowsEnabled: boolean;
-    campaignsEnabled: boolean;
-    conversationsEnabled: boolean;
-    adwordsReportingEnabled: boolean;
-    bulkRequestsEnabled: boolean;
-    triggersEnabled: boolean;
-  };
+  permissions: Permissions
   roles: {
     type: string;
     role: string;
@@ -83,31 +58,44 @@ const UserList = () => {
     email: "",
     phone: undefined,
     permissions: {
-      funnelsEnabled: false,
-      dashboardStatsEnabled: false,
-      phoneCallEnabled: false,
-      workflowsReadOnly: false,
-      contactsEnabled: false,
-      tagsEnabled: false,
-      websitesEnabled: false,
-      campaignsReadOnly: false,
+      adwordsReportingEnabled: false,
+      affiliateManagerEnabled: false,
+      agentReportingEnabled: false,
       appointmentsEnabled: false,
       assignedDataOnly: false,
-      onlineListingsEnabled: false,
-      marketingEnabled: false,
       attributionsReportingEnabled: false,
-      membershipEnabled: false,
-      settingsEnabled: false,
-      leadValueEnabled: false,
-      opportunitiesEnabled: false,
-      reviewsEnabled: false,
-      facebookAdsReportingEnabled: false,
-      workflowsEnabled: false,
-      campaignsEnabled: false,
-      conversationsEnabled: false,
-      adwordsReportingEnabled: false,
+      bloggingEnabled: false,
+      botService: false,
       bulkRequestsEnabled: false,
+      campaignsEnabled: false,
+      campaignsReadOnly: false,
+      cancelSubscriptionEnabled: false,
+      communitiesEnabled: false,
+      contactsEnabled: false,
+      contentAiEnabled: false,
+      conversationsEnabled: false,
+      dashboardStatsEnabled: false,
+      exportPaymentsEnabled: false,
+      facebookAdsReportingEnabled: false,
+      funnelsEnabled: false,
+      invoiceEnabled: false,
+      leadValueEnabled: false,
+      marketingEnabled: false,
+      membershipEnabled: false,
+      onlineListingsEnabled: false,
+      opportunitiesEnabled: false,
+      paymentsEnabled: false,
+      phoneCallEnabled: false,
+      recordPaymentEnabled: false,
+      refundsEnabled: false,
+      reviewsEnabled: false,
+      settingsEnabled: false,
+      socialPlanner: false,
+      tagsEnabled: false,
       triggersEnabled: false,
+      websitesEnabled: false,
+      workflowsEnabled: false,
+      workflowsReadOnly: false,
     },
     roles: {
       type: "",

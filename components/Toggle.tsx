@@ -47,13 +47,13 @@ interface ToggleProps {
 }
 
 const Toggle: React.FC<ToggleProps> = ({ title, onChange, value }) => {
-  const [checked, setChecked] = useState(value);
+  const [checked, setChecked] = useState<boolean>(value);
 
   const handleChange = () => {
     const newValue = !checked;
     setChecked(newValue);
-    onChange(title as keyof User['permissions'], newValue); // Invoke the onChange callback with the title and new value
-  };
+    onChange(title as keyof User['permissions'], newValue);
+  };  
 
   return (
     <div className="flex items-center justify-between gap-2">

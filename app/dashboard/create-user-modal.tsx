@@ -4,6 +4,7 @@ import { CrossIcon, UpIcon, DownIcon, LockIcon, UserIcon } from '@/svg/index.ts'
 import Toggle from '@/components/Toggle';
 import axios, { AxiosError, isAxiosError } from 'axios';
 import Loader from '@/components/Loader';
+import { Permissions } from './types';
 
 interface User {
     firstName: string;
@@ -13,60 +14,100 @@ interface User {
     type: string;
     role: string;
     locationIds: string[];
-    permissions: {
-        campaignsEnabled: boolean;
-        campaignsReadOnly: boolean;
-        contactsEnabled: boolean;
-        workflowsEnabled: boolean;
-        triggersEnabled: boolean;
-        funnelsEnabled: boolean;
-        websitesEnabled: boolean;
-        opportunitiesEnabled: boolean;
-        dashboardStatsEnabled: boolean;
-        bulkRequestsEnabled: boolean;
-        appointmentsEnabled: boolean;
-        reviewsEnabled: boolean;
-        onlineListingsEnabled: boolean;
-        phoneCallEnabled: boolean;
-        conversationsEnabled: boolean;
-        assignedDataOnly: boolean;
-        adwordsReportingEnabled: boolean;
-        membershipEnabled: boolean;
-        facebookAdsReportingEnabled: boolean;
-        attributionsReportingEnabled: boolean;
-        settingsEnabled: boolean;
-        tagsEnabled: boolean;
-        leadValueEnabled: boolean;
-        marketingEnabled: boolean;
-    };
+    permissions: Permissions;
 }
 
 const permissionsArray: string[] = [
+    'adwordsReportingEnabled',
+    'affiliateManagerEnabled',
+    'agentReportingEnabled',
+    'appointmentsEnabled',
+    'assignedDataOnly',
+    'attributionsReportingEnabled',
+    'bloggingEnabled',
+    'botService',
+    'bulkRequestsEnabled',
     'campaignsEnabled',
     'campaignsReadOnly',
+    'cancelSubscriptionEnabled',
+    'communitiesEnabled',
     'contactsEnabled',
-    'workflowsEnabled',
-    'triggersEnabled',
-    'funnelsEnabled',
-    'websitesEnabled',
-    'opportunitiesEnabled',
-    'dashboardStatsEnabled',
-    'bulkRequestsEnabled',
-    'appointmentsEnabled',
-    'reviewsEnabled',
-    'onlineListingsEnabled',
-    'phoneCallEnabled',
+    'contentAiEnabled',
     'conversationsEnabled',
-    'assignedDataOnly',
-    'adwordsReportingEnabled',
-    'membershipEnabled',
+    'dashboardStatsEnabled',
+    'exportPaymentsEnabled',
     'facebookAdsReportingEnabled',
-    'attributionsReportingEnabled',
-    'settingsEnabled',
-    'tagsEnabled',
+    'funnelsEnabled',
+    'invoiceEnabled',
     'leadValueEnabled',
     'marketingEnabled',
+    'membershipEnabled',
+    'onlineListingsEnabled',
+    'opportunitiesEnabled',
+    'paymentsEnabled',
+    'phoneCallEnabled',
+    'recordPaymentEnabled',
+    'refundsEnabled',
+    'reviewsEnabled',
+    'settingsEnabled',
+    'socialPlanner',
+    'tagsEnabled',
+    'triggersEnabled',
+    'websitesEnabled',
+    'workflowsEnabled',
+    'workflowsReadOnly'
 ];
+
+const initialUserValue = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    type: '',
+    role: '',
+    locationIds: [], // Initialize as an empty array
+    permissions: {
+        adwordsReportingEnabled: false,
+        affiliateManagerEnabled: false,
+        agentReportingEnabled: false,
+        appointmentsEnabled: false,
+        assignedDataOnly: false,
+        attributionsReportingEnabled: false,
+        bloggingEnabled: false,
+        botService: false,
+        bulkRequestsEnabled: false,
+        campaignsEnabled: false,
+        campaignsReadOnly: false,
+        cancelSubscriptionEnabled: false,
+        communitiesEnabled: false,
+        contactsEnabled: false,
+        contentAiEnabled: false,
+        conversationsEnabled: false,
+        dashboardStatsEnabled: false,
+        exportPaymentsEnabled: false,
+        facebookAdsReportingEnabled: false,
+        funnelsEnabled: false,
+        invoiceEnabled: false,
+        leadValueEnabled: false,
+        marketingEnabled: false,
+        membershipEnabled: false,
+        onlineListingsEnabled: false,
+        opportunitiesEnabled: false,
+        paymentsEnabled: false,
+        phoneCallEnabled: false,
+        recordPaymentEnabled: false,
+        refundsEnabled: false,
+        reviewsEnabled: false,
+        settingsEnabled: false,
+        socialPlanner: false,
+        tagsEnabled: false,
+        triggersEnabled: false,
+        websitesEnabled: false,
+        workflowsEnabled: false,
+        workflowsReadOnly: false,
+    },
+}
+
 const permissionsArrayColumn1 = permissionsArray.slice(0, Math.ceil(permissionsArray.length / 2));
 const permissionsArrayColumn2 = permissionsArray.slice(Math.ceil(permissionsArray.length / 2));
 
@@ -86,41 +127,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
     const [userInfoAccordion, setUserInfoAccordion] = useState(true);
     const [userPermissionAcc, setUserPermissionAcc] = useState(false);
     const [userRolesAcc, setUserRolesAcc] = useState(false);
-    const [newUserData, setNewUserData] = useState<User>({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        type: '',
-        role: '',
-        locationIds: [], // Initialize as an empty array
-        permissions: {
-            campaignsEnabled: false,
-            campaignsReadOnly: false,
-            contactsEnabled: false,
-            workflowsEnabled: false,
-            triggersEnabled: false,
-            funnelsEnabled: false,
-            websitesEnabled: false,
-            opportunitiesEnabled: false,
-            dashboardStatsEnabled: false,
-            bulkRequestsEnabled: false,
-            appointmentsEnabled: false,
-            reviewsEnabled: false,
-            onlineListingsEnabled: false,
-            phoneCallEnabled: false,
-            conversationsEnabled: false,
-            assignedDataOnly: false,
-            adwordsReportingEnabled: false,
-            membershipEnabled: false,
-            facebookAdsReportingEnabled: false,
-            attributionsReportingEnabled: false,
-            settingsEnabled: false,
-            tagsEnabled: false,
-            leadValueEnabled: false,
-            marketingEnabled: false,
-        },
-    });
+    const [newUserData, setNewUserData] = useState<User>(initialUserValue);
 
     const [agencyLocation, setAgencyLocation] = useState<agencyArray>()
     const [PasswordValid, setPasswordValid] = useState<boolean>(false)

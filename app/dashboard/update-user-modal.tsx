@@ -71,32 +71,45 @@ type User = {
         locationIds: string[];
     };
 }
-
-const permissionsArray: string[] = [
-    'campaignsEnabled',
-    'campaignsReadOnly',
-    'contactsEnabled',
-    'workflowsEnabled',
-    'triggersEnabled',
-    'funnelsEnabled',
-    'websitesEnabled',
-    'opportunitiesEnabled',
-    'dashboardStatsEnabled',
-    'bulkRequestsEnabled',
-    'appointmentsEnabled',
-    'reviewsEnabled',
-    'onlineListingsEnabled',
-    'phoneCallEnabled',
-    'conversationsEnabled',
-    'assignedDataOnly',
-    'adwordsReportingEnabled',
-    'membershipEnabled',
-    'facebookAdsReportingEnabled',
-    'attributionsReportingEnabled',
-    'settingsEnabled',
-    'tagsEnabled',
-    'leadValueEnabled',
-    'marketingEnabled',
+const permissionsArray: { title: string, permission: keyof Permissions }[] = [
+    { title: "Adwords Reporting", permission: "adwordsReportingEnabled" },
+    { title: "Affiliate Manager", permission: "affiliateManagerEnabled" },
+    { title: "Agent Reporting", permission: "agentReportingEnabled" },
+    { title: "Appointments", permission: "appointmentsEnabled" },
+    { title: "Assigned Data Only", permission: "assignedDataOnly" },
+    { title: "Attributions Reporting", permission: "attributionsReportingEnabled" },
+    { title: "Blogging", permission: "bloggingEnabled" },
+    { title: "Bot Service", permission: "botService" },
+    { title: "Bulk Requests", permission: "bulkRequestsEnabled" },
+    { title: "Campaigns", permission: "campaignsEnabled" },
+    { title: "Campaigns", permission: "campaignsReadOnly" },
+    { title: "Cancel Subscription", permission: "cancelSubscriptionEnabled" },
+    { title: "Communities", permission: "communitiesEnabled" },
+    { title: "Contacts", permission: "contactsEnabled" },
+    { title: "Content AI", permission: "contentAiEnabled" },
+    { title: "Conversations", permission: "conversationsEnabled" },
+    { title: "Dashboard Stats", permission: "dashboardStatsEnabled" },
+    { title: "Export Payments", permission: "exportPaymentsEnabled" },
+    { title: "Facebook Ads Reporting", permission: "facebookAdsReportingEnabled" },
+    { title: "Funnels", permission: "funnelsEnabled" },
+    { title: "Invoice", permission: "invoiceEnabled" },
+    { title: "Lead Value", permission: "leadValueEnabled" },
+    { title: "Marketing", permission: "marketingEnabled" },
+    { title: "Membership", permission: "membershipEnabled" },
+    { title: "Online Listings", permission: "onlineListingsEnabled" },
+    { title: "Opportunities", permission: "opportunitiesEnabled" },
+    { title: "Payments", permission: "paymentsEnabled" },
+    { title: "Phone Call", permission: "phoneCallEnabled" },
+    { title: "Record Payment", permission: "recordPaymentEnabled" },
+    { title: "Refunds", permission: "refundsEnabled" },
+    { title: "Reviews", permission: "reviewsEnabled" },
+    { title: "Settings", permission: "settingsEnabled" },
+    { title: "Social Planner", permission: "socialPlanner" },
+    { title: "Tags", permission: "tagsEnabled" },
+    { title: "Triggers", permission: "triggersEnabled" },
+    { title: "Websites", permission: "websitesEnabled" },
+    { title: "Workflows", permission: "workflowsEnabled" },
+    { title: "Workflows", permission: "workflowsReadOnly" }
 ];
 const permissionsArrayColumn1 = permissionsArray.slice(0, Math.ceil(permissionsArray.length / 2));
 const permissionsArrayColumn2 = permissionsArray.slice(Math.ceil(permissionsArray.length / 2));
@@ -120,7 +133,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
         }));
     };
 
-    const handleToggleChange = (permission: keyof User['permissions'], value: boolean) => {
+    const handleToggleChange = (permission: keyof Permissions, value: boolean) => {
         setUserDetails(prevState => ({
             ...prevState,
             permissions: {
@@ -129,6 +142,8 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
             }
         }));
     };
+
+
 
     // fetching all the location with their ids
     useEffect(() => {
@@ -305,16 +320,20 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                         <div className={`${userPermissionAcc ? '' : 'hidden'} `}>
                             <div className='flex justify-between'>
                                 <div className='flex justify-between flex-col gap-1'>
-                                    {permissionsArrayColumn1.map((permission, index) => (
-                                        <div key={index}>
-                                            <Toggle title={permission} onChange={handleToggleChange} value={userDetails?.permissions[permission as keyof Permissions]} />
-                                        </div>
-                                    ))}
+                                    {permissionsArrayColumn1.map(({ title, permission }, index) => {
+                                        console.log(userDetails?.permissions[permission as keyof Permissions]);
+                                        return (
+                                            <div key={index}>
+                                                <Toggle title={title} onChange={handleToggleChange} value={userDetails?.permissions[permission as keyof Permissions]} />
+                                            </div>
+                                        )
+                                    })
+                                    }
                                 </div>
                                 <div className='flex justify-between flex-col gap-1'>
-                                    {permissionsArrayColumn2.map((permission, index) => (
+                                    {permissionsArrayColumn2.map(({ title, permission }, index) => (
                                         <div key={index}>
-                                            <Toggle title={permission} onChange={handleToggleChange} value={userDetails?.permissions[permission as keyof Permissions]} />
+                                            <Toggle title={title} onChange={() => handleToggleChange(permission, userDetails?.permissions[permission as keyof Permissions])} value={userDetails?.permissions[permission as keyof Permissions]} />
                                         </div>
                                     ))}
                                 </div>

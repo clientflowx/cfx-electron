@@ -26,32 +26,46 @@ type User = {
 }
 
 type Permissions = {
-  funnelsEnabled: boolean;
-  dashboardStatsEnabled: boolean;
-  phoneCallEnabled: boolean;
-  workflowsReadOnly: boolean;
-  contactsEnabled: boolean;
-  tagsEnabled: boolean;
-  websitesEnabled: boolean;
-  campaignsReadOnly: boolean;
+  adwordsReportingEnabled: boolean;
+  affiliateManagerEnabled: boolean;
+  agentReportingEnabled: boolean;
   appointmentsEnabled: boolean;
   assignedDataOnly: boolean;
-  onlineListingsEnabled: boolean;
-  marketingEnabled: boolean;
   attributionsReportingEnabled: boolean;
-  membershipEnabled: boolean;
-  settingsEnabled: boolean;
-  leadValueEnabled: boolean;
-  opportunitiesEnabled: boolean;
-  reviewsEnabled: boolean;
-  facebookAdsReportingEnabled: boolean;
-  workflowsEnabled: boolean;
-  campaignsEnabled: boolean;
-  conversationsEnabled: boolean;
-  adwordsReportingEnabled: boolean;
+  bloggingEnabled: boolean;
+  botService: boolean;
   bulkRequestsEnabled: boolean;
+  campaignsEnabled: boolean;
+  campaignsReadOnly: boolean;
+  cancelSubscriptionEnabled: boolean;
+  communitiesEnabled: boolean;
+  contactsEnabled: boolean;
+  contentAiEnabled: boolean;
+  conversationsEnabled: boolean;
+  dashboardStatsEnabled: boolean;
+  exportPaymentsEnabled: boolean;
+  facebookAdsReportingEnabled: boolean;
+  funnelsEnabled: boolean;
+  invoiceEnabled: boolean;
+  leadValueEnabled: boolean;
+  marketingEnabled: boolean;
+  membershipEnabled: boolean;
+  onlineListingsEnabled: boolean;
+  opportunitiesEnabled: boolean;
+  paymentsEnabled: boolean;
+  phoneCallEnabled: boolean;
+  recordPaymentEnabled: boolean;
+  refundsEnabled: boolean;
+  reviewsEnabled: boolean;
+  settingsEnabled: boolean;
+  socialPlanner: boolean;
+  tagsEnabled: boolean;
   triggersEnabled: boolean;
-}
+  websitesEnabled: boolean;
+  workflowsEnabled: boolean;
+  workflowsReadOnly: boolean;
+};
+
 
 
 export type {Permissions, AccType, AdminUser,User };
