@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { Permissions } from "@/app/dashboard/types";
 
-
 interface User {
   firstName: string;
   lastName: string;
@@ -42,18 +41,24 @@ interface User {
 
 interface ToggleProps {
   title: string;
-  onChange: (permission: keyof User['permissions'], value: boolean) => void; // Callback function to handle toggle change
-  value: boolean
+  onChange: (permission: keyof Permissions, value: boolean) => void; // Callback function to handle toggle change
+  value: boolean;
+  permission: keyof Permissions;
 }
 
-const Toggle: React.FC<ToggleProps> = ({ title, onChange, value }) => {
+const Toggle: React.FC<ToggleProps> = ({
+  title,
+  onChange,
+  value,
+  permission,
+}) => {
   const [checked, setChecked] = useState<boolean>(value);
 
   const handleChange = () => {
     const newValue = !checked;
     setChecked(newValue);
-    onChange(title as keyof User['permissions'], newValue);
-  };  
+    onChange(permission, newValue);
+  };
 
   return (
     <div className="flex items-center justify-between gap-2">
