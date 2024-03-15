@@ -3,7 +3,7 @@ import { CompactTable } from "@table-library/react-table-library/compact";
 import { useTheme } from "@table-library/react-table-library/theme";
 import { usePagination } from "@table-library/react-table-library/pagination";
 import { EditPen, Dustbin } from "@/svg/index.ts";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Loader from "@/components/Loader";
 import { IoSearch } from "react-icons/io5";
 import { myTheme } from "@/constants/TableStyles"; // custom styling for the react-table component
@@ -14,6 +14,7 @@ import {
   Data,
   TableNode,
 } from "@table-library/react-table-library/types/table";
+import Alert from "@/components/Alert";
 
 type LocationIdsArray = [
   {
@@ -118,11 +119,34 @@ const UserList = () => {
   const [locationIds, setLocationIds] = useState<LocationIdsArray>([
     { id: "", name: "" },
   ]);
-  const [filteredUsers, setFilteredUsers] = useState([]);
+  // const [filteredUsers, setFilteredUsers] = useState([]);
   const [userRoleFilter, setUserRoleFilter] = useState<string>("all");
   const [userTypeFilter, setUserTypeFilter] = useState<string>("all");
   const [subAccountFilter, setSubAccountFilter] = useState<string>("all");
   const [noRecordFound, setNoRecordFound] = useState<boolean>(false);
+  const [nameFilter, setNameFilter] = useState<string>('');
+  const [showError, setShowError] = useState<boolean>(false);
+  const [showSuccess, setShowSuccess] = useState<boolean>(false);
+  const alertMsg = useRef<string>("");
+
+
+  const filteredUsers = users.filter((user: UserInterface) => {
+
+    const subAccountMatch =
+      subAccountFilter === "all" ||
+      user.roles.locationIds.includes(subAccountFilter);
+    const userTypeMatch =
+      userTypeFilter === "all" || user.roles.type === userTypeFilter;
+    const userRoleMatch =
+      userRoleFilter === "all" || user.roles.role === userRoleFilter;
+    const nameMatch = nameFilter === "" || user.name.toLowerCase().includes(nameFilter.toLowerCase());
+    
+    console.log(nameFilter,nameMatch);
+    // console.log(nameMatch);
+
+    // Return true if all filters match, otherwise false
+    return subAccountMatch && userTypeMatch && userRoleMatch && nameMatch;
+  });
 
   // console.log("type filter: ", userTypeFilter);
   // console.log("role filter: ", userRoleFilter);
@@ -147,9 +171,19 @@ const UserList = () => {
       );
       setUsers(response.data?.data?.users);
       setLoading(false);
+      alertMsg.current = "Request Successfull";
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 5000);
     } catch (error) {
       console.error("Error fetching users:", error);
       setLoading(false);
+      alertMsg.current = "Request Fails, Try Again";
+      setShowError(true);
+      setTimeout(() => {
+        setShowError(false);
+      }, 5000);
     }
   };
 
@@ -319,11 +353,10 @@ const UserList = () => {
       pageButtons.push(
         <button
           key={i}
-          className={`${
-            pagination.state.page === i
-              ? "border-blue-400 border-1 border bg-blue-50"
-              : ""
-          } rounded-sm text-xs text-gray-600 w-6 h-6`}
+          className={`${pagination.state.page === i
+            ? "border-blue-400 border-1 border bg-blue-50"
+            : ""
+            } rounded-sm text-xs text-gray-600 w-6 h-6`}
           onClick={() => {
             setPageIndex(i);
             pagination.fns.onSetPage(i);
@@ -337,34 +370,23 @@ const UserList = () => {
     return pageButtons;
   };
 
-  const handleSearchByName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    const searchedUsers = users.filter((user: UserInterface) =>
-      user.name.toLowerCase().includes(value.toLowerCase())
-    );
-    setFilteredUsers(searchedUsers);
-  };
+  // const handleSearchByName = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { value } = e.target;
+  //   const searchedUsers = users.filter((user: UserInterface) =>
+  //     user.name.toLowerCase().includes(value.toLowerCase())
+  //   );
+  //   setFilteredUsers(searchedUsers);
+  // };
 
   //users filtering on the basis of the filters value
-  useEffect(() => {
-    const filteredUsers = users.filter((user: UserInterface) => {
-      const subAccountMatch =
-        subAccountFilter === "all" ||
-        user.roles.locationIds.includes(subAccountFilter);
-      const userTypeMatch =
-        userTypeFilter === "all" || user.roles.type === userTypeFilter;
-      const userRoleMatch =
-        userRoleFilter === "all" || user.roles.role === userRoleFilter;
+  // useEffect(() => {
 
-      // Return true if all filters match, otherwise false
-      return subAccountMatch && userTypeMatch && userRoleMatch;
-    });
-    // Update state with the filtered users
-    if (filteredUsers.length == 0) {
-      setNoRecordFound(true);
-    }
-    setFilteredUsers(filteredUsers);
-  }, [subAccountFilter, userTypeFilter, userRoleFilter, UserList]);
+  //   // Update state with the filtered users
+  //   if (filteredUsers.length == 0) {
+  //     setNoRecordFound(true);
+  //   }
+  //   setFilteredUsers(filteredUsers);
+  // }, [subAccountFilter, userTypeFilter, userRoleFilter, UserList]);
 
   const handleFilterChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -374,6 +396,12 @@ const UserList = () => {
     else if (name === "userType") setUserTypeFilter(value);
     else if (name === "userRole") setUserRoleFilter(value);
   };
+
+  const handleNameFilter: React.ChangeEventHandler<HTMLInputElement> | undefined = (e) => {
+    const { value } = e.target;
+    // console.log(value);
+    setNameFilter(value)
+  }
 
   return (
     <div className="relative flex flex-col gap-2">
@@ -433,7 +461,8 @@ const UserList = () => {
             type="text"
             className=" text-xs text-gray-400 outline-none"
             placeholder="Search by name"
-            onChange={handleSearchByName}
+            onChange={handleNameFilter}
+            value={nameFilter}
           />
         </div>
         {/* <div className="flex items-center justify-between p-1 bg-white border border-1 outline-none rounded-md gap-1">
@@ -466,7 +495,7 @@ const UserList = () => {
         <div>
           <CompactTable
             columns={COLUMNS}
-            data={{ nodes: filteredUsers.length > 0 ? filteredUsers : users }}
+            data={{ nodes: filteredUsers }}
             theme={theme}
             pagination={pagination}
           />
@@ -478,11 +507,10 @@ const UserList = () => {
             </span>
             <span className="w-1/2 flex items-start justify-end gap-2">
               <button
-                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${
-                  pagination.state.page <= 0
-                    ? "pointer-events-none opacity-50"
-                    : ""
-                }`}
+                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${pagination.state.page <= 0
+                  ? "pointer-events-none opacity-50"
+                  : ""
+                  }`}
                 onClick={() => {
                   if (pagination.state.page > 0) {
                     pagination.fns.onSetPage(pageIndex - 1);
@@ -500,22 +528,21 @@ const UserList = () => {
                 )}
               </button>
               <button
-                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${
-                  pagination.state.page >=
+                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${pagination.state.page >=
                   pagination.state.getTotalPages(
                     filteredUsers.length > 0 ? filteredUsers : users
                   ) -
-                    1
-                    ? "pointer-events-none opacity-50"
-                    : ""
-                }`}
+                  1
+                  ? "pointer-events-none opacity-50"
+                  : ""
+                  }`}
                 onClick={() => {
                   if (
                     pagination.state.page <
                     pagination.state.getTotalPages(
                       filteredUsers.length > 0 ? filteredUsers : users
                     ) -
-                      1
+                    1
                   ) {
                     pagination.fns.onSetPage(pageIndex + 1);
                     setPageIndex(pageIndex + 1);
@@ -532,7 +559,7 @@ const UserList = () => {
       {/* update user modal */}
       {openUpdateUserModal ? (
         <div className="fixed top-0 p-5 left-0 z-40 w-full bg-gray-200 h-full bg-opacity-50  rounded-md flex items-center justify-center">
-        <UpdateUserModal
+          <UpdateUserModal
             setOpenUpdateUserModal={setOpenUpdateUserModal}
             userFormData={userFormData}
             refreshUserList={refreshUserList}
@@ -551,6 +578,12 @@ const UserList = () => {
         </div>
       ) : (
         ""
+      )}
+       {(showError || showSuccess) && (
+        <Alert
+          type={showError ? "error" : "success"}
+          message={alertMsg?.current}
+        />
       )}
     </div>
   );
