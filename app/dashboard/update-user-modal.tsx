@@ -148,7 +148,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
     }
 
     return (
-        <div className='flex flex-col w-1/2 max-h-3/4 overflow-y-auto rounded-md bg-white items-center justify-start gap-5 p-2 custom-scrollbar'>
+        <div className='flex flex-col w-1/2 max-h-[90vh] my-10 overflow-y-auto rounded-md bg-white items-top justify-start gap-5 p-2 custom-scrollbar'>
             {/* Button to close the modal */}
             <div className='p-1 flex items-center justify-between w-full' >
                 <div className='w-10 p-2 shadow-md rounded-full'><UserIcon /></div>
@@ -168,7 +168,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                 <form className="p-2 bg-white rounded flex flex-col gap-3" onSubmit={handleEditFormSubmit}>
                     {/* user information */}
                     <div className='border p-4 rounded-md shadow'>
-                        <div className='flex items-center justify-start py-5 gap-1 w-full cursor-pointer' onClick={() => setUserInfoAccordion(prev => !prev)}>
+                        <div className='flex items-center justify-start gap-1 w-full cursor-pointer' onClick={() => setUserInfoAccordion(prev => !prev)}>
                             <div className='w-5' >{userInfoAccordion ? <DownIcon /> : <UpIcon />}</div>
                             <div className='text-sm'>User Info</div>
                         </div>
@@ -224,7 +224,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                     </div>
                     {/* user permissions */}
                     <div className='border p-4 rounded-md shadow gap-3 flex flex-col justify-between'>
-                        <div className='flex items-center cursor-pointer justify-start py-5 gap-1 w-full' onClick={() => setUserPermissionAcc(prev => !prev)}>
+                        <div className='flex items-center cursor-pointer justify-start gap-1 w-full' onClick={() => setUserPermissionAcc(prev => !prev)}>
                             <div className='w-5 ' >{userPermissionAcc ? <DownIcon /> : <UpIcon />}</div>
                             <div className='text-sm'>User Permissions</div>
                         </div>
@@ -249,7 +249,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                     </div>
                     {/* user roles */}
                     <div className='border p-4 rounded-md shadow gap-3 flex flex-col justify-between'>
-                        <div className='flex items-center justify-start py-5 gap-1 w-full cursor-pointer' onClick={() => setUserRolesAcc(prev => !prev)}>
+                        <div className='flex items-center justify-start gap-1 w-full cursor-pointer' onClick={() => setUserRolesAcc(prev => !prev)}>
                             <div className='w-5'>{userRolesAcc ? <DownIcon /> : <UpIcon />}</div>
                             <div className='text-sm'>User Roles</div>
                         </div>

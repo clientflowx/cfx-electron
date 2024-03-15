@@ -258,8 +258,8 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
     }
 
     return (
-        <div className='flex flex-col w-1/2  overflow-y-auto rounded-md bg-white items-center justify-start gap-5 p-2 custom-scrollbar'>
-            {/* Button to close the modal */}
+        <div className='flex flex-col w-1/2 max-h-[90vh] my-10 overflow-y-auto rounded-md bg-white items-top justify-start gap-5 p-2 custom-scrollbar'>
+        {/* Button to close the modal */}
             <div className='p-1 flex items-center justify-between w-full' >
                 <div className='w-10 p-2 shadow-md rounded-full'><UserIcon /></div>
                 <button

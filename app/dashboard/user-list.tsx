@@ -531,8 +531,8 @@ const UserList = () => {
 
       {/* update user modal */}
       {openUpdateUserModal ? (
-        <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-top justify-center">
-          <UpdateUserModal
+        <div className="fixed top-0 p-5 left-0 z-40 w-full bg-gray-200 h-full bg-opacity-50  rounded-md flex items-center justify-center">
+        <UpdateUserModal
             setOpenUpdateUserModal={setOpenUpdateUserModal}
             userFormData={userFormData}
             refreshUserList={refreshUserList}
@@ -543,7 +543,7 @@ const UserList = () => {
       )}
       {/* newUserModal */}
       {openNewUserModal ? (
-        <div className="absolute z-40 w-full bg-gray-200 bg-opacity-50 h-full rounded-md flex items-top justify-center">
+        <div className="fixed top-0 p-5 left-0 z-40 w-full bg-gray-200 h-full bg-opacity-50  rounded-md flex items-center justify-center">
           <NewUserModal
             setOpenNewUserModal={setOpenNewUserModal}
             refreshUserList={refreshUserList}
