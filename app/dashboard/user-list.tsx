@@ -436,7 +436,7 @@ const UserList = () => {
             onChange={handleSearchByName}
           />
         </div>
-        <div className="flex items-center justify-between p-1 bg-white border border-1 outline-none rounded-md gap-1">
+        {/* <div className="flex items-center justify-between p-1 bg-white border border-1 outline-none rounded-md gap-1">
           <div className="opacity-30 h-full">
             <IoSearch />
           </div>
@@ -445,7 +445,7 @@ const UserList = () => {
             className=" text-xs text-gray-400 outline-none"
             placeholder="Search by Location Id"
           />
-        </div>
+        </div> */}
         <div>
           <button
             className="text-xs text-white rounded-md font-semibold px-3 p-1 bg-blue-500"

@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 import { CrossIcon, UpIcon, DownIcon, LockIcon, UserIcon } from '@/svg/index.ts';
 import Toggle from '@/components/Toggle';
 import axios, { isAxiosError } from 'axios';
-import { User, Permissions } from './types';
+import { Permissions } from './types';
+import Loader from '@/components/Loader';
 
 type Props = {
     setOpenUpdateUserModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -48,6 +50,28 @@ const toggleButtonHeaders: string[] = [
     "Cancel Subscription",
 ];
 
+type agencyArray = [
+    {
+        id: string,
+        name: string,
+    }
+]
+
+type User = {
+    id: string;
+    name: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone?: string; // Optional phone property
+    permissions: Permissions
+    roles: {
+        type: string;
+        role: string;
+        locationIds: string[];
+    };
+}
+
 const permissionsArray: string[] = [
     'campaignsEnabled',
     'campaignsReadOnly',
@@ -84,10 +108,9 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
     const [userDetails, setUserDetails] = useState<User>(userFormData);
     const [formSubmitError, setFormSubmitError] = useState<string>('');
     const [formSubmissionLoading, setformSubmissionLoading] = useState<boolean>(false);
-
-
+    const [loading, setLoading] = useState<boolean>(false);
+    const [agencyLocation, setAgencyLocation] = useState<agencyArray>();
     console.log("user details before the api call:", userDetails);
-
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const { name, value } = e.target;
@@ -107,17 +130,66 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
         }));
     };
 
+    // fetching all the location with their ids
+    useEffect(() => {
+        const getAgencyLocation = async () => {
+            try {
+                setLoading(true);
+                // Retrieve the bearer token from cookies
+                const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+                const tokenValue = token ? token.split('=')[1] : '';
+                const response = await axios.
+                    get('https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-subaccounts',
+                        {
+                            headers: {
+                                Authorization: `Bearer ${tokenValue}`
+                            }
+                        });
+                // console.log("user locations: ", response.data?.data);
+                setLoading(false);
+                setAgencyLocation(response.data?.data);
+            } catch (error) {
+                setLoading(false);
+                console.log("Error getting location: ", error);
+            }
+        }
+        getAgencyLocation();
+    }, []);
+
+    const handleSelectChange: React.ChangeEventHandler<HTMLSelectElement> | undefined = (e) => {
+        const { name, value } = e.target;
+
+        if (name === 'locationIds') {
+            setUserDetails(prevData => ({
+                ...prevData,
+                roles: {
+                    ...prevData.roles,
+                    locationIds: [...prevData.roles.locationIds, value]
+                },
+            }))
+        }
+        else {
+            setUserDetails(prevData => ({
+                ...prevData,
+                roles: {
+                    ...prevData.roles,
+                    [name]: value,
+                }
+            }));
+        }
+    };
+
     const handleEditFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             setformSubmissionLoading(true);
             console.log("inside the api call: ", userDetails);
-            console.log("user id inside the api call: ", userDetails.id);
+            console.log("user id inside the api call: ", userDetails?.id);
 
 
             const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
             const tokenValue = token ? token.split('=')[1] : '';
-            const response = await axios.post(`https://cfx-mono-production-5ec7.up.railway.app/api/internal/update-user/${userDetails.id}`, userDetails, {
+            const response = await axios.post(`https://cfx-mono-production-5ec7.up.railway.app/api/internal/update-user/${userDetails?.id}`, userDetails, {
                 headers: {
                     Authorization: `Bearer ${tokenValue}`
                 }
@@ -180,7 +252,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                                         type="text"
                                         className={inputFieldStyle}
                                         name='firstName'
-                                        value={userDetails.firstName}
+                                        value={userDetails?.firstName}
                                         onChange={handleInputChange}
                                         required
                                     />
@@ -191,7 +263,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                                         type="text"
                                         className={inputFieldStyle}
                                         name='lastName'
-                                        value={userDetails.lastName}
+                                        value={userDetails?.lastName}
                                         onChange={handleInputChange}
                                         required
                                     />
@@ -204,21 +276,12 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                                         type="text"
                                         name='email'
                                         className={`${inputFieldStyle} text-gray-300`}
-                                        value={userDetails.email}
+                                        value={userDetails?.email}
                                         onChange={handleInputChange}
                                         disabled
                                     />
                                 </div>
-                                <div className='flex flex-col items-start justify-between gap-1 w-1/2'>
-                                    <label htmlFor="" className='text-xs'>Phone</label>
-                                    <input
-                                        type="text"
-                                        className={inputFieldStyle}
-                                        name='phone'
-                                        value={userDetails.phone}
-                                        onChange={handleInputChange}
-                                    />
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -233,14 +296,14 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                                 <div className='flex justify-between flex-col gap-1'>
                                     {permissionsArrayColumn1.map((permission, index) => (
                                         <div key={index}>
-                                            <Toggle title={permission} onChange={handleToggleChange} value={userDetails.permissions[permission as keyof Permissions]} />
+                                            <Toggle title={permission} onChange={handleToggleChange} value={userDetails?.permissions[permission as keyof Permissions]} />
                                         </div>
                                     ))}
                                 </div>
                                 <div className='flex justify-between flex-col gap-1'>
                                     {permissionsArrayColumn2.map((permission, index) => (
                                         <div key={index}>
-                                            <Toggle title={permission} onChange={handleToggleChange} value={userDetails.permissions[permission as keyof Permissions]} />
+                                            <Toggle title={permission} onChange={handleToggleChange} value={userDetails?.permissions[permission as keyof Permissions]} />
                                         </div>
                                     ))}
                                 </div>
@@ -256,28 +319,31 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                         <div className={`${userRolesAcc ? '' : 'hidden'} flex flex-col items-start justify-between gap-3`}>
                             <div className='flex flex-col w-full items-start justify-between gap-1 text-xs'>
                                 <label htmlFor="" className='text-xs'>User Type</label>
-                                <select name="type" id="" className={selectFieldStyle} required defaultValue={userFormData.roles.type}>
+                                <select name="type" id="" className={selectFieldStyle} required onChange={handleSelectChange} defaultValue={userDetails?.roles?.type}>
                                     <option value="">Select type</option>
                                     <option value="account">Account</option>
                                 </select>
                             </div>
                             <div className='flex flex-col w-full items-start justify-between gap-1'>
                                 <label htmlFor="" className='text-xs'>User Role</label>
-                                <select name="" id="" className={selectFieldStyle} required defaultValue={userFormData.roles.role}>
+                                <select name="role" id="" className={selectFieldStyle} required defaultValue={userDetails?.roles?.role} onChange={handleSelectChange}>
                                     <option value="">Select Role</option>
                                     <option value="admin" className='py-10 px-10 '>Admin</option>
                                     <option value="user" className='py-10 px-10 '>User</option>
                                 </select>
                             </div>
-                            {/* <div className='flex flex-col w-full items-start justify-between gap-1'>
+                            {/* <div>{userDetails.roles.locationIds}</div> */}
+                            <div className='flex flex-col w-full items-start justify-between gap-1 text-xs'>
                                 <label htmlFor="" className='text-xs'>Add Sub Accounts</label>
-                                <select name="" id="" className={selectFieldStyle}>
-                                    <option value="account" className='py-10 px-10 '>Account</option>
-                                    <option value="account" className='py-10 px-10 '>Account</option>
-                                    <option value="account" className='py-10 px-10 '>Account</option>
-                                    <option value="account" className='py-10 px-10 '>Account</option>
+                                <select name="locationIds" id="" className={selectFieldStyle} onChange={handleSelectChange}>
+                                    {loading ?
+                                        <option><Loader /></option> :
+                                        agencyLocation?.map((location, index) => (
+                                            <option key={index} value={location.id} className='py-10 px-10'>{location.name}</option>
+                                        ))
+                                    }
                                 </select>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                     {/* form buttons */}
