@@ -44,9 +44,12 @@ const SignInForm: React.FC = () => {
       const adminToken = response.data.token;
       const userRole = response?.data?.userData?.role;
 
-      const expirationDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); //expiration time for 30 days
-      document.cookie = `token=${adminToken}; expires=${expirationDate.toUTCString()}; path=/; secure; SameSite=Strict`; //save the token in the cookie
-      document.cookie = `role=${userRole}; expires=${expirationDate.toUTCString()}; path=/; secure; SameSite=Strict`;
+      if (typeof window !== 'undefined') {
+        const expirationDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); //expiration time for 30 days
+        document.cookie = `token=${adminToken}; expires=${expirationDate.toUTCString()}; path=/; secure; SameSite=Strict`; //save the token in the cookie
+        document.cookie = `role=${userRole}; expires=${expirationDate.toUTCString()}; path=/; secure; SameSite=Strict`;
+      }
+
       //redirect the valid admin user to the dashboard
       setIsLoginError(false);
       setLoading(false);
@@ -156,9 +159,8 @@ const SignInForm: React.FC = () => {
                 )}
               </button>
               <div
-                className={`${
-                  isLoginError ? "" : "hidden"
-                } text-red-500 text-sm font-bold`}
+                className={`${isLoginError ? "" : "hidden"
+                  } text-red-500 text-sm font-bold`}
               >
                 {loginErrorMessage}
               </div>
