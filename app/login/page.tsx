@@ -44,8 +44,8 @@ const SignInForm: React.FC = () => {
       const adminToken = response.data.token;
       const userRole = response?.data?.userData?.role;
 
-      if (typeof window !== 'undefined') {
-        const expirationDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); //expiration time for 30 days
+      const expirationDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); //expiration time for 30 days
+      if (process.browser) {
         document.cookie = `token=${adminToken}; expires=${expirationDate.toUTCString()}; path=/; secure; SameSite=Strict`; //save the token in the cookie
         document.cookie = `role=${userRole}; expires=${expirationDate.toUTCString()}; path=/; secure; SameSite=Strict`;
       }

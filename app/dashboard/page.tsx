@@ -16,16 +16,23 @@ const AdminDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [sidebarOption, setSidebarOption] = useState("ClientFlowX");
   const router = useRouter();
-  const roleData = document.cookie
-    .split(";")
-    .find((cookie) => cookie.trim().startsWith("role="));
+  let roleData;
+
+  if (process.browser) {
+    roleData = document.cookie
+      .split(";")
+      .find((cookie) => cookie.trim().startsWith("role="));
+  }
   const userRole = roleData ? roleData.split("=")[1] : "";
   console.log("userRole", userRole);
   useEffect(() => {
     // Check for token in cookies
-    const token = document.cookie
-      .split(";")
-      .find((cookie) => cookie.trim().startsWith("token="));
+    let token;
+    if (process.browser) {
+      token = document.cookie
+        .split(";")
+        .find((cookie) => cookie.trim().startsWith("token="));
+    }
 
     // If token is not present, redirect to /login
     if (!token) {
