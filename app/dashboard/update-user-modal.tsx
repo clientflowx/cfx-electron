@@ -9,59 +9,15 @@ import {
 } from "@/svg/index.ts";
 import Toggle from "@/components/Toggle";
 import axios, { isAxiosError } from "axios";
-import { Permissions } from "./types";
+import { AccType, Permissions } from "./types";
 import Loader from "@/components/Loader";
+import AutoCompleteDD from "@/components/AutoCompleteDD";
 
 type Props = {
   setOpenUpdateUserModal: React.Dispatch<React.SetStateAction<boolean>>;
   userFormData: User;
   refreshUserList: () => void;
 };
-
-const toggleButtonHeaders: string[] = [
-  "Dashboard Stats",
-  "Appointments",
-  "Campaigns",
-  "Bulk Requests",
-  "Triggers",
-  "Funnels",
-  "Opportunities",
-  "Conversations",
-  "Contacts",
-  "Reviews",
-  "Online Listings",
-  "Membership",
-  "Communities",
-  "Settings",
-  "Only Assigned Data",
-  "Tags",
-  "Lead Value",
-  "Marketing",
-  "Websites",
-  "Adwords Reporting",
-  "Facebook Ads",
-  "Call Reporting",
-  "Reporting",
-  "Attribution Reporting",
-  "Agent Reporting",
-  "Social Planner",
-  "Workflows",
-  "Blogging",
-  "Affiliate Manager",
-  "Content Al",
-  "Payments",
-  "Invoicing",
-  "Record Payment",
-  "Payment Refund",
-  "Cancel Subscription",
-];
-
-type agencyArray = [
-  {
-    id: string;
-    name: string;
-  }
-];
 
 type User = {
   id: string;
@@ -144,7 +100,10 @@ const UpdateUserModal: React.FC<Props> = ({
   const [formSubmissionLoading, setformSubmissionLoading] =
     useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
-  const [agencyLocation, setAgencyLocation] = useState<agencyArray>();
+  const [agencyLocation, setAgencyLocation] = useState<AccType[]>([]);
+  const [inputValue, setInputValue] = useState<string>("");
+  const [value, setValue] = useState<AccType | null>(null);
+
   console.log("user details before the api call:", userDetails);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -269,6 +228,22 @@ const UpdateUserModal: React.FC<Props> = ({
         }
       }
     }
+  };
+
+  const handleDeleteLocationId = (index: number) => {
+    const modifiedUserData = { ...userDetails };
+    modifiedUserData.roles.locationIds.splice(index, 1);
+    setUserDetails(modifiedUserData);
+  };
+
+  const addLocationId = (optionValue: string, optionId: string) => {
+    setUserDetails((prevData) => ({
+      ...prevData,
+      roles: {
+        ...prevData.roles,
+        locationIds: [...prevData.roles.locationIds, optionId],
+      },
+    }));
   };
 
   return (
@@ -487,39 +462,32 @@ const UpdateUserModal: React.FC<Props> = ({
                     Add Sub Accounts
                   </label>
                 </div>
-                <select
+                <AutoCompleteDD
+                  inputValue={inputValue}
+                  setInputValue={setInputValue}
+                  setCurrentOption={setValue}
+                  dataList={agencyLocation}
                   name="locationIds"
-                  id=""
-                  className={selectFieldStyle}
-                  onChange={handleSelectChange}
-                >
-                  {loading ? (
-                    <option>
-                      <Loader />
-                    </option>
-                  ) : (
-                    agencyLocation?.map((location, index) => (
-                      <option
-                        key={index}
-                        value={location.id}
-                        className="py-10 px-10"
-                      >
-                        {location.name}
-                      </option>
-                    ))
-                  )}
-                </select>
+                  onOptionClick={addLocationId}
+                />
                 <div className="flex flex-wrap gap-1">
                   {userDetails.roles.locationIds.map((locationId, index) => {
                     const location = agencyLocation?.find(
                       (loc) => loc.id === locationId
                     );
+                    console.log(location);
                     return (
                       <div
                         key={index}
-                        className="bg-green-300 text-xs font-semibold p-1 rounded-md"
+                        className="bg-green-300 text-xs font-semibold p-1 rounded-md flex items-center"
                       >
                         {location ? location.name : "Unknown Location"}
+                        <span
+                          className="cursor-pointer ml-1"
+                          onClick={() => handleDeleteLocationId(index)}
+                        >
+                          X
+                        </span>
                       </div>
                     );
                   })}

@@ -10,7 +10,8 @@ import {
 import Toggle from "@/components/Toggle";
 import axios, { AxiosError, isAxiosError } from "axios";
 import Loader from "@/components/Loader";
-import { Permissions } from "./types";
+import { AccType, Permissions } from "./types";
+import AutoCompleteDD from "@/components/AutoCompleteDD";
 
 interface User {
   firstName: string;
@@ -133,13 +134,6 @@ type Props = {
   refreshUserList: () => void;
 };
 
-type agencyArray = [
-  {
-    id: string;
-    name: string;
-  }
-];
-
 const NewUserModal: React.FC<Props> = ({
   setOpenNewUserModal,
   refreshUserList,
@@ -149,12 +143,14 @@ const NewUserModal: React.FC<Props> = ({
   const [userRolesAcc, setUserRolesAcc] = useState(false);
   const [newUserData, setNewUserData] = useState<User>(initialUserValue);
 
-  const [agencyLocation, setAgencyLocation] = useState<agencyArray>();
+  const [agencyLocation, setAgencyLocation] = useState<AccType[]>([]);
   const [PasswordValid, setPasswordValid] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [formSubmissionLoading, setformSubmissionLoading] =
     useState<boolean>(false);
   const [formSubmitError, setFormSubmitError] = useState<string>("");
+  const [inputValue, setInputValue] = useState<string>("");
+  const [value, setValue] = useState<AccType | null>(null);
 
   const handleInputChange:
     | React.ChangeEventHandler<HTMLInputElement>
@@ -289,6 +285,19 @@ const NewUserModal: React.FC<Props> = ({
         }
       }
     }
+  };
+
+  const handleDeleteLocationId = (index: number) => {
+    const modifiedUserData = { ...newUserData };
+    modifiedUserData.locationIds.splice(index, 1);
+    setNewUserData(modifiedUserData);
+  };
+
+  const addLocationId = (optionValue: string, optionId: string) => {
+    setNewUserData((prevData) => ({
+      ...prevData,
+      locationIds: [...prevData.locationIds, optionId],
+    }));
   };
 
   return (
@@ -497,29 +506,15 @@ const NewUserModal: React.FC<Props> = ({
                 <label htmlFor="" className="text-xs">
                   Add Sub Accounts
                 </label>
-                <select
-                  name="locationIds"
-                  id=""
-                  className={selectFieldStyle}
-                  onChange={handleSelectChange}
-                >
-                  {loading ? (
-                    <option>
-                      <Loader />
-                    </option>
-                  ) : (
-                    agencyLocation?.map((location, index) => (
-                      <option
-                        key={index}
-                        value={location.id}
-                        className="py-10 px-10"
-                      >
-                        {location.name}
-                      </option>
-                    ))
-                  )}
-                </select>
               </div>
+              <AutoCompleteDD
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                setCurrentOption={setValue}
+                dataList={agencyLocation}
+                name="locationIds"
+                onOptionClick={addLocationId}
+              />
               <div className="flex flex-wrap gap-1">
                 {newUserData?.locationIds?.map((locationId, index) => {
                   const location = agencyLocation?.find(
@@ -528,9 +523,15 @@ const NewUserModal: React.FC<Props> = ({
                   return (
                     <div
                       key={index}
-                      className="bg-green-300 text-xs font-semibold p-1 rounded-md"
+                      className="bg-green-300 text-xs font-semibold p-1 rounded-md flex items-center"
                     >
                       {location ? location.name : "Unknown Location"}
+                      <span
+                        className="cursor-pointer ml-1"
+                        onClick={() => handleDeleteLocationId(index)}
+                      >
+                        X
+                      </span>
                     </div>
                   );
                 })}

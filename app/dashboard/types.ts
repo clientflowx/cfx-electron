@@ -1,14 +1,14 @@
 type AccType = {
-  key: string;
+  key?: string;
   name: string;
   id: string;
 };
 
 type AdminUser = {
-  name: string,
-  email: string,
-  role: string
-}
+  name: string;
+  email: string;
+  role: string;
+};
 
 type User = {
   id: string;
@@ -17,13 +17,13 @@ type User = {
   lastName: string;
   email: string;
   phone?: string; // Optional phone property
-  permissions: Permissions
+  permissions: Permissions;
   roles: {
-      type: string;
-      role: string;
-      locationIds: string[];
+    type: string;
+    role: string;
+    locationIds: string[];
   };
-}
+};
 
 type Permissions = {
   adwordsReportingEnabled: boolean;
@@ -66,6 +66,4 @@ type Permissions = {
   workflowsReadOnly: boolean;
 };
 
-
-
-export type {Permissions, AccType, AdminUser,User };
+export type { Permissions, AccType, AdminUser, User };

@@ -6,6 +6,8 @@ interface AutoCompleteDDProps {
   setCurrentOption: React.Dispatch<React.SetStateAction<AccType | null>>;
   inputValue: string;
   setInputValue: React.Dispatch<React.SetStateAction<string>>;
+  name?: string;
+  onOptionClick?: (optionValue: string, optionId: string) => void;
 }
 
 const AutoCompleteDD: React.FC<AutoCompleteDDProps> = ({
@@ -13,6 +15,8 @@ const AutoCompleteDD: React.FC<AutoCompleteDDProps> = ({
   setCurrentOption,
   inputValue,
   setInputValue,
+  name,
+  onOptionClick,
 }) => {
   const [filteredData, setFilteredData] = useState<AccType[]>([]);
 
@@ -61,6 +65,8 @@ const AutoCompleteDD: React.FC<AutoCompleteDDProps> = ({
     setCurrentOption({ id: optionId, name: optionValue, key: optionKey });
     setInputValue(optionValue);
     setFilteredData([]);
+    if (onOptionClick) onOptionClick(optionValue, optionId);
+    console.log({ id: optionId, name: optionValue, key: optionKey });
   };
   const closeList = (e: Event) => {
     if ((e.target as HTMLDivElement).id !== "autocomplete") setFilteredData([]);
