@@ -381,14 +381,13 @@ const NewUserModal: React.FC<Props> = ({
                     required
                   />
                 </div>
-              </div>
-              <div className="flex flex-col gap-1 w-full">
+
                 <div className="flex flex-col items-start justify-between gap-1 w-1/2">
                   <label htmlFor="" className="text-xs">
                     Password
                   </label>
                   <input
-                    type="text"
+                    type="password"
                     className={inputFieldStyle}
                     name="password"
                     value={newUserData.password}
@@ -396,15 +395,15 @@ const NewUserModal: React.FC<Props> = ({
                     required
                   />
                 </div>
-                <div
-                  className={`${
-                    PasswordValid ? "hidden" : ""
-                  } text-xs text-red-500`}
-                >
-                  Password must contain at least 8 characters, including one
-                  uppercase letter, one lowercase letter, one number, and one
-                  special character.
-                </div>
+              </div>
+              <div
+                className={`${
+                  PasswordValid ? "hidden" : ""
+                } text-xs text-red-500`}
+              >
+                Password must contain at least 8 characters, including one
+                uppercase letter, one lowercase letter, one number, and one
+                special character.
               </div>
             </div>
           </div>

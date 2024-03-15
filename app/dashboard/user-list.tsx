@@ -31,7 +31,7 @@ interface UserInterface {
   lastName: string;
   email: string;
   phone?: string; // Optional phone property
-  permissions: Permissions
+  permissions: Permissions;
   roles: {
     type: string;
     role: string;
@@ -112,14 +112,12 @@ const UserList = () => {
   const [userTypeFilter, setUserTypeFilter] = useState<string>("all");
   const [subAccountFilter, setSubAccountFilter] = useState<string>("all");
   const [noRecordFound, setNoRecordFound] = useState<boolean>(false);
-  const [nameFilter, setNameFilter] = useState<string>('');
+  const [nameFilter, setNameFilter] = useState<string>("");
   const [showError, setShowError] = useState<boolean>(false);
   const [showSuccess, setShowSuccess] = useState<boolean>(false);
   const alertMsg = useRef<string>("");
 
-
   const filteredUsers = users.filter((user: UserInterface) => {
-
     const subAccountMatch =
       subAccountFilter === "all" ||
       user.roles.locationIds.includes(subAccountFilter);
@@ -127,9 +125,11 @@ const UserList = () => {
       userTypeFilter === "all" || user.roles.type === userTypeFilter;
     const userRoleMatch =
       userRoleFilter === "all" || user.roles.role === userRoleFilter;
-    const nameMatch = nameFilter === "" || user.name.toLowerCase().includes(nameFilter.toLowerCase());
-    
-    console.log(nameFilter,nameMatch);
+    const nameMatch =
+      nameFilter === "" ||
+      user.name.toLowerCase().includes(nameFilter.toLowerCase());
+
+    console.log(nameFilter, nameMatch);
     // console.log(nameMatch);
 
     // Return true if all filters match, otherwise false
@@ -341,10 +341,11 @@ const UserList = () => {
       pageButtons.push(
         <button
           key={i}
-          className={`${pagination.state.page === i
-            ? "border-blue-400 border-1 border bg-blue-50"
-            : ""
-            } rounded-sm text-xs text-gray-600 w-6 h-6`}
+          className={`${
+            pagination.state.page === i
+              ? "border-blue-400 border-1 border bg-blue-50"
+              : ""
+          } rounded-sm text-xs text-gray-600 w-6 h-6`}
           onClick={() => {
             setPageIndex(i);
             pagination.fns.onSetPage(i);
@@ -385,11 +386,13 @@ const UserList = () => {
     else if (name === "userRole") setUserRoleFilter(value);
   };
 
-  const handleNameFilter: React.ChangeEventHandler<HTMLInputElement> | undefined = (e) => {
+  const handleNameFilter:
+    | React.ChangeEventHandler<HTMLInputElement>
+    | undefined = (e) => {
     const { value } = e.target;
     // console.log(value);
-    setNameFilter(value)
-  }
+    setNameFilter(value);
+  };
 
   return (
     <div className="relative flex flex-col gap-2">
@@ -405,8 +408,7 @@ const UserList = () => {
             <option value="all" defaultChecked>
               Select User Type
             </option>
-            <option value="agency">agency</option>
-            <option value="account">account</option>
+            <option value="account">Account</option>
           </select>
         </div>
         <div>
@@ -419,9 +421,8 @@ const UserList = () => {
             <option value="all" defaultChecked>
               Select User Role
             </option>
-            <option value="owner">owner</option>
-            <option value="admin">admin</option>
-            <option value="user">user</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
           </select>
         </div>
         <div>
@@ -495,10 +496,11 @@ const UserList = () => {
             </span>
             <span className="w-1/2 flex items-start justify-end gap-2">
               <button
-                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${pagination.state.page <= 0
-                  ? "pointer-events-none opacity-50"
-                  : ""
-                  }`}
+                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${
+                  pagination.state.page <= 0
+                    ? "pointer-events-none opacity-50"
+                    : ""
+                }`}
                 onClick={() => {
                   if (pagination.state.page > 0) {
                     pagination.fns.onSetPage(pageIndex - 1);
@@ -516,21 +518,22 @@ const UserList = () => {
                 )}
               </button>
               <button
-                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${pagination.state.page >=
+                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${
+                  pagination.state.page >=
                   pagination.state.getTotalPages(
                     filteredUsers.length > 0 ? filteredUsers : users
                   ) -
-                  1
-                  ? "pointer-events-none opacity-50"
-                  : ""
-                  }`}
+                    1
+                    ? "pointer-events-none opacity-50"
+                    : ""
+                }`}
                 onClick={() => {
                   if (
                     pagination.state.page <
                     pagination.state.getTotalPages(
                       filteredUsers.length > 0 ? filteredUsers : users
                     ) -
-                    1
+                      1
                   ) {
                     pagination.fns.onSetPage(pageIndex + 1);
                     setPageIndex(pageIndex + 1);
@@ -567,7 +570,7 @@ const UserList = () => {
       ) : (
         ""
       )}
-       {(showError || showSuccess) && (
+      {(showError || showSuccess) && (
         <Alert
           type={showError ? "error" : "success"}
           message={alertMsg?.current}
