@@ -75,7 +75,7 @@ const AdminDashboard = () => {
     },
   ];
 
-  const userData = JSON.parse(localStorage?.getItem("loginUserDetails") || "{}")
+  const userData = process.browser ? JSON.parse(localStorage?.getItem("loginUserDetails") || "{}")
     ?.data?.userData;
   const role = userData?.role;
 
