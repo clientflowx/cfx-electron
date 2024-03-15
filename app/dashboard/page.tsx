@@ -14,7 +14,7 @@ import HomePage from "./home-page";
 
 const AdminDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [sidebarOption, setSidebarOption] = useState("ClientFlowX");
+  const [sidebarOption, setSidebarOption] = useState("clientflowx");
   const router = useRouter();
   let roleData;
 
@@ -41,6 +41,7 @@ const AdminDashboard = () => {
   }, []);
 
   type SidebarItem = {
+    key:string,
     title: string;
     icon: JSX.Element;
     titleVisible: boolean;
@@ -48,27 +49,32 @@ const AdminDashboard = () => {
 
   let sidebarItems: SidebarItem[] = [
     {
+      key:"clientflowx",
       title: "ClientFlowX",
       icon: <Image className="rounded-full" src={cfxlogo} alt="CFX logo" />,
       titleVisible: true,
     },
     {
+      key:"manage-users",
       title: "Manage Users",
       icon: <Dashboard />,
       titleVisible: true,
     },
     {
+      key:"manage-admin-users",
       title: "Manage Admin Users",
       icon: <AdminUser />,
       titleVisible: true,
     },
     {
-
+      
+      key:"manage-alohaa",
       title: "Manage Alohaa",
       icon: <Alohaa />,
       titleVisible: true,
     },
     {
+      key:"manage-razorpay",
       title: "Manage Razorpay",
       icon: <RazorPay />,
       titleVisible: true,
@@ -99,7 +105,7 @@ const AdminDashboard = () => {
           <ul className="space-y-2 font-medium">
             {sidebarItems.map((item, index) => {
               return (
-                <li key={index} onClick={() => setSidebarOption(item.title)}>
+                <li key={index} onClick={() => setSidebarOption(item.key)}>
                   <div
                     className={`flex items-center p-4 text-gray-300 hover:bg-gray-800 transition-all ${isSidebarOpen ? "" : "justify-center"
                       } group`}
@@ -124,26 +130,25 @@ const AdminDashboard = () => {
       >
         <div className={`sm:ml-10`}>
           <div className={`rounded-lg mt-14`}>
-            <div className={`${sidebarOption === 'ClientFlowX' ? '' : 'hidden'}`}>
-              {/* <h1 className="text-2xl font-bold text-gray-700 my-6">Dashboard</h1> */}
-              <HomePage />
+            <div className={`${sidebarOption === 'clientflowx' ? '' : 'hidden'}`}>
+              <HomePage setSidebarOption={setSidebarOption} />
             </div>
-            <div className={`${sidebarOption === 'Manage Users' ? '' : 'hidden'}`}>
+            <div className={`${sidebarOption === 'manage-users' ? '' : 'hidden'}`}>
               <h1 className="my-2 font-bold text-md">Teams</h1>
               <UserList />
             </div>
             <div
-              className={`${sidebarOption === 'Manage Admin Users' ? '' : 'hidden'
+              className={`${sidebarOption === 'manage-admin-users' ? '' : 'hidden'
                 }`}
             >
               <h1 className="my-2 font-bold text-md">Manage Admins</h1>
               <ManageAdminUser />
             </div>
-            <div className={`${sidebarOption === 'Manage Alohaa' ? '' : 'hidden'}`}>
+            <div className={`${sidebarOption === 'manage-alohaa' ? '' : 'hidden'}`}>
               <h1 className="my-2 font-bold text-md">Manage Admins</h1>
               <AllohaAdmin />
             </div>
-            {sidebarOption === 'Manage Razorpay' && (
+            {sidebarOption === 'manage-razorpay' && (
               <div>
                 <h1 className="my-2 font-bold text-md">Manage Admins</h1>
                 <RazorpayAdmin />
