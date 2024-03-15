@@ -259,7 +259,7 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
 
     return (
         <div className='flex flex-col w-1/2 max-h-[90vh] my-10 overflow-y-auto rounded-md bg-white items-top justify-start gap-5 p-2 custom-scrollbar'>
-        {/* Button to close the modal */}
+            {/* Button to close the modal */}
             <div className='p-1 flex items-center justify-between w-full' >
                 <div className='w-10 p-2 shadow-md rounded-full'><UserIcon /></div>
                 <button
@@ -397,10 +397,16 @@ const NewUserModal: React.FC<Props> = ({ setOpenNewUserModal, refreshUserList })
                                     }
                                 </select>
                             </div>
-                            {/* <div>{newUserData.locationIds.map((id) => (
-                                <div>{id}</div>
-                            ))}
-                            </div> */}
+                            <div className='flex flex-wrap gap-1'>
+                                {newUserData?.locationIds?.map((locationId, index) => {
+                                    const location = agencyLocation?.find(loc => loc.id === locationId);
+                                    return (
+                                        <div key={index} className='bg-green-300 text-xs font-semibold p-1 rounded-md'>
+                                            {location ? location.name : "Unknown Location"}
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
                     </div>
                     {/* form buttons */}

@@ -179,6 +179,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
         }
     };
 
+
     const handleEditFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
@@ -281,6 +282,16 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                                         disabled
                                     />
                                 </div>
+                                <div className='flex flex-col items-start justify-between gap-1 w-1/2'>
+                                    <label htmlFor="" className='text-xs'>Phone</label>
+                                    <input
+                                        type="text"
+                                        name='phone'
+                                        className={`${inputFieldStyle} text-gray-300`}
+                                        value={userDetails.phone}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
 
                             </div>
                         </div>
@@ -334,7 +345,9 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                             </div>
                             {/* <div>{userDetails.roles.locationIds}</div> */}
                             <div className='flex flex-col w-full items-start justify-between gap-1 text-xs'>
-                                <label htmlFor="" className='text-xs'>Add Sub Accounts</label>
+                                <div className='flex items-center justify-between w-full flex-wrap'>
+                                    <label htmlFor="" className='text-xs'>Add Sub Accounts</label>
+                                </div>
                                 <select name="locationIds" id="" className={selectFieldStyle} onChange={handleSelectChange}>
                                     {loading ?
                                         <option><Loader /></option> :
@@ -343,6 +356,16 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                                         ))
                                     }
                                 </select>
+                                <div className='flex flex-wrap gap-1'>
+                                    {userDetails.roles.locationIds.map((locationId, index) => {
+                                        const location = agencyLocation?.find(loc => loc.id === locationId);
+                                        return (
+                                            <div key={index} className='bg-green-300 text-xs font-semibold p-1 rounded-md'>
+                                                {location ? location.name : "Unknown Location"}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </div>
                     </div>
