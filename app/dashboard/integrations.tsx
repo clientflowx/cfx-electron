@@ -5,7 +5,7 @@ type Props = {
   setSidebarOption: React.Dispatch<React.SetStateAction<string>>
 }
 
-const HomePage: React.FC<Props> = ({setSidebarOption}) => {
+const Integrations: React.FC<Props> = ({setSidebarOption}) => {
   return (
     <div className='flex flex-col gap-2'>
       <div className='text-md w-full font-semibold text-gray-700'>Integrations</div>
@@ -25,4 +25,4 @@ const HomePage: React.FC<Props> = ({setSidebarOption}) => {
   )
 }
 
-export default HomePage;
+export default Integrations;

@@ -9,7 +9,7 @@ import {
 } from "@/svg/index.ts";
 import Toggle from "@/components/Toggle";
 import axios, { isAxiosError } from "axios";
-import { AccType, Permissions } from "./types";
+import { AccType, Permissions, User } from "./types";
 import Loader from "@/components/Loader";
 import AutoCompleteDD from "@/components/AutoCompleteDD";
 
@@ -19,20 +19,7 @@ type Props = {
   refreshUserList: () => void;
 };
 
-type User = {
-  id: string;
-  name: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone?: string; // Optional phone property
-  permissions: Permissions;
-  roles: {
-    type: string;
-    role: string;
-    locationIds: string[];
-  };
-};
+
 const permissionsArray: { title: string; permission: keyof Permissions }[] = [
   { title: "Adwords Reporting", permission: "adwordsReportingEnabled" },
   { title: "Affiliate Manager", permission: "affiliateManagerEnabled" },
