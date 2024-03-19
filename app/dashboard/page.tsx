@@ -59,7 +59,7 @@ const AdminDashboard = () => {
     },
     {
       key: "integrations",
-      title: "Intergrations",
+      title: "Integrations",
       icon: <IntegrationsIcon />,
       titleVisible: true,
     },

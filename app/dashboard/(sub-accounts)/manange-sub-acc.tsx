@@ -48,7 +48,7 @@ const initialSubAccountData: subAccountDataType[] = [{
 }]
 
 const ManageSubAccounts = () => {
-  const [subAccountsData, setSubAccountsData] = useState<subAccountDataType[]>(initialSubAccountData);
+  const [subAccountsData, setSubAccountsData] = useState<subAccountDataType[]>([]);
 
   useEffect(() => {
 
@@ -64,7 +64,7 @@ const ManageSubAccounts = () => {
               Authorization: `Bearer ${tokenValue}`,
             },
           })
-        setSubAccountsData(response?.data?.subAccountsData)
+        setSubAccountsData(response?.data?.subAccountsData || [])
       }
       fetchSubAccountDetails();
 
