@@ -132,6 +132,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
                         type="radio"
                         name="role"
                         value={key}
+                        checked={adminData?.role === key}
                         className='mr-1'
                         onChange={handleInputChange}
                         required
