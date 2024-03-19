@@ -20,7 +20,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
   ];
   const [formSubmitError, setFormSubmitError] = useState<string>('');
   const [formSubmissionLoading, setformSubmissionLoading] = useState<boolean>(false);
-  const [adminData, setAdminData] = useState<AdminUser>({ name: '', email: '', role: '' });
+  const [adminData, setAdminData] = useState<AdminUser>({ firstname: '', lastname: '', email: '', role: '' });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -51,7 +51,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
         setFormSubmitError('');
         console.log(response);
         fetchAdminList();
-        setAdminData({ name: '', email: '', role: '' });
+        setAdminData({ firstname: '', lastname: '', email: '', role: '' });
       }
 
     } catch (error) {
@@ -77,7 +77,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
           <div className='w-10 p-2 shadow-md rounded-full'><UserIcon /></div>
           <button
             className='w-6'
-            onClick={() => { setOpenAddAdminModal(false); setAdminData({ name: '', email: '', role: '' }) }}
+            onClick={() => { setOpenAddAdminModal(false); setAdminData({ firstname: '', lastname: '', email: '', role: '' }) }}
           >
             <CrossIcon />
           </button>
@@ -89,27 +89,39 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
             <div className='border p-4 rounded-md shadow gap-3 flex flex-col'>
               <div className={`flex items-start justify-between gap-2`}>
                 <div className='flex flex-col items-start justify-between gap-1'>
-                  <label htmlFor="" className='text-xs' >Full Name</label>
+                  <label htmlFor="" className='text-xs' >First Name</label>
                   <input
                     type="text"
                     className={inputFieldStyle}
-                    name='name'
-                    value={adminData.name}
+                    name='firstname'
+                    value={adminData.firstname}
                     onChange={handleInputChange}
                     required
                   />
                 </div>
                 <div className='flex flex-col items-start justify-between gap-1'>
-                  <label htmlFor="" className='text-xs'>Email</label>
+                  <label htmlFor="" className='text-xs' >Last Name</label>
                   <input
-                    type="email"
-                    name='email'
+                    type="text"
                     className={inputFieldStyle}
-                    value={adminData.email}
+                    name='lastname'
+                    value={adminData.lastname}
                     onChange={handleInputChange}
                     required
                   />
                 </div>
+
+              </div>
+              <div className='flex flex-col items-start justify-between gap-1'>
+                <label htmlFor="" className='text-xs'>Email</label>
+                <input
+                  type="email"
+                  name='email'
+                  className={inputFieldStyle}
+                  value={adminData.email}
+                  onChange={handleInputChange}
+                  required
+                />
               </div>
               <div className='flex flex-col w-full items-start justify-between gap-1'>
                 <label htmlFor="role" className='text-xs py-1'>Role</label>
@@ -120,6 +132,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
                         type="radio"
                         name="role"
                         value={key}
+                        checked={adminData?.role === key}
                         className='mr-1'
                         onChange={handleInputChange}
                         required
@@ -132,7 +145,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
             </div>
             {/* form buttons */}
             <div className='flex items-center justify-end gap-3 '>
-              <button type='reset' onClick={() => { setOpenAddAdminModal(false); setAdminData({ name: '', email: '', role: '' }) }} className='rounded-md text-xs border shadow bg-white-700 p-2 px-4'>
+              <button type='reset' onClick={() => { setOpenAddAdminModal(false); setAdminData({ firstname: '', lastname: '', email: '', role: '' }) }} className='rounded-md text-xs border shadow bg-white-700 p-2 px-4'>
                 Cancel
               </button>
               <button type='submit' className='rounded-md text-xs text-white bg-blue-700 p-2 px-4 flex w-20 items-center justify-center '>

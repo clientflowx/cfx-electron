@@ -92,12 +92,12 @@ const AutoCompleteDD: React.FC<AutoCompleteDDProps> = ({
       />
       <div
         className={`bg-white h-fit absolute w-full ${
-          filteredData.length > 0
+          filteredData?.length > 0
             ? "border border-t-0  max-h-[200px] overflow-y-scroll "
             : ""
         }`}
       >
-        {filteredData.map((option, idx) => (
+        {filteredData?.map((option, idx) => (
           <span
             key={`${option?.name}-${idx}`}
             data-value={option?.name}

@@ -5,7 +5,8 @@ type AccType = {
 };
 
 type AdminUser = {
-  name: string;
+  firstname:string,
+  lastname:string,
   email: string;
   role: string;
 };
