@@ -226,6 +226,8 @@ const NewUserModal: React.FC<Props> = ({
         );
         // console.log("user locations: ", response.data?.data);
         setLoading(false);
+        console.log(response);
+        
         setAgencyLocation(response.data?.data);
       } catch (error) {
         setLoading(false);

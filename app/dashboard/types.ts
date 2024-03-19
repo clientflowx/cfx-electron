@@ -66,4 +66,54 @@ type Permissions = {
   workflowsReadOnly: boolean;
 };
 
-export type { Permissions, AccType, AdminUser, User };
+interface Business {
+  name: string;
+  address: string;
+  city: string;
+  state: string;
+  country: string;
+  postalCode: string;
+  timezone: string;
+}
+
+interface Social {
+  facebookUrl: string;
+  googlePlus: string;
+  linkedIn: string;
+  foursquare: string;
+  twitter: string;
+  yelp: string;
+  instagram: string;
+  youtube: string;
+  pinterest: string;
+  blogRss: string;
+  googlePlaceId: string;
+}
+
+interface Settings {
+  allowDuplicateContact: boolean;
+  allowDuplicateOpportunity: boolean;
+  allowFacebookNameMerge: boolean;
+  disableContactTimezone: boolean;
+}
+
+interface subAccountDataType {
+  id: string;
+  name: string;
+  address: string;
+  city: string;
+  state: string;
+  country: string;
+  postalCode: string;
+  timezone: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  business: Business;
+  social: Social;
+  settings: Settings;
+}
+
+
+export type { Permissions, AccType, AdminUser, User, subAccountDataType };

@@ -10,7 +10,7 @@ import cfxlogo from "@/public/assets/clientflowx_logo.jpeg";
 import Image from "next/image";
 import AllohaAdmin from "./alohaa-admin";
 import RazorpayAdmin from "./rzp-admin";
-import ManageSubAccounts from './manange-sub-acc'
+import ManageSubAccounts from './(sub-accounts)/manange-sub-acc'
 import IntegrationsIcon from "@/svg/IntegrationsIcon";
 import SubAccounts from "@/svg/SubAccounts";
 import Integrations from "./integrations";
