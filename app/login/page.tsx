@@ -16,6 +16,8 @@ const SignInForm: React.FC = () => {
   });
   const [isLoginError, setIsLoginError] = useState(false);
   const [loginErrorMessage, setLoginErrorMessage] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -90,6 +92,10 @@ const SignInForm: React.FC = () => {
   const buttonStyles =
     "mt-4 border border-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-4 py-2 text-center mr-2 bg-[#38A0DB] text-white";
 
+  const togglePasswordVisibility = () => {
+    setPasswordVisible((prevState) => !prevState);
+  };
+
   return (
     <section className="bg-gray-50 h-full">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0 w-full lg:w-2/3 xl:w-1/3 sm:w-2/3">
@@ -122,19 +128,30 @@ const SignInForm: React.FC = () => {
                   htmlFor="password"
                   className="block mb-2 text-sm font-medium text-gray-900"
                 >
-                  PIN
+                  Password
                 </label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  className={inputStyles}
-                  placeholder="Enter your PIN number"
-                  required
-                />
+                <div className="relative flex items-center">
+                  <input
+                    type={passwordVisible ? "text" : "password"}
+                    name="password"
+                    id="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    className={`${inputStyles} w-full`}
+                    placeholder="Enter your password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    className="absolute right-0 mr-2 text-xs font-semibold text-gray-500 focus:outline-none"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {passwordVisible ? "Hide" : "Show"}
+                  </button>
+                </div>
+
               </div>
+
               <button type="submit" className={buttonStyles}>
                 {loading ? (
                   <svg
