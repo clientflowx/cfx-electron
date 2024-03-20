@@ -27,7 +27,6 @@ const AdminDashboard = () => {
       .find((cookie) => cookie.trim().startsWith("role="));
   }
   const userRole = roleData ? roleData.split("=")[1] : "";
-  console.log("userRole", userRole);
   useEffect(() => {
     // Check for token in cookies
     let token;

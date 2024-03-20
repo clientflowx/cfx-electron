@@ -154,6 +154,9 @@ const NewUserModal: React.FC<Props> = ({
   const [inputValue, setInputValue] = useState<string>("");
   const [value, setValue] = useState<AccType | null>(null);
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [selectAllValue, setSelectAllValue] = useState<boolean>(false);
+
+  console.log(newUserData);
 
 
   const handleInputChange:
@@ -354,6 +357,21 @@ const NewUserModal: React.FC<Props> = ({
     setPasswordVisible((prevState) => !prevState);
   };
 
+  const handleSelectAllPermissions = () => {
+    setSelectAllValue(prev => !prev);
+    setNewUserData((prevData) => {
+      const updatedPermissions = { ...prevData.permissions };
+      for (const key in updatedPermissions) {
+        updatedPermissions[key as keyof Permissions] = !prevData.permissions[key as keyof Permissions];
+      }
+      return {
+        ...prevData,
+        permissions: updatedPermissions,
+      };
+    });
+  };
+
+
   return (
     <div className="flex flex-col w-1/2 max-h-[90vh] my-10 overflow-y-auto rounded-md bg-white items-top justify-start gap-5 p-2 custom-scrollbar">
       {/* Button to close the modal */}
@@ -443,7 +461,7 @@ const NewUserModal: React.FC<Props> = ({
                     <div className="relative flex items-center w-full">
                       <input
                         type={passwordVisible ? "text" : "password"}
-                        className={inputFieldStyle}
+                        className={`${inputFieldStyle} pr-10`}
                         name="password"
                         value={newUserData.password}
                         onChange={handleInputChange}
@@ -475,14 +493,17 @@ const NewUserModal: React.FC<Props> = ({
           </div>
           {/* user permissions */}
           <div className="border p-4 rounded-md shadow gap-3 flex flex-col justify-between">
-            <div
-              className="flex items-center cursor-pointer justify-start gap-1 w-full"
-              onClick={() => setUserPermissionAcc((prev) => !prev)}
-            >
-              <div className="w-5 ">
-                {userPermissionAcc ? <DownIcon /> : <UpIcon />}
+            <div className="flex items-center cursor-pointer justify-between gap-1 w-full">
+              <div onClick={() => setUserPermissionAcc((prev) => !prev)} className="flex items-center cursor-pointer justify-start gap-1 w-full">
+                <div className="w-5 ">
+                  {userPermissionAcc ? <DownIcon /> : <UpIcon />}
+                </div>
+                <div className="text-sm">User Permissions</div>
               </div>
-              <div className="text-sm">User Permissions</div>
+              <div className="w-full flex items-center justify-end gap-1" onClick={handleSelectAllPermissions}>
+                <input type="checkbox" checked={selectAllValue} />
+                <button className={`${userPermissionAcc ? "" : "hidden"} text-xs font-semibold`} >{selectAllValue ? 'Unselect All' : 'Select All'}</button>
+              </div>
             </div>
             <div className={`${userPermissionAcc ? "" : "hidden"}`}>
               <div className="flex justify-between">
@@ -494,11 +515,14 @@ const NewUserModal: React.FC<Props> = ({
                           title={title}
                           permission={permission}
                           onChange={handleToggleChange}
-                          value={false}
+                          value={newUserData?.permissions[
+                            permission as keyof Permissions
+                          ]}
                         />
                       </div>
                     )
-                  )}
+                  )
+                  }
                 </div>
                 <div className="flex justify-between flex-col gap-1">
                   {permissionsArrayColumn2.map(
@@ -508,7 +532,9 @@ const NewUserModal: React.FC<Props> = ({
                           title={title}
                           permission={permission}
                           onChange={handleToggleChange}
-                          value={false}
+                          value={newUserData?.permissions[
+                            permission as keyof Permissions
+                          ]}
                         />
                       </div>
                     )
