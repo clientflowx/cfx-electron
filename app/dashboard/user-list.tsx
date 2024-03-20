@@ -114,7 +114,7 @@ const UserList = () => {
       nameFilter === "" ||
       user.name.toLowerCase().includes(nameFilter.toLowerCase());
 
-    console.log(nameFilter, nameMatch);
+    // console.log(nameFilter, nameMatch);
     // console.log(nameMatch);
 
     // Return true if all filters match, otherwise false

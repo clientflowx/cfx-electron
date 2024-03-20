@@ -80,19 +80,19 @@ const AdminDashboard = () => {
       icon: <AdminUser />,
       titleVisible: true,
     },
-    {
+    // {
 
-      key: "manage-alohaa",
-      title: "Manage Alohaa",
-      icon: <Alohaa />,
-      titleVisible: true,
-    },
-    {
-      key: "manage-razorpay",
-      title: "Manage Razorpay",
-      icon: <RazorPay />,
-      titleVisible: true,
-    },
+    //   key: "manage-alohaa",
+    //   title: "Manage Alohaa",
+    //   icon: <Alohaa />,
+    //   titleVisible: true,
+    // },
+    // {
+    //   key: "manage-razorpay",
+    //   title: "Manage Razorpay",
+    //   icon: <RazorPay />,
+    //   titleVisible: true,
+    // },
 
   ];
 

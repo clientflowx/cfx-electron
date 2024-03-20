@@ -28,8 +28,8 @@ const Toggle: React.FC<ToggleProps> = ({
     onChange(permission, newValue);
   };
 
-  console.log("checked value is: ", checked);
-  console.log("prop value is: ", value);
+  // console.log("checked value is: ", checked);
+  // console.log("prop value is: ", value);
 
 
   return (

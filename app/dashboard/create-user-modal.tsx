@@ -362,7 +362,8 @@ const NewUserModal: React.FC<Props> = ({
     setNewUserData((prevData) => {
       const updatedPermissions = { ...prevData.permissions };
       for (const key in updatedPermissions) {
-        updatedPermissions[key as keyof Permissions] = !prevData.permissions[key as keyof Permissions];
+        // updatedPermissions[key as keyof Permissions] = !prevData.permissions[key as keyof Permissions];
+        updatedPermissions[key as keyof Permissions] = !selectAllValue;
       }
       return {
         ...prevData,
@@ -500,7 +501,7 @@ const NewUserModal: React.FC<Props> = ({
                 </div>
                 <div className="text-sm">User Permissions</div>
               </div>
-              <div className="w-full flex items-center justify-end gap-1" onClick={handleSelectAllPermissions}>
+              <div className={`w-full flex items-center justify-end gap-1 ${userPermissionAcc ? "" : "hidden"}`} onClick={handleSelectAllPermissions}>
                 <input type="checkbox" checked={selectAllValue} />
                 <button className={`${userPermissionAcc ? "" : "hidden"} text-xs font-semibold`} >{selectAllValue ? 'Unselect All' : 'Select All'}</button>
               </div>

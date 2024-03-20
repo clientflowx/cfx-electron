@@ -19,17 +19,13 @@ type Props = {
   refreshUserList: () => void;
 };
 
-
 const permissionsArray: { title: string; permission: keyof Permissions }[] = [
   { title: "Adwords Reporting", permission: "adwordsReportingEnabled" },
   { title: "Affiliate Manager", permission: "affiliateManagerEnabled" },
   { title: "Agent Reporting", permission: "agentReportingEnabled" },
   { title: "Appointments", permission: "appointmentsEnabled" },
   { title: "Assigned Data Only", permission: "assignedDataOnly" },
-  {
-    title: "Attributions Reporting",
-    permission: "attributionsReportingEnabled",
-  },
+  { title: "Attributions Reporting", permission: "attributionsReportingEnabled", },
   { title: "Blogging", permission: "bloggingEnabled" },
   { title: "Bot Service", permission: "botService" },
   { title: "Bulk Requests", permission: "bulkRequestsEnabled" },
@@ -84,12 +80,12 @@ const UpdateUserModal: React.FC<Props> = ({
   const [userRolesAcc, setUserRolesAcc] = useState(false);
   const [userDetails, setUserDetails] = useState<User>(userFormData);
   const [formSubmitError, setFormSubmitError] = useState<string>("");
-  const [formSubmissionLoading, setformSubmissionLoading] =
-    useState<boolean>(false);
+  const [formSubmissionLoading, setformSubmissionLoading] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [agencyLocation, setAgencyLocation] = useState<AccType[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
   const [value, setValue] = useState<AccType | null>(null);
+  const [selectAllValue, setSelectAllValue] = useState<boolean>(false);
 
   console.log("user details before the api call:", userDetails);
 
@@ -146,28 +142,30 @@ const UpdateUserModal: React.FC<Props> = ({
   const handleSelectChange:
     | React.ChangeEventHandler<HTMLSelectElement>
     | undefined = (e) => {
-    const { name, value } = e.target;
+      const { name, value } = e.target;
 
-    if (name === "locationIds") {
-      setUserDetails((prevData) => ({
-        ...prevData,
-        roles: {
-          ...prevData.roles,
-          locationIds: [...prevData.roles.locationIds, value],
-        },
-      }));
-    } else {
-      setUserDetails((prevData) => ({
-        ...prevData,
-        roles: {
-          ...prevData.roles,
-          [name]: value,
-        },
-      }));
-    }
-  };
+      if (name === "locationIds") {
+        setUserDetails((prevData) => ({
+          ...prevData,
+          roles: {
+            ...prevData.roles,
+            locationIds: [...prevData.roles.locationIds, value],
+          },
+        }));
+      } else {
+        setUserDetails((prevData) => ({
+          ...prevData,
+          roles: {
+            ...prevData.roles,
+            [name]: value,
+          },
+        }));
+      }
+    };
 
   const handleEditFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    console.log("into the handle form submission");
+
     e.preventDefault();
     try {
       setformSubmissionLoading(true);
@@ -202,8 +200,6 @@ const UpdateUserModal: React.FC<Props> = ({
       }
     } catch (error) {
       // setformSubmissionLoading(false);
-      console.log("arey baba:", error);
-
       if (isAxiosError(error)) {
         setformSubmissionLoading(false);
         if (error.isAxiosError && error.response && error.response.data) {
@@ -231,6 +227,20 @@ const UpdateUserModal: React.FC<Props> = ({
         locationIds: [...prevData.roles.locationIds, optionId],
       },
     }));
+  };
+
+  const handleSelectAllPermissions = () => {
+    setSelectAllValue(prev => !prev);
+    setUserDetails((prevData) => {
+      const updatedPermissions = { ...prevData.permissions };
+      for (const key in updatedPermissions) {
+        updatedPermissions[key as keyof Permissions] = !selectAllValue;
+      }
+      return {
+        ...prevData,
+        permissions: updatedPermissions,
+      };
+    });
   };
 
   return (
@@ -269,9 +279,8 @@ const UpdateUserModal: React.FC<Props> = ({
               <div className="text-sm">User Info</div>
             </div>
             <div
-              className={`${
-                userInfoAccordion ? "" : "hidden"
-              } flex flex-col items-start justify-between gap-3`}
+              className={`${userInfoAccordion ? "" : "hidden"
+                } flex flex-col items-start justify-between gap-3`}
             >
               <div className="flex gap-2 w-full">
                 <div className="flex flex-col items-start justify-between gap-1 w-1/2">
@@ -332,25 +341,23 @@ const UpdateUserModal: React.FC<Props> = ({
           </div>
           {/* user permissions */}
           <div className="border p-4 rounded-md shadow gap-3 flex flex-col justify-between">
-            <div
-              className="flex items-center cursor-pointer justify-start gap-1 w-full"
-              onClick={() => setUserPermissionAcc((prev) => !prev)}
-            >
-              <div className="w-5 ">
-                {userPermissionAcc ? <DownIcon /> : <UpIcon />}
+            <div className="flex items-center cursor-pointer justify-between gap-1 w-full">
+              <div onClick={() => setUserPermissionAcc((prev) => !prev)} className="flex items-center cursor-pointer justify-start gap-1 w-full">
+                <div className="w-5 ">
+                  {userPermissionAcc ? <DownIcon /> : <UpIcon />}
+                </div>
+                <div className="text-sm">User Permissions</div>
               </div>
-              <div className="text-sm">User Permissions</div>
+              <div className={`w-full flex items-center justify-end gap-1 ${userPermissionAcc ? "" : "hidden"}`} onClick={handleSelectAllPermissions}>
+                <input type="checkbox" checked={selectAllValue} />
+                <button className={`${userPermissionAcc ? "" : "hidden"} text-xs font-semibold`} >{selectAllValue ? 'Unselect All' : 'Select All'}</button>
+              </div>
             </div>
             <div className={`${userPermissionAcc ? "" : "hidden"} `}>
               <div className="flex justify-between">
                 <div className="flex justify-between flex-col gap-1">
                   {permissionsArrayColumn1.map(
                     ({ title, permission }, index) => {
-                      console.log(
-                        userDetails?.permissions[
-                          permission as keyof Permissions
-                        ]
-                      );
                       return (
                         <div key={index}>
                           <Toggle
@@ -359,7 +366,7 @@ const UpdateUserModal: React.FC<Props> = ({
                             onChange={handleToggleChange}
                             value={
                               userDetails?.permissions[
-                                permission as keyof Permissions
+                              permission as keyof Permissions
                               ]
                             }
                           />
@@ -378,7 +385,7 @@ const UpdateUserModal: React.FC<Props> = ({
                           onChange={handleToggleChange}
                           value={
                             userDetails?.permissions[
-                              permission as keyof Permissions
+                            permission as keyof Permissions
                             ]
                           }
                         />
@@ -401,9 +408,8 @@ const UpdateUserModal: React.FC<Props> = ({
               <div className="text-sm">User Roles</div>
             </div>
             <div
-              className={`${
-                userRolesAcc ? "" : "hidden"
-              } flex flex-col items-start justify-between gap-3`}
+              className={`${userRolesAcc ? "" : "hidden"
+                } flex flex-col items-start justify-between gap-3`}
             >
               <div className="flex flex-col w-full items-start justify-between gap-1 text-xs">
                 <label htmlFor="" className="text-xs">
@@ -518,9 +524,8 @@ const UpdateUserModal: React.FC<Props> = ({
             </button>
           </div>
           <div
-            className={`text-xs text-red-500 ${
-              formSubmitError === "" ? "hidden" : ""
-            }`}
+            className={`text-xs text-red-500 ${formSubmitError === "" ? "hidden" : ""
+              }`}
           >
             Error adding user: {formSubmitError}
           </div>
