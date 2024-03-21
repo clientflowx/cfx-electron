@@ -209,7 +209,36 @@ const UserList = () => {
     };
     getUsers();
   }, []);
-
+  // TODO connect with anubhav and merge changes
+  const handleDeleteUser = async (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    user: any
+  ) => {
+    try {
+      const token = document.cookie
+        .split(";")
+        .find((cookie) => cookie.trim().startsWith("token="));
+      const tokenValue = token ? token.split("=")[1] : "";
+      await axios
+        .delete(
+          `https://cfx-mono-production-5ec7.up.railway.app/api/internal/delete-agency-user/${user.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${tokenValue}`,
+            },
+          }
+        )
+        .then((response) => {
+          console.log("Deleted successfully:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error deleting resource:", error.response.data);
+        });
+      refreshUserList();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   //table columns
   const COLUMNS = [
     {
@@ -260,35 +289,7 @@ const UserList = () => {
           </div>
           <div
             className="w-3 h-3 hover:cursor-pointer"
-            onClick={async () => {
-              try {
-                const token = document.cookie
-                  .split(";")
-                  .find((cookie) => cookie.trim().startsWith("token="));
-                const tokenValue = token ? token.split("=")[1] : "";
-                await axios
-                  .delete(
-                    `https://cfx-mono-production-5ec7.up.railway.app/api/internal/delete-agency-user/${user.id}`,
-                    {
-                      headers: {
-                        Authorization: `Bearer ${tokenValue}`,
-                      },
-                    }
-                  )
-                  .then((response) => {
-                    console.log("Deleted successfully:", response.data);
-                  })
-                  .catch((error) => {
-                    console.error(
-                      "Error deleting resource:",
-                      error.response.data
-                    );
-                  });
-                refreshUserList();
-              } catch (error) {
-                console.log(error);
-              }
-            }}
+            onClick={(e) => handleDeleteUser(e, user)}
           >
             <Dustbin />
           </div>
@@ -322,10 +323,11 @@ const UserList = () => {
       pageButtons.push(
         <button
           key={i}
-          className={`${pagination.state.page === i
+          className={`${
+            pagination.state.page === i
               ? "border-blue-400 border-1 border bg-blue-50"
               : ""
-            } rounded-sm text-xs text-gray-600 w-6 h-6`}
+          } rounded-sm text-xs text-gray-600 w-6 h-6`}
           onClick={() => {
             setPageIndex(i);
             pagination.fns.onSetPage(i);
@@ -369,10 +371,10 @@ const UserList = () => {
   const handleNameFilter:
     | React.ChangeEventHandler<HTMLInputElement>
     | undefined = (e) => {
-      const { value } = e.target;
-      // console.log(value);
-      setNameFilter(value);
-    };
+    const { value } = e.target;
+    // console.log(value);
+    setNameFilter(value);
+  };
 
   return (
     <div className="relative flex flex-col gap-2">
@@ -476,10 +478,11 @@ const UserList = () => {
             </span>
             <span className="w-1/2 flex items-start justify-end gap-2">
               <button
-                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${pagination.state.page <= 0
+                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${
+                  pagination.state.page <= 0
                     ? "pointer-events-none opacity-50"
                     : ""
-                  }`}
+                }`}
                 onClick={() => {
                   if (pagination.state.page > 0) {
                     pagination.fns.onSetPage(pageIndex - 1);
@@ -497,21 +500,22 @@ const UserList = () => {
                 )}
               </button>
               <button
-                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${pagination.state.page >=
-                    pagination.state.getTotalPages(
-                      filteredUsers.length > 0 ? filteredUsers : users
-                    ) -
+                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${
+                  pagination.state.page >=
+                  pagination.state.getTotalPages(
+                    filteredUsers.length > 0 ? filteredUsers : users
+                  ) -
                     1
                     ? "pointer-events-none opacity-50"
                     : ""
-                  }`}
+                }`}
                 onClick={() => {
                   if (
                     pagination.state.page <
                     pagination.state.getTotalPages(
                       filteredUsers.length > 0 ? filteredUsers : users
                     ) -
-                    1
+                      1
                   ) {
                     pagination.fns.onSetPage(pageIndex + 1);
                     setPageIndex(pageIndex + 1);

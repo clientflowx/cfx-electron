@@ -91,6 +91,9 @@ const UpdateUserModal: React.FC<Props> = ({
   const [agencyLocation, setAgencyLocation] = useState<AccType[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
   const [value, setValue] = useState<AccType | null>(null);
+  const [selectedLocationIds, setSelectedLocationIds] = useState(
+    userDetails?.roles?.locationIds || []
+  );
 
   // To check if all values are selected or not
   let isAllSelected = true;
@@ -102,7 +105,7 @@ const UpdateUserModal: React.FC<Props> = ({
   });
   isAllSelected =
     Object.keys(userDetails.permissions).length === 38 ? isAllSelected : false;
-  console.log("is all selected==>", isAllSelected);
+
   const [selectAllValue, setSelectAllValue] = useState<boolean>(isAllSelected);
 
   console.log("user details before the api call:", userDetails);
@@ -187,7 +190,6 @@ const UpdateUserModal: React.FC<Props> = ({
 
     try {
       setformSubmissionLoading(true);
-      console.log("inside the api call: ", userDetails);
 
       const token = document.cookie
         .split(";")
@@ -195,7 +197,7 @@ const UpdateUserModal: React.FC<Props> = ({
       const tokenValue = token ? token.split("=")[1] : "";
       const modifiedUserDetails = {
         ...userDetails,
-        locationIds: [...userDetails.roles.locationIds],
+        locationIds: [...selectedLocationIds],
       };
       const response = await axios.post(
         `https://cfx-mono-production-5ec7.up.railway.app/api/internal/update-user/${userDetails?.id}`,
@@ -227,19 +229,79 @@ const UpdateUserModal: React.FC<Props> = ({
   };
 
   const handleDeleteLocationId = (index: number) => {
-    const modifiedUserData = { ...userDetails };
-    modifiedUserData.roles.locationIds.splice(index, 1);
-    setUserDetails(modifiedUserData);
+    const modifiedLocationIds = [...selectedLocationIds];
+    modifiedLocationIds.splice(index, 1);
+    setSelectedLocationIds(modifiedLocationIds);
   };
 
   const addLocationId = (optionValue: string, optionId: string) => {
-    setUserDetails((prevData) => ({
-      ...prevData,
-      roles: {
-        ...prevData.roles,
-        locationIds: [...prevData.roles.locationIds, optionId],
-      },
-    }));
+    const modifiedLocationIds = [...selectedLocationIds, optionId];
+    setSelectedLocationIds(modifiedLocationIds);
+  };
+
+  const handleSelectAllPermissions:
+    | React.ChangeEventHandler<HTMLInputElement>
+    | undefined = (e) => {
+    console.log(isAllSelected, selectAllValue);
+
+    setSelectAllValue((prev) => !prev);
+    // Use the inverse of the current state directly in the setState callback
+    setUserDetails((prevData) => {
+      // const updatedPermissions: Permissions = {...userDetails.permissions};
+      const updatedPermissions: Permissions = {
+        adwordsReportingEnabled: false,
+        affiliateManagerEnabled: false,
+        agentReportingEnabled: false,
+        appointmentsEnabled: false,
+        assignedDataOnly: false,
+        attributionsReportingEnabled: false,
+        bloggingEnabled: false,
+        botService: false,
+        bulkRequestsEnabled: false,
+        campaignsEnabled: false,
+        campaignsReadOnly: false,
+        cancelSubscriptionEnabled: false,
+        communitiesEnabled: false,
+        contactsEnabled: false,
+        contentAiEnabled: false,
+        conversationsEnabled: false,
+        dashboardStatsEnabled: false,
+        exportPaymentsEnabled: false,
+        facebookAdsReportingEnabled: false,
+        funnelsEnabled: false,
+        invoiceEnabled: false,
+        leadValueEnabled: false,
+        marketingEnabled: false,
+        membershipEnabled: false,
+        onlineListingsEnabled: false,
+        opportunitiesEnabled: false,
+        paymentsEnabled: false,
+        phoneCallEnabled: false,
+        recordPaymentEnabled: false,
+        refundsEnabled: false,
+        reviewsEnabled: false,
+        settingsEnabled: false,
+        socialPlanner: false,
+        tagsEnabled: false,
+        triggersEnabled: false,
+        websitesEnabled: false,
+        workflowsEnabled: false,
+        workflowsReadOnly: false,
+      };
+      const permissionsArr = Object.keys(updatedPermissions);
+      for (const key in permissionsArr) {
+        let permission = permissionsArr[key];
+        // console.log(updatedPermissions[key]);
+        updatedPermissions[permission as keyof Permissions] = isAllSelected
+          ? false
+          : true;
+      }
+
+      return {
+        ...prevData,
+        permissions: updatedPermissions,
+      };
+    });
   };
 
   const handleSelectAllPermissions:
@@ -551,14 +613,14 @@ const UpdateUserModal: React.FC<Props> = ({
                   onOptionClick={addLocationId}
                 />
                 <div className="flex flex-wrap gap-1">
-                  {userDetails.roles.locationIds.map((locationId, index) => {
+                  {selectedLocationIds?.map((locationId, index) => {
                     const location = agencyLocation?.find(
                       (loc) => loc.id === locationId
                     );
-                    console.log(location);
+                    console.log(selectedLocationIds, "inside");
                     return (
                       <div
-                        key={index}
+                        key={`${locationId}-${index}`}
                         className="bg-green-300 text-xs font-semibold p-1 rounded-md flex items-center"
                       >
                         {location ? location.name : "Unknown Location"}
@@ -585,7 +647,8 @@ const UpdateUserModal: React.FC<Props> = ({
             </button>
             <button
               type="submit"
-              className="rounded-md text-xs text-white bg-blue-700 p-2 px-4 flex w-20 items-center justify-center "
+              disabled={selectedLocationIds.length < 1}
+              className="disabled:opacity-60 rounded-md text-xs text-white bg-blue-700 p-2 px-4 flex w-20 items-center justify-center "
             >
               {formSubmissionLoading ? (
                 <svg
