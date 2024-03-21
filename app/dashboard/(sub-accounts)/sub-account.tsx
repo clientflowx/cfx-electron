@@ -1,9 +1,10 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { subAccountDataType } from '../types'
 import { Alohaa } from '@/svg'
 import SubAccCall from '@/svg/Sub-acc-call'
 import SubAccLocation from '@/svg/Sub-acc-location'
+import ThreeDots from '@/svg/ThreeDots'
 
 type Props = {
   subAccountData: subAccountDataType,
@@ -11,9 +12,15 @@ type Props = {
 
 const SubAccount: React.FC<Props> = ({ subAccountData }) => {
   // console.log("from the subaccount:", subAccountData);
+  const [openOptionMenu, setOpenOptionMenu] = useState<boolean>(false);
+
+  const handleOptionButtonClick = () => {
+    setOpenOptionMenu(prev => !prev);
+  }
+
   return (
-    <div className='shadow-sm rounded-md p-4 border bg-white'>
-      <div className='flex'>
+    <div className='shadow-sm rounded-md border bg-white'>
+      <div className='flex p-4'>
         <div className='w-1/2 flex flex-col gap-4'>
           <div className='flex items-center justify-start gap-5'>
             <div className='w-10 h-10 rounded-full bg-gray-300'></div>
@@ -38,10 +45,19 @@ const SubAccount: React.FC<Props> = ({ subAccountData }) => {
             </div>
           </div>
         </div>
-        <div className='flex items-start justify-start flex-wrap gap-5'>
+      </div>
+      {/* <div className='w-full h-[1px] border-t'></div> */}
+      <div className='border-t flex items-center justify-end' onClick={handleOptionButtonClick}>
+        <div className='relative'>
+          <button className='h-full border-l p-4'>
+            <div className='opacity-65'><ThreeDots /></div>
+          </button>
+          <div className={`${openOptionMenu ? "block" : "hidden"} absolute bg-white shadow-sm border rounded-md p-2 text-xs right-0 whitespace-nowrap`}>
+            Manage Client
+          </div>
         </div>
       </div>
-      <div></div>
+
     </div>
   )
 }

@@ -14,6 +14,8 @@ import ManageSubAccounts from './(sub-accounts)/manange-sub-acc'
 import IntegrationsIcon from "@/svg/IntegrationsIcon";
 import SubAccounts from "@/svg/SubAccounts";
 import Integrations from "./integrations";
+import ManageLiveChatAccess from "./manage-live-chat-access";
+import ManageLiveChatIcon from "@/svg/ManageLiveChatIcon";
 
 const AdminDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -80,6 +82,12 @@ const AdminDashboard = () => {
       icon: <AdminUser />,
       titleVisible: true,
     },
+    {
+      key: "manage-live-chat-access",
+      title: "Manage Live Chat Access",
+      icon: <ManageLiveChatIcon />,
+      titleVisible: true,
+    },
     // {
 
     //   key: "manage-alohaa",
@@ -106,11 +114,11 @@ const AdminDashboard = () => {
     );
   }
   return (
-    <div>
+    <div className="bg-[#f0f4f7]">
       <Navbar />
       <aside
         id="logo-sidebar"
-        className={`fixed top-0 left-0 z-50 h-screen transition-transform ${isSidebarOpen ? "w-64" : "w-16"
+        className={`fixed top-0 left-0 z-50 h-full transition-transform ${isSidebarOpen ? "w-64" : "w-16"
           } cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}
         aria-label="Sidebar"
         onMouseEnter={() => setIsSidebarOpen(true)}
@@ -178,6 +186,13 @@ const AdminDashboard = () => {
               <div>
                 <h1 className="my-2 font-bold text-md">Manage Razorpay</h1>
                 <RazorpayAdmin />
+              </div>
+            )}
+            {/* Manage Live Chat Access */}
+            {sidebarOption === 'manage-live-chat-access' && (
+              <div>
+                <div className='text-md w-full font-semibold text-gray-700'>Manage Live Chat Access</div>
+                <ManageLiveChatAccess />
               </div>
             )}
           </div>

@@ -156,7 +156,7 @@ const NewUserModal: React.FC<Props> = ({
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [selectAllValue, setSelectAllValue] = useState<boolean>(false);
 
-  console.log(newUserData);
+  console.log("user data: ", newUserData);
 
 
   const handleInputChange:
@@ -278,6 +278,7 @@ const NewUserModal: React.FC<Props> = ({
       );
       // console.log(response.data.m);
       if (response.data.success) {
+        console.log(response);
         setformSubmissionLoading(false);
         setOpenNewUserModal(false);
         setFormSubmitError("");
@@ -357,7 +358,8 @@ const NewUserModal: React.FC<Props> = ({
     setPasswordVisible((prevState) => !prevState);
   };
 
-  const handleSelectAllPermissions = () => {
+  const handleSelectAllPermissions = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
     setSelectAllValue(prev => !prev);
     setNewUserData((prevData) => {
       const updatedPermissions = { ...prevData.permissions };
@@ -371,6 +373,8 @@ const NewUserModal: React.FC<Props> = ({
       };
     });
   };
+
+
 
 
   return (

@@ -1,16 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import {
-  CrossIcon,
-  UpIcon,
-  DownIcon,
-  LockIcon,
-  UserIcon,
-} from "@/svg/index.ts";
+import { CrossIcon, UpIcon, DownIcon, LockIcon, UserIcon, } from "@/svg/index.ts";
 import Toggle from "@/components/Toggle";
 import axios, { isAxiosError } from "axios";
 import { AccType, Permissions, User } from "./types";
-import Loader from "@/components/Loader";
 import AutoCompleteDD from "@/components/AutoCompleteDD";
 
 type Props = {
@@ -38,10 +31,7 @@ const permissionsArray: { title: string; permission: keyof Permissions }[] = [
   { title: "Conversations", permission: "conversationsEnabled" },
   { title: "Dashboard Stats", permission: "dashboardStatsEnabled" },
   { title: "Export Payments", permission: "exportPaymentsEnabled" },
-  {
-    title: "Facebook Ads Reporting",
-    permission: "facebookAdsReportingEnabled",
-  },
+  { title: "Facebook Ads Reporting", permission: "facebookAdsReportingEnabled", },
   { title: "Funnels", permission: "funnelsEnabled" },
   { title: "Invoice", permission: "invoiceEnabled" },
   { title: "Lead Value", permission: "leadValueEnabled" },
@@ -62,19 +52,13 @@ const permissionsArray: { title: string; permission: keyof Permissions }[] = [
   { title: "Workflows", permission: "workflowsEnabled" },
   { title: "Workflows", permission: "workflowsReadOnly" },
 ];
-const permissionsArrayColumn1 = permissionsArray.slice(
-  0,
-  Math.ceil(permissionsArray.length / 2)
-);
-const permissionsArrayColumn2 = permissionsArray.slice(
-  Math.ceil(permissionsArray.length / 2)
-);
 
-const UpdateUserModal: React.FC<Props> = ({
-  setOpenUpdateUserModal,
-  userFormData,
-  refreshUserList,
-}) => {
+const permissionsArrayColumn1 = permissionsArray.slice(0, Math.ceil(permissionsArray.length / 2));
+const permissionsArrayColumn2 = permissionsArray.slice(Math.ceil(permissionsArray.length / 2));
+
+const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData, refreshUserList, }) => {
+  // console.log("from the list: ",userFormData);
+
   const [userInfoAccordion, setUserInfoAccordion] = useState(true);
   const [userPermissionAcc, setUserPermissionAcc] = useState(false);
   const [userRolesAcc, setUserRolesAcc] = useState(false);
@@ -97,10 +81,7 @@ const UpdateUserModal: React.FC<Props> = ({
     }));
   };
 
-  const handleToggleChange = (
-    permission: keyof Permissions,
-    value: boolean
-  ) => {
+  const handleToggleChange = (permission: keyof Permissions, value: boolean) => {
     setUserDetails((prevState) => ({
       ...prevState,
       permissions: {
@@ -139,38 +120,35 @@ const UpdateUserModal: React.FC<Props> = ({
     getAgencyLocation();
   }, []);
 
-  const handleSelectChange:
-    | React.ChangeEventHandler<HTMLSelectElement>
-    | undefined = (e) => {
-      const { name, value } = e.target;
+  const handleSelectChange: React.ChangeEventHandler<HTMLSelectElement> | undefined = (e) => {
+    const { name, value } = e.target;
 
-      if (name === "locationIds") {
-        setUserDetails((prevData) => ({
-          ...prevData,
-          roles: {
-            ...prevData.roles,
-            locationIds: [...prevData.roles.locationIds, value],
-          },
-        }));
-      } else {
-        setUserDetails((prevData) => ({
-          ...prevData,
-          roles: {
-            ...prevData.roles,
-            [name]: value,
-          },
-        }));
-      }
-    };
+    if (name === "locationIds") {
+      setUserDetails((prevData) => ({
+        ...prevData,
+        roles: {
+          ...prevData.roles,
+          locationIds: [...prevData.roles.locationIds, value],
+        },
+      }));
+    } else {
+      setUserDetails((prevData) => ({
+        ...prevData,
+        roles: {
+          ...prevData.roles,
+          [name]: value,
+        },
+      }));
+    }
+  };
 
   const handleEditFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     console.log("into the handle form submission");
-
     e.preventDefault();
+
     try {
       setformSubmissionLoading(true);
       console.log("inside the api call: ", userDetails);
-      console.log("user id inside the api call: ", userDetails?.id);
 
       const token = document.cookie
         .split(";")
@@ -180,8 +158,6 @@ const UpdateUserModal: React.FC<Props> = ({
         ...userDetails,
         locationIds: [...userDetails.roles.locationIds],
       };
-      console.log(modifiedUserDetails);
-      //   delete modifiedUserDetails.roles.locationIds;
       const response = await axios.post(
         `https://cfx-mono-production-5ec7.up.railway.app/api/internal/update-user/${userDetails?.id}`,
         modifiedUserDetails,
@@ -196,14 +172,12 @@ const UpdateUserModal: React.FC<Props> = ({
         setOpenUpdateUserModal(false);
         setFormSubmitError("");
         refreshUserList();
-        console.log(response);
+        console.log("handlesubmit response: ", response);
       }
     } catch (error) {
-      // setformSubmissionLoading(false);
       if (isAxiosError(error)) {
         setformSubmissionLoading(false);
         if (error.isAxiosError && error.response && error.response.data) {
-          // setFormSubmitError(error.message);
           console.log(error);
         } else {
           setFormSubmitError("An error occurred. Please try again later.");
@@ -229,11 +203,67 @@ const UpdateUserModal: React.FC<Props> = ({
     }));
   };
 
-  const handleSelectAllPermissions = () => {
-    setSelectAllValue(prev => !prev);
-    setUserDetails((prevData) => {
-      const updatedPermissions = { ...prevData.permissions };
-      for (const key in updatedPermissions) {
+
+  // const handleSelectAllPermissions = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  //   e.preventDefault();
+  //   setSelectAllValue(prev => !prev);
+  //   const updatedPermissions = { ...userDetails.permissions };
+  //   for (const key in updatedPermissions) {
+  //     updatedPermissions[key as keyof Permissions] = selectAllValue;
+  //   }
+  //   setUserDetails(prevData => ({
+  //     ...prevData,
+  //     permissions: updatedPermissions,
+  //   }));
+  // };
+
+  const handleSelectAllPermissions = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
+    // Use the inverse of the current state directly in the setState callback
+    setUserDetails(prevData => {
+      // const updatedPermissions: Permissions = {...userDetails.permissions};
+      const updatedPermissions: Permissions = {
+        adwordsReportingEnabled: false,
+        affiliateManagerEnabled: false,
+        agentReportingEnabled: false,
+        appointmentsEnabled: false,
+        assignedDataOnly: false,
+        attributionsReportingEnabled: false,
+        bloggingEnabled: false,
+        botService: false,
+        bulkRequestsEnabled: false,
+        campaignsEnabled: false,
+        campaignsReadOnly: false,
+        cancelSubscriptionEnabled: false,
+        communitiesEnabled: false,
+        contactsEnabled: false,
+        contentAiEnabled: false,
+        conversationsEnabled: false,
+        dashboardStatsEnabled: false,
+        exportPaymentsEnabled: false,
+        facebookAdsReportingEnabled: false,
+        funnelsEnabled: false,
+        invoiceEnabled: false,
+        leadValueEnabled: false,
+        marketingEnabled: false,
+        membershipEnabled: false,
+        onlineListingsEnabled: false,
+        opportunitiesEnabled: false,
+        paymentsEnabled: false,
+        phoneCallEnabled: false,
+        recordPaymentEnabled: false,
+        refundsEnabled: false,
+        reviewsEnabled: false,
+        settingsEnabled: false,
+        socialPlanner: false,
+        tagsEnabled: false,
+        triggersEnabled: false,
+        websitesEnabled: false,
+        workflowsEnabled: false,
+        workflowsReadOnly: false,
+      };
+
+      for (const key in prevData.permissions) {
         updatedPermissions[key as keyof Permissions] = !selectAllValue;
       }
       return {
@@ -241,7 +271,11 @@ const UpdateUserModal: React.FC<Props> = ({
         permissions: updatedPermissions,
       };
     });
+    // Update selectAllValue after updating userDetails
+    setSelectAllValue(prev => !prev);
   };
+
+
 
   return (
     <div className="flex flex-col w-1/2 max-h-[90vh] my-10 overflow-y-auto rounded-md bg-white items-top justify-start gap-5 p-2 custom-scrollbar">
