@@ -1,6 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { CrossIcon, UpIcon, DownIcon, LockIcon, UserIcon, } from "@/svg/index.ts";
+import {
+  CrossIcon,
+  UpIcon,
+  DownIcon,
+  LockIcon,
+  UserIcon,
+} from "@/svg/index.ts";
 import Toggle from "@/components/Toggle";
 import axios, { isAxiosError } from "axios";
 import { AccType, Permissions, User } from "./types";
@@ -18,7 +24,10 @@ const permissionsArray: { title: string; permission: keyof Permissions }[] = [
   { title: "Agent Reporting", permission: "agentReportingEnabled" },
   { title: "Appointments", permission: "appointmentsEnabled" },
   { title: "Assigned Data Only", permission: "assignedDataOnly" },
-  { title: "Attributions Reporting", permission: "attributionsReportingEnabled", },
+  {
+    title: "Attributions Reporting",
+    permission: "attributionsReportingEnabled",
+  },
   { title: "Blogging", permission: "bloggingEnabled" },
   { title: "Bot Service", permission: "botService" },
   { title: "Bulk Requests", permission: "bulkRequestsEnabled" },
@@ -31,7 +40,10 @@ const permissionsArray: { title: string; permission: keyof Permissions }[] = [
   { title: "Conversations", permission: "conversationsEnabled" },
   { title: "Dashboard Stats", permission: "dashboardStatsEnabled" },
   { title: "Export Payments", permission: "exportPaymentsEnabled" },
-  { title: "Facebook Ads Reporting", permission: "facebookAdsReportingEnabled", },
+  {
+    title: "Facebook Ads Reporting",
+    permission: "facebookAdsReportingEnabled",
+  },
   { title: "Funnels", permission: "funnelsEnabled" },
   { title: "Invoice", permission: "invoiceEnabled" },
   { title: "Lead Value", permission: "leadValueEnabled" },
@@ -53,10 +65,19 @@ const permissionsArray: { title: string; permission: keyof Permissions }[] = [
   { title: "Workflows", permission: "workflowsReadOnly" },
 ];
 
-const permissionsArrayColumn1 = permissionsArray.slice(0, Math.ceil(permissionsArray.length / 2));
-const permissionsArrayColumn2 = permissionsArray.slice(Math.ceil(permissionsArray.length / 2));
+const permissionsArrayColumn1 = permissionsArray.slice(
+  0,
+  Math.ceil(permissionsArray.length / 2)
+);
+const permissionsArrayColumn2 = permissionsArray.slice(
+  Math.ceil(permissionsArray.length / 2)
+);
 
-const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData, refreshUserList, }) => {
+const UpdateUserModal: React.FC<Props> = ({
+  setOpenUpdateUserModal,
+  userFormData,
+  refreshUserList,
+}) => {
   // console.log("from the list: ",userFormData);
 
   const [userInfoAccordion, setUserInfoAccordion] = useState(true);
@@ -64,12 +85,25 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
   const [userRolesAcc, setUserRolesAcc] = useState(false);
   const [userDetails, setUserDetails] = useState<User>(userFormData);
   const [formSubmitError, setFormSubmitError] = useState<string>("");
-  const [formSubmissionLoading, setformSubmissionLoading] = useState<boolean>(false);
+  const [formSubmissionLoading, setformSubmissionLoading] =
+    useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [agencyLocation, setAgencyLocation] = useState<AccType[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
   const [value, setValue] = useState<AccType | null>(null);
-  const [selectAllValue, setSelectAllValue] = useState<boolean>(false);
+
+  // To check if all values are selected or not
+  let isAllSelected = true;
+  Object.keys(userDetails.permissions).forEach((permission) => {
+    if (!userDetails.permissions[permission as keyof Permissions]) {
+      isAllSelected = false;
+      return;
+    }
+  });
+  isAllSelected =
+    Object.keys(userDetails.permissions).length === 38 ? isAllSelected : false;
+  console.log("is all selected==>", isAllSelected);
+  const [selectAllValue, setSelectAllValue] = useState<boolean>(isAllSelected);
 
   console.log("user details before the api call:", userDetails);
 
@@ -81,7 +115,10 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
     }));
   };
 
-  const handleToggleChange = (permission: keyof Permissions, value: boolean) => {
+  const handleToggleChange = (
+    permission: keyof Permissions,
+    value: boolean
+  ) => {
     setUserDetails((prevState) => ({
       ...prevState,
       permissions: {
@@ -120,7 +157,9 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
     getAgencyLocation();
   }, []);
 
-  const handleSelectChange: React.ChangeEventHandler<HTMLSelectElement> | undefined = (e) => {
+  const handleSelectChange:
+    | React.ChangeEventHandler<HTMLSelectElement>
+    | undefined = (e) => {
     const { name, value } = e.target;
 
     if (name === "locationIds") {
@@ -203,24 +242,14 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
     }));
   };
 
+  const handleSelectAllPermissions:
+    | React.ChangeEventHandler<HTMLInputElement>
+    | undefined = (e) => {
+    console.log(isAllSelected, selectAllValue);
 
-  // const handleSelectAllPermissions = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-  //   e.preventDefault();
-  //   setSelectAllValue(prev => !prev);
-  //   const updatedPermissions = { ...userDetails.permissions };
-  //   for (const key in updatedPermissions) {
-  //     updatedPermissions[key as keyof Permissions] = selectAllValue;
-  //   }
-  //   setUserDetails(prevData => ({
-  //     ...prevData,
-  //     permissions: updatedPermissions,
-  //   }));
-  // };
-
-  const handleSelectAllPermissions = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.preventDefault();
+    setSelectAllValue((prev) => !prev);
     // Use the inverse of the current state directly in the setState callback
-    setUserDetails(prevData => {
+    setUserDetails((prevData) => {
       // const updatedPermissions: Permissions = {...userDetails.permissions};
       const updatedPermissions: Permissions = {
         adwordsReportingEnabled: false,
@@ -262,20 +291,21 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
         workflowsEnabled: false,
         workflowsReadOnly: false,
       };
-
-      for (const key in prevData.permissions) {
-        updatedPermissions[key as keyof Permissions] = !selectAllValue;
+      const permissionsArr = Object.keys(updatedPermissions);
+      for (const key in permissionsArr) {
+        let permission = permissionsArr[key];
+        // console.log(updatedPermissions[key]);
+        updatedPermissions[permission as keyof Permissions] = isAllSelected
+          ? false
+          : true;
       }
+
       return {
         ...prevData,
         permissions: updatedPermissions,
       };
     });
-    // Update selectAllValue after updating userDetails
-    setSelectAllValue(prev => !prev);
   };
-
-
 
   return (
     <div className="flex flex-col w-1/2 max-h-[90vh] my-10 overflow-y-auto rounded-md bg-white items-top justify-start gap-5 p-2 custom-scrollbar">
@@ -313,8 +343,9 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
               <div className="text-sm">User Info</div>
             </div>
             <div
-              className={`${userInfoAccordion ? "" : "hidden"
-                } flex flex-col items-start justify-between gap-3`}
+              className={`${
+                userInfoAccordion ? "" : "hidden"
+              } flex flex-col items-start justify-between gap-3`}
             >
               <div className="flex gap-2 w-full">
                 <div className="flex flex-col items-start justify-between gap-1 w-1/2">
@@ -376,15 +407,36 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
           {/* user permissions */}
           <div className="border p-4 rounded-md shadow gap-3 flex flex-col justify-between">
             <div className="flex items-center cursor-pointer justify-between gap-1 w-full">
-              <div onClick={() => setUserPermissionAcc((prev) => !prev)} className="flex items-center cursor-pointer justify-start gap-1 w-full">
+              <div
+                onClick={() => setUserPermissionAcc((prev) => !prev)}
+                className="flex items-center cursor-pointer justify-start gap-1 w-full"
+              >
                 <div className="w-5 ">
                   {userPermissionAcc ? <DownIcon /> : <UpIcon />}
                 </div>
                 <div className="text-sm">User Permissions</div>
               </div>
-              <div className={`w-full flex items-center justify-end gap-1 ${userPermissionAcc ? "" : "hidden"}`} onClick={handleSelectAllPermissions}>
-                <input type="checkbox" checked={selectAllValue} />
-                <button className={`${userPermissionAcc ? "" : "hidden"} text-xs font-semibold`} >{selectAllValue ? 'Unselect All' : 'Select All'}</button>
+              <div
+                className={`w-full cursor-pointer flex items-center justify-end gap-1 ${
+                  userPermissionAcc ? "" : "hidden"
+                }`}
+              >
+                <input
+                  // key={selectAllValue}
+                  id="select-all-checkbox"
+                  onChange={handleSelectAllPermissions}
+                  type="checkbox"
+                  checked={selectAllValue}
+                />
+
+                <label
+                  htmlFor="select-all-checkbox"
+                  className={`${
+                    userPermissionAcc ? "" : "hidden"
+                  } text-xs font-semibold cursor-pointer`}
+                >
+                  {selectAllValue ? "Unselect All" : "Select All"}
+                </label>
               </div>
             </div>
             <div className={`${userPermissionAcc ? "" : "hidden"} `}>
@@ -400,7 +452,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                             onChange={handleToggleChange}
                             value={
                               userDetails?.permissions[
-                              permission as keyof Permissions
+                                permission as keyof Permissions
                               ]
                             }
                           />
@@ -419,7 +471,7 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
                           onChange={handleToggleChange}
                           value={
                             userDetails?.permissions[
-                            permission as keyof Permissions
+                              permission as keyof Permissions
                             ]
                           }
                         />
@@ -442,8 +494,9 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
               <div className="text-sm">User Roles</div>
             </div>
             <div
-              className={`${userRolesAcc ? "" : "hidden"
-                } flex flex-col items-start justify-between gap-3`}
+              className={`${
+                userRolesAcc ? "" : "hidden"
+              } flex flex-col items-start justify-between gap-3`}
             >
               <div className="flex flex-col w-full items-start justify-between gap-1 text-xs">
                 <label htmlFor="" className="text-xs">
@@ -558,8 +611,9 @@ const UpdateUserModal: React.FC<Props> = ({ setOpenUpdateUserModal, userFormData
             </button>
           </div>
           <div
-            className={`text-xs text-red-500 ${formSubmitError === "" ? "hidden" : ""
-              }`}
+            className={`text-xs text-red-500 ${
+              formSubmitError === "" ? "hidden" : ""
+            }`}
           >
             Error adding user: {formSubmitError}
           </div>

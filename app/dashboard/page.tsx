@@ -10,7 +10,7 @@ import cfxlogo from "@/public/assets/clientflowx_logo.jpeg";
 import Image from "next/image";
 import AllohaAdmin from "./alohaa-admin";
 import RazorpayAdmin from "./rzp-admin";
-import ManageSubAccounts from './(sub-accounts)/manange-sub-acc'
+import ManageSubAccounts from "./(sub-accounts)/manange-sub-acc";
 import IntegrationsIcon from "@/svg/IntegrationsIcon";
 import SubAccounts from "@/svg/SubAccounts";
 import Integrations from "./integrations";
@@ -45,7 +45,7 @@ const AdminDashboard = () => {
   }, []);
 
   type SidebarItem = {
-    key: string,
+    key: string;
     title: string;
     icon: JSX.Element;
     titleVisible: boolean;
@@ -84,27 +84,16 @@ const AdminDashboard = () => {
     },
     {
       key: "manage-live-chat-access",
-      title: "Manage Live Chat Access",
+      title: "Manage Chat Access",
       icon: <ManageLiveChatIcon />,
       titleVisible: true,
     },
-    // {
-
-    //   key: "manage-alohaa",
-    //   title: "Manage Alohaa",
-    //   icon: <Alohaa />,
-    //   titleVisible: true,
-    // },
-    // {
-    //   key: "manage-razorpay",
-    //   title: "Manage Razorpay",
-    //   icon: <RazorPay />,
-    //   titleVisible: true,
-    // },
-
   ];
 
-  const userData = process.browser ? JSON.parse(localStorage?.getItem("loginUserDetails") || "{}")?.data?.userData : null;
+  const userData = process.browser
+    ? JSON.parse(localStorage?.getItem("loginUserDetails") || "{}")?.data
+        ?.userData
+    : null;
   const role = userData?.role;
 
   if (role === "admin") {
@@ -118,8 +107,9 @@ const AdminDashboard = () => {
       <Navbar />
       <aside
         id="logo-sidebar"
-        className={`fixed top-0 left-0 z-50 h-full transition-transform ${isSidebarOpen ? "w-64" : "w-16"
-          } cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}
+        className={`fixed top-0 left-0 z-50 h-full transition-transform ${
+          isSidebarOpen ? "w-64" : "w-16"
+        } cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}
         aria-label="Sidebar"
         onMouseEnter={() => setIsSidebarOpen(true)}
         onMouseLeave={() => setIsSidebarOpen(false)}
@@ -130,13 +120,15 @@ const AdminDashboard = () => {
               return (
                 <li key={index} onClick={() => setSidebarOption(item.key)}>
                   <div
-                    className={`flex items-center p-4 text-gray-300 hover:bg-gray-800 transition-all ${isSidebarOpen ? "" : "justify-center"
-                      } group`}
+                    className={`flex items-center p-4 text-gray-300 hover:bg-gray-800 transition-all ${
+                      isSidebarOpen ? "" : "justify-center"
+                    } group`}
                   >
                     <div className="w-5 text-white">{item.icon}</div>
                     <span
-                      className={`ms-3 h-5 ${isSidebarOpen || !item.titleVisible ? "" : "hidden"
-                        }`}
+                      className={`ms-3 h-5 ${
+                        isSidebarOpen || !item.titleVisible ? "" : "hidden"
+                      }`}
                     >
                       {item.title}
                     </span>
@@ -147,58 +139,68 @@ const AdminDashboard = () => {
           </ul>
         </div>
       </aside>
-
       <div
         className={`relative flex flex-col flex-1 h-full min-h-screen p-10 bg-[#f0f4f7]`}
       >
         <div className="sm:ml-10">
           <div className="rounded-lg mt-14">
             {/* ClientFlowX */}
-            <div className={sidebarOption === 'clientflowx' || sidebarOption === 'manage-sub-accounts' ? '' : 'hidden'}>
+            <div
+              className={
+                sidebarOption === "clientflowx" ||
+                sidebarOption === "manage-sub-accounts"
+                  ? ""
+                  : "hidden"
+              }
+            >
               <ManageSubAccounts />
             </div>
 
             {/* Integrations */}
-            <div className={sidebarOption === 'integrations' ? '' : 'hidden'}>
+            <div className={sidebarOption === "integrations" ? "" : "hidden"}>
               <Integrations setSidebarOption={setSidebarOption} />
             </div>
 
             {/* Manage Users */}
-            <div className={sidebarOption === 'manage-users' ? '' : 'hidden'}>
+            <div className={sidebarOption === "manage-users" ? "" : "hidden"}>
               <h1 className="my-2 font-bold text-md">Teams</h1>
               <UserList />
             </div>
 
             {/* Manage Admin Users */}
-            <div className={sidebarOption === 'manage-admin-users' ? '' : 'hidden'}>
+            <div
+              className={sidebarOption === "manage-admin-users" ? "" : "hidden"}
+            >
               <h1 className="my-2 font-bold text-md">Manage Admins</h1>
               <ManageAdminUser />
             </div>
 
             {/* Manage Alohaa */}
-            <div className={sidebarOption === 'manage-alohaa' ? '' : 'hidden'}>
+            <div className={sidebarOption === "manage-alohaa" ? "" : "hidden"}>
               <h1 className="my-2 font-bold text-md">Manage Alohaa</h1>
               <AllohaAdmin />
             </div>
 
             {/* Manage Razorpay */}
-            {sidebarOption === 'manage-razorpay' && (
+            {sidebarOption === "manage-razorpay" && (
               <div>
                 <h1 className="my-2 font-bold text-md">Manage Razorpay</h1>
                 <RazorpayAdmin />
               </div>
             )}
             {/* Manage Live Chat Access */}
-            {sidebarOption === 'manage-live-chat-access' && (
+            {sidebarOption === "manage-live-chat-access" && (
               <div>
-                <div className='text-md w-full font-semibold text-gray-700'>Manage Live Chat Access</div>
+                <div className="text-md w-full font-semibold text-gray-700">
+                  Manage Live Chat Access
+                </div>
                 <ManageLiveChatAccess />
               </div>
             )}
           </div>
         </div>
-
-      </div>;
+      </div>
+      ;
     </div>
   );
 };
