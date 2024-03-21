@@ -10,7 +10,6 @@ import {
 import Toggle from "@/components/Toggle";
 import axios, { isAxiosError } from "axios";
 import { AccType, Permissions, User } from "./types";
-import Loader from "@/components/Loader";
 import AutoCompleteDD from "@/components/AutoCompleteDD";
 
 type Props = {
@@ -18,7 +17,6 @@ type Props = {
   userFormData: User;
   refreshUserList: () => void;
 };
-
 
 const permissionsArray: { title: string; permission: keyof Permissions }[] = [
   { title: "Adwords Reporting", permission: "adwordsReportingEnabled" },
@@ -66,6 +64,7 @@ const permissionsArray: { title: string; permission: keyof Permissions }[] = [
   { title: "Workflows", permission: "workflowsEnabled" },
   { title: "Workflows", permission: "workflowsReadOnly" },
 ];
+
 const permissionsArrayColumn1 = permissionsArray.slice(
   0,
   Math.ceil(permissionsArray.length / 2)
@@ -79,6 +78,8 @@ const UpdateUserModal: React.FC<Props> = ({
   userFormData,
   refreshUserList,
 }) => {
+  // console.log("from the list: ",userFormData);
+
   const [userInfoAccordion, setUserInfoAccordion] = useState(true);
   const [userPermissionAcc, setUserPermissionAcc] = useState(false);
   const [userRolesAcc, setUserRolesAcc] = useState(false);
@@ -90,6 +91,19 @@ const UpdateUserModal: React.FC<Props> = ({
   const [agencyLocation, setAgencyLocation] = useState<AccType[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
   const [value, setValue] = useState<AccType | null>(null);
+
+  // To check if all values are selected or not
+  let isAllSelected = true;
+  Object.keys(userDetails.permissions).forEach((permission) => {
+    if (!userDetails.permissions[permission as keyof Permissions]) {
+      isAllSelected = false;
+      return;
+    }
+  });
+  isAllSelected =
+    Object.keys(userDetails.permissions).length === 38 ? isAllSelected : false;
+  console.log("is all selected==>", isAllSelected);
+  const [selectAllValue, setSelectAllValue] = useState<boolean>(isAllSelected);
 
   console.log("user details before the api call:", userDetails);
 
@@ -168,11 +182,12 @@ const UpdateUserModal: React.FC<Props> = ({
   };
 
   const handleEditFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    console.log("into the handle form submission");
     e.preventDefault();
+
     try {
       setformSubmissionLoading(true);
       console.log("inside the api call: ", userDetails);
-      console.log("user id inside the api call: ", userDetails?.id);
 
       const token = document.cookie
         .split(";")
@@ -182,8 +197,6 @@ const UpdateUserModal: React.FC<Props> = ({
         ...userDetails,
         locationIds: [...userDetails.roles.locationIds],
       };
-      console.log(modifiedUserDetails);
-      //   delete modifiedUserDetails.roles.locationIds;
       const response = await axios.post(
         `https://cfx-mono-production-5ec7.up.railway.app/api/internal/update-user/${userDetails?.id}`,
         modifiedUserDetails,
@@ -198,16 +211,12 @@ const UpdateUserModal: React.FC<Props> = ({
         setOpenUpdateUserModal(false);
         setFormSubmitError("");
         refreshUserList();
-        console.log(response);
+        console.log("handlesubmit response: ", response);
       }
     } catch (error) {
-      // setformSubmissionLoading(false);
-      console.log("arey baba:", error);
-
       if (isAxiosError(error)) {
         setformSubmissionLoading(false);
         if (error.isAxiosError && error.response && error.response.data) {
-          // setFormSubmitError(error.message);
           console.log(error);
         } else {
           setFormSubmitError("An error occurred. Please try again later.");
@@ -231,6 +240,71 @@ const UpdateUserModal: React.FC<Props> = ({
         locationIds: [...prevData.roles.locationIds, optionId],
       },
     }));
+  };
+
+  const handleSelectAllPermissions:
+    | React.ChangeEventHandler<HTMLInputElement>
+    | undefined = (e) => {
+    console.log(isAllSelected, selectAllValue);
+
+    setSelectAllValue((prev) => !prev);
+    // Use the inverse of the current state directly in the setState callback
+    setUserDetails((prevData) => {
+      // const updatedPermissions: Permissions = {...userDetails.permissions};
+      const updatedPermissions: Permissions = {
+        adwordsReportingEnabled: false,
+        affiliateManagerEnabled: false,
+        agentReportingEnabled: false,
+        appointmentsEnabled: false,
+        assignedDataOnly: false,
+        attributionsReportingEnabled: false,
+        bloggingEnabled: false,
+        botService: false,
+        bulkRequestsEnabled: false,
+        campaignsEnabled: false,
+        campaignsReadOnly: false,
+        cancelSubscriptionEnabled: false,
+        communitiesEnabled: false,
+        contactsEnabled: false,
+        contentAiEnabled: false,
+        conversationsEnabled: false,
+        dashboardStatsEnabled: false,
+        exportPaymentsEnabled: false,
+        facebookAdsReportingEnabled: false,
+        funnelsEnabled: false,
+        invoiceEnabled: false,
+        leadValueEnabled: false,
+        marketingEnabled: false,
+        membershipEnabled: false,
+        onlineListingsEnabled: false,
+        opportunitiesEnabled: false,
+        paymentsEnabled: false,
+        phoneCallEnabled: false,
+        recordPaymentEnabled: false,
+        refundsEnabled: false,
+        reviewsEnabled: false,
+        settingsEnabled: false,
+        socialPlanner: false,
+        tagsEnabled: false,
+        triggersEnabled: false,
+        websitesEnabled: false,
+        workflowsEnabled: false,
+        workflowsReadOnly: false,
+      };
+      const permissionsArr = Object.keys(updatedPermissions);
+      for (const key in permissionsArr) {
+        let permission = permissionsArr[key];
+        // console.log(updatedPermissions[key]);
+        updatedPermissions[permission as keyof Permissions] = isAllSelected
+          ? false
+          : true;
+      }
+
+      return {
+        ...prevData,
+        permissions: updatedPermissions,
+      };
+    });
   };
 
   return (
@@ -332,25 +406,44 @@ const UpdateUserModal: React.FC<Props> = ({
           </div>
           {/* user permissions */}
           <div className="border p-4 rounded-md shadow gap-3 flex flex-col justify-between">
-            <div
-              className="flex items-center cursor-pointer justify-start gap-1 w-full"
-              onClick={() => setUserPermissionAcc((prev) => !prev)}
-            >
-              <div className="w-5 ">
-                {userPermissionAcc ? <DownIcon /> : <UpIcon />}
+            <div className="flex items-center cursor-pointer justify-between gap-1 w-full">
+              <div
+                onClick={() => setUserPermissionAcc((prev) => !prev)}
+                className="flex items-center cursor-pointer justify-start gap-1 w-full"
+              >
+                <div className="w-5 ">
+                  {userPermissionAcc ? <DownIcon /> : <UpIcon />}
+                </div>
+                <div className="text-sm">User Permissions</div>
               </div>
-              <div className="text-sm">User Permissions</div>
+              <div
+                className={`w-full cursor-pointer flex items-center justify-end gap-1 ${
+                  userPermissionAcc ? "" : "hidden"
+                }`}
+              >
+                <input
+                  // key={selectAllValue}
+                  id="select-all-checkbox"
+                  onChange={handleSelectAllPermissions}
+                  type="checkbox"
+                  checked={selectAllValue}
+                />
+
+                <label
+                  htmlFor="select-all-checkbox"
+                  className={`${
+                    userPermissionAcc ? "" : "hidden"
+                  } text-xs font-semibold cursor-pointer`}
+                >
+                  {selectAllValue ? "Unselect All" : "Select All"}
+                </label>
+              </div>
             </div>
             <div className={`${userPermissionAcc ? "" : "hidden"} `}>
               <div className="flex justify-between">
                 <div className="flex justify-between flex-col gap-1">
                   {permissionsArrayColumn1.map(
                     ({ title, permission }, index) => {
-                      console.log(
-                        userDetails?.permissions[
-                          permission as keyof Permissions
-                        ]
-                      );
                       return (
                         <div key={index}>
                           <Toggle

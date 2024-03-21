@@ -1,43 +1,7 @@
 // Inside the Toggle component
-
-import React, { useState } from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import { Permissions } from "@/app/dashboard/types";
-
-interface User {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  type: string;
-  role: string;
-  locationIds: string[];
-  permissions: {
-    campaignsEnabled: boolean;
-    campaignsReadOnly: boolean;
-    contactsEnabled: boolean;
-    workflowsEnabled: boolean;
-    triggersEnabled: boolean;
-    funnelsEnabled: boolean;
-    websitesEnabled: boolean;
-    opportunitiesEnabled: boolean;
-    dashboardStatsEnabled: boolean;
-    bulkRequestsEnabled: boolean;
-    appointmentsEnabled: boolean;
-    reviewsEnabled: boolean;
-    onlineListingsEnabled: boolean;
-    phoneCallEnabled: boolean;
-    conversationsEnabled: boolean;
-    assignedDataOnly: boolean;
-    adwordsReportingEnabled: boolean;
-    membershipEnabled: boolean;
-    facebookAdsReportingEnabled: boolean;
-    attributionsReportingEnabled: boolean;
-    settingsEnabled: boolean;
-    tagsEnabled: boolean;
-    leadValueEnabled: boolean;
-    marketingEnabled: boolean;
-  };
-}
 
 interface ToggleProps {
   title: string;
@@ -54,11 +18,19 @@ const Toggle: React.FC<ToggleProps> = ({
 }) => {
   const [checked, setChecked] = useState<boolean>(value);
 
+  useEffect(() => {
+    setChecked(value);
+  }, [value]); 
+
   const handleChange = () => {
     const newValue = !checked;
     setChecked(newValue);
     onChange(permission, newValue);
   };
+
+  // console.log("checked value is: ", checked);
+  // console.log("prop value is: ", value);
+
 
   return (
     <div className="flex items-center justify-between gap-2">
