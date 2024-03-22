@@ -13,6 +13,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { Calendar } from '@/svg'
 import RightArrow from '@/svg/RightArrow'
 import CreateSubAccount from './create-sub-account'
+import { apiUrl } from '@/config'
 
 const ManageSubAccounts = () => {
   const [subAccountsData, setSubAccountsData] = useState<subAccountDataType[]>([]);
@@ -34,13 +35,14 @@ const ManageSubAccounts = () => {
     return nameMatch;
   });
 
+  //fetch all sub-account details on initial render
   useEffect(() => {
     const fetchSubAccountDetails = async () => {
       setLoading(true);
       try {
         const token = document.cookie.split(';').find((cookie) => cookie.trim().startsWith('token='));
         const tokenValue = token ? token.split('=')[1] : '';
-        const response = await axios.get('https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-subaccounts?isDetail=true', {
+        const response = await axios.get(`${apiUrl}/api/internal/get-agency-subaccounts?isDetail=true`, {
           headers: {
             Authorization: `Bearer ${tokenValue}`
           }
@@ -55,13 +57,15 @@ const ManageSubAccounts = () => {
     fetchSubAccountDetails();
   }, []);
 
+
+  //function to fetch the sub-account-list
   const fetchSubAccountList = async () => {
     setLoading(true);
     try {
       setLoadingMessage("Updating the list")
       const token = document.cookie.split(';').find((cookie) => cookie.trim().startsWith('token='));
       const tokenValue = token ? token.split('=')[1] : '';
-      const response = await axios.get('https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-subaccounts?isDetail=true', {
+      const response = await axios.get(`${apiUrl}/api/internal/get-agency-subaccounts?isDetail=true`, {
         headers: {
           Authorization: `Bearer ${tokenValue}`
         }
@@ -93,6 +97,8 @@ const ManageSubAccounts = () => {
 
   return (
     <div className='flex flex-col w-full justify-between gap-4'>
+
+      {/* Top-button-group */}
       <div className='flex w-full items-start justify-between'>
         <div className='text-md w-full font-semibold text-gray-700'>Sub-Accounts</div>
         <div className='flex items-center justify-end gap-1 w-full'>
@@ -108,7 +114,7 @@ const ManageSubAccounts = () => {
         </div>
       </div>
 
-      {/* sub accounts filter */}
+      {/* Calendar to pick a date range */}
       <div className='w-full flex items-center justify-between'>
         <div className="relative">
           <div className="cursor-pointer flex items-center justify-start gap-2 shadow-sm border rounded-md bg-white p-2" onClick={handleDateSelector}>
@@ -162,7 +168,7 @@ const ManageSubAccounts = () => {
             <div className="text-xs font-medium">{loadingMessage}</div>
           </div> : filteredSubAccountData.map((data, index) => (
             <div key={index} className='w-full'>
-              <SubAccount subAccountData={data} />
+              <SubAccount subAccountData={data} fetchSubAccountList={fetchSubAccountList} />
             </div>
           ))
         }

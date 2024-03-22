@@ -11,6 +11,7 @@ import Toggle from "@/components/Toggle";
 import axios, { isAxiosError } from "axios";
 import { AccType, Permissions, User } from "./types";
 import AutoCompleteDD from "@/components/AutoCompleteDD";
+import { apiUrl } from "@/config";
 
 type Props = {
   setOpenUpdateUserModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -142,7 +143,7 @@ const UpdateUserModal: React.FC<Props> = ({
           .find((cookie) => cookie.trim().startsWith("token="));
         const tokenValue = token ? token.split("=")[1] : "";
         const response = await axios.get(
-          "https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-subaccounts",
+          `${apiUrl}/api/internal/get-agency-subaccounts`,
           {
             headers: {
               Authorization: `Bearer ${tokenValue}`,
@@ -200,7 +201,7 @@ const UpdateUserModal: React.FC<Props> = ({
         locationIds: [...selectedLocationIds],
       };
       const response = await axios.post(
-        `https://cfx-mono-production-5ec7.up.railway.app/api/internal/update-user/${userDetails?.id}`,
+        `${apiUrl}/api/internal/update-user/${userDetails?.id}`,
         modifiedUserDetails,
         {
           headers: {

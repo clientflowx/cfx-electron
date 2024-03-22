@@ -4,19 +4,21 @@ import React, { useState } from "react";
 import { newSubAccountDataType } from "../types";
 import { CrossIcon, UserIcon } from "@/svg";
 import axios, { isAxiosError } from "axios";
+import { apiUrl } from "@/config";
 
 type Props = {
     setOpenCreateSubAccModal: React.Dispatch<React.SetStateAction<boolean>>;
     fetchSubAccountList: () => void
 }
-const CreateSubAccount: React.FC<Props> = ({ setOpenCreateSubAccModal, fetchSubAccountList }) => {
 
+const emptySubAccountData: newSubAccountDataType = {
+    businessName: "", firstName: "", lastName: "", email: "", address: ""
+}
+
+const CreateSubAccount: React.FC<Props> = ({ setOpenCreateSubAccModal, fetchSubAccountList }) => {
     const [formSubmitError, setFormSubmitError] = useState<string>('');
     const [formSubmissionLoading, setformSubmissionLoading] = useState<boolean>(false);
-    const [newSubAccountData, setNewSubAccountData] = useState<newSubAccountDataType>({ businessName: "", firstName: "", lastName: "", email: "", address: "" })
-
-    console.log("New sub acc data:", newSubAccountData);
-
+    const [newSubAccountData, setNewSubAccountData] = useState<newSubAccountDataType>(emptySubAccountData);
 
     const handleFormSubmit: React.FormEventHandler<HTMLFormElement> | undefined = async (e) => {
         e.preventDefault();
@@ -24,7 +26,7 @@ const CreateSubAccount: React.FC<Props> = ({ setOpenCreateSubAccModal, fetchSubA
             setformSubmissionLoading(true);
             const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
             const tokenValue = token ? token.split('=')[1] : '';
-            const response = await axios.post('https://cfx-mono-production-5ec7.up.railway.app/api/internal/create-agency-subaccount',
+            const response = await axios.post(`${apiUrl}/api/internal/create-agency-subaccount`,
                 newSubAccountData,
                 {
                     headers: {
@@ -35,9 +37,8 @@ const CreateSubAccount: React.FC<Props> = ({ setOpenCreateSubAccModal, fetchSubA
                 setformSubmissionLoading(false);
                 setOpenCreateSubAccModal(false);
                 setFormSubmitError('');
-                console.log(response);
                 fetchSubAccountList();
-                setNewSubAccountData({ businessName: "", firstName: "", lastName: "", email: "", address: "" });
+                setNewSubAccountData(emptySubAccountData);
             }
 
         } catch (error) {
@@ -46,7 +47,6 @@ const CreateSubAccount: React.FC<Props> = ({ setOpenCreateSubAccModal, fetchSubA
 
                 if (error.isAxiosError && error.response && error.response.data) {
                     setFormSubmitError(error.message);
-                    console.log(error);
                 } else {
                     setFormSubmitError('An error occurred. Please try again later.');
                 }
@@ -59,8 +59,13 @@ const CreateSubAccount: React.FC<Props> = ({ setOpenCreateSubAccModal, fetchSubA
             {
                 ...prevData,
                 [name]: value
-            }
+            }   
         ))
+    }
+
+    const handleCloseModalButton = () => {
+        setOpenCreateSubAccModal(false);
+        setNewSubAccountData(emptySubAccountData);
     }
 
     return (
@@ -71,7 +76,8 @@ const CreateSubAccount: React.FC<Props> = ({ setOpenCreateSubAccModal, fetchSubA
                     <div className='w-10 p-2 shadow-md rounded-full'><UserIcon /></div>
                     <button
                         className='w-6'
-                        onClick={() => { setOpenCreateSubAccModal(false); setNewSubAccountData({ businessName: "", firstName: "", lastName: "", email: "", address: "" }) }}
+                        onClick={handleCloseModalButton}
+                        type="reset"
                     >
                         <CrossIcon />
                     </button>
@@ -141,7 +147,7 @@ const CreateSubAccount: React.FC<Props> = ({ setOpenCreateSubAccModal, fetchSubA
                         </div>
                         {/* form buttons */}
                         <div className='flex items-center justify-end gap-3 '>
-                            <button type='reset' onClick={() => { setOpenCreateSubAccModal(false); setNewSubAccountData({ businessName: "", firstName: "", lastName: "", email: "", address: "" }) }} className='rounded-md text-xs border shadow bg-white-700 p-2 px-4'>
+                            <button type='reset' onClick={handleCloseModalButton} className='rounded-md text-xs border shadow bg-white-700 p-2 px-4'>
                                 Cancel
                             </button>
                             <button type='submit' className='rounded-md text-xs text-white bg-blue-700 p-2 px-4 flex w-20 items-center justify-center '>

@@ -59,12 +59,6 @@ const AdminDashboard = () => {
       titleVisible: true,
     },
     {
-      key: "integrations",
-      title: "Integrations",
-      icon: <IntegrationsIcon />,
-      titleVisible: true,
-    },
-    {
       key: "manage-sub-accounts",
       title: "Manage Sub Accounts",
       icon: <SubAccounts />,
@@ -83,6 +77,12 @@ const AdminDashboard = () => {
       titleVisible: true,
     },
     {
+      key: "integrations",
+      title: "Integrations",
+      icon: <IntegrationsIcon />,
+      titleVisible: true,
+    },
+    {
       key: "manage-live-chat-access",
       title: "Manage Chat Access",
       icon: <ManageLiveChatIcon />,
@@ -92,7 +92,7 @@ const AdminDashboard = () => {
 
   const userData = process.browser
     ? JSON.parse(localStorage?.getItem("loginUserDetails") || "{}")?.data
-        ?.userData
+      ?.userData
     : null;
   const role = userData?.role;
 
@@ -107,9 +107,8 @@ const AdminDashboard = () => {
       <Navbar />
       <aside
         id="logo-sidebar"
-        className={`fixed top-0 left-0 z-50 h-full transition-transform ${
-          isSidebarOpen ? "w-64" : "w-16"
-        } cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}
+        className={`fixed top-0 left-0 z-50 h-full transition-transform ${isSidebarOpen ? "w-64" : "w-16"
+          } cursor-pointer bg-gray-700 border-r border-gray-200 transition-all overflow-x-hidden`}
         aria-label="Sidebar"
         onMouseEnter={() => setIsSidebarOpen(true)}
         onMouseLeave={() => setIsSidebarOpen(false)}
@@ -120,15 +119,13 @@ const AdminDashboard = () => {
               return (
                 <li key={index} onClick={() => setSidebarOption(item.key)}>
                   <div
-                    className={`flex items-center p-4 text-gray-300 hover:bg-gray-800 transition-all ${
-                      isSidebarOpen ? "" : "justify-center"
-                    } group`}
+                    className={`flex items-center p-4 text-gray-300 hover:bg-gray-800 transition-all ${isSidebarOpen ? "" : "justify-center"
+                      } group`}
                   >
                     <div className="w-5 text-white">{item.icon}</div>
                     <span
-                      className={`ms-3 h-5 ${
-                        isSidebarOpen || !item.titleVisible ? "" : "hidden"
-                      }`}
+                      className={`ms-3 h-5 ${isSidebarOpen || !item.titleVisible ? "" : "hidden"
+                        }`}
                     >
                       {item.title}
                     </span>
@@ -139,16 +136,14 @@ const AdminDashboard = () => {
           </ul>
         </div>
       </aside>
-      <div
-        className={`relative flex flex-col flex-1 h-full min-h-screen p-10 bg-[#f0f4f7]`}
-      >
+      <div className={`relative flex flex-col flex-1 h-full min-h-screen p-10 bg-[#f0f4f7]`} >
         <div className="sm:ml-10">
           <div className="rounded-lg mt-14">
             {/* ClientFlowX */}
             <div
               className={
                 sidebarOption === "clientflowx" ||
-                sidebarOption === "manage-sub-accounts"
+                  sidebarOption === "manage-sub-accounts"
                   ? ""
                   : "hidden"
               }

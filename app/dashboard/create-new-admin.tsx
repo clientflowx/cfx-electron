@@ -3,6 +3,7 @@ import { CrossIcon, UserIcon } from '@/svg';
 import React, { useState } from 'react'
 import { AdminUser } from './types';
 import axios, { isAxiosError } from 'axios';
+import { apiUrl } from '@/config';
 
 type Props = {
   setOpenAddAdminModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -34,7 +35,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
       const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
       const tokenValue = token ? token.split('=')[1] : '';
       const response = await axios.
-        post('https://cfx-mono-production-5ec7.up.railway.app/api/internal/create-admin-user',
+        post(`${apiUrl}/api/internal/create-admin-user`,
           adminData,
           {
             headers: {

@@ -14,6 +14,7 @@ import { AccType, Permissions } from "./types";
 import AutoCompleteDD from "@/components/AutoCompleteDD";
 import GeneratePasswordIcon from "@/svg/GeneratePasswordIcon";
 import Alert from "@/components/Alert";
+import { apiUrl } from "@/config";
 
 interface User {
   firstName: string;
@@ -163,56 +164,56 @@ const NewUserModal: React.FC<Props> = ({
   const handleInputChange:
     | React.ChangeEventHandler<HTMLInputElement>
     | undefined = (e) => {
-    const { name, value } = e.target;
-    const passwordRegex =
-      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+      const { name, value } = e.target;
+      const passwordRegex =
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
 
-    // Check if the input field is for the password
-    if (name === "password") {
-      if (!passwordRegex.test(value)) {
-        setPasswordValid(false);
-      } else setPasswordValid(true);
-    }
+      // Check if the input field is for the password
+      if (name === "password") {
+        if (!passwordRegex.test(value)) {
+          setPasswordValid(false);
+        } else setPasswordValid(true);
+      }
 
-    if (name === "locationIds") {
-      setNewUserData((prevData) => ({
-        ...prevData,
-        locationIds: [...prevData.locationIds, value],
-      }));
-    } else {
-      setNewUserData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    }
-  };
+      if (name === "locationIds") {
+        setNewUserData((prevData) => ({
+          ...prevData,
+          locationIds: [...prevData.locationIds, value],
+        }));
+      } else {
+        setNewUserData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      }
+    };
 
   const handleSelectChange:
     | React.ChangeEventHandler<HTMLSelectElement>
     | undefined = (e) => {
-    const { name, value } = e.target;
-    const passwordRegex =
-      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+      const { name, value } = e.target;
+      const passwordRegex =
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
 
-    // Check if the input field is for the password
-    if (name === "password") {
-      if (!passwordRegex.test(value)) {
-        setPasswordValid(false);
-      } else setPasswordValid(true);
-    }
+      // Check if the input field is for the password
+      if (name === "password") {
+        if (!passwordRegex.test(value)) {
+          setPasswordValid(false);
+        } else setPasswordValid(true);
+      }
 
-    if (name === "locationIds") {
-      setNewUserData((prevData) => ({
-        ...prevData,
-        locationIds: [...prevData.locationIds, value],
-      }));
-    } else {
-      setNewUserData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    }
-  };
+      if (name === "locationIds") {
+        setNewUserData((prevData) => ({
+          ...prevData,
+          locationIds: [...prevData.locationIds, value],
+        }));
+      } else {
+        setNewUserData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      }
+    };
 
   // fetching all the location with their ids
   useEffect(() => {
@@ -225,7 +226,7 @@ const NewUserModal: React.FC<Props> = ({
           .find((cookie) => cookie.trim().startsWith("token="));
         const tokenValue = token ? token.split("=")[1] : "";
         const response = await axios.get(
-          "https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-subaccounts",
+          `${apiUrl}/api/internal/get-agency-subaccounts`,
           {
             headers: {
               Authorization: `Bearer ${tokenValue}`,
@@ -271,7 +272,7 @@ const NewUserModal: React.FC<Props> = ({
       const tokenValue = token ? token.split("=")[1] : "";
 
       const response = await axios.post(
-        "https://cfx-mono-production-5ec7.up.railway.app/api/internal/create-agency-user",
+        `${apiUrl}/api/internal/create-agency-user`,
         newUserData,
         {
           headers: {
@@ -352,62 +353,62 @@ const NewUserModal: React.FC<Props> = ({
   const generateRandomPassword:
     | React.MouseEventHandler<HTMLButtonElement>
     | undefined = (e) => {
-    e.preventDefault();
-    const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
-    const numbers = "0123456789";
-    const symbols = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+      e.preventDefault();
+      const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+      const numbers = "0123456789";
+      const symbols = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 
-    let password = "";
+      let password = "";
 
-    // Ensure at least one uppercase letter
-    password +=
-      uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
+      // Ensure at least one uppercase letter
+      password +=
+        uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
 
-    // Ensure at least one lowercase letter
-    password +=
-      lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
+      // Ensure at least one lowercase letter
+      password +=
+        lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
 
-    // Ensure at least one number
-    password += numbers[Math.floor(Math.random() * numbers.length)];
+      // Ensure at least one number
+      password += numbers[Math.floor(Math.random() * numbers.length)];
 
-    // Ensure at least one special character
-    password += symbols[Math.floor(Math.random() * symbols.length)];
+      // Ensure at least one special character
+      password += symbols[Math.floor(Math.random() * symbols.length)];
 
-    // Generate remaining characters
-    for (let i = 0; i < 4; i++) {
-      const characters =
-        uppercaseLetters + lowercaseLetters + numbers + symbols;
-      password += characters[Math.floor(Math.random() * characters.length)];
-    }
+      // Generate remaining characters
+      for (let i = 0; i < 4; i++) {
+        const characters =
+          uppercaseLetters + lowercaseLetters + numbers + symbols;
+        password += characters[Math.floor(Math.random() * characters.length)];
+      }
 
-    // Shuffle the password characters
-    password = password
-      .split("")
-      .sort(() => Math.random() - 0.5)
-      .join("");
+      // Shuffle the password characters
+      password = password
+        .split("")
+        .sort(() => Math.random() - 0.5)
+        .join("");
 
-    const passwordRegex =
-      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+      const passwordRegex =
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
 
-    if (passwordRegex.test(password)) {
-      setPasswordValid(true);
-      setNewUserData((prevData) => ({
-        ...prevData,
-        password: password,
-      }));
-      console.log(newUserData.password);
-    } else setPasswordValid(false);
-  };
+      if (passwordRegex.test(password)) {
+        setPasswordValid(true);
+        setNewUserData((prevData) => ({
+          ...prevData,
+          password: password,
+        }));
+        console.log(newUserData.password);
+      } else setPasswordValid(false);
+    };
 
   const copyCredentials:
     | React.MouseEventHandler<HTMLButtonElement>
     | undefined = (e) => {
-    e.preventDefault();
-    const { email, password } = newUserData;
-    navigator.clipboard.writeText(`Email:${email} , Password:${password}`);
-    setCredentialsCopied(true);
-  };
+      e.preventDefault();
+      const { email, password } = newUserData;
+      navigator.clipboard.writeText(`Email:${email} , Password:${password}`);
+      setCredentialsCopied(true);
+    };
 
   const togglePasswordVisibility = () => {
     setPasswordVisible((prevState) => !prevState);
@@ -477,9 +478,8 @@ const NewUserModal: React.FC<Props> = ({
               </button>
             </div>{" "}
             <div
-              className={`${
-                userInfoAccordion ? "" : "hidden"
-              } flex flex-col items-start justify-between gap-3`}
+              className={`${userInfoAccordion ? "" : "hidden"
+                } flex flex-col items-start justify-between gap-3`}
             >
               <div className="flex gap-2 w-full">
                 <div className="flex flex-col items-start justify-between gap-1 w-1/2">
@@ -559,9 +559,8 @@ const NewUserModal: React.FC<Props> = ({
                 </div>
               </div>
               <div
-                className={`${
-                  PasswordValid ? "hidden" : ""
-                } text-xs text-red-500`}
+                className={`${PasswordValid ? "hidden" : ""
+                  } text-xs text-red-500`}
               >
                 Password must contain at least 8 characters, including one
                 uppercase letter, one lowercase letter, one number, and one
@@ -587,16 +586,14 @@ const NewUserModal: React.FC<Props> = ({
                 <div className="text-sm">User Permissions</div>
               </div>
               <div
-                className={`w-full flex items-center justify-end gap-1 ${
-                  userPermissionAcc ? "" : "hidden"
-                }`}
+                className={`w-full flex items-center justify-end gap-1 ${userPermissionAcc ? "" : "hidden"
+                  }`}
                 onClick={handleSelectAllPermissions}
               >
                 <input type="checkbox" checked={selectAllValue} />
                 <button
-                  className={`${
-                    userPermissionAcc ? "" : "hidden"
-                  } text-xs font-semibold`}
+                  className={`${userPermissionAcc ? "" : "hidden"
+                    } text-xs font-semibold`}
                 >
                   {selectAllValue ? "Unselect All" : "Select All"}
                 </button>
@@ -614,7 +611,7 @@ const NewUserModal: React.FC<Props> = ({
                           onChange={handleToggleChange}
                           value={
                             newUserData?.permissions[
-                              permission as keyof Permissions
+                            permission as keyof Permissions
                             ]
                           }
                         />
@@ -632,7 +629,7 @@ const NewUserModal: React.FC<Props> = ({
                           onChange={handleToggleChange}
                           value={
                             newUserData?.permissions[
-                              permission as keyof Permissions
+                            permission as keyof Permissions
                             ]
                           }
                         />
@@ -655,9 +652,8 @@ const NewUserModal: React.FC<Props> = ({
               <div className="text-sm">User Roles</div>
             </div>
             <div
-              className={`${
-                userRolesAcc ? "" : "hidden"
-              } flex flex-col items-start justify-between gap-3`}
+              className={`${userRolesAcc ? "" : "hidden"
+                } flex flex-col items-start justify-between gap-3`}
             >
               <div className="flex flex-col w-full items-start justify-between gap-1 text-xs">
                 <label htmlFor="" className="text-xs">
@@ -767,9 +763,8 @@ const NewUserModal: React.FC<Props> = ({
             </button>
           </div>
           <div
-            className={`text-xs text-red-500 ${
-              formSubmitError === "" ? "hidden" : ""
-            }`}
+            className={`text-xs text-red-500 ${formSubmitError === "" ? "hidden" : ""
+              }`}
           >
             Error adding user: {formSubmitError}
           </div>
