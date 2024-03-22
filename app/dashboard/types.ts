@@ -5,8 +5,8 @@ type AccType = {
 };
 
 type AdminUser = {
-  firstname:string,
-  lastname:string,
+  firstname: string,
+  lastname: string,
   email: string;
   role: string;
 };
@@ -116,5 +116,13 @@ interface subAccountDataType {
   settings: Settings;
 }
 
+type newSubAccountDataType = {
+  businessName: string,
+  address: string,
+  email: string,
+  firstName: string,
+  lastName: string
+}
 
-export type { Permissions, AccType, AdminUser, User, subAccountDataType };
+
+export type { Permissions, AccType, AdminUser, User, subAccountDataType, newSubAccountDataType };

@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import SubAccount from './sub-account'
 import axios from 'axios'
 import { subAccountDataType } from '../types'
@@ -7,56 +7,12 @@ import { IoSearch } from 'react-icons/io5'
 import CreateSubAccIcon from '@/svg/CreateSubAccIcon'
 import SubAccFeedback from '@/svg/SubAccFeedback'
 import Loader from '@/components/Loader'
-import { DateRangePicker, RangeKeyDict } from "react-date-range";
-
+import { DateRangePicker } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { Calendar } from '@/svg'
 import RightArrow from '@/svg/RightArrow'
-
-
-const initialSubAccountData: subAccountDataType[] = [{
-  id: "",
-  name: "",
-  address: "",
-  city: "",
-  state: "",
-  country: "",
-  postalCode: "",
-  timezone: "",
-  firstName: "",
-  lastName: "",
-  email: "",
-  phone: "",
-  business: {
-    name: "",
-    address: "",
-    city: "",
-    state: "",
-    country: "",
-    postalCode: "",
-    timezone: ""
-  },
-  social: {
-    facebookUrl: "",
-    googlePlus: "",
-    linkedIn: "",
-    foursquare: "",
-    twitter: "",
-    yelp: "",
-    instagram: "",
-    youtube: "",
-    pinterest: "",
-    blogRss: "",
-    googlePlaceId: ""
-  },
-  settings: {
-    allowDuplicateContact: false,
-    allowDuplicateOpportunity: false,
-    allowFacebookNameMerge: false,
-    disableContactTimezone: false
-  }
-}]
+import CreateSubAccount from './create-sub-account'
 
 const ManageSubAccounts = () => {
   const [subAccountsData, setSubAccountsData] = useState<subAccountDataType[]>([]);
@@ -68,8 +24,9 @@ const ManageSubAccounts = () => {
     endDate: new Date(),
     key: 'selection'
   });
+  const [openCreateSubAccModal, setOpenCreateSubAccModal] = useState<boolean>(false);
+  const [loadingMessage, setLoadingMessage] = useState<string>("Fetching the list")
 
-  console.log("date: ", dateRange.startDate.getDay());
 
 
   const filteredSubAccountData = subAccountsData.filter((data: subAccountDataType) => {
@@ -98,6 +55,25 @@ const ManageSubAccounts = () => {
     fetchSubAccountDetails();
   }, []);
 
+  const fetchSubAccountList = async () => {
+    setLoading(true);
+    try {
+      setLoadingMessage("Updating the list")
+      const token = document.cookie.split(';').find((cookie) => cookie.trim().startsWith('token='));
+      const tokenValue = token ? token.split('=')[1] : '';
+      const response = await axios.get('https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-subaccounts?isDetail=true', {
+        headers: {
+          Authorization: `Bearer ${tokenValue}`
+        }
+      });
+      setSubAccountsData(response?.data?.data || []);
+    } catch (error) {
+      console.error('Error fetching sub account details:', error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   const handleNameFilter: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const { value } = e.target;
     setNameFilter(value);
@@ -111,6 +87,10 @@ const ManageSubAccounts = () => {
     setDateRange(ranges.selection);
   };
 
+  const handleCreateSubAccModal = () => {
+    setOpenCreateSubAccModal(prev => !prev);
+  }
+
   return (
     <div className='flex flex-col w-full justify-between gap-4'>
       <div className='flex w-full items-start justify-between'>
@@ -121,7 +101,7 @@ const ManageSubAccounts = () => {
             <div>Submit Feedback</div>
           </button>
           <button className='text-xs font-semibold rounded-md shadow-sm border p-2 bg-white text-gray-600'>View Scheduled Reports</button>
-          <button className='text-xs gap-1 text-white font-semibold rounded-md shadow-sm border p-2 bg-blue-600 flex items-center'>
+          <button onClick={handleCreateSubAccModal} className='text-xs gap-1 text-white font-semibold rounded-md shadow-sm border p-2 bg-blue-600 flex items-center'>
             <div className='w-3 h-3'><CreateSubAccIcon /></div>
             <div>Create Sub-Account</div>
           </button>
@@ -137,7 +117,7 @@ const ManageSubAccounts = () => {
               {JSON.stringify(dateRange.startDate.getDate())}
             </div>
             <div className='w-3 h-3 opacity-50'>
-              <RightArrow/>
+              <RightArrow />
             </div>
             <div className='text-sm font-semibold'>
               {JSON.stringify(dateRange.endDate.getFullYear())}-{JSON.stringify(dateRange.endDate.getMonth())}-
@@ -179,17 +159,28 @@ const ManageSubAccounts = () => {
         {
           loading ? <div className="flex flex-col gap-2 items-center justify-center my-40">
             <Loader />
-            <div className="text-xs font-medium">Fetching the list</div>
+            <div className="text-xs font-medium">{loadingMessage}</div>
           </div> : filteredSubAccountData.map((data, index) => (
             <div key={index} className='w-full'>
               <SubAccount subAccountData={data} />
             </div>
           ))
         }
-      </div>
 
+        {openCreateSubAccModal ? (
+          <div className="fixed top-0 p-5 left-0 z-40 w-full bg-gray-200 h-full bg-opacity-50  rounded-md flex items-center justify-center">
+            <CreateSubAccount
+              setOpenCreateSubAccModal={setOpenCreateSubAccModal}
+              fetchSubAccountList={fetchSubAccountList}
+            />
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   )
 }
+
 
 export default ManageSubAccounts

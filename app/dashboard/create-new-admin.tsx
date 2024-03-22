@@ -9,9 +9,6 @@ type Props = {
   fetchAdminList: () => void;
 }
 
-const handleSubmit = () => {
-
-}
 const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }) => {
   const roles = [
     { key: "admin", title: "Admin" },
