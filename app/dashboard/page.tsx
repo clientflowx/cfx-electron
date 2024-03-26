@@ -29,15 +29,15 @@ const AdminDashboard = () => {
       .find((cookie) => cookie.trim().startsWith("role="));
   }
   const userRole = roleData ? roleData.split("=")[1] : "";
+
+  //check if the user details stores in LS is authenticated or not
   useEffect(() => {
-    // Check for token in cookies
     let token;
     if (process.browser) {
       token = document.cookie
         .split(";")
         .find((cookie) => cookie.trim().startsWith("token="));
     }
-
     // If token is not present, redirect to /login
     if (!token) {
       router.push("/login");
@@ -90,10 +90,7 @@ const AdminDashboard = () => {
     },
   ];
 
-  const userData = process.browser
-    ? JSON.parse(localStorage?.getItem("loginUserDetails") || "{}")?.data
-      ?.userData
-    : null;
+  const userData = process.browser ? JSON.parse(localStorage?.getItem("loginUserDetails") || "{}")?.data?.userData : null;
   const role = userData?.role;
 
   if (role === "admin") {

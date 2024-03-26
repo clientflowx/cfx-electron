@@ -1,6 +1,6 @@
 "use client"
 import { IoSearch } from "react-icons/io5";
-import { Avatar, Grid, Hamburger, List, Mail, Notification } from '@/svg/index.ts'
+import { Avatar, Hamburger, Notification } from '@/svg/index.ts'
 import { useState } from "react";
 import { useRouter } from 'next/navigation'
 import Cookies from 'js-cookie';
@@ -10,17 +10,17 @@ const Navbar: React.FC = () => {
     const router = useRouter();
 
     const navIcons: JSX.Element[] = [
-
         <Notification key="notifications" />,
-        // <List key="list"/>,
-        // <Mail key="mail" />,
         <Avatar key="avatar" />,
-        // <Grid key="grid" />,
     ]
 
     const handleLogout = () => {
         router.push('/login');
         Cookies.remove('token');
+    }
+
+    const handleMouseHover = (event: boolean) => {
+        setHovered(event);
     }
 
     return (
@@ -43,8 +43,8 @@ const Navbar: React.FC = () => {
                     <div className="relative hidden sm:flex" key={index}>
                         <div className="absolute -right-1 -top-1 bg-green-600 opacity-95 rounded-full w-2 h-2"></div>
                         <div className="relative font w-6 opacity-40 hover:opacity-90 transition-all cursor-pointer"
-                            onMouseEnter={() => setHovered(true)}
-                            onMouseLeave={() => setHovered(false)}
+                            onMouseEnter={() => index === 1 ? handleMouseHover(true) : null}
+                            onMouseLeave={() => index === 1 ? handleMouseHover(false) : null}
                         >
                             {navItem}
                         </div>

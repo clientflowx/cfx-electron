@@ -10,6 +10,8 @@ type Props = {
   fetchAdminList: () => void;
 }
 
+const emptyAdminUserData: AdminUser = { firstname: '', lastname: '', email: '', role: '' }
+
 const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }) => {
   const roles = [
     { key: "admin", title: "Admin" },
@@ -18,7 +20,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
   ];
   const [formSubmitError, setFormSubmitError] = useState<string>('');
   const [formSubmissionLoading, setformSubmissionLoading] = useState<boolean>(false);
-  const [adminData, setAdminData] = useState<AdminUser>({ firstname: '', lastname: '', email: '', role: '' });
+  const [adminData, setAdminData] = useState<AdminUser>(emptyAdminUserData);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -49,7 +51,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
         setFormSubmitError('');
         console.log(response);
         fetchAdminList();
-        setAdminData({ firstname: '', lastname: '', email: '', role: '' });
+        setAdminData(emptyAdminUserData);
       }
 
     } catch (error) {
@@ -75,7 +77,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
           <div className='w-10 p-2 shadow-md rounded-full'><UserIcon /></div>
           <button
             className='w-6'
-            onClick={() => { setOpenAddAdminModal(false); setAdminData({ firstname: '', lastname: '', email: '', role: '' }) }}
+            onClick={() => { setOpenAddAdminModal(false); setAdminData(emptyAdminUserData) }}
           >
             <CrossIcon />
           </button>
@@ -143,7 +145,7 @@ const NewAdminModal: React.FC<Props> = ({ setOpenAddAdminModal, fetchAdminList }
             </div>
             {/* form buttons */}
             <div className='flex items-center justify-end gap-3 '>
-              <button type='reset' onClick={() => { setOpenAddAdminModal(false); setAdminData({ firstname: '', lastname: '', email: '', role: '' }) }} className='rounded-md text-xs border shadow bg-white-700 p-2 px-4'>
+              <button type='reset' onClick={() => { setOpenAddAdminModal(false); setAdminData(emptyAdminUserData) }} className='rounded-md text-xs border shadow bg-white-700 p-2 px-4'>
                 Cancel
               </button>
               <button type='submit' className='rounded-md text-xs text-white bg-blue-700 p-2 px-4 flex w-20 items-center justify-center '>
