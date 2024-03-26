@@ -16,6 +16,7 @@ import {
 } from "@table-library/react-table-library/types/table";
 import Alert from "@/components/Alert";
 import { User } from "./types";
+import { apiUrl } from "@/config";
 
 type LocationIdsArray = [
   {
@@ -131,7 +132,7 @@ const UserList = () => {
         .find((cookie) => cookie.trim().startsWith("token="));
       const tokenValue = token ? token.split("=")[1] : "";
       const response = await axios.get(
-        "https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-user-list",
+        `${apiUrl}/api/internal/get-agency-user-list`,
         {
           headers: {
             Authorization: `Bearer ${tokenValue}`,
@@ -165,7 +166,7 @@ const UserList = () => {
           .find((cookie) => cookie.trim().startsWith("token="));
         const tokenValue = token ? token.split("=")[1] : "";
         const response = await axios.get(
-          "https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-subaccounts",
+          `${apiUrl}/api/internal/get-agency-subaccounts`,
           {
             headers: {
               Authorization: `Bearer ${tokenValue}`,
@@ -193,7 +194,7 @@ const UserList = () => {
         const tokenValue = token ? token.split("=")[1] : "";
         // Make the request with the bearer token
         const response = await axios.get(
-          "https://cfx-mono-production-5ec7.up.railway.app/api/internal/get-agency-user-list",
+          `${apiUrl}/api/internal/get-agency-user-list`,
           {
             headers: {
               Authorization: `Bearer ${tokenValue}`,
@@ -221,7 +222,7 @@ const UserList = () => {
       const tokenValue = token ? token.split("=")[1] : "";
       await axios
         .delete(
-          `https://cfx-mono-production-5ec7.up.railway.app/api/internal/delete-agency-user/${user.id}`,
+          `${apiUrl}/api/internal/delete-agency-user/${user.id}`,
           {
             headers: {
               Authorization: `Bearer ${tokenValue}`,
@@ -323,11 +324,10 @@ const UserList = () => {
       pageButtons.push(
         <button
           key={i}
-          className={`${
-            pagination.state.page === i
-              ? "border-blue-400 border-1 border bg-blue-50"
-              : ""
-          } rounded-sm text-xs text-gray-600 w-6 h-6`}
+          className={`${pagination.state.page === i
+            ? "border-blue-400 border-1 border bg-blue-50"
+            : ""
+            } rounded-sm text-xs text-gray-600 w-6 h-6`}
           onClick={() => {
             setPageIndex(i);
             pagination.fns.onSetPage(i);
@@ -371,10 +371,10 @@ const UserList = () => {
   const handleNameFilter:
     | React.ChangeEventHandler<HTMLInputElement>
     | undefined = (e) => {
-    const { value } = e.target;
-    // console.log(value);
-    setNameFilter(value);
-  };
+      const { value } = e.target;
+      // console.log(value);
+      setNameFilter(value);
+    };
 
   return (
     <div className="relative flex flex-col gap-2">
@@ -478,11 +478,10 @@ const UserList = () => {
             </span>
             <span className="w-1/2 flex items-start justify-end gap-2">
               <button
-                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${
-                  pagination.state.page <= 0
-                    ? "pointer-events-none opacity-50"
-                    : ""
-                }`}
+                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${pagination.state.page <= 0
+                  ? "pointer-events-none opacity-50"
+                  : ""
+                  }`}
                 onClick={() => {
                   if (pagination.state.page > 0) {
                     pagination.fns.onSetPage(pageIndex - 1);
@@ -500,22 +499,21 @@ const UserList = () => {
                 )}
               </button>
               <button
-                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${
-                  pagination.state.page >=
+                className={`text-xs px-2 py-1 text-gray-600 border border-1 border-gray-300 rounded-md font-semibold ${pagination.state.page >=
                   pagination.state.getTotalPages(
                     filteredUsers.length > 0 ? filteredUsers : users
                   ) -
-                    1
-                    ? "pointer-events-none opacity-50"
-                    : ""
-                }`}
+                  1
+                  ? "pointer-events-none opacity-50"
+                  : ""
+                  }`}
                 onClick={() => {
                   if (
                     pagination.state.page <
                     pagination.state.getTotalPages(
                       filteredUsers.length > 0 ? filteredUsers : users
                     ) -
-                      1
+                    1
                   ) {
                     pagination.fns.onSetPage(pageIndex + 1);
                     setPageIndex(pageIndex + 1);

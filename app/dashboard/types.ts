@@ -5,8 +5,8 @@ type AccType = {
 };
 
 type AdminUser = {
-  firstname:string,
-  lastname:string,
+  firstname: string,
+  lastname: string,
   email: string;
   role: string;
 };
@@ -114,7 +114,50 @@ interface subAccountDataType {
   business: Business;
   social: Social;
   settings: Settings;
+  website:string
+}
+
+type newSubAccountDataType = {
+  businessName: string,
+  address: string,
+  email: string,
+  firstName: string,
+  lastName: string
 }
 
 
-export type { Permissions, AccType, AdminUser, User, subAccountDataType };
+interface updatedSubAccountDataType {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  businessName: string;
+  // timezone: string;
+  address: string;
+  city: string;
+  country: string;
+  state: string;
+  postalCode: string;
+  website: string;
+  social: {
+    facebookUrl: string;
+    googlePlus: string;
+    linkedIn: string;
+    foursquare: string;
+    twitter: string;
+    yelp: string;
+    instagram: string;
+    youtube: string;
+    pinterest: string;
+    blogRss: string;
+    googlePlaceId: string;
+  };
+  settings: {
+    allowDuplicateContact: boolean;
+    allowDuplicateOpportunity: boolean;
+    allowFacebookNameMerge: boolean;
+    disableContactTimezone: boolean;
+  };
+}
+
+export type { Permissions, AccType, AdminUser, User, subAccountDataType, newSubAccountDataType,updatedSubAccountDataType };
