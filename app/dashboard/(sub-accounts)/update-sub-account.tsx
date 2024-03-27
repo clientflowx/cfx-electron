@@ -39,8 +39,6 @@ const UpdateSubAccount: React.FC<Props> = ({ fetchSubAccountList, setOpenUpdateS
   const [formSubmitError, setFormSubmitError] = useState<string>('');
   const [formSubmissionLoading, setformSubmissionLoading] = useState<boolean>(false);
   const [updatedSubAccount, setUpdatedSubAccount] = useState<updatedSubAccountDataType>(InitialUpdatedSubAccData);
-  console.log(updatedSubAccount);
-  
 
   //handle form submit
   const handleFormSubmit: React.FormEventHandler<HTMLFormElement> | undefined = async (e) => {
@@ -168,35 +166,32 @@ const UpdateSubAccount: React.FC<Props> = ({ fetchSubAccountList, setOpenUpdateS
                   />
                 </div>
                 <div className='flex flex-col items-start justify-between gap-1'>
-                  <label htmlFor="" className='text-xs font-medium'>Street Address *</label>
+                  <label htmlFor="" className='text-xs font-medium'>Street Address</label>
                   <input
                     type="text"
                     name='address'
                     className={inputFieldStyle}
                     value={updatedSubAccount.address}
                     onChange={handleInputChange}
-                    required
                   />
                 </div>
                 <div className='flex flex-col items-start justify-between gap-1'>
-                  <label htmlFor="" className='text-xs font-medium'>City *</label>
+                  <label htmlFor="" className='text-xs font-medium'>City</label>
                   <input
                     type="text"
                     name='city'
                     className={inputFieldStyle}
                     value={updatedSubAccount.city}
                     onChange={handleInputChange}
-                    required
                   />
                 </div>
                 <div className='flex flex-col items-start justify-between gap-1'>
-                  <label htmlFor="" className='text-xs font-medium'>Country *</label>
+                  <label htmlFor="" className='text-xs font-medium'>Country</label>
                   <select
                     name="country"
                     className={selectFieldStyle}
                     value={updatedSubAccount.country}
                     onChange={handleCountryChange}
-                    required
                   >
                     <option value="">Select Country</option>
                     {namesAndIsoCodes.map((country, index) => (
@@ -206,49 +201,34 @@ const UpdateSubAccount: React.FC<Props> = ({ fetchSubAccountList, setOpenUpdateS
                     ))}
                   </select>
                 </div>
-
-                {/* <div className='flex flex-col items-start justify-between gap-1'>
-                  <label htmlFor="" className='text-xs font-medium'>Business Niche</label>
-                  <input
-                    type="text"
-                    name='businessNiche'
-                    className={inputFieldStyle}
-                    // value={newSubAccountData.email}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div> */}
                 <div className='flex flex-col items-start justify-between gap-1'>
-                  <label htmlFor="" className='text-xs font-medium'>State/Prov/Region *</label>
+                  <label htmlFor="" className='text-xs font-medium'>State/Prov/Region</label>
                   <input
                     type="text"
                     name='state'
                     className={inputFieldStyle}
                     value={updatedSubAccount.state}
                     onChange={handleInputChange}
-                    required
                   />
                 </div>
                 <div className='flex flex-col items-start justify-between gap-1'>
-                  <label htmlFor="" className='text-xs font-medium'>Zip/Postal Code *</label>
+                  <label htmlFor="" className='text-xs font-medium'>Zip/Postal Code</label>
                   <input
                     type="text"
                     name='postalCode'
                     className={inputFieldStyle}
                     value={updatedSubAccount.postalCode}
                     onChange={handleInputChange}
-                    required
                   />
                 </div>
                 <div className='flex flex-col items-start justify-between gap-1'>
-                  <label htmlFor="" className='text-xs font-medium'>Phone number *</label>
+                  <label htmlFor="" className='text-xs font-medium'>Phone number</label>
                   <input
                     type="text"
                     name='phone'
                     className={inputFieldStyle}
                     value={updatedSubAccount.phone}
                     onChange={handleInputChange}
-                    required
                   />
                 </div>
                 <div className='flex flex-col items-start justify-between gap-1'>
@@ -259,20 +239,8 @@ const UpdateSubAccount: React.FC<Props> = ({ fetchSubAccountList, setOpenUpdateS
                     className={inputFieldStyle}
                     value={updatedSubAccount.website}
                     onChange={handleInputChange}
-                    required
                   />
                 </div>
-                {/* <div className='flex flex-col items-start justify-between gap-1'>
-                  <label htmlFor="" className='text-xs font-medium'>Time Zone *</label>
-                  <input
-                    type="text"
-                    name='timezone'
-                    className={inputFieldStyle}
-                    value={updatedSubAccount.timezone}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div> */}
               </div>
               {/* form buttons */}
               <div className='flex items-center justify-end gap-3 '>

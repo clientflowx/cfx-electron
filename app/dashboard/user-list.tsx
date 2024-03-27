@@ -141,7 +141,7 @@ const UserList = () => {
       );
       setUsers(response.data?.data?.users);
       setLoading(false);
-      alertMsg.current = "Request Successfull";
+      alertMsg.current = "Request successful";
       setShowSuccess(true);
       setTimeout(() => {
         setShowSuccess(false);
@@ -340,25 +340,6 @@ const UserList = () => {
 
     return pageButtons;
   };
-
-  // const handleSearchByName = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { value } = e.target;
-  //   const searchedUsers = users.filter((user: User) =>
-  //     user.name.toLowerCase().includes(value.toLowerCase())
-  //   );
-  //   setFilteredUsers(searchedUsers);
-  // };
-
-  //users filtering on the basis of the filters value
-  // useEffect(() => {
-
-  //   // Update state with the filtered users
-  //   if (filteredUsers.length == 0) {
-  //     setNoRecordFound(true);
-  //   }
-  //   setFilteredUsers(filteredUsers);
-  // }, [subAccountFilter, userTypeFilter, userRoleFilter, UserList]);
-
   const handleFilterChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -378,6 +359,13 @@ const UserList = () => {
 
   return (
     <div className="relative flex flex-col gap-2">
+      {/* Alert box */}
+      {(showError || showSuccess) && (
+        <Alert
+          type={showError ? "error" : "success"}
+          message={alertMsg?.current}
+        />
+      )}
       {/* Filters and Search section */}
       <div className="flex items-center justify-end gap-1 py-2">
         <div>
@@ -436,16 +424,6 @@ const UserList = () => {
             value={nameFilter}
           />
         </div>
-        {/* <div className="flex items-center justify-between p-1 bg-white border border-1 outline-none rounded-md gap-1">
-          <div className="opacity-30 h-full">
-            <IoSearch />
-          </div>
-          <input
-            type="text"
-            className=" text-xs text-gray-400 outline-none"
-            placeholder="Search by Location Id"
-          />
-        </div> */}
         <div>
           <button
             className="text-xs text-white rounded-md font-semibold px-3 p-1 bg-blue-500"
@@ -549,12 +527,6 @@ const UserList = () => {
         </div>
       ) : (
         ""
-      )}
-      {(showError || showSuccess) && (
-        <Alert
-          type={showError ? "error" : "success"}
-          message={alertMsg?.current}
-        />
       )}
     </div>
   );

@@ -14,8 +14,11 @@ import { Calendar } from '@/svg'
 import RightArrow from '@/svg/RightArrow'
 import CreateSubAccount from './create-sub-account'
 import { apiUrl } from '@/config'
+import Alert from '@/components/Alert'
 
 const ManageSubAccounts = () => {
+
+  //state variables
   const [subAccountsData, setSubAccountsData] = useState<subAccountDataType[]>([]);
   const [nameFilter, setNameFilter] = useState<string>('');
   const [loading, setLoading] = useState(false);
@@ -27,6 +30,9 @@ const ManageSubAccounts = () => {
   });
   const [openCreateSubAccModal, setOpenCreateSubAccModal] = useState<boolean>(false);
   const [loadingMessage, setLoadingMessage] = useState<string>("Fetching the list")
+  const [showError, setShowError] = useState<boolean>(false);
+  const [showSuccess, setShowSuccess] = useState<boolean>(false);
+  const alertMsg = useRef<string>("");
 
 
 
@@ -71,8 +77,18 @@ const ManageSubAccounts = () => {
         }
       });
       setSubAccountsData(response?.data?.data || []);
+      alertMsg.current = "Request successful";
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 5000);
     } catch (error) {
       console.error('Error fetching sub account details:', error);
+      alertMsg.current = "Request Fails, Try Again";
+      setShowError(true);
+      setTimeout(() => {
+        setShowError(false);
+      }, 5000);
     } finally {
       setLoading(false);
     }
@@ -158,6 +174,16 @@ const ManageSubAccounts = () => {
             />
           </div>
         </div>
+      </div>
+
+      <div>
+        {/* Alert box */}
+        {(showError || showSuccess) && (
+          <Alert
+            type={showError ? "error" : "success"}
+            message={alertMsg?.current}
+          />
+        )}
       </div>
 
       {/* Sub accounts listing */}

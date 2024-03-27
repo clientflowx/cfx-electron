@@ -1,0 +1,483 @@
+[33mcommit 36ae727629525163c3b8e595bab2fb03f7e24b5c[m[33m ([m[1;36mHEAD -> [m[1;32mfeat/create-sub-account[m[33m, [m[1;31morigin/feat/create-sub-account[m[33m)[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Tue Mar 26 11:33:49 2024 +0530
+
+    feat/create-sub-acc: Fix Navbar hover Bug
+
+[33mcommit 354c0d7a6eef7a31ca36ac1c1304bac1042792fb[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Sat Mar 23 00:19:12 2024 +0530
+
+    feat/create-sub-account: Add update-sub-acc functionality + Add ApiUrl to axios calls
+
+[33mcommit 18ee0ea93dbfe13fc4cc4cd2bad7fef40ed638c8[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 22 07:32:35 2024 +0530
+
+    feat/sub-account: Add create-sub-acc functionality
+
+[33mcommit 552d4c68ff90528cc3d91b8e63a21673e5ee6aaf[m[33m ([m[1;32mfix/admin[m[33m)[m
+Merge: 68632b0 a84270f
+Author: Naman <160215194+namancfx@users.noreply.github.com>
+Date:   Thu Mar 21 19:07:13 2024 +0530
+
+    Merge pull request #3 from clientflowx/fix/minor-func
+    
+    Fix/minor func
+
+[33mcommit a84270f11cb75b9ec8a025be387b3607312133d7[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Thu Mar 21 19:05:15 2024 +0530
+
+    fix(minor-func): resolved merge conflicts
+
+[33mcommit e65887da974f9f84da573ac2ccd2726239d80e9c[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Thu Mar 21 19:00:27 2024 +0530
+
+    fix(minor-func): copy credentials + valid email check+ location id check
+
+[33mcommit 68632b0f0903bbdc3f7836938b61e2daa9c42bdd[m
+Merge: fa6db81 67c2fec
+Author: Naman <160215194+namancfx@users.noreply.github.com>
+Date:   Thu Mar 21 18:56:25 2024 +0530
+
+    Merge pull request #2 from clientflowx/feat/select-all
+    
+    Feat/select all
+
+[33mcommit 67c2feceb08f080633698a40cb756a261f881720[m[33m ([m[1;31morigin/feat/select-all[m[33m)[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Thu Mar 21 18:54:44 2024 +0530
+
+    feat(select-all): fixed select-all button
+
+[33mcommit 689737722d98318ad024bbb49869f63266869d16[m[33m ([m[1;32mfeat/select-all[m[33m)[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Thu Mar 21 18:17:13 2024 +0530
+
+    feat/select-all: Add Manage-live-chat-access, select-all feature
+
+[33mcommit fcdf2c7403652a7bbe4b55088cfd139a1d90344c[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Wed Mar 20 19:51:57 2024 +0530
+
+    feat/select-all: Add DateRange Pick functionality
+
+[33mcommit 27ec62de2e8291e8d5b901648e892de183a955ff[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Wed Mar 20 17:41:50 2024 +0530
+
+    feat/select-all: Add Sub-account listing and search-by-name functionality
+
+[33mcommit be5845ee45c9cd0eb50467b83a30f701300ba61e[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Wed Mar 20 08:01:07 2024 +0530
+
+    feat/(select-all): Implement select all permissions functionality
+
+[33mcommit fa6db81632e0328cda933de614f452f668941a1b[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Tue Mar 19 21:00:02 2024 +0530
+
+    fix/admin: Add password generation functionality
+
+[33mcommit e2be4836176eeff053a1c0d3a54d7d252a63ceca[m
+Merge: c4d329d 30b8577
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Tue Mar 19 19:02:24 2024 +0530
+
+    Merge remote-tracking branch 'origin/staging' into fix/admin
+
+[33mcommit 30b8577fcc0554859e2e1a9882571a672f53606e[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Tue Mar 19 18:06:54 2024 +0530
+
+    fix: added optional chaining
+
+[33mcommit 7ee71adf028115efb645440fd62d5c2e6a78462d[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Tue Mar 19 14:52:54 2024 +0530
+
+    fix: added checked field
+
+[33mcommit 38193b672b3413625c2c03d4761ddcb672cbb9a5[m[33m ([m[1;32mstaging[m[33m)[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Tue Mar 19 13:40:44 2024 +0530
+
+    (staging): Add lastname input field in create-admin-modal
+
+[33mcommit 60cce1090f080788a52a824c94a38543c3c0ea7e[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Tue Mar 19 13:28:39 2024 +0530
+
+    (staging): Add password show/hide feature
+
+[33mcommit c4d329d5a86c64e111d0067f38ba2c37da947efc[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Tue Mar 19 13:15:48 2024 +0530
+
+    fix(admin): Add sub account listing
+
+[33mcommit ebe52a2a7c454ec1f0faff53931b5f264d71b6d8[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Mon Mar 18 18:46:26 2024 +0530
+
+    fix(admin): Add Sub-Accounts tab
+
+[33mcommit 41fc24c6fc6906359074bec16fb38053209a665d[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Fri Mar 15 18:50:40 2024 +0530
+
+    fix(admin): style +text updates
+
+[33mcommit 0b324a4b970442a1fee2a9ba99539995b5c91ad8[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Fri Mar 15 18:41:36 2024 +0530
+
+    fix(admin): autocomplete implemented
+
+[33mcommit 99f6d49b42a3d12881fca68cf35021f55fdcb136[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Fri Mar 15 17:59:40 2024 +0530
+
+    fix(admin): update agency api + permission fixed
+
+[33mcommit 7951a807b575aaaa2437d88772691e447cc728d9[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Fri Mar 15 17:59:23 2024 +0530
+
+    fix(admin): toggle fixed
+
+[33mcommit cbbc9d4a76cc548f02af6bc98d86a13072221081[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 15 16:06:18 2024 +0530
+
+    fix/admin: Add Homepage Intergrations Navigation
+
+[33mcommit 503c1dd4a447814cd3c6f481aa5c10bac518b043[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 15 15:42:31 2024 +0530
+
+    fix/admin: Fix build Error
+
+[33mcommit 7d5212d8a52b79b2c264ca0473c2144568628bca[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 15 15:37:54 2024 +0530
+
+    fix/admin: Fix LocalStorage build Error
+
+[33mcommit 774e997c044e46d3489c612c3b630c8790a38559[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 15 14:27:52 2024 +0530
+
+    fix/admin: Resolve document Error
+
+[33mcommit b5952481b51e7264a408376056911cd1b9a74b8a[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 15 14:16:48 2024 +0530
+
+    fix/admin: Resolve build error
+
+[33mcommit a2f13fea2fbce065bbd0c3e7a8672f8007a31449[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 15 13:35:43 2024 +0530
+
+    fix/admin: Resolve double-quotes Error
+
+[33mcommit 5784cb4e4bcd47a851f65d713eab460cf4c45d5c[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 15 13:20:10 2024 +0530
+
+    fix/admin: Refactor permissions
+
+[33mcommit 0ade18c2e1d3c605557ac7b8e81dae59c61ac570[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 15 11:26:38 2024 +0530
+
+    fix/admin: bug fixes
+
+[33mcommit b04f8f73df8138f6239b25ddfdd9cd8bf1b2432b[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 15 09:48:04 2024 +0530
+
+    fix/admin: Refactor update-user-modal
+
+[33mcommit 2403ed325094e3df1fba8276f018564e952207e7[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 15 08:34:41 2024 +0530
+
+    fix/admin: Add Homepage-intergrations routing
+
+[33mcommit ae31d2e72df6b268337fa35b6ec33a8cad237236[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Fri Mar 15 06:54:47 2024 +0530
+
+    fix/admin: Refine modals layout
+
+[33mcommit d159d8989135a08d828ad388d178e79dae494c86[m[33m ([m[1;32mfeat/login-page[m[33m)[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Thu Mar 14 21:05:25 2024 +0530
+
+    fix(admin): user list updated
+
+[33mcommit 74a82925c6299959deda07758506b3b5024df7bf[m[33m ([m[1;31morigin/feat/login-page[m[33m)[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Thu Mar 14 18:56:08 2024 +0530
+
+    feat(login-page): localstorage bug fix
+
+[33mcommit afb54a0fcd813754e11ca1b925d1d0b01301a7d9[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Thu Mar 14 18:47:26 2024 +0530
+
+    feat(login-page): Fix localStorage error
+
+[33mcommit 62f2194e17190821ffc50c05801c455145a34947[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Thu Mar 14 18:38:50 2024 +0530
+
+    feat(login-page): bug fixes
+
+[33mcommit 7ff0fdc2cbc89689afcbdf96560dff0155b9003d[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Thu Mar 14 18:34:11 2024 +0530
+
+    feat(login-page): window object bug fix
+
+[33mcommit 367d04698eaedf4d0b8aa14a5e2ace14a31c60d1[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Thu Mar 14 18:29:26 2024 +0530
+
+    feat(login-page): minor import bug fix
+
+[33mcommit 238c3a20d21d42a8795b81290fc08fef5185b101[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Thu Mar 14 18:24:08 2024 +0530
+
+    feat(login-page): Remove Type Errors
+
+[33mcommit 2c69fa08b2195312208b6609facbde5ba5e5ef5d[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Thu Mar 14 18:03:48 2024 +0530
+
+    feat(login-page): Add key prop
+
+[33mcommit 5a9c0ce60380e025d41f97cfe167b8606bbb00cd[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Thu Mar 14 17:53:12 2024 +0530
+
+    feat(login-page): Bug fixes
+
+[33mcommit 3f5346ec38e21746c762e6d3ee7ac7133f73b420[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Wed Mar 13 11:25:21 2024 +0530
+
+    feat(login-page): Add create-admin-user feature
+
+[33mcommit 68150d289409601cba5e9ce1729f8d0a8a4e3792[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Tue Mar 12 21:25:31 2024 +0530
+
+    feat(login-page): razorpay admin api integrated
+
+[33mcommit 0600579208199a8f8b1b89dec9ec00f1b3a32249[m
+Merge: 1fdd546 eb6bfbf
+Author: naman360 <naman.geek@gmail.com>
+Date:   Tue Mar 12 21:13:53 2024 +0530
+
+    Merge branch 'feat/rzp-alohaa-admin' into feat/login-page
+
+[33mcommit eb6bfbfbceec06d11ef8aa725a1297cfb3d64c55[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Tue Mar 12 21:12:41 2024 +0530
+
+    feat(rzp-alohaa-admin): alohaa admin + rzp admin page
+
+[33mcommit 1fdd546c68809e7671597f242f2bbccf824f8f42[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Tue Mar 12 17:41:43 2024 +0530
+
+    feat(login-page): Add User Filters
+
+[33mcommit f3cc1ddc38a3fe4f5cc8f5e457c31262a0f5c7e3[m
+Merge: dde3e9f 5b5ca64
+Author: naman360 <naman.geek@gmail.com>
+Date:   Tue Mar 12 17:03:23 2024 +0530
+
+    Merge branch 'feat/manage-admin-user-v2' into feat/rzp-alohaa-admin
+
+[33mcommit dde3e9f78073f29e4e062774de8562cfb4d5533e[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Tue Mar 12 11:44:46 2024 +0530
+
+    feat(login-page): Add User Filters
+
+[33mcommit a71a13a1d2d6fe45ae2e00a3df12d8d3c9a4df9b[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Tue Mar 12 01:58:04 2024 +0530
+
+    feat(login-page): Delete User Feature
+
+[33mcommit ae8736b874d8dbe5744ff52eeed706b2f9bd872c[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Mon Mar 11 12:03:33 2024 +0530
+
+    feat(login-page): Fix Edit user Error
+
+[33mcommit 14add8c2eddd491c0ea177e03c4121dbad42add2[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Mon Mar 11 01:24:33 2024 +0530
+
+    feat(login-page): Add Edit User-details feature
+
+[33mcommit 43be5a13fd90c4681daccadd9d37e6003296319c[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Mon Mar 11 01:10:47 2024 +0530
+
+    feat(login-page): Add Edit User-details feature
+
+[33mcommit f20bee7c7c10a62fbb7f72dca2767cafd5211648[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Sun Mar 10 20:20:19 2024 +0530
+
+    feat(login-page): Update Userlist on User creation
+
+[33mcommit a269a47234ec77a4335e503c593490849d647f2f[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Sat Mar 9 21:25:14 2024 +0530
+
+    feat(login-page): Add Create-agency-user functionality
+
+[33mcommit ee884e5623ef587eb9ec08cc1a8842effb2e432a[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Thu Mar 7 16:02:47 2024 +0530
+
+    feat(login-page): Update User Modal
+
+[33mcommit d8a772c0dc8e02c6b28f02d3fc453525d8483c19[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Thu Mar 7 10:26:39 2024 +0530
+
+    feat(login-page): Update Login Error Handling
+
+[33mcommit 5b5ca64b8e58442777b8055cc7a60aa127ecb7dc[m[33m ([m[1;31morigin/feat/manage-admin-user-v2[m[33m)[m
+Author: aman123956 <amandixit033@gmail.com>
+Date:   Wed Mar 6 22:25:05 2024 +0530
+
+    feat(manage-admin-users): manage admin user part added
+
+[33mcommit e1e10fb7cbf367aaf107b875f7160759ecb074ed[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Wed Mar 6 20:00:36 2024 +0530
+
+    feat(login-page): Add UserModal UI
+
+[33mcommit f073f141d38587cb566a574aef354b3b3cd99c63[m[33m ([m[1;31morigin/feat/manage-admin-users[m[33m)[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Wed Mar 6 15:29:25 2024 +0530
+
+    feat(login-page): Update Sidebar Icons
+
+[33mcommit 9a4e39a60fce32cc7d6571b800796427935a7661[m
+Merge: 2c479e3 922102c
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Wed Mar 6 15:16:08 2024 +0530
+
+    feat(login-page): Update Login-page and Navbar
+
+[33mcommit 2c479e305f1198049d9919d6148ec5a6a7f9be77[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Wed Mar 6 15:08:59 2024 +0530
+
+    feat(login-page): Update Login-page and Navbar
+
+[33mcommit 922102c0d197361f8c786593711e235972fe25fe[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Wed Mar 6 13:49:12 2024 +0530
+
+    feat(login-page): fix types for pagintion hook
+
+[33mcommit 50dcd9ddbc331b6645be551813c086a1e8349d84[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Wed Mar 6 13:38:05 2024 +0530
+
+    Resolve key prop Error
+
+[33mcommit a4c212fcd1405cdea2420df9c48bcbbd014921f2[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Wed Mar 6 13:25:27 2024 +0530
+
+    Resolve key prop Error
+
+[33mcommit d26abcdeb2ac34073166ac55e15ff89877107e6c[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Tue Mar 5 22:42:43 2024 +0530
+
+    Add newUser/UpdateUser Modal
+
+[33mcommit 1fea31b9355509f791638479f53bd500b6ddc77b[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Tue Mar 5 20:37:28 2024 +0530
+
+    Add Admin-user List
+
+[33mcommit 7c7dc42716031b7020a67662637895c70c024b95[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Mon Mar 4 18:54:18 2024 +0530
+
+    Complete Pagination
+
+[33mcommit 4aac94cd2dc4ff958efa48dbdb15fa6443be77e6[m
+Author: Anubhav Pal <anubhav.pal@clientflowx.com>
+Date:   Mon Mar 4 01:01:28 2024 +0530
+
+    User list, pagination and filters UI
+
+[33mcommit c3a5bb6a5a386f2c8153f3e998cff8b6515194d5[m
+Author: Anubhav Pal <anubhavpal15june@gmail.com>
+Date:   Thu Feb 29 12:27:17 2024 +0530
+
+    Update Admin-panel UI
+
+[33mcommit 348b96b2a1a49dc1ec23bd4c4a10c9fd16e5b951[m
+Author: Anubhav Pal <anubhavpal15june@gmail.com>
+Date:   Thu Feb 29 10:27:58 2024 +0530
+
+    Update Sidebar UI
+
+[33mcommit 87a6c6585e4664b0ba8f0d25a6553196ae788c13[m
+Author: Anubhav Pal <anubhavpal15june@gmail.com>
+Date:   Thu Feb 29 00:16:25 2024 +0530
+
+    Improvise Dashboard UI
+
+[33mcommit 026cdf35ff413bc549faa22349379f4f63d67f42[m
+Author: Anubhav Pal <anubhavpal15june@gmail.com>
+Date:   Wed Feb 28 12:29:10 2024 +0530
+
+    Refactor Sidebar code
+
+[33mcommit a75798b26039b0f7c1e99914c078b43adb2000c1[m
+Author: Anubhav Pal <anubhavpal15june@gmail.com>
+Date:   Wed Feb 28 12:10:06 2024 +0530
+
+    Add Form Handling and update admin-panel UI
+
+[33mcommit 7afe93c1d99538268d8dc45837288961044f6393[m
+Author: Anubhav Pal <anubhavpal15june@gmail.com>
+Date:   Wed Feb 28 00:47:47 2024 +0530
+
+    Add admin-panel UI
+
+[33mcommit 947c556c307da5ec54de4511e26bf0d00d861360[m
+Author: Anubhav Pal <anubhavpal15june@gmail.com>
+Date:   Tue Feb 27 19:11:40 2024 +0530
+
+    Add login page
+
+[33mcommit 46d5de26466d0669c7f9508ce3f10a152dd91b9a[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: naman360 <naman.geek@gmail.com>
+Date:   Tue Feb 27 14:39:38 2024 +0530
+
+    Initial commit from Create Next App

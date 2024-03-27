@@ -408,6 +408,9 @@ const NewUserModal: React.FC<Props> = ({
       const { email, password } = newUserData;
       navigator.clipboard.writeText(`Email:${email} , Password:${password}`);
       setCredentialsCopied(true);
+      setTimeout(() => {
+        setCredentialsCopied(false);
+      }, 5000);
     };
 
   const togglePasswordVisibility = () => {

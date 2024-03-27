@@ -18,27 +18,28 @@ const Alert: React.FC<AlertProps> = ({ type, message }) => {
     ),
   };
   return (
-    <div
-      className="absolute bottom-[20px] left-1/2 w-lg bg-white border border-gray-200 rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700"
-      role="alert"
-    >
-      <div className="flex p-4">
-        <div className="flex-shrink-0">
-          <svg
-            className={`flex-shrink-0 size-4 mt-0.5 ${
-              type === "success" ? "text-teal-500" : "text-red-500 "
-            }`}
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            viewBox="0 0 16 16"
-          >
-            {typeIconMap[type]}
-          </svg>
-        </div>
-        <div className="ms-3">
-          <p className="text-sm text-gray-700 dark:text-gray-400">{message}</p>
+    <div className="flex items-center justify-center">
+      <div
+        className="absolute top-40 z-50 w-lg bg-white border border-gray-200 rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700"
+        role="alert"
+      >
+        <div className="flex p-4">
+          <div className="flex-shrink-0">
+            <svg
+              className={`flex-shrink-0 size-4 mt-0.5 ${type === "success" ? "text-teal-500" : "text-red-500 "
+                }`}
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              {typeIconMap[type]}
+            </svg>
+          </div>
+          <div className="ms-3">
+            <p className="text-sm text-gray-700 dark:text-gray-400">{message}</p>
+          </div>
         </div>
       </div>
     </div>

@@ -122,8 +122,18 @@ const ManageAdminUser = () => {
           },
         }
       );
+      alertMsg.current = "Request successful";
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 5000);
       setAdminData(response?.data?.adminUserList);
     } catch (err) {
+      alertMsg.current = "Request Fails, Try Again";
+      setShowError(true);
+      setTimeout(() => {
+        setShowError(false);
+      }, 5000);
       console.log(err);
     } finally {
       setLoading(false);
